@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Dev Update - 5th August &middot; Triple Eh?
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/Boing.png">
+  <link rel="shortcut icon" href="/public/Boing.png">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body class="theme-base-09">
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>Triple Eh? Ltd.</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Blog</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+	
+		<span class="sidebar-nav-item">Follow me:</span>
+		<a class="sidebar-nav-item" href="https://twitter.com/korruptor">- Twitter</a>
+		<a class="sidebar-nav-item" href="https://www.youtube.com/channel/UC6H2Ql7vVE4hHc-GNkMK8bQ">- You Tube</a>
+		<a class="sidebar-nav-item" href="https://triple-eh.tumblr.com">- Tumblr</a>
+		<span class="sidebar-nav-item">Games:</span>
+		<a class="sidebar-nav-item" href="http://play-lumo.com/">- Lumo</a>
+		<span class="sidebar-nav-item">Web:</span>
+		<a class="sidebar-nav-item" href="http://triple-eh.net">- Triple Eh?</a>
+		<a class="sidebar-nav-item" href="http://triple-eh.net/presskit/index.php">- Press Kit</a>
+  
+   </nav>
+
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2016. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Triple Eh?</a>
+            <small></small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <h1 class="post-title">Dev Update - 5th August</h1>
+  <span class="post-date">05 Aug 2016</span>
+  <p><img src="/images/NESJoypad_Final.jpg" alt="NES Joypad" /></p>
+
+<p>I’ve been on holiday! I know, that’s not exciting, but it’s the first proper feet-on-the-table, sat around playing games in my pants, do-nothing break I’ve had for, oooh, a while. And it was good, thank you for asking!</p>
+
+<p>Anyway, I’m back, and I’m going to try and be a bit more open about what I’m up to here, rather than just random <a href="https://twitter.com/korruptor">tweets</a> and <a href="https://triple-eh.tumblr.com">Tumblr</a> posts. I can’t promise how regular these devupdates will be, but I’ll aim for at least a couple a month.</p>
+
+<p>This is the first week back in front of my Dev PC since Lumo shipped. Despite having a bunch of ideas for new projects, I’m easing myself back into work by completely replacing my tool chain.</p>
+
+<p>Er, what?</p>
+
+<p>Lumo was created with Unity. For the most part Unity did what I wanted but the 10% of work to take the build from a nearly finished game to a polished, commercial release was, well, painful. Very painful. Much more painful than it had any right to be given the maturity of the middleware and the number of people using it. By the end of the project I needed 3 different patch versions of Unity, (one for each of the skus that I was handling: PC, Mac &amp; Linux) just to get around crash and rendering bugs. Not good. Don’t get me started on the hoops the chaps at <a href="http://www.jawltd.com/">JAW</a> had to go through on the console side. I also shipped with a lot of awful looking bugs that just weren’t present in earlier builds, all of which were completely out of my control. Wand particles would render incorrectly, or jump around the world, some of the animation blending is broken in specific circumstances, UI elements will pick up and render garbage for a couple of frames, lighting is broken in a few of the mini-games, etc. etc. Things that most of you won’t notice, but feel like a knife to the heart every time I see them. Unity 5.3.x was an absolute shit-show, so I decided to drop it and move to Unreal 4. There’s not going to be much news on the new projects until I start getting my head into UE4 and learn the ropes, which is why I mention it now.</p>
+
+<p>The other big change is on the art side. As you can tell from Lumo I’m a bit of a noob on the modelling side of things, but I spent enough time learning how to rig, animate, model &amp; texture, that toward the end of the project I was happy enough to jump in and make the things I needed rather than search the Asset Store. Unfortunately I was doing all of this with 3DS Max, which is slow, expensive, crashes all the time, and had a 50/50 chance of actually exporting to an FBX file that Unity could use. I hated it.</p>
+
+<p>After asking people far more knowledgeably than me about what I should use, I bought myself a copy of <a href="https://www.thefoundry.co.uk/products/modo/">Modo</a>. This week has been all about learning the ropes and I have to say, I immediately love it. The NES Joypad at the top of this post was the first thing to fall out of my monkeying around. Nothing too complicated - and yes, I know the DPad looks wrong - but I’m still pleased with the result.</p>
+
+<p>Next week I’m going to be 100% focused on Modo. I need to make a character, rig and animate it, and then I can start looking at getting assets into UE4. (Note: I reserve the right to do anything I want, contents may be hot, may contain nuts).</p>
+
+<p>Other stuff this week: Setting up Backblaze B2 for offsite backups of my NAS (I made a post about this on my <a href="http://tdi.online">personal blog</a>) and finding things to stretch the new GTX1080 GPU I’ve pushed into my Dev PC.</p>
+
+<p>It’s nice to be back at work! :)</p>
+
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2016/09/23/devupdate-23rd-september/">
+            Devupdate - 23rd September
+            <small>23 Sep 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2016/09/14/dev-update-15th-september/">
+            Dev Update – 14th September
+            <small>14 Sep 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2016/08/26/dev-update-26th-august/">
+            Dev Update - 26th August
+            <small>26 Aug 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+ <title>Triple Eh?</title>
+ <link href="https://www.triple-aye.com//atom.xml" rel="self"/>
+ <link href="https://www.triple-aye.com//"/>
+ <updated>2016-09-25T13:45:03+03:00</updated>
+ <id>https://www.triple-aye.com/</id>
+ <author>
+   <name>Gareth Noyce</name>
+   <email></email>
+ </author>
+
+ 
+ <entry>
+   <title>Devupdate - 23rd September</title>
+   <link href="https://www.triple-aye.com//2016/09/23/devupdate-23rd-september/"/>
+   <updated>2016-09-23T08:14:00+03:00</updated>
+   <id>https://www.triple-aye.com//2016/09/23/devupdate-23rd-september</id>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/images/22.09.2016-SplitScreenTest.jpg&quot; alt=&quot;Screenshot&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Cultural learnings of Unreal 4 for the benefit of game development, again, this week. And I think I’ve got over the first hill…&lt;/p&gt;
+
+&lt;p&gt;One of the things I found odd about Unity when I was starting was its complete lack of structure. Unity, from a certain angle, is basically an API and a fairly extensible editor, with a collection of half-finished bits to support you. This ‘flexibility’ is touted as its big strength, but over time I’ve grown to see this as a bit of a weakness. Some of that I attribute to the complete mess some of my students have got into, but even during Lumo, I grew to resent the amount of basic stuff that I had to roll. Why is localisation not built into the string classes? Why do I need to write my own serialisation? Why do I need to roll my own state handling? I need to write my own Audio manager?! etc. etc.&lt;/p&gt;
+
+&lt;p&gt;Sure, some of this stuff is write-once and then amend for every game thereafter, and of course that’s no different to writing a game in C. But for anyone used to having something as basic as an outer while loop in charge of the game’s tick, a series of very loosely coupled components, initiated in a random order on load, means you have to be very careful about how you start the game and track state as you proceed through scenes. At some point, it’s going to bite you on the arse, or worse - as happened with Lumo more than once post alpha - a bump in editor version can lead to a re-serialisation of objects and a total re-order of your init. Race conditions can be subtle and hairy dragons…&lt;/p&gt;
+
+&lt;p&gt;UE4 is a total contrast in this respect. It has a very clear structure that it seems to expect you to work in. There’s a GameMode, that’s, well, kinda the game globals for state, but I’m using it to handle a bit more. Actors, Pawns, etc are possessed by controllers that may or may not be players. Spawning players is done in a quite prescriptive way. Cameras come with a lot of expected functionality baked in. Basically, everything I’ve touched is ready rolled for a game, and you override and extend to mould it all into shape. The flip side of that coin is working out how you’re expected to do things.&lt;/p&gt;
+
+&lt;p&gt;Initially I had everything for the player in a class derived from ACharacter, but that came with a lot of stuff I didn’t need. My players aren’t going to be walking about, and a lot of stuff will just be canned Anims and some simple collision detection, so I split that into a Player Controller and custom Pawn class. Now I’m working from the bare bones and can see what I’m doing.&lt;/p&gt;
+
+&lt;p&gt;Because I want Oh Snow to be local multiplayer I figured I better dive-in and work out how the hell you do that. There’s a very simple way to spawn a single player - it’s basically handled for you automatically if you set the base class for your player - but the only examples I could find for handling multiplayer were Blueprints. I wanted to do things in C++ and the docs were a little, er, sparse. I ended up guessing my way through and spent the better part of a day trying things to see what happened. As expected, it’s about 2 lines of code to get going (took a while to find them though), and then to my complete surprise I got split screen for free. Yup, just having two cameras spawn in flips everything to split screen (unless you toggle a bool) and spawning 4 players gives me four screens. Nice.&lt;/p&gt;
+
+&lt;p&gt;I think I’ve also found more of a sweet spot between Blueprints and classes. Rather than add a bunch of pre-existing components in the C++ constructor and then the reams of code to set their params, it’s easier to just derive my class from whatever, put in the functions I want, and then derive a Blueprint from the result. I can add components - cameras, animations, etc - to the blueprint and tweak everything in the editor to my hearts content. Less typing, less compiling. Fingers crossed.&lt;/p&gt;
+
+&lt;p&gt;I’m also super impressed with UE4’s import stuff. It automagically picks up the materials from Modo, so no setup on my part. Adding collision is amazingly simple. Merging a set of assets into a single static mesh can be done in-engine, so no bouncing backwards and forwards to the modeller. The animation setup is sooooo much nicer than mechanim. That whole side of things looks like it’s going to be big time saver compared to Unity.&lt;/p&gt;
+
+&lt;p&gt;All in all, a reasonably productive couple of days at the forge. I think I’ve got a bit more of a grip as to what UE’s doing, I’m in love with all the tools I’ve played with, and I’m quite close to the point where I can just try and make some gameplay.&lt;/p&gt;
+
+&lt;p&gt;I’m going to need to model some characters soon though…&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Dev Update – 14th September</title>
+   <link href="https://www.triple-aye.com//2016/09/14/dev-update-15th-september/"/>
+   <updated>2016-09-14T18:37:00+03:00</updated>
+   <id>https://www.triple-aye.com//2016/09/14/dev-update-15th-september</id>
+   <content type="html">&lt;p&gt;I’ve had my head in Unreal, off and on, since the last post and I’m slowly starting to make head-way. As mentioned in the previous post, the Blueprint system was feeling like a grind, so I spent a week biting the bullet and just trying to get stuff going from the C++ side. This immediately gave me better results, and despite the iteration time being slower, I ended up getting a lot more done.&lt;/p&gt;
+
+&lt;p&gt;To that end, I’ve scrapped what I’ve been working on - mainly little tests, but I got as far as a half functioning endless runner - and created a clean project and pushed it to Github on Monday.&lt;/p&gt;
+
+&lt;p&gt;I had an idea about half-way through the development of Lumo for a little mobile game where you dragged around the view of a downhill ski slope, and the character twisted and turned to follow where the terrain was going. I figured this would work well, as you could essentially play it one-handed, and maybe you could extend it a bit further to add jumps and the odd trick without complicated the controls too much. It’s one of those little toy ideas that’s stuck in my head ever since, so I’m going to have a crack at making something similar as my first UE4 project. I say similar, as I’m not going to do it on mobile, at least not initially. For simplicity it’s probably better to start off with a PC game, and that also means I can go a little more Tony Hawks on it. The player will likely have a joypad…&lt;/p&gt;
+
+&lt;p&gt;Early days but I’ve been really impressed with UE4. The animation stuff - compared to Mecanim - is like mana from heaven. The code API is big, and more verbose than what I’ve been used to (C++ vs C#, natch) but it makes sense. And it works. And there’s proper debugging channels. And. And.&lt;/p&gt;
+
+&lt;p&gt;Going to be a while until I’m properly productive as I’m only working about 1.5 days a week on gamedev atm, but it’s nice to be chasing down another game. Even if it’s only a small one. Screenshots soon!&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Dev Update - 26th August</title>
+   <link href="https://www.triple-aye.com//2016/08/26/dev-update-26th-august/"/>
+   <updated>2016-08-26T10:52:00+03:00</updated>
+   <id>https://www.triple-aye.com//2016/08/26/dev-update-26th-august</id>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/images/Screenshot-from-2016-08-26-09-46-16-e1472198667714.png&quot; alt=&quot;Screenshot&quot; /&gt;
+So, this is exciting. Linux Voice - easily my fav tech magazine - very kindly asked if I’d be interesting in writing a quick Dev Diary about Lumo. Obviously I jumped at the chance. Having grown up reading Zzap!64’s &lt;a href=&quot;http://www.zzap64.co.uk/zzap3/para_birth01.html&quot;&gt;“Diary of a Game”&lt;/a&gt; series, from the likes of Andy Braybrook and Jeff Minter, this was too good an opportunity to miss. The LV team did a lovely job, ending up with a 6 page feature - including some of the early prototype screenshots - in this month’s issue. Massive thanks to Graham and the lads for that!&lt;/p&gt;
+
+&lt;p&gt;It’s taken a couple of weeks, but I’m definitely back in full-on ‘work mode’. Which is good, as it’s going to be a really busy few months ahead. I spent a couple of weeks in Modo messing around with tutorials and getting a feel for things, and I have to say I’m really happy with it. For some reason it just clicks in my head. I didn’t get to the character or rigging, but I did spend a long time messing around with a low poly look that I want to use for a possible prototype: Oh Snow!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Winter20Scene_Final.jpg&quot; alt=&quot;Winter&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I’ve also spent a week in UE4, messing about with Blueprints. There’s a lot to learn here and I’m already starting to feel that the Blueprint system isn’t for me. They’re not really much of a time saving as the workflow is labourious; drag pin, type the first few letters of the command, find box, drop box, hook up inputs/outputs, rinse repeat, so I could pretty much type what I wanted into Visual Studio and compile in the same time. I may have wasted all the work I’ve done, but it was a useful process to at least start to understand some of the jargon and API.&lt;/p&gt;
+
+&lt;p&gt;Nothing to show from that effort, so far, and I suspect it’ll take me a few days to start everything again with C++ classes.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately it may be a while until I get back to UE4. My teaching schedule has been sorted and there’s a lot front-loaded between now and Xmas. This means I’ll be at the Uni two days a week.  I’ve also signed up to a Finnish language course, which is another 2 days a week, meaning the bulk of my dev time is going to be evenings and on the train. Because of this, I’ve started re-writing my old 2D framework, as I have a bunch of ideas for simple, small games that I might be productive on. A lot’s been done on that over the last few days - mostly under the hood prep - but I have sprites. Enjoy the mesmerising, floating head of &lt;a href=&quot;https://en.wikipedia.org/wiki/Kevin_Toms&quot;&gt;Kevin Toms&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;iframe src=&quot;https://vine.co/v/5Oxwq2wdOi0/embed/simple?audio=1&quot; width=&quot;600&quot; height=&quot;600&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
+&lt;script src=&quot;https://platform.vine.co/static/scripts/embed.js&quot;&gt;&lt;/script&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Dev Update - 5th August</title>
+   <link href="https://www.triple-aye.com//2016/08/05/dev-update-5th-august/"/>
+   <updated>2016-08-05T18:31:00+03:00</updated>
+   <id>https://www.triple-aye.com//2016/08/05/dev-update-5th-august</id>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/images/NESJoypad_Final.jpg&quot; alt=&quot;NES Joypad&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I’ve been on holiday! I know, that’s not exciting, but it’s the first proper feet-on-the-table, sat around playing games in my pants, do-nothing break I’ve had for, oooh, a while. And it was good, thank you for asking!&lt;/p&gt;
+
+&lt;p&gt;Anyway, I’m back, and I’m going to try and be a bit more open about what I’m up to here, rather than just random &lt;a href=&quot;https://twitter.com/korruptor&quot;&gt;tweets&lt;/a&gt; and &lt;a href=&quot;https://triple-eh.tumblr.com&quot;&gt;Tumblr&lt;/a&gt; posts. I can’t promise how regular these devupdates will be, but I’ll aim for at least a couple a month.&lt;/p&gt;
+
+&lt;p&gt;This is the first week back in front of my Dev PC since Lumo shipped. Despite having a bunch of ideas for new projects, I’m easing myself back into work by completely replacing my tool chain.&lt;/p&gt;
+
+&lt;p&gt;Er, what?&lt;/p&gt;
+
+&lt;p&gt;Lumo was created with Unity. For the most part Unity did what I wanted but the 10% of work to take the build from a nearly finished game to a polished, commercial release was, well, painful. Very painful. Much more painful than it had any right to be given the maturity of the middleware and the number of people using it. By the end of the project I needed 3 different patch versions of Unity, (one for each of the skus that I was handling: PC, Mac &amp;amp; Linux) just to get around crash and rendering bugs. Not good. Don’t get me started on the hoops the chaps at &lt;a href=&quot;http://www.jawltd.com/&quot;&gt;JAW&lt;/a&gt; had to go through on the console side. I also shipped with a lot of awful looking bugs that just weren’t present in earlier builds, all of which were completely out of my control. Wand particles would render incorrectly, or jump around the world, some of the animation blending is broken in specific circumstances, UI elements will pick up and render garbage for a couple of frames, lighting is broken in a few of the mini-games, etc. etc. Things that most of you won’t notice, but feel like a knife to the heart every time I see them. Unity 5.3.x was an absolute shit-show, so I decided to drop it and move to Unreal 4. There’s not going to be much news on the new projects until I start getting my head into UE4 and learn the ropes, which is why I mention it now.&lt;/p&gt;
+
+&lt;p&gt;The other big change is on the art side. As you can tell from Lumo I’m a bit of a noob on the modelling side of things, but I spent enough time learning how to rig, animate, model &amp;amp; texture, that toward the end of the project I was happy enough to jump in and make the things I needed rather than search the Asset Store. Unfortunately I was doing all of this with 3DS Max, which is slow, expensive, crashes all the time, and had a 50/50 chance of actually exporting to an FBX file that Unity could use. I hated it.&lt;/p&gt;
+
+&lt;p&gt;After asking people far more knowledgeably than me about what I should use, I bought myself a copy of &lt;a href=&quot;https://www.thefoundry.co.uk/products/modo/&quot;&gt;Modo&lt;/a&gt;. This week has been all about learning the ropes and I have to say, I immediately love it. The NES Joypad at the top of this post was the first thing to fall out of my monkeying around. Nothing too complicated - and yes, I know the DPad looks wrong - but I’m still pleased with the result.&lt;/p&gt;
+
+&lt;p&gt;Next week I’m going to be 100% focused on Modo. I need to make a character, rig and animate it, and then I can start looking at getting assets into UE4. (Note: I reserve the right to do anything I want, contents may be hot, may contain nuts).&lt;/p&gt;
+
+&lt;p&gt;Other stuff this week: Setting up Backblaze B2 for offsite backups of my NAS (I made a post about this on my &lt;a href=&quot;http://tdi.online&quot;&gt;personal blog&lt;/a&gt;) and finding things to stretch the new GTX1080 GPU I’ve pushed into my Dev PC.&lt;/p&gt;
+
+&lt;p&gt;It’s nice to be back at work! :)&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Lumo Director's Commentary, Part 8</title>
+   <link href="https://www.triple-aye.com//2016/07/08/lumo-directors-commentary-part-8/"/>
+   <updated>2016-07-08T12:26:00+03:00</updated>
+   <id>https://www.triple-aye.com//2016/07/08/lumo-directors-commentary-part-8</id>
+   <content type="html">&lt;iframe width=&quot;560&quot; height=&quot;420&quot; src=&quot;http://www.youtube.com/embed/6icLEGefcTY?color=white&amp;amp;theme=light&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;And that, Ladies and Gentlemen, is that. 100% rinse of Lumo, including the paperboy ending!&lt;/p&gt;
+
+&lt;p&gt;I’m going on holiday for a couple of weeks, so enjoy the sun and thanks again to everyone that’s supported the game :)&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Lumo Director's Commentary Part 7</title>
+   <link href="https://www.triple-aye.com//2016/07/01/lumo-directors-commentary-part-7/"/>
+   <updated>2016-07-01T11:37:00+03:00</updated>
+   <id>https://www.triple-aye.com//2016/07/01/lumo-directors-commentary-part-7</id>
+   <content type="html">&lt;iframe width=&quot;560&quot; height=&quot;420&quot; src=&quot;http://www.youtube.com/embed/iP_xaDQDZsk?color=white&amp;amp;theme=light&quot;&gt;&lt;/iframe&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Archiving...</title>
+   <link href="https://www.triple-aye.com//2016/07/01/archiving/"/>
+   <updated>2016-07-01T11:35:00+03:00</updated>
+   <id>https://www.triple-aye.com//2016/07/01/archiving</id>
+   <content type="html">&lt;p&gt;Strange feeling, but the Lumo adventure is drawing to a close. I’ve just updated my PC to Windows 10 and I’m in the process of archiving up all the software, source code, assets, documents and miscellaneous paraphernalia that I’ve accumulated and used over the last 2.5 years making the game.&lt;/p&gt;
+
+&lt;p&gt;I recently put out patch 1.06.27 which, I believe, is going to be the last update. There’s a tiny little bug I noticed during the Director’s commentary that I’d like to fix, but it’s not worth a patch for. So, I’ll keep an eye out for any reports of obvious game breaking bugs or compatibility issues, but should none arise, that’s officially the end of Lumo’s development.  Fingers crossed.&lt;/p&gt;
+
+&lt;p&gt;It’s been a hell of an adventure, dark at times, but ultimately worth it. I’ve given up a few things in order to be in this position, but the end result is something that I’m proud of. I can look at Lumo and see a game with a good level of polish that does a lot more than I originally set out to achieve. It’s bigger than I anticipated, and took longer to make than I hoped, but it got a far wider exposure than I ever dreamed possible and received more than fair critical reactions from the majority of the press. So lots to be thankful for. (The metacritic is exactly where I’d put the game (solid 7/10, maybe an 8/10) and in places some people have fallen head over heels [ahem] for it, with 9s, 10s, Sizzlers and Editor’s Choice awards in the mix).&lt;/p&gt;
+
+&lt;p&gt;I’m going to take a couple of weeks off now and spend some time with my other half. I have one last Lumo related thing to do (an article that’ll hopefully be printed soon) before this chapter’s officially closed. And I’m looking forward to starting on the next thing…&lt;/p&gt;
+
+&lt;p&gt;So thanks to everyone that’s been supporting the game. More news on what’s next soon…&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Lumo, Vita release imminent!</title>
+   <link href="https://www.triple-aye.com//2016/06/28/lumo-vita-release-imminent/"/>
+   <updated>2016-06-28T16:20:00+03:00</updated>
+   <id>https://www.triple-aye.com//2016/06/28/lumo-vita-release-imminent</id>
+   <content type="html">&lt;p&gt;As noted by the fine folks over at &lt;a href=&quot;http://www.eurogamer.net/articles/2016-06-28-lumo-finally-has-a-vita-release-date&quot;&gt;Eurogamer&lt;/a&gt;, the release date for Lumo has been announced; 5th July.&lt;/p&gt;
+
+&lt;p&gt;This is much later than originally promised, and for that I do sincerely apologise for keeping you waiting, but the folks over at &lt;a href=&quot;http://www.jawltd.com/&quot;&gt;JAW&lt;/a&gt; have been working hard optimising, squeezing, cajoling and generally persuading what is, at heart, a PC game into the Vita’s tiny innards. No easy task…&lt;/p&gt;
+
+&lt;p&gt;The form factor should suit the game well, and it’ll also support Cross Buy and Cross Save, so it’s a steal for all you Sony chums out there!&lt;/p&gt;
+
+&lt;p&gt;Anyway, enjoy!&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Director's Commentary, Part 6</title>
+   <link href="https://www.triple-aye.com//2016/06/23/directors-commentary-part-6/"/>
+   <updated>2016-06-23T22:04:00+03:00</updated>
+   <id>https://www.triple-aye.com//2016/06/23/directors-commentary-part-6</id>
+   <content type="html">&lt;iframe width=&quot;560&quot; height=&quot;420&quot; src=&quot;http://www.youtube.com/embed/DPXR4u92ikg?color=white&amp;amp;theme=light&quot;&gt;&lt;/iframe&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Lumo, now available for XBox One!</title>
+   <link href="https://www.triple-aye.com//2016/06/23/lumo-now-available-for-xbox-one/"/>
+   <updated>2016-06-23T22:01:00+03:00</updated>
+   <id>https://www.triple-aye.com//2016/06/23/lumo-now-available-for-xbox-one</id>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/images/image.png&quot; alt=&quot;Xbox&quot; /&gt;
+Phew, we got there in the end! Lumo’s out now on XBox One. Head over to the &lt;a href=&quot;https://store.xbox.com/en-GB/Xbox-One/Games/Lumo/1247d4e3-2a97-4d47-9eba-8983c801edec&quot;&gt;Xbox store&lt;/a&gt; to grab your copy!&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Director's Commentary, Part 5</title>
+   <link href="https://www.triple-aye.com//2016/06/17/directors-commentary-part-5/"/>
+   <updated>2016-06-17T12:29:00+03:00</updated>
+   <id>https://www.triple-aye.com//2016/06/17/directors-commentary-part-5</id>
+   <content type="html">&lt;p&gt;Quick run through the first of the Cauldron sections. Nothing too strenuous in here:&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;420&quot; src=&quot;http://www.youtube.com/embed/JzBgrJfAhk0?color=white&amp;amp;theme=light&quot;&gt;&lt;/iframe&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Director's Commentary, Part 4</title>
+   <link href="https://www.triple-aye.com//2016/06/09/directors-commentary-part-4/"/>
+   <updated>2016-06-09T11:07:00+03:00</updated>
+   <id>https://www.triple-aye.com//2016/06/09/directors-commentary-part-4</id>
+   <content type="html">&lt;iframe width=&quot;560&quot; height=&quot;420&quot; src=&quot;http://www.youtube.com/embed/H84P9mI-V4w?color=white&amp;amp;theme=light&quot;&gt;&lt;/iframe&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Director's Commentary, Part 3 & World's first Old School run!</title>
+   <link href="https://www.triple-aye.com//2016/06/03/directors-commentary-part-3-worlds-first-old-school-run/"/>
+   <updated>2016-06-03T11:36:00+03:00</updated>
+   <id>https://www.triple-aye.com//2016/06/03/directors-commentary-part-3-worlds-first-old-school-run</id>
+   <content type="html">&lt;p&gt;Exciting news, and worth recording for posterity… The world’s first Lumo Old School run has been recorded and put on You Tube. 1 hour 28 minutes to beat!&lt;/p&gt;
+
+&lt;p&gt;It’s a pretty sane any% run, but there’s plenty of time to come off that. There’s another hidden short-cut in the game, and a few little exploits that haven’t been used. I’d guess a good any% run would be sub 1hr 15, but we’ll see. There’re probably exploits that I’m not aware of…&lt;/p&gt;
+
+&lt;p&gt;Check it out:&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;420&quot; src=&quot;http://www.youtube.com/embed/KciwYApcJKM?color=white&amp;amp;theme=light&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;And while you’re in the You Tube mood, here’s Part 3 of my Director’s Commentary:&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;420&quot; src=&quot;http://www.youtube.com/embed/wSbU-5Pn3Vg?color=white&amp;amp;theme=light&quot;&gt;&lt;/iframe&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Director's Commentary, Part 2</title>
+   <link href="https://www.triple-aye.com//2016/05/29/directors-commentary-part-2/"/>
+   <updated>2016-05-29T01:31:00+03:00</updated>
+   <id>https://www.triple-aye.com//2016/05/29/directors-commentary-part-2</id>
+   <content type="html">&lt;p&gt;Here’s the second part of my Director’s Commentary walk through of Lumo. Enjoy!&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;420&quot; src=&quot;http://www.youtube.com/embed/7IEBQDRYWyI?color=white&amp;amp;theme=light&quot;&gt;&lt;/iframe&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Release Day!</title>
+   <link href="https://www.triple-aye.com//2016/05/25/release-day/"/>
+   <updated>2016-05-25T10:34:00+03:00</updated>
+   <id>https://www.triple-aye.com//2016/05/25/release-day</id>
+   <content type="html">&lt;p&gt;Lumo’s out and the reaction from press and public has been great! Phew! That’s a massive weight off.&lt;/p&gt;
+
+&lt;p&gt;No disasters have been reported, the game seems stable and there’s a lot of love for it in certain quaters (my twitter feed was going mental yesterday). That’s all I could hope for.&lt;/p&gt;
+
+&lt;p&gt;I’ve tried not to read the reviews - there doesn’t seem much point, they can’t change anything - But the publisher’s been sending me an overview. There’re some 9s. A 10. Mainly 7s and 8s, with a few 6s bringing up the rear. That seems fair to me, I’d place it somewhere between a 7 or 8 if I were reviewing it. Happy days :)&lt;/p&gt;
+
+&lt;p&gt;Massive thanks to everyone that’s bought it, everyone that’s reviewed it, or streamed it, or just talked about it on Twitter!&lt;/p&gt;
+
+&lt;p&gt;For those of you that haven’t, you can buy it on &lt;a href=&quot;http://store.steampowered.com/app/345480/&quot;&gt;Steam&lt;/a&gt;, &lt;a href=&quot;https://www.gog.com/game/lumo&quot;&gt;Good Old Games&lt;/a&gt;, &lt;a href=&quot;https://www.humblebundle.com/store/lumo&quot;&gt;Humble&lt;/a&gt; or the &lt;a href=&quot;https://store.playstation.com/#!/en-gb/games/lumo/cid=EP4034-CUSA03923_00-LUMO000000000000?scope=sceapp&amp;amp;smcid=sceapp:home&quot;&gt;Playstation Store&lt;/a&gt;. Enjoy!&lt;/p&gt;
+
+&lt;p&gt;I’ve got a few live streams to do this week. Eurogamer this afternoon, then Twitch during the early hours of tomorrow morning. Then I guess I’m on holiday…&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Director's Commentary, Part 1</title>
+   <link href="https://www.triple-aye.com//2016/05/20/directors-commentary-part-1/"/>
+   <updated>2016-05-20T10:55:00+03:00</updated>
+   <id>https://www.triple-aye.com//2016/05/20/directors-commentary-part-1</id>
+   <content type="html">&lt;p&gt;There’s a lot of stuff tucked away in Lumo, some of it’s obvious, some of it’s pretty subtle, so I’ve had a lot of requests to explain more about the game. To that end I’ve started a Director’s Commentary series of videos. I’m doing a full run through of the game, nattering as I go. I’ll show where a lot of the collectables are hidden, and discuss what ever pops into my head as I play.&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;420&quot; src=&quot;http://www.youtube.com/embed/JyxaiOV4ebc?color=white&amp;amp;theme=light&quot;&gt;&lt;/iframe&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Lumo Release Date</title>
+   <link href="https://www.triple-aye.com//2016/05/11/lumo-release-date/"/>
+   <updated>2016-05-11T16:40:00+03:00</updated>
+   <id>https://www.triple-aye.com//2016/05/11/lumo-release-date</id>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/images/WebsiteHeader.png&quot; alt=&quot;Header&quot; /&gt;
+Be-de-dip-diddly-dip… News Update!&lt;/p&gt;
+
+&lt;p&gt;I’m happy to confirm that Lumo will be released on &lt;strong&gt;24th of May&lt;/strong&gt; for&lt;strong&gt; PC, Mac, Linux&lt;/strong&gt; &lt;strong&gt;&amp;amp; PS4&lt;/strong&gt;!&lt;/p&gt;
+
+&lt;p&gt;The XBox One and Vita versions will be landing a week or so later.&lt;/p&gt;
+
+&lt;p&gt;It’s been a long road to get here, but I’m super excited (and nervous as hell) that you’ll be able to play it soon. Woo!&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Devupdate, 11th May</title>
+   <link href="https://www.triple-aye.com//2016/05/11/devupdate-11th-may/"/>
+   <updated>2016-05-11T10:36:00+03:00</updated>
+   <id>https://www.triple-aye.com//2016/05/11/devupdate-11th-may</id>
+   <content type="html">&lt;p&gt;So. This happened:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/EngineCapture.png&quot; alt=&quot;Engine&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;And this happened:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Screenshot-from-2016-05-11-101807.png&quot; alt=&quot;Screenshot&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;And then I had to take a headshot for Develop:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Develop_Headshot_small.jpg&quot; alt=&quot;Headshot&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I went for the “turning around at my desk, pleased that you want to speak to me” pose. I reckon I nailed that. The full interview is here: &lt;a href=&quot;http://www.develop-online.net/interview/gareth-noyce-on-making-lumo-triple-a-isn-t-my-calling/0220110&quot;&gt;http://www.develop-online.net/interview/gareth-noyce-on-making-lumo-triple-a-isn-t-my-calling/0220110&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I’ll explain more about Neutrino and my other plans in a later post. For now, keep your eyes peeled while you’re playing Lumo. There’s a big clue as to what type of game it is in the intro.&lt;/p&gt;
+
+&lt;p&gt;Annnnnd… Last, but no means least, the mighty Rob Fearon put words to screen and claimed the crown for the first&lt;a href=&quot;http://takethismachine.com/lumo-2/&quot;&gt; Lumo review&lt;/a&gt;. God bless yer, Rob.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Where's Lumo?</title>
+   <link href="https://www.triple-aye.com//2016/04/27/wheres-lumo/"/>
+   <updated>2016-04-27T18:02:00+03:00</updated>
+   <id>https://www.triple-aye.com//2016/04/27/wheres-lumo</id>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/images/MyDesk-2-1024x613.jpg&quot; alt=&quot;My Desk&quot; /&gt;
+It’s there. On that PC.&lt;/p&gt;
+
+&lt;p&gt;Ok, ok. I know we said it would be out by now but a button didn’t get pushed. The machine stopped. But the machine’s running now and in the delay I noticed that one of the achievements was broken, so phew, at least we didn’t live with that…&lt;/p&gt;
+
+&lt;p&gt;I’m very very very (very) sorry for the delay. I desperately &lt;em&gt;want-this-out-so-you-can-play-it&lt;/em&gt; like you wouldn’t believe… I’m quietly stressing that there’s some other disaster, or nasty bug lurking around the corner but I think we’re good. So, with the wind behind us, we should be out in 2 or 3 weeks. Just don’t hold me to that until the press release goes out, yeah?&lt;/p&gt;
+
+&lt;p&gt;On the plus side, the delay means we should be in Good Old Games and the Humble Store on day one, so DRM free copies will be available. That’s a good thing, innit?&lt;/p&gt;
+
+&lt;p&gt;Anyway, sorry sorry sorry. It’s on the way. Sorry.&lt;/p&gt;
+</content>
+ </entry>
+ 
+
+</feed>

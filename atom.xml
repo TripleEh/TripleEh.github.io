@@ -4,13 +4,49 @@
  <title>Triple Eh?</title>
  <link href="https://www.triple-aye.com/atom.xml" rel="self"/>
  <link href="https://www.triple-aye.com/"/>
- <updated>2016-10-01T17:42:31+03:00</updated>
+ <updated>2016-10-06T18:01:58+03:00</updated>
  <id>https://www.triple-aye.com</id>
  <author>
    <name>Gareth Noyce</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Devupdate - 6th October</title>
+   <link href="https://www.triple-aye.com/2016/10/06/Devupdate/"/>
+   <updated>2016-10-06T00:00:00+03:00</updated>
+   <id>https://www.triple-aye.com/2016/10/06/Devupdate</id>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/images/2016.10.06_Character_WIP1.jpg&quot; alt=&quot;Character 1 WIP&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;After my last post I started work on a character model for the game. This is the first time I’ve ever modelled a character, and also the first time 
+I’ve tried to do anything complicated that had any sort of predefined ‘style’ (low poly in this case, so nothing too strenuous).&lt;/p&gt;
+
+&lt;p&gt;As expected, even simple character modelling is non-trivial and I’ve discovered I have 
+an amazing ability to be completely OCD on vert placements, so probably wasted hours just tweaking stuff when I shouldn’t have bothered.&lt;/p&gt;
+
+&lt;p&gt;The results aren’t amazing, but it was a good learning experience and it’ll do for now. It’s kinda close to what I had in my head, and hopefully the super deformed 
+look will parse well enough on-screen. Fingers crossed!&lt;/p&gt;
+
+&lt;p&gt;I’m intending to make a bunch of different hairstyles, hats, goggles and other bits, that you’ll be able to pick and choose from. Probably as 
+some sort of unlock/upgrade tree. None of that should be too tricky, but I’ll need to look into how attachments work out in UE4, or find a simple way to output the variants from Modo. With a few base models 
+I’ll be able to do most of the variations with material swaps, so it shouldn’t be too bad, either way.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/2016.10.06_Character_WIP2.jpg&quot; alt=&quot;Character 1 WIP2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I had to rig and skin four characters for Lumo, all in Max, and each of them ended up taking one or two days to get right. I hated doing it and still live in fear of ever going back in 
+there to fix something. That’s probably why I’ve been putting off doing any character work on this for the last few weeks, but today I dragged myself away from tweaking vert placements and 
+sat down in front of some tutorial videos to get to grips with how the process works in Modo. And - so far - it’s been a really pleasant experience.&lt;/p&gt;
+
+&lt;p&gt;The rigging is nice and simple, taking less than 20 minutes, and the base vertex bindings the software produced is surprisingly close to what I need. I’ve probably got a few hours work left just to tweak the weights around the fingers and waist, but I’m pretty 
+confident that this’ll be good to go before I leave for the UK next week.&lt;/p&gt;
+
+&lt;p&gt;Then it’ll be UV unrwapping, and producing some simple test animations to get him skiing.&lt;/p&gt;
+
+&lt;p&gt;Yet again, big props to Modo. It definitely fits with my head.&lt;/p&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>Devupdate - 23rd September</title>

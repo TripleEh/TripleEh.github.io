@@ -4,7 +4,7 @@
  <title>Triple Eh?</title>
  <link href="https://www.triple-aye.com/atom.xml" rel="self"/>
  <link href="https://www.triple-aye.com/"/>
- <updated>2016-10-06T18:01:58+03:00</updated>
+ <updated>2016-10-06T18:12:42+03:00</updated>
  <id>https://www.triple-aye.com</id>
  <author>
    <name>Gareth Noyce</name>
@@ -41,7 +41,7 @@ sat down in front of some tutorial videos to get to grips with how the process w
 &lt;p&gt;The rigging is nice and simple, taking less than 20 minutes, and the base vertex bindings the software produced is surprisingly close to what I need. I’ve probably got a few hours work left just to tweak the weights around the fingers and waist, but I’m pretty 
 confident that this’ll be good to go before I leave for the UK next week.&lt;/p&gt;
 
-&lt;p&gt;Then it’ll be UV unrwapping, and producing some simple test animations to get him skiing.&lt;/p&gt;
+&lt;p&gt;Then it’ll be UV unwrapping, and producing some simple test animations to get him skiing.&lt;/p&gt;
 
 &lt;p&gt;Yet again, big props to Modo. It definitely fits with my head.&lt;/p&gt;
 

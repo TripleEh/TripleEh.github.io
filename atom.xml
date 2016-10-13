@@ -4,13 +4,58 @@
  <title>Triple Eh?</title>
  <link href="https://www.triple-aye.com/atom.xml" rel="self"/>
  <link href="https://www.triple-aye.com/"/>
- <updated>2016-10-12T09:01:24+03:00</updated>
+ <updated>2016-10-13T22:40:29+03:00</updated>
  <id>https://www.triple-aye.com</id>
  <author>
    <name>Gareth Noyce</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Devupdate - 13th October</title>
+   <link href="https://www.triple-aye.com/2016/10/13/Devupdate-13th-October/"/>
+   <updated>2016-10-13T00:00:00+03:00</updated>
+   <id>https://www.triple-aye.com/2016/10/13/Devupdate---13th-October</id>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/images/2016.10.13_UV_ForBlogPost.PNG&quot; alt=&quot;UV Islands&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I thought I’d do a quick update before I head out to the UK this weekend.&lt;/p&gt;
+
+&lt;p&gt;I’ve had a bit of fun this week. Neutrino moved forward for the first time in a long while. I’ve integrated &lt;a href=&quot;https://github.com/ocornut/imgui&quot;&gt;ImGUI&lt;/a&gt;, a lovely
+header based widget library for games and other multi-media. This is one of those “where have you been all my life” bits of code, that slotted straight in and opened 
+up a really simple, clean way to do debug output, windows, memory inspection and the like. So far I’ve only added some simple performance counters, but the plan is 
+to use this to build up the internal editors for things like splines, particle effects and bullet patterns. I’m having a bit of a man crush on it…&lt;/p&gt;
+
+&lt;p&gt;Oh Snow’s also moving forward. The base character is done, skinned and rigged. I had to make a few tweaks since the last update, and today I sat down to try and get the UVing 
+into shape. I’ve not used any of the UV tools in Modo before (can you spot a pattern here?) and to be perfectly honest, for Lumo I got away with everything being basically box 
+mapped, so don’t really profess to even know the terminology. Every day’s a school day.&lt;/p&gt;
+
+&lt;p&gt;As ever, Modo’s been good to me. I made a lot of mistakes, and had to kinda stumble my way through the various options to work out what does what, but I finished today with a pretty 
+clean set of UV islands, and what appears to be - to me at least - reasonable texel density.&lt;/p&gt;
+
+&lt;p&gt;All this highlighted some problems in my modelling workflow. As a lot of the geometry is mirrored, I could have saved myself a lot of time if I’d done a quick UV map on the model 
+before I mirrored it. I’m wasting UV space for things that could be overlapping. I’m not sure if there’s a quick way to do this after the fact, other than manually line up 
+the appropriate islands. I might need to ask around on that.&lt;/p&gt;
+
+&lt;p&gt;For this game it’s not really going to be a problem…&lt;/p&gt;
+
+&lt;p&gt;Also, I should have done the UVing before the skinning, as I noticed a few problems with a couple of quads that meant going back in to make some tweaks. Fortunately this is simple in Modo,
+but something to bear in mind in the future.&lt;/p&gt;
+
+&lt;p&gt;The paint tools in Modo turned out to be really useful for finding where my UV seams were causing problems, and really drove home how quickly things can look shit if there’s too much 
+distortion in the quads. Today I found all this out after I thought I was ‘done’, so I scrapped everything (basically the whole day’s work) and started again. Once I vaguely knew what 
+I was doing the whole process took less than an hour.&lt;/p&gt;
+
+&lt;p&gt;I’m having to stop myself from getting too stressed over the slow progress I’m making atm, and keep reminding myself that taking the hit now will pay off down the road. Learning Modo - and 
+pretty much the entire art pipeline - is a pretty big task. Learning UE4 is also going to take a good long while. The fact is, I need these skills if I’m going to continue making games on my own, 
+so it’s nice when I do finally crack something. Even if it takes all day… :)&lt;/p&gt;
+
+&lt;p&gt;So, next up: a quick pass on the texture, then some simple poses for test anims.&lt;/p&gt;
+
+&lt;p&gt;After I’ve recovered from a week in the UK! :D&lt;/p&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>This is scary...</title>

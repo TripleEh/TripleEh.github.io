@@ -4,13 +4,106 @@
  <title>Triple Eh?</title>
  <link href="https://www.triple-aye.com/atom.xml" rel="self"/>
  <link href="https://www.triple-aye.com/"/>
- <updated>2016-10-13T22:40:29+03:00</updated>
+ <updated>2016-11-04T14:32:51+02:00</updated>
  <id>https://www.triple-aye.com</id>
  <author>
    <name>Gareth Noyce</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Devupdate - 4th November</title>
+   <link href="https://www.triple-aye.com/2016/11/04/Devupdate-4th-November/"/>
+   <updated>2016-11-04T00:00:00+02:00</updated>
+   <id>https://www.triple-aye.com/2016/11/04/Devupdate---4th-November</id>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;images/lemsip.jpg&quot; alt=&quot;How I miss this...&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;God I miss this stuff. The last 10 days I’ve been down with a snotty cold. The first week was a complete wipeput because Finland, bless it, hasn’t 
+quite caught up with the idea of dosing yourself to the eyeballs with a cacophony of drugs to ease 
+yourself through. &lt;em&gt;sniff&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;It’s not been all bad though.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;images/lumo_fanart.jpg&quot; alt=&quot;First bit of fan art&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Lumo received its first bit of fan art!&lt;/p&gt;
+
+&lt;p&gt;I’ve never been given something like this before. I was a bit lost for words, tbh. 
+Complete surprise, but it cheered me up no end. Thank you Cris_Cat_Kun, you made my day.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;images/famitsu.jpg&quot; alt=&quot;Famitsu&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Lumo’s out in Japan now, and got a respectable flush of 7s from Famitsu. Again, another bucket list 
+tick, this. I love magazines, and I love seeing my work in them. Famitsu is one of the longest running
+and most famous, and even today, it’s a healthy 230 pages of madness. Props to all at Rising Star who
+worked behind the scenes to make this happen.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;images/lumo_mag.jpg&quot; alt=&quot;Finland&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Even the Finnish press have got in on the action!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;images/box.jpg&quot; alt=&quot;Box&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Annnd, I’ve finally got my hands on the boxed version.&lt;/p&gt;
+
+&lt;p&gt;Again, another one off the bucket list.&lt;/p&gt;
+
+&lt;p&gt;Since Sudeki I’ve had a little ritual of going into the local game shop, seeing what I’ve worked on nestled 
+among all big games of the day, and buying it with a big grin on my face. I didn’t catch Lumo in the wild but I was able to 
+buy it off Amazon, which still counts IMO.&lt;/p&gt;
+
+&lt;p&gt;Development wise it’s been a bit slow, what with the man-flu, but I’ve had some productive train coding sessions the last few days.&lt;/p&gt;
+
+&lt;p&gt;One of the things I’ve been tempted to do for Neutrino since the start is roll all my tools into the framework so I can carry it all 
+forward to multiple projects. Key to this is the map editor. I started scratching out what would be required for this, but decided to 
+pull back. It’s obviously going to grow arms and legs before taking on a life of its own. I’m old enough to know better.&lt;/p&gt;
+
+&lt;p&gt;The obvious alternative is &lt;a href=&quot;www.mapeditor.org&quot;&gt;TileD&lt;/a&gt;, an open source map editor that’s been around, in one shape or form, for years. I’ve looked 
+at this before for Beat Arena (another project I might return to one day) and passed because it’s quite rigid and a little old school. It’s
+not changed much since I last looked at it, and the limitations of using fixed size tiles and rigid grid layouts is going to get on my nerves very quickly, 
+but it’s a sensible short-cut to create the background layers for Neutrino. I can write some custom tools for spline editing and wave triggering.&lt;/p&gt;
+
+&lt;p&gt;There are still a couple of hurdles with this approach:&lt;/p&gt;
+
+&lt;p&gt;TileD outputs to TMX or JSON formats, neither of which I support. The Neutrino framework uses libconfig for parsing the various text-based data files, 
+and I’m loath to add new dependencies. (There’s a good argument for dropping libconfig and just using a single header JSON library, but that’s a question for 
+another day.)&lt;/p&gt;
+
+&lt;p&gt;TileD also expects you to be working with a texture page of square tiles, which is fine, except I have no intention of just using square tiles in any of my games, or 
+of introducing extra draw calls just so the square tiles can be on their own t-page…&lt;/p&gt;
+
+&lt;p&gt;Currently I output texture pages via a build step that runs the individual art assets through &lt;a href=&quot;https://www.codeandweb.com/texturepacker&quot;&gt;Texture Packer&lt;/a&gt;, an insanely good 
+tool for taking a collection of images and spitting out an optimised t-page. (BTW, if this isn’t in your tool box, it should be.) This leaves me with 
+a .png containing all the sprites, and a text file containing all the sprite meta-data (position within the texture, size, etc).&lt;/p&gt;
+
+&lt;p&gt;TileD doesn’t seem to have a way for 
+me to mark the individual tiles in a t-page by hand - due to this expectation that they’ll be square, so easy to identify in the texture page automagically - meaning I have to drop in individual 
+assets in order to make maps. Not a problem, except the ID of tiles in TileD’s output will likely differ from the meta-data of the texture page.&lt;/p&gt;
+
+&lt;p&gt;It’s stuff like this 
+that has tempted me to write my own map editor for the last 6 or 7 years…&lt;/p&gt;
+
+&lt;p&gt;Anyway, the problem was easily solved with a Python script to pre-process the TileD JSON output, fix the mappings, and then spit out a libconfig format file that 
+Neutrino can then use to build a VBO of the tile map. This can be inserted into the build process, or just done as and when it’s needed.&lt;/p&gt;
+
+&lt;p&gt;Building a VBO of a tilemap is one of those jobs that I must have done 3 or 4 times now. The only thing I think I’ve written more times is a text writer. Literally, the
+code to parse strings and spit them onto screen. I keep promising myself that “this will be the last time”. We’ll see if this one is…&lt;/p&gt;
+
+&lt;p&gt;When I get around to it. Obviously this 
+week I prevaricated and put in a few debug bits and pieces that I know I’ll need, the most important of which was the debug fly cam. (Mainly cos I know my first pass at 
+the tile map will probably end up in the wrong location, so I’ll need to fly around to look for it…)&lt;/p&gt;
+
+&lt;p&gt;This ended up being a fun little job as mapping keyboard and joystick input to controls for various player actions involves a bit more than you’d think. For a start, joypads
+can be added and removed at runtime so you need to be able to move controllers between players, and keyboard layouts differ between locals, so you can’t just “detect a letter” 
+and be done with it. SDL’s docs have a couple of gotchas around how you handle this stuff, but I was able to get it all working nicely. The only thing that’s missing 
+is exposing an interface for assigning controllers or redefining controls. As that’s game specific I figure I can put that off for now.&lt;/p&gt;
+
+&lt;p&gt;I’m hoping I’ll get a day clear to go back to Oh Snow next week, but with three teaching courses on the go that might be wishful thinking. Either way, I’ve had
+fun this week. In between the sneezes.&lt;/p&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>Devupdate - 13th October</title>

@@ -114,6 +114,40 @@
   
   <div class="post">
     <h1 class="post-title">
+      <a href="https://www.triple-aye.com/2016/09/23/devupdate-23rd-september/">
+        Devupdate - 23rd September
+      </a>
+    </h1>
+
+    <span class="post-date">23 Sep 2016</span>
+
+    <p><img src="/images/22.09.2016-SplitScreenTest.jpg" alt="Screenshot" /></p>
+
+<p>Cultural learnings of Unreal 4 for the benefit of game development, again, this week. And I think I’ve got over the first hill…</p>
+
+<p>One of the things I found odd about Unity when I was starting was its complete lack of structure. Unity, from a certain angle, is basically an API and a fairly extensible editor, with a collection of half-finished bits to support you. This ‘flexibility’ is touted as its big strength, but over time I’ve grown to see this as a bit of a weakness. Some of that I attribute to the complete mess some of my students have got into, but even during Lumo, I grew to resent the amount of basic stuff that I had to roll. Why is localisation not built into the string classes? Why do I need to write my own serialisation? Why do I need to roll my own state handling? I need to write my own Audio manager?! etc. etc.</p>
+
+<p>Sure, some of this stuff is write-once and then amend for every game thereafter, and of course that’s no different to writing a game in C. But for anyone used to having something as basic as an outer while loop in charge of the game’s tick, a series of very loosely coupled components, initiated in a random order on load, means you have to be very careful about how you start the game and track state as you proceed through scenes. At some point, it’s going to bite you on the arse, or worse - as happened with Lumo more than once post alpha - a bump in editor version can lead to a re-serialisation of objects and a total re-order of your init. Race conditions can be subtle and hairy dragons…</p>
+
+<p>UE4 is a total contrast in this respect. It has a very clear structure that it seems to expect you to work in. There’s a GameMode, that’s, well, kinda the game globals for state, but I’m using it to handle a bit more. Actors, Pawns, etc are possessed by controllers that may or may not be players. Spawning players is done in a quite prescriptive way. Cameras come with a lot of expected functionality baked in. Basically, everything I’ve touched is ready rolled for a game, and you override and extend to mould it all into shape. The flip side of that coin is working out how you’re expected to do things.</p>
+
+<p>Initially I had everything for the player in a class derived from ACharacter, but that came with a lot of stuff I didn’t need. My players aren’t going to be walking about, and a lot of stuff will just be canned Anims and some simple collision detection, so I split that into a Player Controller and custom Pawn class. Now I’m working from the bare bones and can see what I’m doing.</p>
+
+<p>Because I want Oh Snow to be local multiplayer I figured I better dive-in and work out how the hell you do that. There’s a very simple way to spawn a single player - it’s basically handled for you automatically if you set the base class for your player - but the only examples I could find for handling multiplayer were Blueprints. I wanted to do things in C++ and the docs were a little, er, sparse. I ended up guessing my way through and spent the better part of a day trying things to see what happened. As expected, it’s about 2 lines of code to get going (took a while to find them though), and then to my complete surprise I got split screen for free. Yup, just having two cameras spawn in flips everything to split screen (unless you toggle a bool) and spawning 4 players gives me four screens. Nice.</p>
+
+<p>I think I’ve also found more of a sweet spot between Blueprints and classes. Rather than add a bunch of pre-existing components in the C++ constructor and then the reams of code to set their params, it’s easier to just derive my class from whatever, put in the functions I want, and then derive a Blueprint from the result. I can add components - cameras, animations, etc - to the blueprint and tweak everything in the editor to my hearts content. Less typing, less compiling. Fingers crossed.</p>
+
+<p>I’m also super impressed with UE4’s import stuff. It automagically picks up the materials from Modo, so no setup on my part. Adding collision is amazingly simple. Merging a set of assets into a single static mesh can be done in-engine, so no bouncing backwards and forwards to the modeller. The animation setup is sooooo much nicer than mechanim. That whole side of things looks like it’s going to be big time saver compared to Unity.</p>
+
+<p>All in all, a reasonably productive couple of days at the forge. I think I’ve got a bit more of a grip as to what UE’s doing, I’m in love with all the tools I’ve played with, and I’m quite close to the point where I can just try and make some gameplay.</p>
+
+<p>I’m going to need to model some characters soon though…</p>
+
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
       <a href="https://www.triple-aye.com/2016/09/14/dev-update-15th-september/">
         Dev Update – 14th September
       </a>
@@ -212,19 +246,6 @@ So, this is exciting. Linux Voice - easily my fav tech magazine - very kindly 
 <p>And that, Ladies and Gentlemen, is that. 100% rinse of Lumo, including the paperboy ending!</p>
 
 <p>I’m going on holiday for a couple of weeks, so enjoy the sun and thanks again to everyone that’s supported the game :)</p>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="https://www.triple-aye.com/2016/07/01/lumo-directors-commentary-part-7/">
-        Lumo Director's Commentary Part 7
-      </a>
-    </h1>
-
-    <span class="post-date">01 Jul 2016</span>
-
-    <iframe width="560" height="420" src="http://www.youtube.com/embed/iP_xaDQDZsk?color=white&amp;theme=light"></iframe>
 
   </div>
   

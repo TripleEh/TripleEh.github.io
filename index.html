@@ -114,6 +114,34 @@
   
   <div class="post">
     <h1 class="post-title">
+      <a href="https://www.triple-aye.com/2016/12/03/PS4-v1.0.2-Save-Games/">
+        PS4 v1.02 Save Games
+      </a>
+    </h1>
+
+    <span class="post-date">03 Dec 2016</span>
+
+    <p>A few people have still experienced the save icon corruption on PS4 and have posted to the Steam forums for info. Mart from RSG just posted the 
+following steps which should fix the issue for anyone that’s upgraded from the previous build, but still has problems:</p>
+
+<ul>
+  <li>Make sure the game isn’t running.</li>
+  <li>Check that you’re running V1.02 - you can do that by highlighting the game icon on the PS4 home menu, pressing Options and choosing Update History. If you’re not, download the update from the same Options menu.</li>
+  <li>From the PS4 home menu, go into Settings &gt; Application Saved Data Management &gt; Saved Data In System Storage &gt; Delete and then go to Lumo.</li>
+  <li>You should see two files - Player Preferences and Lumo Save Slot 0. The latter is the one that’s causing all the trouble (the system should even tell you it’s corrupted), so delete it.</li>
+  <li>Exit back to the PS4 home menu and start the game again. The game will create new save data and that should be the end of all the problems.</li>
+</ul>
+
+<p>The trouble appears to be that on PS4, deleting/reinstalling the game does NOT remove the save files - you have to do it manually.</p>
+
+<p>I know this is a massive ball-ache if you’ve managed to get a fair distance through the game, and I can only apologise. As far as we know this does solve the 
+issue and v1.02 should be stable for you.</p>
+
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
       <a href="https://www.triple-aye.com/2016/11/08/Build-Update-v1.11.8-Fixes-to-Win10-controller-issues/">
         Lumo Build Updates
       </a>
@@ -328,46 +356,6 @@ be related to this.</p>
 and something I thought was worth sharing. Not all desktop environments are equal, and some aren’t good for games.</p>
 
 <p>Real shame, as I can’t use Cinnamon while it’s exhibiting this kinda problem. Also doesn’t bode well for when I release something, but I’ll cross that bridge when I come to it.</p>
-
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="https://www.triple-aye.com/2016/10/06/Devupdate/">
-        Devupdate - 6th October
-      </a>
-    </h1>
-
-    <span class="post-date">06 Oct 2016</span>
-
-    <p><img src="/images/2016.10.06_Character_WIP1.jpg" alt="Character 1 WIP" /></p>
-
-<p>After my last post I started work on a character model for the game. This is the first time I’ve ever modelled a character, and also the first time 
-I’ve tried to do anything complicated that had any sort of predefined ‘style’ (low poly in this case, so nothing too strenuous).</p>
-
-<p>As expected, even simple character modelling is non-trivial and I’ve discovered I have 
-an amazing ability to be completely OCD on vert placements, so probably wasted hours just tweaking stuff when I shouldn’t have bothered.</p>
-
-<p>The results aren’t amazing, but it was a good learning experience and it’ll do for now. It’s kinda close to what I had in my head, and hopefully the super deformed 
-look will parse well enough on-screen. Fingers crossed!</p>
-
-<p>I’m intending to make a bunch of different hairstyles, hats, goggles and other bits, that you’ll be able to pick and choose from. Probably as 
-some sort of unlock/upgrade tree. None of that should be too tricky, but I’ll need to look into how attachments work out in UE4, or find a simple way to output the variants from Modo. With a few base models 
-I’ll be able to do most of the variations with material swaps, so it shouldn’t be too bad, either way.</p>
-
-<p><img src="/images/2016.10.06_Character_WIP2.jpg" alt="Character 1 WIP2" /></p>
-
-<p>I had to rig and skin four characters for Lumo, all in Max, and each of them ended up taking one or two days to get right. I hated doing it and still live in fear of ever going back in 
-there to fix something. That’s probably why I’ve been putting off doing any character work on this for the last few weeks, but today I dragged myself away from tweaking vert placements and 
-sat down in front of some tutorial videos to get to grips with how the process works in Modo. And - so far - it’s been a really pleasant experience.</p>
-
-<p>The rigging is nice and simple, taking less than 20 minutes, and the base vertex bindings the software produced is surprisingly close to what I need. I’ve probably got a few hours work left just to tweak the weights around the fingers and waist, but I’m pretty 
-confident that this’ll be good to go before I leave for the UK next week.</p>
-
-<p>Then it’ll be UV unwrapping, and producing some simple test animations to get him skiing.</p>
-
-<p>Yet again, big props to Modo. It definitely fits with my head.</p>
 
 
   </div>

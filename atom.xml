@@ -4,13 +4,37 @@
  <title>Triple Eh?</title>
  <link href="https://www.triple-aye.com/atom.xml" rel="self"/>
  <link href="https://www.triple-aye.com/"/>
- <updated>2016-11-08T17:30:03+02:00</updated>
+ <updated>2016-12-03T10:18:41+02:00</updated>
  <id>https://www.triple-aye.com</id>
  <author>
    <name>Gareth Noyce</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>PS4 v1.02 Save Games</title>
+   <link href="https://www.triple-aye.com/2016/12/03/PS4-v1.0.2-Save-Games/"/>
+   <updated>2016-12-03T00:00:00+02:00</updated>
+   <id>https://www.triple-aye.com/2016/12/03/PS4-v1.0.2-Save-Games</id>
+   <content type="html">&lt;p&gt;A few people have still experienced the save icon corruption on PS4 and have posted to the Steam forums for info. Mart from RSG just posted the 
+following steps which should fix the issue for anyone that’s upgraded from the previous build, but still has problems:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Make sure the game isn’t running.&lt;/li&gt;
+  &lt;li&gt;Check that you’re running V1.02 - you can do that by highlighting the game icon on the PS4 home menu, pressing Options and choosing Update History. If you’re not, download the update from the same Options menu.&lt;/li&gt;
+  &lt;li&gt;From the PS4 home menu, go into Settings &amp;gt; Application Saved Data Management &amp;gt; Saved Data In System Storage &amp;gt; Delete and then go to Lumo.&lt;/li&gt;
+  &lt;li&gt;You should see two files - Player Preferences and Lumo Save Slot 0. The latter is the one that’s causing all the trouble (the system should even tell you it’s corrupted), so delete it.&lt;/li&gt;
+  &lt;li&gt;Exit back to the PS4 home menu and start the game again. The game will create new save data and that should be the end of all the problems.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The trouble appears to be that on PS4, deleting/reinstalling the game does NOT remove the save files - you have to do it manually.&lt;/p&gt;
+
+&lt;p&gt;I know this is a massive ball-ache if you’ve managed to get a fair distance through the game, and I can only apologise. As far as we know this does solve the 
+issue and v1.02 should be stable for you.&lt;/p&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>Lumo Build Updates</title>

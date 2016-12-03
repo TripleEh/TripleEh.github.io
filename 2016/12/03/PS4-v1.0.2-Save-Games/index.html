@@ -11,7 +11,7 @@
 
   <title>
     
-      Dev Update – 14th September &middot; Triple Eh?
+      PS4 v1.02 Save Games &middot; Triple Eh?
     
   </title>
 
@@ -111,17 +111,23 @@
 
       <div class="container content">
         <div class="post">
-  <h1 class="post-title">Dev Update – 14th September</h1>
-  <span class="post-date">14 Sep 2016</span>
-  <p>I’ve had my head in Unreal, off and on, since the last post and I’m slowly starting to make head-way. As mentioned in the previous post, the Blueprint system was feeling like a grind, so I spent a week biting the bullet and just trying to get stuff going from the C++ side. This immediately gave me better results, and despite the iteration time being slower, I ended up getting a lot more done.</p>
+  <h1 class="post-title">PS4 v1.02 Save Games</h1>
+  <span class="post-date">03 Dec 2016</span>
+  <p>A few people have still experienced the save icon corruption on PS4 and have posted to the Steam forums for info. Mart from RSG just posted the 
+following steps which should fix the issue for anyone that’s upgraded from the previous build, but still has problems:</p>
 
-<p>To that end, I’ve scrapped what I’ve been working on - mainly little tests, but I got as far as a half functioning endless runner - and created a clean project and pushed it to Github on Monday.</p>
+<ul>
+  <li>Make sure the game isn’t running.</li>
+  <li>Check that you’re running V1.02 - you can do that by highlighting the game icon on the PS4 home menu, pressing Options and choosing Update History. If you’re not, download the update from the same Options menu.</li>
+  <li>From the PS4 home menu, go into Settings &gt; Application Saved Data Management &gt; Saved Data In System Storage &gt; Delete and then go to Lumo.</li>
+  <li>You should see two files - Player Preferences and Lumo Save Slot 0. The latter is the one that’s causing all the trouble (the system should even tell you it’s corrupted), so delete it.</li>
+  <li>Exit back to the PS4 home menu and start the game again. The game will create new save data and that should be the end of all the problems.</li>
+</ul>
 
-<p>I had an idea about half-way through the development of Lumo for a little mobile game where you dragged around the view of a downhill ski slope, and the character twisted and turned to follow where the terrain was going. I figured this would work well, as you could essentially play it one-handed, and maybe you could extend it a bit further to add jumps and the odd trick without complicated the controls too much. It’s one of those little toy ideas that’s stuck in my head ever since, so I’m going to have a crack at making something similar as my first UE4 project. I say similar, as I’m not going to do it on mobile, at least not initially. For simplicity it’s probably better to start off with a PC game, and that also means I can go a little more Tony Hawks on it. The player will likely have a joypad…</p>
+<p>The trouble appears to be that on PS4, deleting/reinstalling the game does NOT remove the save files - you have to do it manually.</p>
 
-<p>Early days but I’ve been really impressed with UE4. The animation stuff - compared to Mecanim - is like mana from heaven. The code API is big, and more verbose than what I’ve been used to (C++ vs C#, natch) but it makes sense. And it works. And there’s proper debugging channels. And. And.</p>
-
-<p>Going to be a while until I’m properly productive as I’m only working about 1.5 days a week on gamedev atm, but it’s nice to be chasing down another game. Even if it’s only a small one. Screenshots soon!</p>
+<p>I know this is a massive ball-ache if you’ve managed to get a fair distance through the game, and I can only apologise. As far as we know this does solve the 
+issue and v1.02 should be stable for you.</p>
 
 
 </div>
@@ -129,15 +135,6 @@
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
-    
-      <li>
-        <h3>
-          <a href="/2016/12/03/PS4-v1.0.2-Save-Games/">
-            PS4 v1.02 Save Games
-            <small>03 Dec 2016</small>
-          </a>
-        </h3>
-      </li>
     
       <li>
         <h3>
@@ -153,6 +150,15 @@
           <a href="/2016/11/04/Devupdate-4th-November/">
             Devupdate - 4th November
             <small>04 Nov 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2016/10/13/Devupdate-13th-October/">
+            Devupdate - 13th October
+            <small>13 Oct 2016</small>
           </a>
         </h3>
       </li>

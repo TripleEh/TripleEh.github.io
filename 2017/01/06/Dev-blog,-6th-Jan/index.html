@@ -11,7 +11,7 @@
 
   <title>
     
-      Archiving... &middot; Triple Eh?
+      Dev blog, 6th Jan &middot; Triple Eh?
     
   </title>
 
@@ -122,32 +122,48 @@
 
       <div class="container content">
         <div class="post">
-  <h1 class="post-title">Archiving...</h1>
-  <span class="post-date">01 Jul 2016</span>
-  <p>Strange feeling, but the Lumo adventure is drawing to a close. I’ve just updated my PC to Windows 10 and I’m in the process of archiving up all the software, source code, assets, documents and miscellaneous paraphernalia that I’ve accumulated and used over the last 2.5 years making the game.</p>
+  <h1 class="post-title">Dev blog, 6th Jan</h1>
+  <span class="post-date">06 Jan 2017</span>
+  <p>Happy New Year!</p>
 
-<p>I recently put out patch 1.06.27 which, I believe, is going to be the last update. There’s a tiny little bug I noticed during the Director’s commentary that I’d like to fix, but it’s not worth a patch for. So, I’ll keep an eye out for any reports of obvious game breaking bugs or compatibility issues, but should none arise, that’s officially the end of Lumo’s development.  Fingers crossed.</p>
+<p>Apologies. The blog was on a temporary hiatus through December, as I had to prepare for a programming course that I’m 
+due to give at TAMK University this year. That meant getting up-to-speed with the latest Unity version,<br />
+and writing a simple game that’ll form the basis of the course. As well as having a Xmas Holiday.</p>
 
-<p>It’s been a hell of an adventure, dark at times, but ultimately worth it. I’ve given up a few things in order to be in this position, but the end result is something that I’m proud of. I can look at Lumo and see a game with a good level of polish that does a lot more than I originally set out to achieve. It’s bigger than I anticipated, and took longer to make than I hoped, but it got a far wider exposure than I ever dreamed possible and received more than fair critical reactions from the majority of the press. So lots to be thankful for. (The metacritic is exactly where I’d put the game (solid 7/10, maybe an 8/10) and in places some people have fallen head over heels [ahem] for it, with 9s, 10s, Sizzlers and Editor’s Choice awards in the mix).</p>
+<p>But I did do some work and make some decisions. The first of which: Oh Snow! is canned. Probably forever. Why?
+Short answer; it was meant to be my toy project, not something that took a year to make, and due to teaching 
+and signing up for a Finnish language course, I basically did nothing on it. But I did learn some Unreal, so it 
+wasn’t a complete waste.</p>
 
-<p>I’m going to take a couple of weeks off now and spend some time with my other half. I have one last Lumo related thing to do (an article that’ll hopefully be printed soon) before this chapter’s officially closed. And I’m looking forward to starting on the next thing…</p>
+<p>That means <em>Next Game</em> has officially been started. Here’s a little WIP screenie:</p>
 
-<p>So thanks to everyone that’s been supporting the game. More news on what’s next soon…</p>
+<p><a href="/images/2017-01-06-PsyanceTestRoom.jpg"><img src="/images/2017-01-06-PsyanceTestRoom.jpg" alt="It's an FPS!" /></a></p>
+
+<p>Yes, it’s an FPS. No, I’ve not done any graphics or modelling yet. And yes, that’s the default UE4 character model.</p>
+
+<p>More info on <em>Next Game</em> in a later update.</p>
+
+<p>Aside from that, Unity 5.5.x, and eating mince pies(+), I’ve done some more on Neutrino. The choice of using cmake for the 
+build process turned out to be an excellent one. I thought I’d have a pop at getting the game running on windows, and although 
+the cmake gui is a bit weird, once I worked out the intricacies it spat out a Visual Studio 2015 solution and Neutrino built and ran 
+first time. And yeah, that surprised the hell out of me.</p>
+
+<p>I’ve been continuing my love-in with ImGui, and decided that the effort to parse TileD tilemaps and integrate them into everything else 
+I want to do was becoming a monumental pain in the arse. And I quite fancy rendering the tilemap through a pixel shader <a href="http://blog.tojicode.com/2012/07/sprite-tile-maps-on-gpu.html">a little like this</a>.
+So I’ve started writing a simple tilemap editor in-engine. Exactly what I said I wouldn’t do. Ahem.</p>
+
+<p>Early doors. I’m at the point where I can click a tile and move it about.</p>
+
+<p><a href="/images/2017-01-06-StartOftheTilemap.png"><img src="/images/2017-01-06-StartOftheTilemap.png" alt="It's a tilemap editor. Ish" /></a></p>
+
+<p>(+) I hate mince pies.</p>
+
 
 </div>
 
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
-    
-      <li>
-        <h3>
-          <a href="/2017/01/06/Dev-blog,-6th-Jan/">
-            Dev blog, 6th Jan
-            <small>06 Jan 2017</small>
-          </a>
-        </h3>
-      </li>
     
       <li>
         <h3>
@@ -163,6 +179,15 @@
           <a href="/2016/11/08/Build-Update-v1.11.8-Fixes-to-Win10-controller-issues/">
             Lumo Build Updates
             <small>08 Nov 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2016/11/04/Devupdate-4th-November/">
+            Devupdate - 4th November
+            <small>04 Nov 2016</small>
           </a>
         </h3>
       </li>

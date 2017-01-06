@@ -4,13 +4,55 @@
  <title>Triple Eh?</title>
  <link href="https://www.triple-aye.com/atom.xml" rel="self"/>
  <link href="https://www.triple-aye.com/"/>
- <updated>2016-12-03T10:44:13+02:00</updated>
+ <updated>2017-01-06T15:07:57+02:00</updated>
  <id>https://www.triple-aye.com</id>
  <author>
    <name>Gareth Noyce</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Dev blog, 6th Jan</title>
+   <link href="https://www.triple-aye.com/2017/01/06/Dev-blog,-6th-Jan/"/>
+   <updated>2017-01-06T00:00:00+02:00</updated>
+   <id>https://www.triple-aye.com/2017/01/06/Dev-blog,-6th-Jan</id>
+   <content type="html">&lt;p&gt;Happy New Year!&lt;/p&gt;
+
+&lt;p&gt;Apologies. The blog was on a temporary hiatus through December, as I had to prepare for a programming course that I’m 
+due to give at TAMK University this year. That meant getting up-to-speed with the latest Unity version,&lt;br /&gt;
+and writing a simple game that’ll form the basis of the course. As well as having a Xmas Holiday.&lt;/p&gt;
+
+&lt;p&gt;But I did do some work and make some decisions. The first of which: Oh Snow! is canned. Probably forever. Why?
+Short answer; it was meant to be my toy project, not something that took a year to make, and due to teaching 
+and signing up for a Finnish language course, I basically did nothing on it. But I did learn some Unreal, so it 
+wasn’t a complete waste.&lt;/p&gt;
+
+&lt;p&gt;That means &lt;em&gt;Next Game&lt;/em&gt; has officially been started. Here’s a little WIP screenie:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/2017-01-06-PsyanceTestRoom.jpg&quot;&gt;&lt;img src=&quot;/images/2017-01-06-PsyanceTestRoom.jpg&quot; alt=&quot;It's an FPS!&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Yes, it’s an FPS. No, I’ve not done any graphics or modelling yet. And yes, that’s the default UE4 character model.&lt;/p&gt;
+
+&lt;p&gt;More info on &lt;em&gt;Next Game&lt;/em&gt; in a later update.&lt;/p&gt;
+
+&lt;p&gt;Aside from that, Unity 5.5.x, and eating mince pies(+), I’ve done some more on Neutrino. The choice of using cmake for the 
+build process turned out to be an excellent one. I thought I’d have a pop at getting the game running on windows, and although 
+the cmake gui is a bit weird, once I worked out the intricacies it spat out a Visual Studio 2015 solution and Neutrino built and ran 
+first time. And yeah, that surprised the hell out of me.&lt;/p&gt;
+
+&lt;p&gt;I’ve been continuing my love-in with ImGui, and decided that the effort to parse TileD tilemaps and integrate them into everything else 
+I want to do was becoming a monumental pain in the arse. And I quite fancy rendering the tilemap through a pixel shader &lt;a href=&quot;http://blog.tojicode.com/2012/07/sprite-tile-maps-on-gpu.html&quot;&gt;a little like this&lt;/a&gt;.
+So I’ve started writing a simple tilemap editor in-engine. Exactly what I said I wouldn’t do. Ahem.&lt;/p&gt;
+
+&lt;p&gt;Early doors. I’m at the point where I can click a tile and move it about.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/2017-01-06-StartOftheTilemap.png&quot;&gt;&lt;img src=&quot;/images/2017-01-06-StartOftheTilemap.png&quot; alt=&quot;It's a tilemap editor. Ish&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;(+) I hate mince pies.&lt;/p&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>PS4 v1.02 Save Games</title>

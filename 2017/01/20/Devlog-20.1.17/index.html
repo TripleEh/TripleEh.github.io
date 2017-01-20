@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Devlog - 20.1.17 &middot; Triple Eh?
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/Boing.png">
+  <link rel="shortcut icon" href="/public/Boing.png">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body class="theme-base-09">
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>Triple Eh? Ltd.</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Blog</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/archive/">Archive</a>
+        
+      
+    
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+	
+		<span class="sidebar-nav-item">Follow me:</span>
+		<a class="sidebar-nav-item" href="https://twitter.com/korruptor">- Twitter</a>
+		<a class="sidebar-nav-item" href="https://www.youtube.com/channel/UC6H2Ql7vVE4hHc-GNkMK8bQ">- You Tube</a>
+		<a class="sidebar-nav-item" href="https://triple-eh.tumblr.com">- Tumblr</a>
+		<span class="sidebar-nav-item">Games:</span>
+		<a class="sidebar-nav-item" href="http://play-lumo.com/">- Lumo</a>
+		<span class="sidebar-nav-item">Web:</span>
+		<a class="sidebar-nav-item" href="http://triple-eh.net">- Triple Eh?</a>
+		<a class="sidebar-nav-item" href="http://triple-eh.net/presskit/index.php">- Press Kit</a>
+		<span class="sidebar-nav-item">Feed:</span>
+		<a class="sidebar-nav-item" href="https://triple-aye.net/atom.xml">- Atom Feed</a>
+   </nav>
+
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2017. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Triple Eh?</a>
+            <small></small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <h1 class="post-title">Devlog - 20.1.17</h1>
+  <span class="post-date">20 Jan 2017</span>
+  <div style="text-align: center"><iframe width="560" height="315" src="https://www.youtube.com/embed/qr0ff58evkQ" frameborder="0" allowfullscreen=""></iframe><p>&nbsp;</p></div>
+
+<p>Bar teaching, the last two weeks have been entirely focused on Next Game, so I’ve managed to get quite a lot done.</p>
+
+<p>Character movement is essentially ‘finished’. It’s pretty nippy - Quake 1 fast, in fact - but it feels nice and responsive. At least to me . Rocket Jumps will be featuring heavily, so spending the time to play around with this in order to get the height and distance nailed, was essential. Changes from here-on will just be tiny number tweaks, so I’m at the point now where I feel safe to begin whiteboxing levels.</p>
+
+<p>The player’s inventory management is also working. You can cycle through weapons, pick up armour and health, as well as take damage. Armour modifiers still need to be added but I know exactly how these will operate.</p>
+
+<p>UE’s weapon and projectile systems took a while to figure out, but I do now have 3 basic types that should cover everything I intend to use:</p>
+
+<ul>
+  <li>Projectile based: rocket launcher / nail gun, stuff like that.</li>
+  <li>Instant shot: Pistols</li>
+  <li>Instant multi-shot: Shotguns.</li>
+</ul>
+
+<p>Weapons have individual fire rates, can spawn splash damage areas and their damage can attenuate over distance. The only thing you might expect that’s missing - especially if you play something like COD - is projectile penetration. I’m toying with the idea of adding this, but right now my guess is that it’ll be pretty useless within the sort of levels that I intend to create.</p>
+
+<p>None of the weapons have been properly setup atm, as that’s something I’ll do once some NPCs are in. I need moving targets to shoot at!</p>
+
+<p>I’ve also had a crash course in the localisation system, configuring animation blueprints, playing audio and have dipped my toe into Cascade again.</p>
+
+<p>For the most part the last two weeks have been really productive, but I’ve been badly burned by a couple of things. One of the worst was discovering that UE4 types get garbage-collected quite aggressively. If, say, you have a TArray of elements but don’t add the UPROPERTY() macro above their definition, then at some point they’ll disappear from under you. It took me a few hours to work out exactly what was causing the crash and why, as it was appearing fairly randomly - and taking the editor out with it - but like everything, it’s completely obvious once you spot it.</p>
+
+<p>I’ve also learned the hard way that Play In Editor - PIE - masks a certain type of class initialisation bug. Stupidly, I had a set of FText variables defined outside the class (they were static char arrays at first) which compiled perfectly fine, and even ran in the editor, but cooked builds would immediately crash. It took me a couple of hours to realise that it wasn’t my Anti Virus, or some auto-build failure, but UE4 barfing when trying to initialise the variable before the engine had started up. This was happening before the splash screen was appearing, so I wasn’t even getting a log to help… Again, totally obvious once you spot it.</p>
+
+<p>I probably lost a day bug hunting this stuff, so I’m a little behind where I wanted to be this week -  ammo pickups are half done, and weapon pickups haven’t been started - but I’m basically at the point where I can play around with some look and feel tests, and maybe start white-boxing some spaces to run around in. I’m also growing in confidence with the engine and my ability to at least fix my own fuck-ups, so it’s probably a net win…</p>
+
+<p>I’ve added a little video to You Tube for those who want a peek (see the top of this post). It should go without saying that none of the assets in this are final, or even likely to appear in-game. It’s bits and bobs from Lumo and UE4’s example assets, that I’ve thrown together. Although I did lose a good chunk of time over Xmas playing with the lighting and post, just to see how it worked ;D</p>
+
+<p>The music is by Steve Birch, from the album Wonderland, that’ll be released by Joof sometime in Feb.</p>
+
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2017/01/06/Dev-blog,-6th-Jan/">
+            Dev blog, 6th Jan
+            <small>06 Jan 2017</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2016/12/03/PS4-v1.0.2-Save-Games/">
+            PS4 v1.02 Save Games
+            <small>03 Dec 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2016/11/08/Build-Update-v1.11.8-Fixes-to-Win10-controller-issues/">
+            Lumo Build Updates
+            <small>08 Nov 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+  </body>
+</html>

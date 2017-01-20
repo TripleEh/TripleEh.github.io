@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Devupdate - 13th October &middot; Triple Eh?
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/Boing.png">
+  <link rel="shortcut icon" href="/public/Boing.png">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body class="theme-base-09">
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>Triple Eh? Ltd.</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Blog</a>
+
+    
+
+    
+    
+      
+        
+          <a class="sidebar-nav-item" href="/archive/">Archive</a>
+        
+      
+    
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+	
+		<span class="sidebar-nav-item">Follow me:</span>
+		<a class="sidebar-nav-item" href="https://twitter.com/korruptor">- Twitter</a>
+		<a class="sidebar-nav-item" href="https://www.youtube.com/channel/UC6H2Ql7vVE4hHc-GNkMK8bQ">- You Tube</a>
+		<a class="sidebar-nav-item" href="https://triple-eh.tumblr.com">- Tumblr</a>
+		<span class="sidebar-nav-item">Games:</span>
+		<a class="sidebar-nav-item" href="http://play-lumo.com/">- Lumo</a>
+		<span class="sidebar-nav-item">Web:</span>
+		<a class="sidebar-nav-item" href="http://triple-eh.net">- Triple Eh?</a>
+		<a class="sidebar-nav-item" href="http://triple-eh.net/presskit/index.php">- Press Kit</a>
+		<span class="sidebar-nav-item">Feed:</span>
+		<a class="sidebar-nav-item" href="https://triple-aye.net/atom.xml">- Atom Feed</a>
+   </nav>
+
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2017. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Triple Eh?</a>
+            <small></small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <h1 class="post-title">Devupdate - 13th October</h1>
+  <span class="post-date">13 Oct 2016</span>
+  <p><img alt='UV Islands' src='/images/2016.10.13_UV_ForBlogPost.PNG' /></p>
+
+<p>I thought I&#8217;d do a quick update before I head out to the UK this weekend.</p>
+
+<p>I&#8217;ve had a bit of fun this week. Neutrino moved forward for the first time in a long while. I&#8217;ve integrated <a href='https://github.com/ocornut/imgui'>ImGUI</a>, a lovely header based widget library for games and other multi-media. This is one of those &#8220;where have you been all my life&#8221; bits of code, that slotted straight in and opened up a really simple, clean way to do debug output, windows, memory inspection and the like. So far I&#8217;ve only added some simple performance counters, but the plan is to use this to build up the internal editors for things like splines, particle effects and bullet patterns. I&#8217;m having a bit of a man crush on it&#8230;</p>
+
+<p>Oh Snow&#8217;s also moving forward. The base character is done, skinned and rigged. I had to make a few tweaks since the last update, and today I sat down to try and get the UVing into shape. I&#8217;ve not used any of the UV tools in Modo before (can you spot a pattern here?) and to be perfectly honest, for Lumo I got away with everything being basically box mapped, so don&#8217;t really profess to even know the terminology. Every day&#8217;s a school day.</p>
+
+<p>As ever, Modo&#8217;s been good to me. I made a lot of mistakes, and had to kinda stumble my way through the various options to work out what does what, but I finished today with a pretty clean set of UV islands, and what appears to be - to me at least - reasonable texel density.</p>
+
+<p>All this highlighted some problems in my modelling workflow. As a lot of the geometry is mirrored, I could have saved myself a lot of time if I&#8217;d done a quick UV map on the model before I mirrored it. I&#8217;m wasting UV space for things that could be overlapping. I&#8217;m not sure if there&#8217;s a quick way to do this after the fact, other than manually line up the appropriate islands. I might need to ask around on that.</p>
+
+<p>For this game it&#8217;s not really going to be a problem&#8230;</p>
+
+<p>Also, I should have done the UVing before the skinning, as I noticed a few problems with a couple of quads that meant going back in to make some tweaks. Fortunately this is simple in Modo, but something to bear in mind in the future.</p>
+
+<p>The paint tools in Modo turned out to be really useful for finding where my UV seams were causing problems, and really drove home how quickly things can look shit if there&#8217;s too much distortion in the quads. Today I found all this out after I thought I was &#8216;done&#8217;, so I scrapped everything (basically the whole day&#8217;s work) and started again. Once I vaguely knew what I was doing the whole process took less than an hour.</p>
+
+<p>I&#8217;m having to stop myself from getting too stressed over the slow progress I&#8217;m making atm, and keep reminding myself that taking the hit now will pay off down the road. Learning Modo - and pretty much the entire art pipeline - is a pretty big task. Learning UE4 is also going to take a good long while. The fact is, I need these skills if I&#8217;m going to continue making games on my own, so it&#8217;s nice when I do finally crack something. Even if it takes all day&#8230; :)</p>
+
+<p>So, next up: a quick pass on the texture, then some simple poses for test anims.</p>
+
+<p>After I&#8217;ve recovered from a week in the UK! :D</p>
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2016/12/03/PS4-v1.0.2-Save-Games/">
+            PS4 v1.02 Save Games
+            <small>03 Dec 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2016/11/08/Build-Update-v1.11.8---Fixes-to-Win10-controller-issues/">
+            Lumo Build Updates
+            <small>08 Nov 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2016/11/04/Devupdate---4th-November/">
+            Devupdate - 4th November
+            <small>04 Nov 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+  </body>
+</html>

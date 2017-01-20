@@ -125,6 +125,55 @@
   
   <div class="post">
     <h1 class="post-title">
+      <a href="https://www.triple-aye.com/2016/10/13/Devupdate-13th-October/">
+        Devupdate - 13th October
+      </a>
+    </h1>
+
+    <span class="post-date">13 Oct 2016</span>
+
+    <p><img src="/images/2016.10.13_UV_ForBlogPost.PNG" alt="UV Islands" /></p>
+
+<p>I thought I’d do a quick update before I head out to the UK this weekend.</p>
+
+<p>I’ve had a bit of fun this week. Neutrino moved forward for the first time in a long while. I’ve integrated <a href="https://github.com/ocornut/imgui">ImGUI</a>, a lovely
+header based widget library for games and other multi-media. This is one of those “where have you been all my life” bits of code, that slotted straight in and opened 
+up a really simple, clean way to do debug output, windows, memory inspection and the like. So far I’ve only added some simple performance counters, but the plan is 
+to use this to build up the internal editors for things like splines, particle effects and bullet patterns. I’m having a bit of a man crush on it…</p>
+
+<p>Oh Snow’s also moving forward. The base character is done, skinned and rigged. I had to make a few tweaks since the last update, and today I sat down to try and get the UVing 
+into shape. I’ve not used any of the UV tools in Modo before (can you spot a pattern here?) and to be perfectly honest, for Lumo I got away with everything being basically box 
+mapped, so don’t really profess to even know the terminology. Every day’s a school day.</p>
+
+<p>As ever, Modo’s been good to me. I made a lot of mistakes, and had to kinda stumble my way through the various options to work out what does what, but I finished today with a pretty 
+clean set of UV islands, and what appears to be - to me at least - reasonable texel density.</p>
+
+<p>All this highlighted some problems in my modelling workflow. As a lot of the geometry is mirrored, I could have saved myself a lot of time if I’d done a quick UV map on the model 
+before I mirrored it. I’m wasting UV space for things that could be overlapping. I’m not sure if there’s a quick way to do this after the fact, other than manually line up 
+the appropriate islands. I might need to ask around on that.</p>
+
+<p>For this game it’s not really going to be a problem…</p>
+
+<p>Also, I should have done the UVing before the skinning, as I noticed a few problems with a couple of quads that meant going back in to make some tweaks. Fortunately this is simple in Modo,
+but something to bear in mind in the future.</p>
+
+<p>The paint tools in Modo turned out to be really useful for finding where my UV seams were causing problems, and really drove home how quickly things can look shit if there’s too much 
+distortion in the quads. Today I found all this out after I thought I was ‘done’, so I scrapped everything (basically the whole day’s work) and started again. Once I vaguely knew what 
+I was doing the whole process took less than an hour.</p>
+
+<p>I’m having to stop myself from getting too stressed over the slow progress I’m making atm, and keep reminding myself that taking the hit now will pay off down the road. Learning Modo - and 
+pretty much the entire art pipeline - is a pretty big task. Learning UE4 is also going to take a good long while. The fact is, I need these skills if I’m going to continue making games on my own, 
+so it’s nice when I do finally crack something. Even if it takes all day… :)</p>
+
+<p>So, next up: a quick pass on the texture, then some simple poses for test anims.</p>
+
+<p>After I’ve recovered from a week in the UK! :D</p>
+
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
       <a href="https://www.triple-aye.com/2016/10/12/This-is-scary">
         This is scary...
       </a>
@@ -247,36 +296,6 @@ confident that this’ll be good to go before I leave for the UK next week.</p>
 <p>Early days but I’ve been really impressed with UE4. The animation stuff - compared to Mecanim - is like mana from heaven. The code API is big, and more verbose than what I’ve been used to (C++ vs C#, natch) but it makes sense. And it works. And there’s proper debugging channels. And. And.</p>
 
 <p>Going to be a while until I’m properly productive as I’m only working about 1.5 days a week on gamedev atm, but it’s nice to be chasing down another game. Even if it’s only a small one. Screenshots soon!</p>
-
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="https://www.triple-aye.com/2016/08/26/dev-update-26th-august/">
-        Dev Update - 26th August
-      </a>
-    </h1>
-
-    <span class="post-date">26 Aug 2016</span>
-
-    <p><img src="/images/Screenshot-from-2016-08-26-09-46-16-e1472198667714.png" alt="Screenshot" />
-So, this is exciting. Linux Voice - easily my fav tech magazine - very kindly asked if I’d be interesting in writing a quick Dev Diary about Lumo. Obviously I jumped at the chance. Having grown up reading Zzap!64’s <a href="http://www.zzap64.co.uk/zzap3/para_birth01.html">“Diary of a Game”</a> series, from the likes of Andy Braybrook and Jeff Minter, this was too good an opportunity to miss. The LV team did a lovely job, ending up with a 6 page feature - including some of the early prototype screenshots - in this month’s issue. Massive thanks to Graham and the lads for that!</p>
-
-<p>It’s taken a couple of weeks, but I’m definitely back in full-on ‘work mode’. Which is good, as it’s going to be a really busy few months ahead. I spent a couple of weeks in Modo messing around with tutorials and getting a feel for things, and I have to say I’m really happy with it. For some reason it just clicks in my head. I didn’t get to the character or rigging, but I did spend a long time messing around with a low poly look that I want to use for a possible prototype: Oh Snow!</p>
-
-<p><img src="/images/Winter20Scene_Final.jpg" alt="Winter" /></p>
-
-<p>I’ve also spent a week in UE4, messing about with Blueprints. There’s a lot to learn here and I’m already starting to feel that the Blueprint system isn’t for me. They’re not really much of a time saving as the workflow is labourious; drag pin, type the first few letters of the command, find box, drop box, hook up inputs/outputs, rinse repeat, so I could pretty much type what I wanted into Visual Studio and compile in the same time. I may have wasted all the work I’ve done, but it was a useful process to at least start to understand some of the jargon and API.</p>
-
-<p>Nothing to show from that effort, so far, and I suspect it’ll take me a few days to start everything again with C++ classes.</p>
-
-<p>Unfortunately it may be a while until I get back to UE4. My teaching schedule has been sorted and there’s a lot front-loaded between now and Xmas. This means I’ll be at the Uni two days a week.  I’ve also signed up to a Finnish language course, which is another 2 days a week, meaning the bulk of my dev time is going to be evenings and on the train. Because of this, I’ve started re-writing my old 2D framework, as I have a bunch of ideas for simple, small games that I might be productive on. A lot’s been done on that over the last few days - mostly under the hood prep - but I have sprites. Enjoy the mesmerising, floating head of <a href="https://en.wikipedia.org/wiki/Kevin_Toms">Kevin Toms</a>.</p>
-
-<p> </p>
-
-<iframe src="https://vine.co/v/5Oxwq2wdOi0/embed/simple?audio=1" width="600" height="600" frameborder="0"></iframe>
-<script src="https://platform.vine.co/static/scripts/embed.js"></script>
 
 
   </div>

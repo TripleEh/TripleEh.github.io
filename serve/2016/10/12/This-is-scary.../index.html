@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      This is scary... &middot; Triple Eh?
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/Boing.png">
+  <link rel="shortcut icon" href="/public/Boing.png">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body class="theme-base-09">
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>Triple Eh? Ltd.</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Blog</a>
+
+    
+
+    
+    
+      
+        
+          <a class="sidebar-nav-item" href="/archive/">Archive</a>
+        
+      
+    
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+	
+		<span class="sidebar-nav-item">Follow me:</span>
+		<a class="sidebar-nav-item" href="https://twitter.com/korruptor">- Twitter</a>
+		<a class="sidebar-nav-item" href="https://www.youtube.com/channel/UC6H2Ql7vVE4hHc-GNkMK8bQ">- You Tube</a>
+		<a class="sidebar-nav-item" href="https://triple-eh.tumblr.com">- Tumblr</a>
+		<span class="sidebar-nav-item">Games:</span>
+		<a class="sidebar-nav-item" href="http://play-lumo.com/">- Lumo</a>
+		<span class="sidebar-nav-item">Web:</span>
+		<a class="sidebar-nav-item" href="http://triple-eh.net">- Triple Eh?</a>
+		<a class="sidebar-nav-item" href="http://triple-eh.net/presskit/index.php">- Press Kit</a>
+		<span class="sidebar-nav-item">Feed:</span>
+		<a class="sidebar-nav-item" href="https://triple-aye.net/atom.xml">- Atom Feed</a>
+   </nav>
+
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2017. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Triple Eh?</a>
+            <small></small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <h1 class="post-title">This is scary...</h1>
+  <span class="post-date">12 Oct 2016</span>
+  <p>Quick aside: I&#8217;ve been doing a bit of work on the side project this week - mainly on the train to and from my teaching classes - and I noticed something a bit worrying. For a while I&#8217;ve been wondering why my 2D framework for Neutrino appears to be pixel-fill limited on my laptop. Much more so than I expected. Jumping to 1080p in a window is enough to really hit the performance, so after integrating ImGUI I dug a little deeper and added some profilng.</p>
+
+<p>It turns out that the engine isn&#8217;t as slow as I thought. Internally it was vsync&#8217;d to 60, but unbound could potentially hit ~1400fps. Visually, however, it was blatantly dropping frames. If anything, it looked sub Dirty Hz (30fps). Not good. So I tried glmark2 and it was showing the same problem, it&#8217;d report fps in the hundreds, but visually appear dog slow.</p>
+
+<p>My laptop runs Ubuntu 16.04, and for the desktop environment I&#8217;ve been using the latest version of Cinnamon. I like it, it&#8217;s incredibly clean, good looking and does what I need. The other big plus is Nemo - the file manager - which is by far my favourite thing about it. Default split-pane views ftw! But, for whatever reason, I didn&#8217;t consider that my performance problems could be related to this.</p>
+
+<p>On a whim I tested the game under Unity, and lo. A silky smooth, 60fps.</p>
+
+<p>So yeah, even though Cinnamon claimed that it wasn&#8217;t running in SW rendering mode, for whatever reason, the window update wasn&#8217;t actually matching what I was outputting. Quite a big &#8220;Whoah&#8221; moment, and something I thought was worth sharing. Not all desktop environments are equal, and some aren&#8217;t good for games.</p>
+
+<p>Real shame, as I can&#8217;t use Cinnamon while it&#8217;s exhibiting this kinda problem. Also doesn&#8217;t bode well for when I release something, but I&#8217;ll cross that bridge when I come to it.</p>
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2016/12/03/PS4-v1.0.2-Save-Games/">
+            PS4 v1.02 Save Games
+            <small>03 Dec 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2016/11/08/Build-Update-v1.11.8---Fixes-to-Win10-controller-issues/">
+            Lumo Build Updates
+            <small>08 Nov 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2016/11/04/Devupdate---4th-November/">
+            Devupdate - 4th November
+            <small>04 Nov 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+  </body>
+</html>

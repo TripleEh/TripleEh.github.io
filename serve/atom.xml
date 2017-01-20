@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+ <title>Triple Eh?</title>
+ <link href="https://www.triple-aye.com/atom.xml" rel="self"/>
+ <link href="https://www.triple-aye.com/"/>
+ <updated>2017-01-06T14:12:41+02:00</updated>
+ <id>https://www.triple-aye.com</id>
+ <author>
+   <name>Gareth Noyce</name>
+   <email></email>
+ </author>
+
+ 
+ <entry>
+   <title>PS4 v1.02 Save Games</title>
+   <link href="https://www.triple-aye.com/2016/12/03/PS4-v1.0.2-Save-Games/"/>
+   <updated>2016-12-03T00:00:00+02:00</updated>
+   <id>https://www.triple-aye.com/2016/12/03/PS4-v1.0.2-Save-Games</id>
+   <content type="html">&lt;p&gt;A few people have still experienced the save icon corruption on PS4 and have posted to the Steam forums for info. Mart from RSG just posted the following steps which should fix the issue for anyone that&amp;#8217;s upgraded from the previous build, but still has problems:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Make sure the game isn&amp;#8217;t running.&lt;/li&gt;
+
+&lt;li&gt;Check that you&amp;#8217;re running V1.02 - you can do that by highlighting the game icon on the PS4 home menu, pressing Options and choosing Update History. If you&amp;#8217;re not, download the update from the same Options menu.&lt;/li&gt;
+
+&lt;li&gt;From the PS4 home menu, go into Settings &amp;gt; Application Saved Data Management &amp;gt; Saved Data In System Storage &amp;gt; Delete and then go to Lumo.&lt;/li&gt;
+
+&lt;li&gt;You should see two files - Player Preferences and Lumo Save Slot 0. The latter is the one that&amp;#8217;s causing all the trouble (the system should even tell you it&amp;#8217;s corrupted), so delete it.&lt;/li&gt;
+
+&lt;li&gt;Exit back to the PS4 home menu and start the game again. The game will create new save data and that should be the end of all the problems.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The trouble appears to be that on PS4, deleting/reinstalling the game does NOT remove the save files - you have to do it manually.&lt;/p&gt;
+
+&lt;p&gt;I know this is a massive ball-ache if you&amp;#8217;ve managed to get a fair distance through the game, and I can only apologise. As far as we know this does solve the issue and v1.02 should be stable for you.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Lumo Build Updates</title>
+   <link href="https://www.triple-aye.com/2016/11/08/Build-Update-v1.11.8---Fixes-to-Win10-controller-issues/"/>
+   <updated>2016-11-08T00:00:00+02:00</updated>
+   <id>https://www.triple-aye.com/2016/11/08/Build-Update-v1.11.8---Fixes-to-Win10-controller-issues</id>
+   <content type="html">&lt;p&gt;The Windows 10 Anniversary update caused a lot of weird issues with how gamepads work, leaving Lumo and a bunch of other games with broken controls. I&amp;#8217;ve just pushed out a new build to Steam that should fix most of these problems.&lt;/p&gt;
+
+&lt;p&gt;It&amp;#8217;s been tested with the following pads:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;PS4&lt;/li&gt;
+
+&lt;li&gt;Xbox 360 (Wired and Wireless)&lt;/li&gt;
+
+&lt;li&gt;XBox One (wired)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Other joypads should work, but may require you to define your own controller mappings in Settings-&amp;gt;Controls. Fight sticks are not directly supported, unfortunately, as many of them don&amp;#8217;t identify themselves as pads, even though the may map to something like the default Xbox 360 layout (like my SF IV Fight Stick does).&lt;/p&gt;
+
+&lt;p&gt;In addition to this I&amp;#8217;ve re-written the redefine controls screen &lt;span&gt;and back-end&lt;/span&gt;, fixing several small issues that have been in there since release.&lt;/p&gt;
+
+&lt;p&gt;Other fixes:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Several affected achievements re-written&lt;/li&gt;
+
+&lt;li&gt;Small balancing changes&lt;/li&gt;
+
+&lt;li&gt;Clue added to the Ice Cube Stairs room&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Mac and Linux were unaffected by the original bugs but I&amp;#8217;ve put out new versions for all platforms just in-case. DRM free builds are uploading now and should go live in the next day or two.&lt;/p&gt;
+
+&lt;p&gt;In addition - if this wasn&amp;#8217;t bad enough - Playstation 4 owners have been plagued by a save icon corruption for the last month. Withouth going into too much detail (&lt;em&gt;cough&lt;/em&gt;Unity&lt;em&gt;cough&lt;/em&gt;) I can confirm that the fix for this, on both PS4 and Vita, went live today. Phew :)&lt;/p&gt;
+
+&lt;p&gt;Apologies to all affected by these breakages, I know it&amp;#8217;s been a complete nightmare. :(&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Devupdate - 4th November</title>
+   <link href="https://www.triple-aye.com/2016/11/04/Devupdate---4th-November/"/>
+   <updated>2016-11-04T00:00:00+02:00</updated>
+   <id>https://www.triple-aye.com/2016/11/04/Devupdate---4th-November</id>
+   <content type="html">&lt;p&gt;&lt;img alt='How I miss this' src='images/lemsip.jpg' /&gt;&lt;/p&gt;
+
+&lt;p&gt;God I miss this stuff. The last 10 days I&amp;#8217;ve been down with a snotty cold. The first week was a complete wipeput because Finland, bless it, hasn&amp;#8217;t quite caught up with the idea of dosing yourself to the eyeballs with a cacophony of drugs to ease yourself through. &lt;em&gt;sniff&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;It&amp;#8217;s not been all bad though.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt='First bit of fan art' src='images/lumo_fanart.jpg' /&gt;&lt;/p&gt;
+
+&lt;p&gt;Lumo received its first bit of fan art!&lt;/p&gt;
+
+&lt;p&gt;I&amp;#8217;ve never been given something like this before. I was a bit lost for words, tbh. Complete surprise, but it cheered me up no end. Thank you Cris_Cat_Kun, you made my day.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt='Famitsu' src='images/famitsu.jpg' /&gt;&lt;/p&gt;
+
+&lt;p&gt;Lumo&amp;#8217;s out in Japan now, and got a respectable flush of 7s from Famitsu. Again, another bucket list tick, this. I love magazines, and I love seeing my work in them. Famitsu is one of the longest running and most famous, and even today, it&amp;#8217;s a healthy 230 pages of madness. Props to all at Rising Star who worked behind the scenes to make this happen.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt='Finland' src='images/lumo_mag.jpg' /&gt;&lt;/p&gt;
+
+&lt;p&gt;Even the Finnish press have got in on the action!&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt='Box' src='images/box.jpg' /&gt;&lt;/p&gt;
+
+&lt;p&gt;Annnd, I&amp;#8217;ve finally got my hands on the boxed version.&lt;/p&gt;
+
+&lt;p&gt;Again, another one off the bucket list.&lt;/p&gt;
+
+&lt;p&gt;Since Sudeki I&amp;#8217;ve had a little ritual of going into the local game shop, seeing what I&amp;#8217;ve worked on nestled among all big games of the day, and buying it with a big grin on my face. I didn&amp;#8217;t catch Lumo in the wild but I was able to buy it off Amazon, which still counts IMO.&lt;/p&gt;
+
+&lt;p&gt;Development wise it&amp;#8217;s been a bit slow, what with the man-flu, but I&amp;#8217;ve had some productive train coding sessions the last few days.&lt;/p&gt;
+
+&lt;p&gt;One of the things I&amp;#8217;ve been tempted to do for Neutrino since the start is roll all my tools into the framework so I can carry it all forward to multiple projects. Key to this is the map editor. I started scratching out what would be required for this, but decided to pull back. It&amp;#8217;s obviously going to grow arms and legs before taking on a life of its own. I&amp;#8217;m old enough to know better.&lt;/p&gt;
+
+&lt;p&gt;The obvious alternative is &lt;a href='www.mapeditor.org'&gt;TileD&lt;/a&gt;, an open source map editor that&amp;#8217;s been around, in one shape or form, for years. I&amp;#8217;ve looked at this before for Beat Arena (another project I might return to one day) and passed because it&amp;#8217;s quite rigid and a little old school. It&amp;#8217;s not changed much since I last looked at it, and the limitations of using fixed size tiles and rigid grid layouts is going to get on my nerves very quickly, but it&amp;#8217;s a sensible short-cut to create the background layers for Neutrino. I can write some custom tools for spline editing and wave triggering.&lt;/p&gt;
+
+&lt;p&gt;There are still a couple of hurdles with this approach:&lt;/p&gt;
+
+&lt;p&gt;TileD outputs to TMX or JSON formats, neither of which I support. The Neutrino framework uses libconfig for parsing the various text-based data files, and I&amp;#8217;m loath to add new dependencies. (There&amp;#8217;s a good argument for dropping libconfig and just using a single header JSON library, but that&amp;#8217;s a question for another day.)&lt;/p&gt;
+
+&lt;p&gt;TileD also expects you to be working with a texture page of square tiles, which is fine, except I have no intention of just using square tiles in any of my games, or of introducing extra draw calls just so the square tiles can be on their own t-page&amp;#8230;&lt;/p&gt;
+
+&lt;p&gt;Currently I output texture pages via a build step that runs the individual art assets through &lt;a href='https://www.codeandweb.com/texturepacker'&gt;Texture Packer&lt;/a&gt;, an insanely good tool for taking a collection of images and spitting out an optimised t-page. (BTW, if this isn&amp;#8217;t in your tool box, it should be.) This leaves me with a .png containing all the sprites, and a text file containing all the sprite meta-data (position within the texture, size, etc).&lt;/p&gt;
+
+&lt;p&gt;TileD doesn&amp;#8217;t seem to have a way for me to mark the individual tiles in a t-page by hand - due to this expectation that they&amp;#8217;ll be square, so easy to identify in the texture page automagically - meaning I have to drop in individual assets in order to make maps. Not a problem, except the ID of tiles in TileD&amp;#8217;s output will likely differ from the meta-data of the texture page.&lt;/p&gt;
+
+&lt;p&gt;It&amp;#8217;s stuff like this that has tempted me to write my own map editor for the last 6 or 7 years&amp;#8230;&lt;/p&gt;
+
+&lt;p&gt;Anyway, the problem was easily solved with a Python script to pre-process the TileD JSON output, fix the mappings, and then spit out a libconfig format file that Neutrino can then use to build a VBO of the tile map. This can be inserted into the build process, or just done as and when it&amp;#8217;s needed.&lt;/p&gt;
+
+&lt;p&gt;Building a VBO of a tilemap is one of those jobs that I must have done 3 or 4 times now. The only thing I think I&amp;#8217;ve written more times is a text writer. Literally, the code to parse strings and spit them onto screen. I keep promising myself that &amp;#8220;this will be the last time&amp;#8221;. We&amp;#8217;ll see if this one is&amp;#8230;&lt;/p&gt;
+
+&lt;p&gt;When I get around to it. Obviously this week I prevaricated and put in a few debug bits and pieces that I know I&amp;#8217;ll need, the most important of which was the debug fly cam. (Mainly cos I know my first pass at the tile map will probably end up in the wrong location, so I&amp;#8217;ll need to fly around to look for it&amp;#8230;)&lt;/p&gt;
+
+&lt;p&gt;This ended up being a fun little job as mapping keyboard and joystick input to controls for various player actions involves a bit more than you&amp;#8217;d think. For a start, joypads can be added and removed at runtime so you need to be able to move controllers between players, and keyboard layouts differ between locals, so you can&amp;#8217;t just &amp;#8220;detect a letter&amp;#8221; and be done with it. SDL&amp;#8217;s docs have a couple of gotchas around how you handle this stuff, but I was able to get it all working nicely. The only thing that&amp;#8217;s missing is exposing an interface for assigning controllers or redefining controls. As that&amp;#8217;s game specific I figure I can put that off for now.&lt;/p&gt;
+
+&lt;p&gt;I&amp;#8217;m hoping I&amp;#8217;ll get a day clear to go back to Oh Snow next week, but with three teaching courses on the go that might be wishful thinking. Either way, I&amp;#8217;ve had fun this week. In between the sneezes.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Devupdate - 13th October</title>
+   <link href="https://www.triple-aye.com/2016/10/13/Devupdate---13th-October/"/>
+   <updated>2016-10-13T00:00:00+03:00</updated>
+   <id>https://www.triple-aye.com/2016/10/13/Devupdate---13th-October</id>
+   <content type="html">&lt;p&gt;&lt;img alt='UV Islands' src='/images/2016.10.13_UV_ForBlogPost.PNG' /&gt;&lt;/p&gt;
+
+&lt;p&gt;I thought I&amp;#8217;d do a quick update before I head out to the UK this weekend.&lt;/p&gt;
+
+&lt;p&gt;I&amp;#8217;ve had a bit of fun this week. Neutrino moved forward for the first time in a long while. I&amp;#8217;ve integrated &lt;a href='https://github.com/ocornut/imgui'&gt;ImGUI&lt;/a&gt;, a lovely header based widget library for games and other multi-media. This is one of those &amp;#8220;where have you been all my life&amp;#8221; bits of code, that slotted straight in and opened up a really simple, clean way to do debug output, windows, memory inspection and the like. So far I&amp;#8217;ve only added some simple performance counters, but the plan is to use this to build up the internal editors for things like splines, particle effects and bullet patterns. I&amp;#8217;m having a bit of a man crush on it&amp;#8230;&lt;/p&gt;
+
+&lt;p&gt;Oh Snow&amp;#8217;s also moving forward. The base character is done, skinned and rigged. I had to make a few tweaks since the last update, and today I sat down to try and get the UVing into shape. I&amp;#8217;ve not used any of the UV tools in Modo before (can you spot a pattern here?) and to be perfectly honest, for Lumo I got away with everything being basically box mapped, so don&amp;#8217;t really profess to even know the terminology. Every day&amp;#8217;s a school day.&lt;/p&gt;
+
+&lt;p&gt;As ever, Modo&amp;#8217;s been good to me. I made a lot of mistakes, and had to kinda stumble my way through the various options to work out what does what, but I finished today with a pretty clean set of UV islands, and what appears to be - to me at least - reasonable texel density.&lt;/p&gt;
+
+&lt;p&gt;All this highlighted some problems in my modelling workflow. As a lot of the geometry is mirrored, I could have saved myself a lot of time if I&amp;#8217;d done a quick UV map on the model before I mirrored it. I&amp;#8217;m wasting UV space for things that could be overlapping. I&amp;#8217;m not sure if there&amp;#8217;s a quick way to do this after the fact, other than manually line up the appropriate islands. I might need to ask around on that.&lt;/p&gt;
+
+&lt;p&gt;For this game it&amp;#8217;s not really going to be a problem&amp;#8230;&lt;/p&gt;
+
+&lt;p&gt;Also, I should have done the UVing before the skinning, as I noticed a few problems with a couple of quads that meant going back in to make some tweaks. Fortunately this is simple in Modo, but something to bear in mind in the future.&lt;/p&gt;
+
+&lt;p&gt;The paint tools in Modo turned out to be really useful for finding where my UV seams were causing problems, and really drove home how quickly things can look shit if there&amp;#8217;s too much distortion in the quads. Today I found all this out after I thought I was &amp;#8216;done&amp;#8217;, so I scrapped everything (basically the whole day&amp;#8217;s work) and started again. Once I vaguely knew what I was doing the whole process took less than an hour.&lt;/p&gt;
+
+&lt;p&gt;I&amp;#8217;m having to stop myself from getting too stressed over the slow progress I&amp;#8217;m making atm, and keep reminding myself that taking the hit now will pay off down the road. Learning Modo - and pretty much the entire art pipeline - is a pretty big task. Learning UE4 is also going to take a good long while. The fact is, I need these skills if I&amp;#8217;m going to continue making games on my own, so it&amp;#8217;s nice when I do finally crack something. Even if it takes all day&amp;#8230; :)&lt;/p&gt;
+
+&lt;p&gt;So, next up: a quick pass on the texture, then some simple poses for test anims.&lt;/p&gt;
+
+&lt;p&gt;After I&amp;#8217;ve recovered from a week in the UK! :D&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>This is scary...</title>
+   <link href="https://www.triple-aye.com/2016/10/12/This-is-scary.../"/>
+   <updated>2016-10-12T00:00:00+03:00</updated>
+   <id>https://www.triple-aye.com/2016/10/12/This-is-scary...</id>
+   <content type="html">&lt;p&gt;Quick aside: I&amp;#8217;ve been doing a bit of work on the side project this week - mainly on the train to and from my teaching classes - and I noticed something a bit worrying. For a while I&amp;#8217;ve been wondering why my 2D framework for Neutrino appears to be pixel-fill limited on my laptop. Much more so than I expected. Jumping to 1080p in a window is enough to really hit the performance, so after integrating ImGUI I dug a little deeper and added some profilng.&lt;/p&gt;
+
+&lt;p&gt;It turns out that the engine isn&amp;#8217;t as slow as I thought. Internally it was vsync&amp;#8217;d to 60, but unbound could potentially hit ~1400fps. Visually, however, it was blatantly dropping frames. If anything, it looked sub Dirty Hz (30fps). Not good. So I tried glmark2 and it was showing the same problem, it&amp;#8217;d report fps in the hundreds, but visually appear dog slow.&lt;/p&gt;
+
+&lt;p&gt;My laptop runs Ubuntu 16.04, and for the desktop environment I&amp;#8217;ve been using the latest version of Cinnamon. I like it, it&amp;#8217;s incredibly clean, good looking and does what I need. The other big plus is Nemo - the file manager - which is by far my favourite thing about it. Default split-pane views ftw! But, for whatever reason, I didn&amp;#8217;t consider that my performance problems could be related to this.&lt;/p&gt;
+
+&lt;p&gt;On a whim I tested the game under Unity, and lo. A silky smooth, 60fps.&lt;/p&gt;
+
+&lt;p&gt;So yeah, even though Cinnamon claimed that it wasn&amp;#8217;t running in SW rendering mode, for whatever reason, the window update wasn&amp;#8217;t actually matching what I was outputting. Quite a big &amp;#8220;Whoah&amp;#8221; moment, and something I thought was worth sharing. Not all desktop environments are equal, and some aren&amp;#8217;t good for games.&lt;/p&gt;
+
+&lt;p&gt;Real shame, as I can&amp;#8217;t use Cinnamon while it&amp;#8217;s exhibiting this kinda problem. Also doesn&amp;#8217;t bode well for when I release something, but I&amp;#8217;ll cross that bridge when I come to it.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Devupdate - 6th October</title>
+   <link href="https://www.triple-aye.com/2016/10/06/Devupdate/"/>
+   <updated>2016-10-06T00:00:00+03:00</updated>
+   <id>https://www.triple-aye.com/2016/10/06/Devupdate</id>
+   <content type="html">&lt;p&gt;&lt;img alt='Character 1 WIP' src='/images/2016.10.06_Character_WIP1.jpg' /&gt;&lt;/p&gt;
+
+&lt;p&gt;After my last post I started work on a character model for the game. This is the first time I&amp;#8217;ve ever modelled a character, and also the first time I&amp;#8217;ve tried to do anything complicated that had any sort of predefined &amp;#8216;style&amp;#8217; (low poly in this case, so nothing too strenuous).&lt;/p&gt;
+
+&lt;p&gt;As expected, even simple character modelling is non-trivial and I&amp;#8217;ve discovered I have an amazing ability to be completely OCD on vert placements, so probably wasted hours just tweaking stuff when I shouldn&amp;#8217;t have bothered.&lt;/p&gt;
+
+&lt;p&gt;The results aren&amp;#8217;t amazing, but it was a good learning experience and it&amp;#8217;ll do for now. It&amp;#8217;s kinda close to what I had in my head, and hopefully the super deformed look will parse well enough on-screen. Fingers crossed!&lt;/p&gt;
+
+&lt;p&gt;I&amp;#8217;m intending to make a bunch of different hairstyles, hats, goggles and other bits, that you&amp;#8217;ll be able to pick and choose from. Probably as some sort of unlock/upgrade tree. None of that should be too tricky, but I&amp;#8217;ll need to look into how attachments work out in UE4, or find a simple way to output the variants from Modo. With a few base models I&amp;#8217;ll be able to do most of the variations with material swaps, so it shouldn&amp;#8217;t be too bad, either way.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt='Character 1 WIP2' src='/images/2016.10.06_Character_WIP2.jpg' /&gt;&lt;/p&gt;
+
+&lt;p&gt;I had to rig and skin four characters for Lumo, all in Max, and each of them ended up taking one or two days to get right. I hated doing it and still live in fear of ever going back in there to fix something. That&amp;#8217;s probably why I&amp;#8217;ve been putting off doing any character work on this for the last few weeks, but today I dragged myself away from tweaking vert placements and sat down in front of some tutorial videos to get to grips with how the process works in Modo. And - so far - it&amp;#8217;s been a really pleasant experience.&lt;/p&gt;
+
+&lt;p&gt;The rigging is nice and simple, taking less than 20 minutes, and the base vertex bindings the software produced is surprisingly close to what I need. I&amp;#8217;ve probably got a few hours work left just to tweak the weights around the fingers and waist, but I&amp;#8217;m pretty confident that this&amp;#8217;ll be good to go before I leave for the UK next week.&lt;/p&gt;
+
+&lt;p&gt;Then it&amp;#8217;ll be UV unwrapping, and producing some simple test animations to get him skiing.&lt;/p&gt;
+
+&lt;p&gt;Yet again, big props to Modo. It definitely fits with my head.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Devupdate - 23rd September</title>
+   <link href="https://www.triple-aye.com/2016/09/23/devupdate-23rd-september/"/>
+   <updated>2016-09-23T08:14:00+03:00</updated>
+   <id>https://www.triple-aye.com/2016/09/23/devupdate-23rd-september</id>
+   <content type="html">&lt;p&gt;&lt;img alt='Screenshot' src='/images/22.09.2016-SplitScreenTest.jpg' /&gt;&lt;/p&gt;
+
+&lt;p&gt;Cultural learnings of Unreal 4 for the benefit of game development, again, this week. And I think I&amp;#8217;ve got over the first hill&amp;#8230;&lt;/p&gt;
+
+&lt;p&gt;One of the things I found odd about Unity when I was starting was its complete lack of structure. Unity, from a certain angle, is basically an API and a fairly extensible editor, with a collection of half-finished bits to support you. This &amp;#8216;flexibility&amp;#8217; is touted as its big strength, but over time I&amp;#8217;ve grown to see this as a bit of a weakness. Some of that I attribute to the complete mess some of my students have got into, but even during Lumo, I grew to resent the amount of basic stuff that I had to roll. Why is localisation not built into the string classes? Why do I need to write my own serialisation? Why do I need to roll my own state handling? I need to write my own Audio manager?! etc. etc.&lt;/p&gt;
+
+&lt;p&gt;Sure, some of this stuff is write-once and then amend for every game thereafter, and of course that&amp;#8217;s no different to writing a game in C. But for anyone used to having something as basic as an outer while loop in charge of the game&amp;#8217;s tick, a series of very loosely coupled components, initiated in a random order on load, means you have to be very careful about how you start the game and track state as you proceed through scenes. At some point, it&amp;#8217;s going to bite you on the arse, or worse - as happened with Lumo more than once post alpha - a bump in editor version can lead to a re-serialisation of objects and a total re-order of your init. Race conditions can be subtle and hairy dragons&amp;#8230;&lt;/p&gt;
+
+&lt;p&gt;UE4 is a total contrast in this respect. It has a very clear structure that it seems to expect you to work in. There&amp;#8217;s a GameMode, that&amp;#8217;s, well, kinda the game globals for state, but I&amp;#8217;m using it to handle a bit more. Actors, Pawns, etc are possessed by controllers that may or may not be players. Spawning players is done in a quite prescriptive way. Cameras come with a lot of expected functionality baked in. Basically, everything I&amp;#8217;ve touched is ready rolled for a game, and you override and extend to mould it all into shape. The flip side of that coin is working out how you&amp;#8217;re expected to do things.&lt;/p&gt;
+
+&lt;p&gt;Initially I had everything for the player in a class derived from ACharacter, but that came with a lot of stuff I didn&amp;#8217;t need. My players aren&amp;#8217;t going to be walking about, and a lot of stuff will just be canned Anims and some simple collision detection, so I split that into a Player Controller and custom Pawn class. Now I&amp;#8217;m working from the bare bones and can see what I&amp;#8217;m doing.&lt;/p&gt;
+
+&lt;p&gt;Because I want Oh Snow to be local multiplayer I figured I better dive-in and work out how the hell you do that. There&amp;#8217;s a very simple way to spawn a single player - it&amp;#8217;s basically handled for you automatically if you set the base class for your player - but the only examples I could find for handling multiplayer were Blueprints. I wanted to do things in C++ and the docs were a little, er, sparse. I ended up guessing my way through and spent the better part of a day trying things to see what happened. As expected, it&amp;#8217;s about 2 lines of code to get going (took a while to find them though), and then to my complete surprise I got split screen for free. Yup, just having two cameras spawn in flips everything to split screen (unless you toggle a bool) and spawning 4 players gives me four screens. Nice.&lt;/p&gt;
+
+&lt;p&gt;I think I&amp;#8217;ve also found more of a sweet spot between Blueprints and classes. Rather than add a bunch of pre-existing components in the C++ constructor and then the reams of code to set their params, it&amp;#8217;s easier to just derive my class from whatever, put in the functions I want, and then derive a Blueprint from the result. I can add components - cameras, animations, etc - to the blueprint and tweak everything in the editor to my hearts content. Less typing, less compiling. Fingers crossed.&lt;/p&gt;
+
+&lt;p&gt;I&amp;#8217;m also super impressed with UE4&amp;#8217;s import stuff. It automagically picks up the materials from Modo, so no setup on my part. Adding collision is amazingly simple. Merging a set of assets into a single static mesh can be done in-engine, so no bouncing backwards and forwards to the modeller. The animation setup is sooooo much nicer than mechanim. That whole side of things looks like it&amp;#8217;s going to be big time saver compared to Unity.&lt;/p&gt;
+
+&lt;p&gt;All in all, a reasonably productive couple of days at the forge. I think I&amp;#8217;ve got a bit more of a grip as to what UE&amp;#8217;s doing, I&amp;#8217;m in love with all the tools I&amp;#8217;ve played with, and I&amp;#8217;m quite close to the point where I can just try and make some gameplay.&lt;/p&gt;
+
+&lt;p&gt;I&amp;#8217;m going to need to model some characters soon though&amp;#8230;&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Dev Update – 14th September</title>
+   <link href="https://www.triple-aye.com/2016/09/14/dev-update-15th-september/"/>
+   <updated>2016-09-14T18:37:00+03:00</updated>
+   <id>https://www.triple-aye.com/2016/09/14/dev-update-15th-september</id>
+   <content type="html">&lt;p&gt;I&amp;#8217;ve had my head in Unreal, off and on, since the last post and I&amp;#8217;m slowly starting to make head-way. As mentioned in the previous post, the Blueprint system was feeling like a grind, so I spent a week biting the bullet and just trying to get stuff going from the C++ side. This immediately gave me better results, and despite the iteration time being slower, I ended up getting a lot more done.&lt;/p&gt;
+
+&lt;p&gt;To that end, I&amp;#8217;ve scrapped what I&amp;#8217;ve been working on - mainly little tests, but I got as far as a half functioning endless runner - and created a clean project and pushed it to Github on Monday.&lt;/p&gt;
+
+&lt;p&gt;I had an idea about half-way through the development of Lumo for a little mobile game where you dragged around the view of a downhill ski slope, and the character twisted and turned to follow where the terrain was going. I figured this would work well, as you could essentially play it one-handed, and maybe you could extend it a bit further to add jumps and the odd trick without complicated the controls too much. It&amp;#8217;s one of those little toy ideas that&amp;#8217;s stuck in my head ever since, so I&amp;#8217;m going to have a crack at making something similar as my first UE4 project. I say similar, as I&amp;#8217;m not going to do it on mobile, at least not initially. For simplicity it&amp;#8217;s probably better to start off with a PC game, and that also means I can go a little more Tony Hawks on it. The player will likely have a joypad&amp;#8230;&lt;/p&gt;
+
+&lt;p&gt;Early days but I&amp;#8217;ve been really impressed with UE4. The animation stuff - compared to Mecanim - is like mana from heaven. The code API is big, and more verbose than what I&amp;#8217;ve been used to (C++ vs C#, natch) but it makes sense. And it works. And there&amp;#8217;s proper debugging channels. And. And.&lt;/p&gt;
+
+&lt;p&gt;Going to be a while until I&amp;#8217;m properly productive as I&amp;#8217;m only working about 1.5 days a week on gamedev atm, but it&amp;#8217;s nice to be chasing down another game. Even if it&amp;#8217;s only a small one. Screenshots soon!&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Dev Update - 26th August</title>
+   <link href="https://www.triple-aye.com/2016/08/26/dev-update-26th-august/"/>
+   <updated>2016-08-26T10:52:00+03:00</updated>
+   <id>https://www.triple-aye.com/2016/08/26/dev-update-26th-august</id>
+   <content type="html">&lt;p&gt;&lt;img alt='Screenshot' src='/images/Screenshot-from-2016-08-26-09-46-16-e1472198667714.png' /&gt; So, this is exciting. Linux Voice - easily my fav tech magazine - very kindly asked if I&amp;#8217;d be interesting in writing a quick Dev Diary about Lumo. Obviously I jumped at the chance. Having grown up reading Zzap!64&amp;#8217;s &lt;a href='http://www.zzap64.co.uk/zzap3/para_birth01.html'&gt;&quot;Diary of a Game&quot;&lt;/a&gt; series, from the likes of Andy Braybrook and Jeff Minter, this was too good an opportunity to miss. The LV team did a lovely job, ending up with a 6 page feature - including some of the early prototype screenshots - in this month&amp;#8217;s issue. Massive thanks to Graham and the lads for that!&lt;/p&gt;
+
+&lt;p&gt;It&amp;#8217;s taken a couple of weeks, but I&amp;#8217;m definitely back in full-on &amp;#8216;work mode&amp;#8217;. Which is good, as it&amp;#8217;s going to be a really busy few months ahead. I spent a couple of weeks in Modo messing around with tutorials and getting a feel for things, and I have to say I&amp;#8217;m really happy with it. For some reason it just clicks in my head. I didn&amp;#8217;t get to the character or rigging, but I did spend a long time messing around with a low poly look that I want to use for a possible prototype: Oh Snow!&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt='Winter' src='/images/Winter20Scene_Final.jpg' /&gt;&lt;/p&gt;
+
+&lt;p&gt;I&amp;#8217;ve also spent a week in UE4, messing about with Blueprints. There&amp;#8217;s a lot to learn here and I&amp;#8217;m already starting to feel that the Blueprint system isn&amp;#8217;t for me. They&amp;#8217;re not really much of a time saving as the workflow is labourious; drag pin, type the first few letters of the command, find box, drop box, hook up inputs/outputs, rinse repeat, so I could pretty much type what I wanted into Visual Studio and compile in the same time. I may have wasted all the work I&amp;#8217;ve done, but it was a useful process to at least start to understand some of the jargon and API.&lt;/p&gt;
+
+&lt;p&gt;Nothing to show from that effort, so far, and I suspect it&amp;#8217;ll take me a few days to start everything again with C++ classes.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately it may be a while until I get back to UE4. My teaching schedule has been sorted and there&amp;#8217;s a lot front-loaded between now and Xmas. This means I&amp;#8217;ll be at the Uni two days a week.  I&amp;#8217;ve also signed up to a Finnish language course, which is another 2 days a week, meaning the bulk of my dev time is going to be evenings and on the train. Because of this, I&amp;#8217;ve started re-writing my old 2D framework, as I have a bunch of ideas for simple, small games that I might be productive on. A lot&amp;#8217;s been done on that over the last few days - mostly under the hood prep - but I have sprites. Enjoy the mesmerising, floating head of &lt;a href='https://en.wikipedia.org/wiki/Kevin_Toms'&gt;Kevin Toms&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&amp;#160;&lt;/p&gt;
+&lt;iframe frameborder='0' height='600' src='https://vine.co/v/5Oxwq2wdOi0/embed/simple?audio=1' width='600' /&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Dev Update - 5th August</title>
+   <link href="https://www.triple-aye.com/2016/08/05/dev-update-5th-august/"/>
+   <updated>2016-08-05T18:31:00+03:00</updated>
+   <id>https://www.triple-aye.com/2016/08/05/dev-update-5th-august</id>
+   <content type="html">&lt;p&gt;&lt;img alt='NES Joypad' src='/images/NESJoypad_Final.jpg' /&gt;&lt;/p&gt;
+
+&lt;p&gt;I&amp;#8217;ve been on holiday! I know, that&amp;#8217;s not exciting, but it&amp;#8217;s the first proper feet-on-the-table, sat around playing games in my pants, do-nothing break I&amp;#8217;ve had for, oooh, a while. And it was good, thank you for asking!&lt;/p&gt;
+
+&lt;p&gt;Anyway, I&amp;#8217;m back, and I&amp;#8217;m going to try and be a bit more open about what I&amp;#8217;m up to here, rather than just random &lt;a href='https://twitter.com/korruptor'&gt;tweets&lt;/a&gt; and &lt;a href='https://triple-eh.tumblr.com'&gt;Tumblr&lt;/a&gt; posts. I can&amp;#8217;t promise how regular these devupdates will be, but I&amp;#8217;ll aim for at least a couple a month.&lt;/p&gt;
+
+&lt;p&gt;This is the first week back in front of my Dev PC since Lumo shipped. Despite having a bunch of ideas for new projects, I&amp;#8217;m easing myself back into work by completely replacing my tool chain.&lt;/p&gt;
+
+&lt;p&gt;Er, what?&lt;/p&gt;
+
+&lt;p&gt;Lumo was created with Unity. For the most part Unity did what I wanted but the 10% of work to take the build from a nearly finished game to a polished, commercial release was, well, painful. Very painful. Much more painful than it had any right to be given the maturity of the middleware and the number of people using it. By the end of the project I needed 3 different patch versions of Unity, (one for each of the skus that I was handling: PC, Mac &amp;amp; Linux) just to get around crash and rendering bugs. Not good. Don&amp;#8217;t get me started on the hoops the chaps at &lt;a href='http://www.jawltd.com/'&gt;JAW&lt;/a&gt; had to go through on the console side. I also shipped with a lot of awful looking bugs that just weren&amp;#8217;t present in earlier builds, all of which were completely out of my control. Wand particles would render incorrectly, or jump around the world, some of the animation blending is broken in specific circumstances, UI elements will pick up and render garbage for a couple of frames, lighting is broken in a few of the mini-games, etc. etc. Things that most of you won&amp;#8217;t notice, but feel like a knife to the heart every time I see them. Unity 5.3.x was an absolute shit-show, so I decided to drop it and move to Unreal 4. There&amp;#8217;s not going to be much news on the new projects until I start getting my head into UE4 and learn the ropes, which is why I mention it now.&lt;/p&gt;
+
+&lt;p&gt;The other big change is on the art side. As you can tell from Lumo I&amp;#8217;m a bit of a noob on the modelling side of things, but I spent enough time learning how to rig, animate, model &amp;amp; texture, that toward the end of the project I was happy enough to jump in and make the things I needed rather than search the Asset Store. Unfortunately I was doing all of this with 3DS Max, which is slow, expensive, crashes all the time, and had a 50/50 chance of actually exporting to an FBX file that Unity could use. I hated it.&lt;/p&gt;
+
+&lt;p&gt;After asking people far more knowledgeably than me about what I should use, I bought myself a copy of &lt;a href='https://www.thefoundry.co.uk/products/modo/'&gt;Modo&lt;/a&gt;. This week has been all about learning the ropes and I have to say, I immediately love it. The NES Joypad at the top of this post was the first thing to fall out of my monkeying around. Nothing too complicated - and yes, I know the DPad looks wrong - but I&amp;#8217;m still pleased with the result.&lt;/p&gt;
+
+&lt;p&gt;Next week I&amp;#8217;m going to be 100% focused on Modo. I need to make a character, rig and animate it, and then I can start looking at getting assets into UE4. (Note: I reserve the right to do anything I want, contents may be hot, may contain nuts).&lt;/p&gt;
+
+&lt;p&gt;Other stuff this week: Setting up Backblaze B2 for offsite backups of my NAS (I made a post about this on my &lt;a href='http://tdi.online'&gt;personal blog&lt;/a&gt;) and finding things to stretch the new GTX1080 GPU I&amp;#8217;ve pushed into my Dev PC.&lt;/p&gt;
+
+&lt;p&gt;It&amp;#8217;s nice to be back at work! :)&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Lumo Director's Commentary, Part 8</title>
+   <link href="https://www.triple-aye.com/2016/07/08/lumo-directors-commentary-part-8/"/>
+   <updated>2016-07-08T12:26:00+03:00</updated>
+   <id>https://www.triple-aye.com/2016/07/08/lumo-directors-commentary-part-8</id>
+   <content type="html">&lt;pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'&gt;REXML could not parse this XML/HTML: 
+&amp;lt;iframe width=&amp;quot;560&amp;quot; height=&amp;quot;420&amp;quot; src=&amp;quot;http://www.youtube.com/embed/6icLEGefcTY?color=white&amp;amp;theme=light&amp;quot;&amp;gt;&amp;lt;/iframe&amp;gt;&lt;/pre&gt;
+&lt;p&gt;And that, Ladies and Gentlemen, is that. 100% rinse of Lumo, including the paperboy ending!&lt;/p&gt;
+
+&lt;p&gt;I&amp;#8217;m going on holiday for a couple of weeks, so enjoy the sun and thanks again to everyone that&amp;#8217;s supported the game :)&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Lumo Director's Commentary Part 7</title>
+   <link href="https://www.triple-aye.com/2016/07/01/lumo-directors-commentary-part-7/"/>
+   <updated>2016-07-01T11:37:00+03:00</updated>
+   <id>https://www.triple-aye.com/2016/07/01/lumo-directors-commentary-part-7</id>
+   <content type="html">&lt;pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'&gt;REXML could not parse this XML/HTML: 
+&amp;lt;iframe width=&amp;quot;560&amp;quot; height=&amp;quot;420&amp;quot; src=&amp;quot;http://www.youtube.com/embed/iP_xaDQDZsk?color=white&amp;amp;theme=light&amp;quot;&amp;gt;&amp;lt;/iframe&amp;gt;&lt;/pre&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Archiving...</title>
+   <link href="https://www.triple-aye.com/2016/07/01/archiving/"/>
+   <updated>2016-07-01T11:35:00+03:00</updated>
+   <id>https://www.triple-aye.com/2016/07/01/archiving</id>
+   <content type="html">&lt;p&gt;Strange feeling, but the Lumo adventure is drawing to a close. I&amp;#8217;ve just updated my PC to Windows 10 and I&amp;#8217;m in the process of archiving up all the software, source code, assets, documents and miscellaneous paraphernalia that I&amp;#8217;ve accumulated and used over the last 2.5 years making the game.&lt;/p&gt;
+
+&lt;p&gt;I recently put out patch 1.06.27 which, I believe, is going to be the last update. There&amp;#8217;s a tiny little bug I noticed during the Director&amp;#8217;s commentary that I&amp;#8217;d like to fix, but it&amp;#8217;s not worth a patch for. So, I&amp;#8217;ll keep an eye out for any reports of obvious game breaking bugs or compatibility issues, but should none arise, that&amp;#8217;s officially the end of Lumo&amp;#8217;s development.  Fingers crossed.&lt;/p&gt;
+
+&lt;p&gt;It&amp;#8217;s been a hell of an adventure, dark at times, but ultimately worth it. I&amp;#8217;ve given up a few things in order to be in this position, but the end result is something that I&amp;#8217;m proud of. I can look at Lumo and see a game with a good level of polish that does a lot more than I originally set out to achieve. It&amp;#8217;s bigger than I anticipated, and took longer to make than I hoped, but it got a far wider exposure than I ever dreamed possible and received more than fair critical reactions from the majority of the press. So lots to be thankful for. (The metacritic is exactly where I&amp;#8217;d put the game (solid 7/10, maybe an 8/10) and in places some people have fallen head over heels &lt;span&gt;ahem&lt;/span&gt; for it, with 9s, 10s, Sizzlers and Editor&amp;#8217;s Choice awards in the mix).&lt;/p&gt;
+
+&lt;p&gt;I&amp;#8217;m going to take a couple of weeks off now and spend some time with my other half. I have one last Lumo related thing to do (an article that&amp;#8217;ll hopefully be printed soon) before this chapter&amp;#8217;s officially closed. And I&amp;#8217;m looking forward to starting on the next thing&amp;#8230;&lt;/p&gt;
+
+&lt;p&gt;So thanks to everyone that&amp;#8217;s been supporting the game. More news on what&amp;#8217;s next soon&amp;#8230;&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Lumo, Vita release imminent!</title>
+   <link href="https://www.triple-aye.com/2016/06/28/lumo-vita-release-imminent/"/>
+   <updated>2016-06-28T16:20:00+03:00</updated>
+   <id>https://www.triple-aye.com/2016/06/28/lumo-vita-release-imminent</id>
+   <content type="html">&lt;p&gt;As noted by the fine folks over at &lt;a href='http://www.eurogamer.net/articles/2016-06-28-lumo-finally-has-a-vita-release-date'&gt;Eurogamer&lt;/a&gt;, the release date for Lumo has been announced; 5th July.&lt;/p&gt;
+
+&lt;p&gt;This is much later than originally promised, and for that I do sincerely apologise for keeping you waiting, but the folks over at &lt;a href='http://www.jawltd.com/'&gt;JAW&lt;/a&gt; have been working hard optimising, squeezing, cajoling and generally persuading what is, at heart, a PC game into the Vita&amp;#8217;s tiny innards. No easy task&amp;#8230;&lt;/p&gt;
+
+&lt;p&gt;The form factor should suit the game well, and it&amp;#8217;ll also support Cross Buy and Cross Save, so it&amp;#8217;s a steal for all you Sony chums out there!&lt;/p&gt;
+
+&lt;p&gt;Anyway, enjoy!&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Director's Commentary, Part 6</title>
+   <link href="https://www.triple-aye.com/2016/06/23/directors-commentary-part-6/"/>
+   <updated>2016-06-23T22:04:00+03:00</updated>
+   <id>https://www.triple-aye.com/2016/06/23/directors-commentary-part-6</id>
+   <content type="html">&lt;pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'&gt;REXML could not parse this XML/HTML: 
+&amp;lt;iframe width=&amp;quot;560&amp;quot; height=&amp;quot;420&amp;quot; src=&amp;quot;http://www.youtube.com/embed/DPXR4u92ikg?color=white&amp;amp;theme=light&amp;quot;&amp;gt;&amp;lt;/iframe&amp;gt;&lt;/pre&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Lumo, now available for XBox One!</title>
+   <link href="https://www.triple-aye.com/2016/06/23/lumo-now-available-for-xbox-one/"/>
+   <updated>2016-06-23T22:01:00+03:00</updated>
+   <id>https://www.triple-aye.com/2016/06/23/lumo-now-available-for-xbox-one</id>
+   <content type="html">&lt;p&gt;&lt;img alt='Xbox' src='/images/image.png' /&gt; Phew, we got there in the end! Lumo&amp;#8217;s out now on XBox One. Head over to the &lt;a href='https://store.xbox.com/en-GB/Xbox-One/Games/Lumo/1247d4e3-2a97-4d47-9eba-8983c801edec'&gt;Xbox store&lt;/a&gt; to grab your copy!&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Director's Commentary, Part 5</title>
+   <link href="https://www.triple-aye.com/2016/06/17/directors-commentary-part-5/"/>
+   <updated>2016-06-17T12:29:00+03:00</updated>
+   <id>https://www.triple-aye.com/2016/06/17/directors-commentary-part-5</id>
+   <content type="html">&lt;p&gt;Quick run through the first of the Cauldron sections. Nothing too strenuous in here:&lt;/p&gt;
+&lt;pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'&gt;REXML could not parse this XML/HTML: 
+&amp;lt;iframe width=&amp;quot;560&amp;quot; height=&amp;quot;420&amp;quot; src=&amp;quot;http://www.youtube.com/embed/JzBgrJfAhk0?color=white&amp;amp;theme=light&amp;quot;&amp;gt;&amp;lt;/iframe&amp;gt;&lt;/pre&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Director's Commentary, Part 4</title>
+   <link href="https://www.triple-aye.com/2016/06/09/directors-commentary-part-4/"/>
+   <updated>2016-06-09T11:07:00+03:00</updated>
+   <id>https://www.triple-aye.com/2016/06/09/directors-commentary-part-4</id>
+   <content type="html">&lt;pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'&gt;REXML could not parse this XML/HTML: 
+&amp;lt;iframe width=&amp;quot;560&amp;quot; height=&amp;quot;420&amp;quot; src=&amp;quot;http://www.youtube.com/embed/H84P9mI-V4w?color=white&amp;amp;theme=light&amp;quot;&amp;gt;&amp;lt;/iframe&amp;gt;&lt;/pre&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Director's Commentary, Part 3 & World's first Old School run!</title>
+   <link href="https://www.triple-aye.com/2016/06/03/directors-commentary-part-3-worlds-first-old-school-run/"/>
+   <updated>2016-06-03T11:36:00+03:00</updated>
+   <id>https://www.triple-aye.com/2016/06/03/directors-commentary-part-3-worlds-first-old-school-run</id>
+   <content type="html">&lt;p&gt;Exciting news, and worth recording for posterity&amp;#8230; The world&amp;#8217;s first Lumo Old School run has been recorded and put on You Tube. 1 hour 28 minutes to beat!&lt;/p&gt;
+
+&lt;p&gt;It&amp;#8217;s a pretty sane any% run, but there&amp;#8217;s plenty of time to come off that. There&amp;#8217;s another hidden short-cut in the game, and a few little exploits that haven&amp;#8217;t been used. I&amp;#8217;d guess a good any% run would be sub 1hr 15, but we&amp;#8217;ll see. There&amp;#8217;re probably exploits that I&amp;#8217;m not aware of&amp;#8230;&lt;/p&gt;
+
+&lt;p&gt;Check it out:&lt;/p&gt;
+&lt;pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'&gt;REXML could not parse this XML/HTML: 
+&amp;lt;iframe width=&amp;quot;560&amp;quot; height=&amp;quot;420&amp;quot; src=&amp;quot;http://www.youtube.com/embed/KciwYApcJKM?color=white&amp;amp;theme=light&amp;quot;&amp;gt;&amp;lt;/iframe&amp;gt;&lt;/pre&gt;
+&lt;p&gt;And while you&amp;#8217;re in the You Tube mood, here&amp;#8217;s Part 3 of my Director&amp;#8217;s Commentary:&lt;/p&gt;
+&lt;pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'&gt;REXML could not parse this XML/HTML: 
+&amp;lt;iframe width=&amp;quot;560&amp;quot; height=&amp;quot;420&amp;quot; src=&amp;quot;http://www.youtube.com/embed/wSbU-5Pn3Vg?color=white&amp;amp;theme=light&amp;quot;&amp;gt;&amp;lt;/iframe&amp;gt;&lt;/pre&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Director's Commentary, Part 2</title>
+   <link href="https://www.triple-aye.com/2016/05/29/directors-commentary-part-2/"/>
+   <updated>2016-05-29T01:31:00+03:00</updated>
+   <id>https://www.triple-aye.com/2016/05/29/directors-commentary-part-2</id>
+   <content type="html">&lt;p&gt;Here&amp;#8217;s the second part of my Director&amp;#8217;s Commentary walk through of Lumo. Enjoy!&lt;/p&gt;
+&lt;pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'&gt;REXML could not parse this XML/HTML: 
+&amp;lt;iframe width=&amp;quot;560&amp;quot; height=&amp;quot;420&amp;quot; src=&amp;quot;http://www.youtube.com/embed/7IEBQDRYWyI?color=white&amp;amp;theme=light&amp;quot;&amp;gt;&amp;lt;/iframe&amp;gt;&lt;/pre&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Release Day!</title>
+   <link href="https://www.triple-aye.com/2016/05/25/release-day/"/>
+   <updated>2016-05-25T10:34:00+03:00</updated>
+   <id>https://www.triple-aye.com/2016/05/25/release-day</id>
+   <content type="html">&lt;p&gt;Lumo&amp;#8217;s out and the reaction from press and public has been great! Phew! That&amp;#8217;s a massive weight off.&lt;/p&gt;
+
+&lt;p&gt;No disasters have been reported, the game seems stable and there&amp;#8217;s a lot of love for it in certain quaters (my twitter feed was going mental yesterday). That&amp;#8217;s all I could hope for.&lt;/p&gt;
+
+&lt;p&gt;I&amp;#8217;ve tried not to read the reviews - there doesn&amp;#8217;t seem much point, they can&amp;#8217;t change anything - But the publisher&amp;#8217;s been sending me an overview. There&amp;#8217;re some 9s. A 10. Mainly 7s and 8s, with a few 6s bringing up the rear. That seems fair to me, I&amp;#8217;d place it somewhere between a 7 or 8 if I were reviewing it. Happy days :)&lt;/p&gt;
+
+&lt;p&gt;Massive thanks to everyone that&amp;#8217;s bought it, everyone that&amp;#8217;s reviewed it, or streamed it, or just talked about it on Twitter!&lt;/p&gt;
+
+&lt;p&gt;For those of you that haven&amp;#8217;t, you can buy it on &lt;a href='http://store.steampowered.com/app/345480/'&gt;Steam&lt;/a&gt;, &lt;a href='https://www.gog.com/game/lumo'&gt;Good Old Games&lt;/a&gt;, &lt;a href='https://www.humblebundle.com/store/lumo'&gt;Humble&lt;/a&gt; or the &lt;a href='https://store.playstation.com/#!/en-gb/games/lumo/cid=EP4034-CUSA03923_00-LUMO000000000000?scope=sceapp&amp;amp;smcid=sceapp:home'&gt;Playstation Store&lt;/a&gt;. Enjoy!&lt;/p&gt;
+
+&lt;p&gt;I&amp;#8217;ve got a few live streams to do this week. Eurogamer this afternoon, then Twitch during the early hours of tomorrow morning. Then I guess I&amp;#8217;m on holiday&amp;#8230;&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Director's Commentary, Part 1</title>
+   <link href="https://www.triple-aye.com/2016/05/20/directors-commentary-part-1/"/>
+   <updated>2016-05-20T10:55:00+03:00</updated>
+   <id>https://www.triple-aye.com/2016/05/20/directors-commentary-part-1</id>
+   <content type="html">&lt;p&gt;There&amp;#8217;s a lot of stuff tucked away in Lumo, some of it&amp;#8217;s obvious, some of it&amp;#8217;s pretty subtle, so I&amp;#8217;ve had a lot of requests to explain more about the game. To that end I&amp;#8217;ve started a Director&amp;#8217;s Commentary series of videos. I&amp;#8217;m doing a full run through of the game, nattering as I go. I&amp;#8217;ll show where a lot of the collectables are hidden, and discuss what ever pops into my head as I play.&lt;/p&gt;
+&lt;pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'&gt;REXML could not parse this XML/HTML: 
+&amp;lt;iframe width=&amp;quot;560&amp;quot; height=&amp;quot;420&amp;quot; src=&amp;quot;http://www.youtube.com/embed/JyxaiOV4ebc?color=white&amp;amp;theme=light&amp;quot;&amp;gt;&amp;lt;/iframe&amp;gt;&lt;/pre&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Lumo Release Date</title>
+   <link href="https://www.triple-aye.com/2016/05/11/lumo-release-date/"/>
+   <updated>2016-05-11T16:40:00+03:00</updated>
+   <id>https://www.triple-aye.com/2016/05/11/lumo-release-date</id>
+   <content type="html">&lt;p&gt;&lt;img alt='Header' src='/images/WebsiteHeader.png' /&gt; Be-de-dip-diddly-dip&amp;#8230; News Update!&lt;/p&gt;
+
+&lt;p&gt;I&amp;#8217;m happy to confirm that Lumo will be released on &lt;strong&gt;24th of May&lt;/strong&gt; for&lt;strong&gt; PC, Mac, Linux&lt;/strong&gt; &lt;strong&gt;&amp;amp; PS4&lt;/strong&gt;!&lt;/p&gt;
+
+&lt;p&gt;The XBox One and Vita versions will be landing a week or so later.&lt;/p&gt;
+
+&lt;p&gt;It&amp;#8217;s been a long road to get here, but I&amp;#8217;m super excited (and nervous as hell) that you&amp;#8217;ll be able to play it soon. Woo!&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Devupdate, 11th May</title>
+   <link href="https://www.triple-aye.com/2016/05/11/devupdate-11th-may/"/>
+   <updated>2016-05-11T10:36:00+03:00</updated>
+   <id>https://www.triple-aye.com/2016/05/11/devupdate-11th-may</id>
+   <content type="html">&lt;p&gt;So. This happened:&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt='Engine' src='/images/EngineCapture.png' /&gt;&lt;/p&gt;
+
+&lt;p&gt;And this happened:&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt='Screenshot' src='/images/Screenshot-from-2016-05-11-101807.png' /&gt;&lt;/p&gt;
+
+&lt;p&gt;And then I had to take a headshot for Develop:&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt='Headshot' src='/images/Develop_Headshot_small.jpg' /&gt;&lt;/p&gt;
+
+&lt;p&gt;I went for the &amp;#8220;turning around at my desk, pleased that you want to speak to me&amp;#8221; pose. I reckon I nailed that. The full interview is here: &lt;a href='http://www.develop-online.net/interview/gareth-noyce-on-making-lumo-triple-a-isn-t-my-calling/0220110'&gt;http://www.develop-online.net/interview/gareth-noyce-on-making-lumo-triple-a-isn-t-my-calling/0220110&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I&amp;#8217;ll explain more about Neutrino and my other plans in a later post. For now, keep your eyes peeled while you&amp;#8217;re playing Lumo. There&amp;#8217;s a big clue as to what type of game it is in the intro.&lt;/p&gt;
+
+&lt;p&gt;Annnnnd&amp;#8230; Last, but no means least, the mighty Rob Fearon put words to screen and claimed the crown for the first&lt;a href='http://takethismachine.com/lumo-2/'&gt; Lumo review&lt;/a&gt;. God bless yer, Rob.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Where's Lumo?</title>
+   <link href="https://www.triple-aye.com/2016/04/27/wheres-lumo/"/>
+   <updated>2016-04-27T18:02:00+03:00</updated>
+   <id>https://www.triple-aye.com/2016/04/27/wheres-lumo</id>
+   <content type="html">&lt;p&gt;&lt;img alt='My Desk' src='/images/MyDesk-2-1024x613.jpg' /&gt; It&amp;#8217;s there. On that PC.&lt;/p&gt;
+
+&lt;p&gt;Ok, ok. I know we said it would be out by now but a button didn&amp;#8217;t get pushed. The machine stopped. But the machine&amp;#8217;s running now and in the delay I noticed that one of the achievements was broken, so phew, at least we didn&amp;#8217;t live with that&amp;#8230;&lt;/p&gt;
+
+&lt;p&gt;I&amp;#8217;m very very very (very) sorry for the delay. I desperately &lt;em&gt;want-this-out-so-you-can-play-it&lt;/em&gt; like you wouldn&amp;#8217;t believe&amp;#8230; I&amp;#8217;m quietly stressing that there&amp;#8217;s some other disaster, or nasty bug lurking around the corner but I think we&amp;#8217;re good. So, with the wind behind us, we should be out in 2 or 3 weeks. Just don&amp;#8217;t hold me to that until the press release goes out, yeah?&lt;/p&gt;
+
+&lt;p&gt;On the plus side, the delay means we should be in Good Old Games and the Humble Store on day one, so DRM free copies will be available. That&amp;#8217;s a good thing, innit?&lt;/p&gt;
+
+&lt;p&gt;Anyway, sorry sorry sorry. It&amp;#8217;s on the way. Sorry.&lt;/p&gt;</content>
+ </entry>
+ 
+
+</feed>

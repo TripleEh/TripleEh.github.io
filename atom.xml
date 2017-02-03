@@ -4,13 +4,85 @@
  <title>Triple Eh?</title>
  <link href="https://www.triple-aye.com/atom.xml" rel="self"/>
  <link href="https://www.triple-aye.com/"/>
- <updated>2017-01-28T10:59:45+02:00</updated>
+ <updated>2017-02-03T12:33:37+02:00</updated>
  <id>https://www.triple-aye.com</id>
  <author>
    <name>Gareth Noyce</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Devlog - 03.02.2017</title>
+   <link href="https://www.triple-aye.com/2017/02/03/Devlog-03.02.2017/"/>
+   <updated>2017-02-03T00:00:00+02:00</updated>
+   <id>https://www.triple-aye.com/2017/02/03/Devlog---03.02.2017</id>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/images/17.02.03-DecalsTest2.jpg&quot; alt=&quot;Hello Mum&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It’s been a mad-cap couple of weeks. Here’s what I’ve been up to:&lt;/p&gt;
+
+&lt;h2 id=&quot;lumo&quot;&gt;Lumo&lt;/h2&gt;
+
+&lt;p&gt;Yesterday I pushed out version 1.17.2, to fix issues found with wireless Xbone pads running on Windows 7. Thanks go out to 
+Patrick Hogan — the developer of InControl, a nice cross platform input library for Unity that I can recommend, &lt;a href=&quot;http://www.gallantgames.com/pages/incontrol-introduction&quot;&gt;available here&lt;/a&gt; —  for sparing the time to test around the issue and provide a fix.&lt;/p&gt;
+
+&lt;p&gt;In addition to taking on the new version of InControl, I’ve also moved over to XInput, so — in theory —  joypad support should be a 
+little more robust on Windows going forward. (Crosses Fingers)&lt;/p&gt;
+
+&lt;p&gt;This build also fixes a possible bug with joypad “submit” actions not being registered by the pause screen UI, as well as turning 
+off Unity’s bullshit “automatic” navigation option on some of the button layouts. Honestly, fuck that UI system.&lt;/p&gt;
+
+&lt;h2 id=&quot;neutrino&quot;&gt;Neutrino&lt;/h2&gt;
+
+&lt;p&gt;I’ve been doing a bit of train / weekend coding, so this has moved forward:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Finished off the Input system. You can now poll mouse and up to four joypads. Previously it only handled attach/dettach events.&lt;/li&gt;
+  &lt;li&gt;Added some keystate handling for specific inputs in editor modes (keyboard shortcuts, basically)&lt;/li&gt;
+  &lt;li&gt;Added a bunch of helper functions to quickly get sprites from texture pages&lt;/li&gt;
+  &lt;li&gt;Got the Tile Map editor to the point where you can select and place tiles, freely, or snapped to a grid&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Next job is to store that in something I can spit out and reload that’ll be the basis of the level data. I’ll probably do a very thin 
+Command pattern wrapper over this so I can support unlimited Undo/Redo as well.&lt;/p&gt;
+
+&lt;h2 id=&quot;next-game&quot;&gt;Next Game&lt;/h2&gt;
+
+&lt;p&gt;I’ve been all over the shop with this the last couple of weeks:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Finished off the weapon-types code and added weapon pickups&lt;/li&gt;
+  &lt;li&gt;Player can now be killed, either through damage or falling out of the world&lt;/li&gt;
+  &lt;li&gt;Player respawns properly&lt;/li&gt;
+  &lt;li&gt;Added Ammo to the HUD&lt;/li&gt;
+  &lt;li&gt;Added decals, and spent a morning drawing swears on walls&lt;/li&gt;
+  &lt;li&gt;Added a new “Pain Room” to the test room, for traps and damage/stat tweaking&lt;/li&gt;
+  &lt;li&gt;Dipped my toe into Cascade, UE4’s particle system, and made some effects for pickups&lt;/li&gt;
+  &lt;li&gt;Started on a shotgun model for the first person view&lt;/li&gt;
+  &lt;li&gt;Added some new models for the ammunition pickpus&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The last item in that list has been my main diversion since the last post.&lt;/p&gt;
+
+&lt;p&gt;I know that I’m going to be doing a fair amount of modelling on this project so I’m still slowly schooling myself on workflows. For this, I decided 
+to do some fairly high poly models of the pickup items and then bake them down to a low poly cage. Like everything, once I worked out how to 
+do it, it’s reasonably straight forward, but it took a day or so to really get it working.&lt;/p&gt;
+
+&lt;p&gt;Building low poly cages seems to be a bit of an art, depending on the sorts of shapes you want, but after a lot of attempts I was able to bake AO and 
+normals in Modo that looked pretty clean on the low poly asset, and came out clearly in-engine. I’m far from an expert at this, but it’s something I 
+wanted to have in the toolbox even if I don’t use it very often.&lt;/p&gt;
+
+&lt;p&gt;I also spent a day or two messing about with Substance Painter. The “rent to own” model really appeals to me, as well as fitting in my budget, so I 
+jumped on that. It’s a little unstable on my rig - I’ve had 4 or 5 really messy crashes - but when it’s working, it’s great. I doubt I’ll delve too 
+deeply into the materials for this game, but anything that speeds up texturing is going to be worth the effort learning.&lt;/p&gt;
+
+&lt;p&gt;Now that Vine is dead I’ve started posting screenshots and little vids onto my Instagram account. You can keep an eye-out, &lt;a href=&quot;https://www.instagram.com/garethnoyce/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Also, there’s been a big migration of developers from Twitter onto Mastodon.social. If you’re a twitter user then I don’t really need to explain why this 
+is happening, but if not and you’re interested in a low traffic, Nazi-free open source Twitter-alike then &lt;a href=&quot;https://mastodon.social&quot;&gt;Mastodon&lt;/a&gt; is worth 
+checking out. I’m @korruptor as usual.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Visual Studio Code</title>

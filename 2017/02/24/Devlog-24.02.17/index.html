@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Devlog - 24.02.17 &middot; Triple Eh?
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/Boing.png">
+  <link rel="shortcut icon" href="/public/Boing.png">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body class="theme-base-09">
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>Triple Eh? Ltd.</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Blog</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/archive/">Archive</a>
+        
+      
+    
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+	
+		<span class="sidebar-nav-item">Follow me:</span>
+		<a class="sidebar-nav-item" href="https://twitter.com/korruptor">- Twitter</a>
+		<a class="sidebar-nav-item" href="https://www.youtube.com/channel/UC6H2Ql7vVE4hHc-GNkMK8bQ">- You Tube</a>
+		<a class="sidebar-nav-item" href="https://triple-eh.tumblr.com">- Tumblr</a>
+		<span class="sidebar-nav-item">Games:</span>
+		<a class="sidebar-nav-item" href="http://play-lumo.com/">- Lumo</a>
+		<span class="sidebar-nav-item">Web:</span>
+		<a class="sidebar-nav-item" href="http://triple-eh.net">- Triple Eh?</a>
+		<a class="sidebar-nav-item" href="http://triple-eh.net/presskit/index.php">- Press Kit</a>
+		<span class="sidebar-nav-item">Feed:</span>
+		<a class="sidebar-nav-item" href="https://triple-aye.net/atom.xml">- Atom Feed</a>
+   </nav>
+
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2017. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Triple Eh?</a>
+            <small></small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <h1 class="post-title">Devlog - 24.02.17</h1>
+  <span class="post-date">24 Feb 2017</span>
+  <p>Oops, I missed a week and the devlog is late. Sorry! Game Dev and all that. Shipping late’s what we do…</p>
+
+<p>I put off posting as I was hopeful that I’d have something nice to show, but things haven’t quite worked out as planned:</p>
+
+<h2 id="next-game">Next Game</h2>
+
+<p>I added a damage effect –  the “damage beans” – on the screen edges to indicate that the player’s been hurt. It’s a simple post-process overlay, but with a normal map  added you get a nice distortion of the 
+screen as it fades in and out. Standard stuff for the most part. Except I have two versions, one that’s a blood-splat, and one that’s a nice high-res picture of actual baked beans. :D</p>
+
+<p>I’ve also had a quick play with the audio system in UE4. My natural inclination is to integrate FMOD, but I’m hearing from fellow developers on Mastodon that UE4’s system is pretty good, and from the quick tests 
+it might well be. Audio attenuation and geometry occlusion definite seem to work, which could be enough for what I need.</p>
+
+<p>But for the last 10 days or so I’ve been playing around with look and feel tests.</p>
+
+<p><img src="/images/17.02.17-SkyBox.jpg" alt="Nice skies" /></p>
+
+<p>This skybox got me into a lot of trouble.</p>
+
+<p>My intention with Next Game is to do everything quite low-poly and avoid as much texturing as possible. One reason for that is to look different, but texturing and modelling 
+take time, and time/money aren’t something that I have a lot of. If I have to get into the texturing than I’d probably go for something old-school, like Gibhard or Strafe, but for obvious reasons I’d like to avoid that. 
+I think every man and his dog will be doing that style in a year or two…</p>
+
+<p>Unfortunately having a super realistic skybox lead me down a path where geometry got a bit too complex, and things rapidly looked incongruous when flat-shaded with high quality lighting. Basically, I couldn’t get it to look good unless it was
+extremely high-contrast. Which was unplayable. Although, I did spend a day flirting with an entirely black-and-white grading that I might go back to for some levels.</p>
+
+<p>Anyway, I’ve thrown away all that work. All the geometry modelled so far, the test level, the greybox, all the materials and all the textures. That stung a bit.</p>
+
+<p>This week I started again, but from a better footing: I chose a nice, harmonious, palette, and put a simple gradient in the sky-box. The palette is very limited: four base colours, four shades of each colour, and a gradient from top to bottom of each colour. I will 
+most likely add to that over time, but for now this is working well.</p>
+
+<p>UV-unwrapping can be done extremely quickly. Anything single colour can just be atlas unwrapped and pushed over the appropriate shade in the texture, while things with gradients just need a little 
+more attention to align them properly over the gradient. Because the palette is fixed, everything sits in the scene, and with some lightmass settings tweaked I’m getting really rich colour gradients, colour bounces being picked up and 
+deep shadows. It looks better, basically. It’s also super colourful, to the point of being cartoony – far too much for this game – but I find it easier to turn everything up to 11 and then slowly dial it in over time. (Early screenshots of Lumo are
+practically black because I was shooting for a Scooby-Doo vibe. The final game looks nothing like it…)</p>
+
+<p>What needs sorting out now is the correct scale for things. My character moves extremely quickly, and rocket jumps go for miles. This will take a bit of two-and-fro, but that’s next week’s mission. At the minute everything’s a little too big but I find it quite endearing. Iterate, iterate.</p>
+
+<h2 id="neutrino">Neutrino</h2>
+
+<p><img src="/images/2017-02-19-TilemapAddRemove.png" alt="Tilemap Editor" /></p>
+
+<p>Still train-coding my way through this and the big news is, the tile map editor that I said I’d never write is basically done. It’s missing the ability to create re-usable brushes from placed tiles, so I might go back and add that at some point, but bar some tidying up and 
+deciding on the save format it’s doing what I’ll need.  This throw up a couple of interesting things.</p>
+
+<p>I was about to delve into the murk of C’s directory and file-handling, which is annoyingly different depending on the platform, but decided to have a quick search through Github to see what was already out there, and came across this little gem: <a href="https://github.com/cxong/tinydir">Tinydir</a>, 
+ works brilliantly.</p>
+
+<p>While testing the tilemap editor I thought I’d throw in some massive numbers to see how it performed. Turns out things started crawling pretty quickly, which was er, a shock. After pushing it through Richard Mitton’s <a href="http://www.codersnotes.com/sleepy/">Very Sleepy</a> 
+the hot spot seemed to be in how I’m populating the VBOs, which again, was a bit of a surprise. This was supposed to be an optimised version of what I’d written a few years back on iOS…</p>
+
+<p>For some reason I was only getting ~8k sprites per frame. I was expecting quite a few more. The culprit was this line:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>mTransform = mTranslate * mRotation * mScale;
+</code></pre>
+</div>
+
+<p>Pretty standard stuff, this is just creating the translation matrix which I’m pushing all my vertices through before copying the result into the VBO. (Yes, at some point I should just do all that into the shader…)  I’ve done this before and had much better performance, 
+except then I was using my own math class, and this time I’m using <a href="http://glm.g-truc.net/0.9.8/index.html">OpenGL Math</a>. I figured it’d  be better to pass off the optimisation and maintenance of my maths stuff to, well, people that know some maths.</p>
+
+<p>So I dug into the operator * overload:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>GLM_FUNC_QUALIFIER tmat4x4&lt;T, P&gt; operator*(tmat4x4&lt;T, P&gt; const &amp; m1, tmat4x4&lt;T, P&gt; const &amp; m2)
+{
+	typename tmat4x4&lt;T, P&gt;::col_type const SrcA0 = m1[0];
+	typename tmat4x4&lt;T, P&gt;::col_type const SrcA1 = m1[1];
+	typename tmat4x4&lt;T, P&gt;::col_type const SrcA2 = m1[2];
+	typename tmat4x4&lt;T, P&gt;::col_type const SrcA3 = m1[3];
+
+	typename tmat4x4&lt;T, P&gt;::col_type const SrcB0 = m2[0];
+	typename tmat4x4&lt;T, P&gt;::col_type const SrcB1 = m2[1];
+	typename tmat4x4&lt;T, P&gt;::col_type const SrcB2 = m2[2];
+	typename tmat4x4&lt;T, P&gt;::col_type const SrcB3 = m2[3];
+
+	tmat4x4&lt;T, P&gt; Result(uninitialize);
+	Result[0] = SrcA0 * SrcB0[0] + SrcA1 * SrcB0[1] + SrcA2 * SrcB0[2] + SrcA3 * SrcB0[3];
+	Result[1] = SrcA0 * SrcB1[0] + SrcA1 * SrcB1[1] + SrcA2 * SrcB1[2] + SrcA3 * SrcB1[3];
+	Result[2] = SrcA0 * SrcB2[0] + SrcA1 * SrcB2[1] + SrcA2 * SrcB2[2] + SrcA3 * SrcB2[3];
+	Result[3] = SrcA0 * SrcB3[0] + SrcA1 * SrcB3[1] + SrcA2 * SrcB3[2] + SrcA3 * SrcB3[3];
+	return Result;
+}
+</code></pre>
+</div>
+
+<p>Ow. That’s creating a lot of vec4 variables over the course of a few thousand sprites.</p>
+
+<p>I admit, I’m learning GLM as I go, and maybe there’re some functions to do mat4 multiplications in place but the docs make my nose bleed, and to be honest I couldn’t be arsed to trawl through it all.</p>
+
+<p>So instead of using a glm::mat4, my matrix is now a simple array, allocated at the start of the function, that only contains the scale and rotation. I can push the sprite corners through this 
+and add the translation, and remove a lot of obviously zero multiplications from the process.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>vBL.x = (vBL_Pos-&gt;x * s_mTransMat[0]) + (vBL_Pos-&gt;y * s_mTransMat[1]) + vPos-&gt;x;
+vBL.y = (vBL_Pos-&gt;y * s_mTransMat[3]) + (vBL_Pos-&gt;y * s_mTransMat[4]) + vPos-&gt;y;
+vBL.z = vPos-&gt;z;
+
+etc. etc. 
+
+</code></pre>
+</div>
+
+<p>This is fine for 2D stuff, which is all I intend to use this engine for.</p>
+
+<p>And the result? About a 15x speed-up. In fact, I get exactly the same number of sprites out of a single thread on my X1 laptop, as I do on my big fat devrig: ~150k @ 60fps.</p>
+
+<p>I’ll probably look to multi-thread this once the physics engine and fmod have been integrated, but for now it’s more than good enough for a little shoot-em-up.</p>
+
+<p>The moral of the story: Future Gareth, you should probably look into how to use GLM properly.</p>
+
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2017/02/03/Devlog-03.02.2017/">
+            Devlog - 03.02.2017
+            <small>03 Feb 2017</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2017/01/28/Visual-Studio-Code/">
+            Visual Studio Code
+            <small>28 Jan 2017</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2017/01/20/Devlog-20.1.17/">
+            Devlog - 20.1.17
+            <small>20 Jan 2017</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+  </body>
+</html>

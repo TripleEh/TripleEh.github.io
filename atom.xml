@@ -4,7 +4,7 @@
  <title>Triple Eh?</title>
  <link href="https://www.triple-aye.com/atom.xml" rel="self"/>
  <link href="https://www.triple-aye.com/"/>
- <updated>2017-02-24T12:18:23+02:00</updated>
+ <updated>2017-02-24T12:25:51+02:00</updated>
  <id>https://www.triple-aye.com</id>
  <author>
    <name>Gareth Noyce</name>
@@ -59,7 +59,7 @@ practically black because I was shooting for a Scooby-Doo vibe. The final game l
 &lt;p&gt;&lt;img src=&quot;/images/2017-02-19-TilemapAddRemove.png&quot; alt=&quot;Tilemap Editor&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Still train-coding my way through this and the big news is, the tile map editor that I said I’d never write is basically done. It’s missing the ability to create re-usable brushes from placed tiles, so I might go back and add that at some point, but bar some tidying up and 
-deciding on the save format it’s doing what I’ll need.  This throw up a couple of interesting things.&lt;/p&gt;
+deciding on the save format it’s doing what I’ll need.  This threw up a couple of interesting things.&lt;/p&gt;
 
 &lt;p&gt;I was about to delve into the murk of C’s directory and file-handling, which is annoyingly different depending on the platform, but decided to have a quick search through Github to see what was already out there, and came across this little gem: &lt;a href=&quot;https://github.com/cxong/tinydir&quot;&gt;Tinydir&lt;/a&gt;, 
  works brilliantly.&lt;/p&gt;

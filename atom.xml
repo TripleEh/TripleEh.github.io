@@ -4,7 +4,7 @@
  <title>Triple Eh?</title>
  <link href="https://www.triple-aye.com/atom.xml" rel="self"/>
  <link href="https://www.triple-aye.com/"/>
- <updated>2017-02-24T12:16:29+02:00</updated>
+ <updated>2017-02-24T12:17:45+02:00</updated>
  <id>https://www.triple-aye.com</id>
  <author>
    <name>Gareth Noyce</name>
@@ -44,7 +44,7 @@ extremely high-contrast. Which was unplayable. Although, I did spend a day flirt
 
 &lt;p&gt;Anyway, I’ve thrown away all that work. All the geometry modelled so far, the test level, the greybox, all the materials and all the textures. That stung a bit.&lt;/p&gt;
 
-&lt;p&gt;This week I started again, but from a better footing: I chose a nice, harmonious, palette, and put a simple gradient in the sky-box. The palette is very limited: four base colours, four shades of each colour, and a gradient from top to bottom of each colour. I will 
+&lt;p&gt;This week I started again, but from a better footing: I chose a nice, harmonious, palette, and put a simple gradient in the sky-box. The palette is very limited: four base colours, four shades of each colour, and a gradient from top to bottom of each colour. I’ll 
 most likely add to that over time, but for now this is working well.&lt;/p&gt;
 
 &lt;p&gt;UV-unwrapping can be done extremely quickly. Anything single colour can just be atlas unwrapped and pushed over the appropriate shade in the texture, while things with gradients just need a little 

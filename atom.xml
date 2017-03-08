@@ -4,7 +4,7 @@
  <title>Triple Eh?</title>
  <link href="https://www.triple-aye.com/atom.xml" rel="self"/>
  <link href="https://www.triple-aye.com/"/>
- <updated>2017-03-08T13:46:08+02:00</updated>
+ <updated>2017-03-08T13:56:57+02:00</updated>
  <id>https://www.triple-aye.com</id>
  <author>
    <name>Gareth Noyce</name>
@@ -22,7 +22,7 @@ who’s helping me with some concept art – it’s been a race-to-make-a-face s
 
 &lt;h2 id=&quot;next-game&quot;&gt;Next Game&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&quot;./images/2017-03-08-TestLevel_Courtyard2.jpg&quot;&gt;&lt;img src=&quot;./images/2017-03-08-TestLevel_Courtyard2.jpg&quot; alt=&quot;Screenie&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/images/2017-03-08-TestLevel_Courtyard2.jpg&quot;&gt;&lt;img src=&quot;/images/2017-03-08-TestLevel_Courtyard2.jpg&quot; alt=&quot;Screenie&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;The second iteration of the test level is basically done. As I said, it’s super chunky and super low-poly, but it looks a lot better than my 
 first iteration. And I can get very dark areas, as well as very light areas. Pretty important for a Quake-a-like.&lt;/p&gt;
@@ -69,13 +69,13 @@ to change. It’s heading in the right direction, though.&lt;/p&gt;
 
 &lt;p&gt;Click screenies to enbiggen.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;./images/2017-03-08-TestLevel_Underground.jpg&quot;&gt;&lt;img src=&quot;./images/2017-03-08-TestLevel_Underground.jpg&quot; alt=&quot;Screenie&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/images/2017-03-08-TestLevel_Underground.jpg&quot;&gt;&lt;img src=&quot;/images/2017-03-08-TestLevel_Underground.jpg&quot; alt=&quot;Screenie&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;./images/2017-03-08-TestLevel_TP1.jpg&quot;&gt;&lt;img src=&quot;./images/2017-03-08-TestLevel_TP1.jpg&quot; alt=&quot;Screenie&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/images/2017-03-08-TestLevel_TP1.jpg&quot;&gt;&lt;img src=&quot;/images/2017-03-08-TestLevel_TP1.jpg&quot; alt=&quot;Screenie&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;./images/2017-03-08-TestLevel_Armour.jpg&quot;&gt;&lt;img src=&quot;./images/2017-03-08-TestLevel_Armour.jpg&quot; alt=&quot;Screenie&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/images/2017-03-08-TestLevel_Armour.jpg&quot;&gt;&lt;img src=&quot;/images/2017-03-08-TestLevel_Armour.jpg&quot; alt=&quot;Screenie&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;./images/2017-03-08-TestLevel_Corridor2.jpg&quot;&gt;&lt;img src=&quot;./images/2017-03-08-TestLevel_Corridor2.jpg&quot; alt=&quot;Screenie&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/images/2017-03-08-TestLevel_Corridor2.jpg&quot;&gt;&lt;img src=&quot;/images/2017-03-08-TestLevel_Corridor2.jpg&quot; alt=&quot;Screenie&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 </content>
  </entry>
  

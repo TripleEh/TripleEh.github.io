@@ -4,13 +4,80 @@
  <title>Triple Eh?</title>
  <link href="https://www.triple-aye.com/atom.xml" rel="self"/>
  <link href="https://www.triple-aye.com/"/>
- <updated>2017-02-24T12:25:51+02:00</updated>
+ <updated>2017-03-08T13:46:08+02:00</updated>
  <id>https://www.triple-aye.com</id>
  <author>
    <name>Gareth Noyce</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Devlog - 08.03.17</title>
+   <link href="https://www.triple-aye.com/2017/03/08/Devlog-08.03.17/"/>
+   <updated>2017-03-08T00:00:00+02:00</updated>
+   <id>https://www.triple-aye.com/2017/03/08/Devlog---08.03.17</id>
+   <content type="html">&lt;p&gt;Early update, this time, as I’m off to the UK for a wedding. Because of that – and because I’m meeting up with a friend 
+who’s helping me with some concept art – it’s been a race-to-make-a-face since my last post.&lt;/p&gt;
+
+&lt;h2 id=&quot;next-game&quot;&gt;Next Game&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;./images/2017-03-08-TestLevel_Courtyard2.jpg&quot;&gt;&lt;img src=&quot;./images/2017-03-08-TestLevel_Courtyard2.jpg&quot; alt=&quot;Screenie&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The second iteration of the test level is basically done. As I said, it’s super chunky and super low-poly, but it looks a lot better than my 
+first iteration. And I can get very dark areas, as well as very light areas. Pretty important for a Quake-a-like.&lt;/p&gt;
+
+&lt;p&gt;Although this scene is essentially outdoor, I don’t actually think I’ll do that in many of the levels. My plan for most of it is 
+to do something darker and not as well lit, but for the purposes of a test I just wanted to see if I could do both. So I’ve aped a bit of the 
+Quake 1 start thing, and done an imaginary “intro” level.&lt;/p&gt;
+
+&lt;p&gt;There’s a lot wrong with it; the scale is on the, er, large side – but the minute you start rocket jumping that’s less of a problem –  there’s a lack of secondary motion – wibbly grass, lights swaying, stuff like that – 
+and hardly any props to dress the scene. Although the colours work for me, a bit more detail would definitely help.&lt;/p&gt;
+
+&lt;p&gt;I’m not too bothered about all this atm, the main function 
+of the test was to find a workflow that’s quick enough to let me bang out [reasonably] good looking geometry, and the lack of texturing definitely helps that. I’ve
+gone from zero to a level I can run around, in 8 days. And half that time’s been trying to understand lighting.  Nearly all the missing things 
+will happen over time and I can dress the scenes with more props as and when I make them. It’s how I worked the environment in Lumo.&lt;/p&gt;
+
+&lt;p&gt;I’m still toying with the idea of bevelling the larger geometry pieces as 
+the extra edges would play in the light. Nintendo do this all the time in Mario and Zelda, so it might be worth a test…&lt;/p&gt;
+
+&lt;p&gt;Anyway. After the mild depression at going down the wrong path and throwing out a couple of week’s work, this whole exercise turned out to be super useful. The untextured “matte” look forced me to work out how the baked lighting is applied, especially 
+when the various shadow schemes are thrown into the mix. There’s no where to hide so setting this up was a lot of trial and error, not helped by the 
+fact that my lighting build-quality was set to “preview” for God knows how long. That flushed out lots of stupid things, but derp. Fucking idiot, etc.&lt;/p&gt;
+
+&lt;p&gt;The Modo side of things has been great, although it took me a long time to uvunwrap for clean bakes.  Initially I was just ignoring it, letting the UE importer 
+generate the lightmaps and then wondering why I had dirty big splotches everywhere. Then I started adding a second UV channel in the model to mitigate, 
+which gives some control over how the model parts are split. But the real-trick, which it took me a couple of days to clock-on to, is making sure edges/verts 
+are clamped to texel boundaries. In Modo this is trivial, you can set the UVGrid to 1/64, and then use the snapping tool to make sure that edges/verts are all 
+nice and clean. It’s a bit handraulic, but if done right, a one shot deal.  I think.&lt;/p&gt;
+
+&lt;p&gt;I still have some light-bleeding in parts of the level, but this is either where I’ve not added an edge to the wall (one model) where it meets the floors 
+(a different model), or have a polygon that extrudes through the wall, so catches the light and the dark. The second issue is just me not knowing what I was&lt;br /&gt;
+doing at the start and then being too lazy to go back in and fix it. You can see it on the window frames.&lt;/p&gt;
+
+&lt;p&gt;I’ve also had a good play around with Cascade, and although I don’t feel as confident with it as Unity’s particle system, I’m able to do the basics. The same 
+can be pretty much said for the material editor. I’m hoping to pick stuff up via osmosis and concentrate on the big things for the foreseeable.&lt;/p&gt;
+
+&lt;p&gt;Code-wise, I don’t think I’ve had any problems. I’ve even started doing a few things – the on screen messages for example – in Blueprints. Quick and dirty is, 
+as Quick and Dirty does, and all that.&lt;/p&gt;
+
+&lt;p&gt;I’ve stuck a little video of all this up on You Tube. It should go without saying that the Quake 1 sound effects won’t be there for long, and everything is liable 
+to change. It’s heading in the right direction, though.&lt;/p&gt;
+
+&lt;div style=&quot;text-align: center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/gxeUt0OoUMo&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;/div&gt;
+
+&lt;p&gt;Click screenies to enbiggen.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;./images/2017-03-08-TestLevel_Underground.jpg&quot;&gt;&lt;img src=&quot;./images/2017-03-08-TestLevel_Underground.jpg&quot; alt=&quot;Screenie&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;./images/2017-03-08-TestLevel_TP1.jpg&quot;&gt;&lt;img src=&quot;./images/2017-03-08-TestLevel_TP1.jpg&quot; alt=&quot;Screenie&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;./images/2017-03-08-TestLevel_Armour.jpg&quot;&gt;&lt;img src=&quot;./images/2017-03-08-TestLevel_Armour.jpg&quot; alt=&quot;Screenie&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;./images/2017-03-08-TestLevel_Corridor2.jpg&quot;&gt;&lt;img src=&quot;./images/2017-03-08-TestLevel_Corridor2.jpg&quot; alt=&quot;Screenie&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Devlog - 24.02.17</title>

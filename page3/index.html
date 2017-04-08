@@ -129,6 +129,152 @@
   
   <div class="post">
     <h1 class="post-title">
+      <a href="https://www.triple-aye.com/2016/11/04/Devupdate-4th-November/">
+        Devupdate - 4th November
+      </a>
+    </h1>
+
+    <span class="post-date">04 Nov 2016</span>
+
+    <p><img src="images/lemsip.jpg" alt="How I miss this..." /></p>
+
+<p>God I miss this stuff. The last 10 days I’ve been down with a snotty cold. The first week was a complete wipeput because Finland, bless it, hasn’t 
+quite caught up with the idea of dosing yourself to the eyeballs with a cacophony of drugs to ease 
+yourself through. <em>sniff</em></p>
+
+<p>It’s not been all bad though.</p>
+
+<p><img src="images/lumo_fanart.jpg" alt="First bit of fan art" /></p>
+
+<p>Lumo received its first bit of fan art!</p>
+
+<p>I’ve never been given something like this before. I was a bit lost for words, tbh. 
+Complete surprise, but it cheered me up no end. Thank you Cris_Cat_Kun, you made my day.</p>
+
+<p><img src="images/famitsu.jpg" alt="Famitsu" /></p>
+
+<p>Lumo’s out in Japan now, and got a respectable flush of 7s from Famitsu. Again, another bucket list 
+tick, this. I love magazines, and I love seeing my work in them. Famitsu is one of the longest running
+and most famous, and even today, it’s a healthy 230 pages of madness. Props to all at Rising Star who
+worked behind the scenes to make this happen.</p>
+
+<p><img src="images/lumo_mag.jpg" alt="Finland" /></p>
+
+<p>Even the Finnish press have got in on the action!</p>
+
+<p><img src="images/box.jpg" alt="Box" /></p>
+
+<p>Annnd, I’ve finally got my hands on the boxed version.</p>
+
+<p>Again, another one off the bucket list.</p>
+
+<p>Since Sudeki I’ve had a little ritual of going into the local game shop, seeing what I’ve worked on nestled 
+among all big games of the day, and buying it with a big grin on my face. I didn’t catch Lumo in the wild but I was able to 
+buy it off Amazon, which still counts IMO.</p>
+
+<p>Development wise it’s been a bit slow, what with the man-flu, but I’ve had some productive train coding sessions the last few days.</p>
+
+<p>One of the things I’ve been tempted to do for Neutrino since the start is roll all my tools into the framework so I can carry it all 
+forward to multiple projects. Key to this is the map editor. I started scratching out what would be required for this, but decided to 
+pull back. It’s obviously going to grow arms and legs before taking on a life of its own. I’m old enough to know better.</p>
+
+<p>The obvious alternative is <a href="www.mapeditor.org">TileD</a>, an open source map editor that’s been around, in one shape or form, for years. I’ve looked 
+at this before for Beat Arena (another project I might return to one day) and passed because it’s quite rigid and a little old school. It’s
+not changed much since I last looked at it, and the limitations of using fixed size tiles and rigid grid layouts is going to get on my nerves very quickly, 
+but it’s a sensible short-cut to create the background layers for Neutrino. I can write some custom tools for spline editing and wave triggering.</p>
+
+<p>There are still a couple of hurdles with this approach:</p>
+
+<p>TileD outputs to TMX or JSON formats, neither of which I support. The Neutrino framework uses libconfig for parsing the various text-based data files, 
+and I’m loath to add new dependencies. (There’s a good argument for dropping libconfig and just using a single header JSON library, but that’s a question for 
+another day.)</p>
+
+<p>TileD also expects you to be working with a texture page of square tiles, which is fine, except I have no intention of just using square tiles in any of my games, or 
+of introducing extra draw calls just so the square tiles can be on their own t-page…</p>
+
+<p>Currently I output texture pages via a build step that runs the individual art assets through <a href="https://www.codeandweb.com/texturepacker">Texture Packer</a>, an insanely good 
+tool for taking a collection of images and spitting out an optimised t-page. (BTW, if this isn’t in your tool box, it should be.) This leaves me with 
+a .png containing all the sprites, and a text file containing all the sprite meta-data (position within the texture, size, etc).</p>
+
+<p>TileD doesn’t seem to have a way for 
+me to mark the individual tiles in a t-page by hand - due to this expectation that they’ll be square, so easy to identify in the texture page automagically - meaning I have to drop in individual 
+assets in order to make maps. Not a problem, except the ID of tiles in TileD’s output will likely differ from the meta-data of the texture page.</p>
+
+<p>It’s stuff like this 
+that has tempted me to write my own map editor for the last 6 or 7 years…</p>
+
+<p>Anyway, the problem was easily solved with a Python script to pre-process the TileD JSON output, fix the mappings, and then spit out a libconfig format file that 
+Neutrino can then use to build a VBO of the tile map. This can be inserted into the build process, or just done as and when it’s needed.</p>
+
+<p>Building a VBO of a tilemap is one of those jobs that I must have done 3 or 4 times now. The only thing I think I’ve written more times is a text writer. Literally, the
+code to parse strings and spit them onto screen. I keep promising myself that “this will be the last time”. We’ll see if this one is…</p>
+
+<p>When I get around to it. Obviously this 
+week I prevaricated and put in a few debug bits and pieces that I know I’ll need, the most important of which was the debug fly cam. (Mainly cos I know my first pass at 
+the tile map will probably end up in the wrong location, so I’ll need to fly around to look for it…)</p>
+
+<p>This ended up being a fun little job as mapping keyboard and joystick input to controls for various player actions involves a bit more than you’d think. For a start, joypads
+can be added and removed at runtime so you need to be able to move controllers between players, and keyboard layouts differ between locals, so you can’t just “detect a letter” 
+and be done with it. SDL’s docs have a couple of gotchas around how you handle this stuff, but I was able to get it all working nicely. The only thing that’s missing 
+is exposing an interface for assigning controllers or redefining controls. As that’s game specific I figure I can put that off for now.</p>
+
+<p>I’m hoping I’ll get a day clear to go back to Oh Snow next week, but with three teaching courses on the go that might be wishful thinking. Either way, I’ve had
+fun this week. In between the sneezes.</p>
+
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="https://www.triple-aye.com/2016/10/13/Devupdate-13th-October/">
+        Devupdate - 13th October
+      </a>
+    </h1>
+
+    <span class="post-date">13 Oct 2016</span>
+
+    <p><img src="/images/2016.10.13_UV_ForBlogPost.PNG" alt="UV Islands" /></p>
+
+<p>I thought I’d do a quick update before I head out to the UK this weekend.</p>
+
+<p>I’ve had a bit of fun this week. Neutrino moved forward for the first time in a long while. I’ve integrated <a href="https://github.com/ocornut/imgui">ImGUI</a>, a lovely
+header based widget library for games and other multi-media. This is one of those “where have you been all my life” bits of code, that slotted straight in and opened 
+up a really simple, clean way to do debug output, windows, memory inspection and the like. So far I’ve only added some simple performance counters, but the plan is 
+to use this to build up the internal editors for things like splines, particle effects and bullet patterns. I’m having a bit of a man crush on it…</p>
+
+<p>Oh Snow’s also moving forward. The base character is done, skinned and rigged. I had to make a few tweaks since the last update, and today I sat down to try and get the UVing 
+into shape. I’ve not used any of the UV tools in Modo before (can you spot a pattern here?) and to be perfectly honest, for Lumo I got away with everything being basically box 
+mapped, so don’t really profess to even know the terminology. Every day’s a school day.</p>
+
+<p>As ever, Modo’s been good to me. I made a lot of mistakes, and had to kinda stumble my way through the various options to work out what does what, but I finished today with a pretty 
+clean set of UV islands, and what appears to be - to me at least - reasonable texel density.</p>
+
+<p>All this highlighted some problems in my modelling workflow. As a lot of the geometry is mirrored, I could have saved myself a lot of time if I’d done a quick UV map on the model 
+before I mirrored it. I’m wasting UV space for things that could be overlapping. I’m not sure if there’s a quick way to do this after the fact, other than manually line up 
+the appropriate islands. I might need to ask around on that.</p>
+
+<p>For this game it’s not really going to be a problem…</p>
+
+<p>Also, I should have done the UVing before the skinning, as I noticed a few problems with a couple of quads that meant going back in to make some tweaks. Fortunately this is simple in Modo,
+but something to bear in mind in the future.</p>
+
+<p>The paint tools in Modo turned out to be really useful for finding where my UV seams were causing problems, and really drove home how quickly things can look shit if there’s too much 
+distortion in the quads. Today I found all this out after I thought I was ‘done’, so I scrapped everything (basically the whole day’s work) and started again. Once I vaguely knew what 
+I was doing the whole process took less than an hour.</p>
+
+<p>I’m having to stop myself from getting too stressed over the slow progress I’m making atm, and keep reminding myself that taking the hit now will pay off down the road. Learning Modo - and 
+pretty much the entire art pipeline - is a pretty big task. Learning UE4 is also going to take a good long while. The fact is, I need these skills if I’m going to continue making games on my own, 
+so it’s nice when I do finally crack something. Even if it takes all day… :)</p>
+
+<p>So, next up: a quick pass on the texture, then some simple poses for test anims.</p>
+
+<p>After I’ve recovered from a week in the UK! :D</p>
+
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
       <a href="https://www.triple-aye.com/2016/10/12/This-is-scary">
         This is scary...
       </a>
@@ -229,58 +375,6 @@ confident that this’ll be good to go before I leave for the UK next week.</p>
 <p>All in all, a reasonably productive couple of days at the forge. I think I’ve got a bit more of a grip as to what UE’s doing, I’m in love with all the tools I’ve played with, and I’m quite close to the point where I can just try and make some gameplay.</p>
 
 <p>I’m going to need to model some characters soon though…</p>
-
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="https://www.triple-aye.com/2016/09/14/dev-update-15th-september/">
-        Dev Update – 14th September
-      </a>
-    </h1>
-
-    <span class="post-date">14 Sep 2016</span>
-
-    <p>I’ve had my head in Unreal, off and on, since the last post and I’m slowly starting to make head-way. As mentioned in the previous post, the Blueprint system was feeling like a grind, so I spent a week biting the bullet and just trying to get stuff going from the C++ side. This immediately gave me better results, and despite the iteration time being slower, I ended up getting a lot more done.</p>
-
-<p>To that end, I’ve scrapped what I’ve been working on - mainly little tests, but I got as far as a half functioning endless runner - and created a clean project and pushed it to Github on Monday.</p>
-
-<p>I had an idea about half-way through the development of Lumo for a little mobile game where you dragged around the view of a downhill ski slope, and the character twisted and turned to follow where the terrain was going. I figured this would work well, as you could essentially play it one-handed, and maybe you could extend it a bit further to add jumps and the odd trick without complicated the controls too much. It’s one of those little toy ideas that’s stuck in my head ever since, so I’m going to have a crack at making something similar as my first UE4 project. I say similar, as I’m not going to do it on mobile, at least not initially. For simplicity it’s probably better to start off with a PC game, and that also means I can go a little more Tony Hawks on it. The player will likely have a joypad…</p>
-
-<p>Early days but I’ve been really impressed with UE4. The animation stuff - compared to Mecanim - is like mana from heaven. The code API is big, and more verbose than what I’ve been used to (C++ vs C#, natch) but it makes sense. And it works. And there’s proper debugging channels. And. And.</p>
-
-<p>Going to be a while until I’m properly productive as I’m only working about 1.5 days a week on gamedev atm, but it’s nice to be chasing down another game. Even if it’s only a small one. Screenshots soon!</p>
-
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="https://www.triple-aye.com/2016/08/26/dev-update-26th-august/">
-        Dev Update - 26th August
-      </a>
-    </h1>
-
-    <span class="post-date">26 Aug 2016</span>
-
-    <p><img src="/images/Screenshot-from-2016-08-26-09-46-16-e1472198667714.png" alt="Screenshot" />
-So, this is exciting. Linux Voice - easily my fav tech magazine - very kindly asked if I’d be interesting in writing a quick Dev Diary about Lumo. Obviously I jumped at the chance. Having grown up reading Zzap!64’s <a href="http://www.zzap64.co.uk/zzap3/para_birth01.html">“Diary of a Game”</a> series, from the likes of Andy Braybrook and Jeff Minter, this was too good an opportunity to miss. The LV team did a lovely job, ending up with a 6 page feature - including some of the early prototype screenshots - in this month’s issue. Massive thanks to Graham and the lads for that!</p>
-
-<p>It’s taken a couple of weeks, but I’m definitely back in full-on ‘work mode’. Which is good, as it’s going to be a really busy few months ahead. I spent a couple of weeks in Modo messing around with tutorials and getting a feel for things, and I have to say I’m really happy with it. For some reason it just clicks in my head. I didn’t get to the character or rigging, but I did spend a long time messing around with a low poly look that I want to use for a possible prototype: Oh Snow!</p>
-
-<p><img src="/images/Winter20Scene_Final.jpg" alt="Winter" /></p>
-
-<p>I’ve also spent a week in UE4, messing about with Blueprints. There’s a lot to learn here and I’m already starting to feel that the Blueprint system isn’t for me. They’re not really much of a time saving as the workflow is labourious; drag pin, type the first few letters of the command, find box, drop box, hook up inputs/outputs, rinse repeat, so I could pretty much type what I wanted into Visual Studio and compile in the same time. I may have wasted all the work I’ve done, but it was a useful process to at least start to understand some of the jargon and API.</p>
-
-<p>Nothing to show from that effort, so far, and I suspect it’ll take me a few days to start everything again with C++ classes.</p>
-
-<p>Unfortunately it may be a while until I get back to UE4. My teaching schedule has been sorted and there’s a lot front-loaded between now and Xmas. This means I’ll be at the Uni two days a week.  I’ve also signed up to a Finnish language course, which is another 2 days a week, meaning the bulk of my dev time is going to be evenings and on the train. Because of this, I’ve started re-writing my old 2D framework, as I have a bunch of ideas for simple, small games that I might be productive on. A lot’s been done on that over the last few days - mostly under the hood prep - but I have sprites. Enjoy the mesmerising, floating head of <a href="https://en.wikipedia.org/wiki/Kevin_Toms">Kevin Toms</a>.</p>
-
-<p> </p>
-
-<iframe src="https://vine.co/v/5Oxwq2wdOi0/embed/simple?audio=1" width="600" height="600" frameborder="0"></iframe>
-<script src="https://platform.vine.co/static/scripts/embed.js"></script>
 
 
   </div>

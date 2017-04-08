@@ -4,13 +4,191 @@
  <title>Triple Eh?</title>
  <link href="https://www.triple-aye.com/atom.xml" rel="self"/>
  <link href="https://www.triple-aye.com/"/>
- <updated>2017-03-08T13:56:57+02:00</updated>
+ <updated>2017-04-08T13:40:26+03:00</updated>
  <id>https://www.triple-aye.com</id>
  <author>
    <name>Gareth Noyce</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Devlog - 08.04.17</title>
+   <link href="https://www.triple-aye.com/2017/04/08/Devlog-08.04.17/"/>
+   <updated>2017-04-08T00:00:00+03:00</updated>
+   <id>https://www.triple-aye.com/2017/04/08/Devlog---08.04.17</id>
+   <content type="html">&lt;p&gt;Zelda has been pushed to the back-burner, I’ve been to the UK for a trade show, and started up a new consultancy gig. Even found some time to do some programming…&lt;/p&gt;
+
+&lt;h2 id=&quot;eurogamer-rezzed&quot;&gt;Eurogamer: Rezzed&lt;/h2&gt;
+
+&lt;p&gt;I’ve not been to Rezzed in four or five years, but I can safely say that it’s my favourite “trade” show. It’s far more chill than the Expo, and there are plenty of opportunities to 
+catch up with Developers, ask them techie questions, and get the shizz on who’s getting published by whom, and where the funding’s at. Eurogamer also do a good range of panel discussions, 
+which are great to watch, and what with it being in central London, getting ruinously drunk in the evening is entirely possible.&lt;/p&gt;
+
+&lt;p&gt;It’s hard to pick stand-outs at shows like these, but ExoOne and Tokyo 42 were the two that got me, and were by far the best looking Unity developed games at the show. I 
+know it doesn’t matter what engine a game is written in, but having spent 2 days walking around it was incredibly obvious - for the most part - who was using what. Unity on the
+Nintendo Switch looking rough as balls (Overcooked was running at 15-20fps at points) and there were many many tales of people having the same problems as I had, while shipping Lumo. So I did leave the 
+show thinking that I’d made the right choice moving to UE4, and Epic having a large presence at the venue definitely didn’t hurt that.&lt;/p&gt;
+
+&lt;p&gt;And if Snake Pass really was ported to Switch in a week, well, I’m looking forward to begging Nintendo for some Devkits toward the end of the year… :D&lt;/p&gt;
+
+&lt;p&gt;I didn’t show anything, or talk to publishers this time around. It was just nice to go to a show with no pressure and mooch around. My Zub t-shirt had its first public airing. :D&lt;/p&gt;
+
+&lt;h2 id=&quot;new-gig&quot;&gt;New Gig&lt;/h2&gt;
+
+&lt;p&gt;I’ve picked up some consultancy work with a start-up in Helsinki. Can’t say much about it atm, but that’s one or two days a week helping them get going with their project. It’s time away from 
+doing my own stuff, but extra cash in the bank is never a bad thing, and I’m working in an area I’ve not really touched before, so a few things to learn.&lt;/p&gt;
+
+&lt;h2 id=&quot;neutrino&quot;&gt;Neutrino&lt;/h2&gt;
+
+&lt;p&gt;You’d think with all the planes and trains I’ve been on this month, I’d have done more, but it turns out that in my excitement at getting exit row seats on the plane, I forgot that no bags are allowed to be stashed and the table barely 
+holds a cup, let alone my laptop. But I did manage to do a few things.&lt;/p&gt;
+
+&lt;p&gt;I’ve put in the various game states so Neutrino moves through the splash-screen, “main menu”, and into a test level, and finished off the saving of tilemaps to a binary file. I can load this, and I can create a static 
+VBO that holds the tile-data. But I’ve not quite got it all hooked up so the level is being displayed. That’s the next job.&lt;/p&gt;
+
+&lt;p&gt;Most games have several versions, Debug and Release being the most common. Normally these will do slightly different things: Debug will have more integrity checks, print out more logging information, and may even contain different modes 
+(none of Neurino’s editors, for example, are even compiled into the release build).&lt;/p&gt;
+
+&lt;p&gt;Release, as the name suggests, is normally what gets shipped to the players. To date I’ve only ever been working in Debug builds, so I thought it was about time 
+that I checked out how the release build was getting on… And the good news is, excellently! I’d made a couple of mistakes with some #ifdef wrapping, but once fixed, Release was up and running in a couple of minutes. I’m mildly 
+surprised about that.&lt;/p&gt;
+
+&lt;h2 id=&quot;next-game&quot;&gt;Next Game&lt;/h2&gt;
+
+&lt;p&gt;Work’s been a bit stop/start, but quite a lot’s been done. The bulk of the effort has been working on the game-flow: at launch the game presents a little splash-screen with the company logo on, which nicely fades into the main 
+menu. From there, you can jump into the first level, or quit out to the desktop. In-game it’s now possible to pause (in single player) and the level’s exit teleporters will take control away from the player and 
+present an end of level stats screen, showing score, items collected, time taken and any bonuses earned, etc.&lt;/p&gt;
+
+&lt;p&gt;This was a good exercise and I uncovered a few things: for a start, I’m still not using the various game and player state classes correctly. Things like the inventory are currently in my Player Controller, and should
+be in the Player State class. Level pick-ups and secrets aren’t being tracked in the Game State class, but by the player or individually. All of this comes back to UE4 being opinionated about how to structure the 
+game, and I’m still learning that stuff. What I have “works”, but will be completely broken in a networked game.&lt;/p&gt;
+
+&lt;p&gt;I’m at the point now - having basically got my head around how to do the single player stuff - that I’m going to refactor the bits I’ve got wrong, and then make a start on the network replication. I’ve no idea how to handle 
+the lobby system, or picking game-modes, but if I can get the players, weapons, projectiles and pick-ups replicating, that puts me in a good position to then start on the AI. I can work the rest out later.&lt;/p&gt;
+
+&lt;p&gt;I also discovered that it was possible to have a static library of C++ functions you could provide to Blueprints, but despite this working well for a few days it eventually started to give me 
+build errors, complaining that things were compiled with out-of-date outers (or something). I’ve no idea what this meant, and I’m starting to become more and more distrustful of Blueprints in general. They’re ok for little 
+throw-away things, but even doing the UI flow in them was tedious. Debugging them is an absolute nightmare…&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLqfZolvobgUADL9xLhimuX3TQONLZGJO5&quot;&gt;51Daedalus&lt;/a&gt; is giving a serious of lighting lectures over on his You Tube channel. I can highly recommend these, as I’ve learned a lot from the 
+few hours he’s already done, including a lovely little trick for faking volumetric light areas (which I’ve nicked and slapped all over my test level). I think lit particles and these sorts of faked volumetric tricks 
+are going to be really important, in Next Game. Some of the best looking stuff at Rezzed was doing of a lot of this for atmosphere, so it’s something I’m really keen to try and learn.&lt;/p&gt;
+
+&lt;p&gt;Also, a shout out to the Unofficial Unreal Discord Community: &lt;a href=&quot;http://unrealslackers.org/&quot;&gt;Unreal Slackers&lt;/a&gt; I’ve been able to get a few questions answered, and people seem nice and friendly. It’s good to be able to bounce 
+stuff off other developers now and again.&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Devlog - 17.03.17</title>
+   <link href="https://www.triple-aye.com/2017/04/08/Devlog-17.03.17/"/>
+   <updated>2017-04-08T00:00:00+03:00</updated>
+   <id>https://www.triple-aye.com/2017/04/08/Devlog---17.03.17</id>
+   <content type="html">&lt;p&gt;The flip-side to blogging about my progress is that you get to see the occasions where I’ve not been massively productive. So I’m going to waffle on about what’s really had its hooks in me over the last couple of weeks…&lt;/p&gt;
+
+&lt;h2 id=&quot;zelda-breath-of-the-wild&quot;&gt;Zelda: Breath of the Wild&lt;/h2&gt;
+
+&lt;p&gt;Of course I bought a Nintendo Switch at launch!&lt;/p&gt;
+
+&lt;p&gt;I’ll probably find some time to talk about the device over on my personal blog, for it is perfect in many, many ways, but Zelda? Wow, what a game. 
+“Not much” has been done since it came out and this week I basically gave up any pretence of getting work done. It’s been time very well spent…&lt;/p&gt;
+
+&lt;p&gt;During the middle part of Lumo’s development I completed Link Between Worlds. That was a bit of a double-edged sword at the time, as, naturally, I started to become influenced by what I was playing. 
+I have pages of notes about things to do in “dungeons”, but Lumo wasn’t ever that sort of game. Overlaid systems design — things that work well across multiple rooms &amp;amp; outer-world based travel, for 
+example — wouldn’t be introduced to the genre until the Pickford brother’s Equinox, and I was determined to stick as closely to the confines defined by Jon Ritman’s early work as possible, 
+and then poke out in directions from there…&lt;/p&gt;
+
+&lt;p&gt;(Lumo would have been “better” if the scope was wider, but, honestly, that was never really the point.)&lt;/p&gt;
+
+&lt;p&gt;Because of this (and with the exception of the occasionally mooted “Lost Levels”) it’s been obvious since the start that any spiritual sequel to Lumo would move more toward Zelda’s 
+dungeons and away from the bespoke, single room designs. Not because the genre necessarily dictates it — although it is a natural progression — but because it’s the thing I want to make. 
+It’s the direction that I’d have taken it, back in the ‘90s. It’s also exactly the design pattern that Nintendo have moved away from…&lt;/p&gt;
+
+&lt;p&gt;—&lt;/p&gt;
+
+&lt;p&gt;Having grown up in the ’80s I’m a student of the Arcades, and I came of age with the SNES. Systems design is important. The best game mechanics are simple systems, confined by a set of rules, 
+that are obscured from the player by the machine. Their rules may evolve, slowly, over time, but the player is always encouraged to explore these confines, to learn the rules, through play. 
+Great games — for me — are not about story, or narrative (although these may work well to support an overall theme) but about sets of systems that encourage and allow for the player to create 
+their own experiences. To make “stories” in their head. Some of these stories will be to mentally explain a system’s ruleset. Others will be entirely unique to the player, based on how they interpret 
+and apply their ‘abillities’ through play.&lt;/p&gt;
+
+&lt;p&gt;I was lucky enough to work with teams that understood this — Crackdown and Fable spring to mind — but I’ll never forget one meeting, where the publisher’s large and expensive writing team tried to “fix” 
+our proposals by spending several hours arguing over the feelings and motivations of the NPCs in the world. The player wasn’t even mentioned once. I fucking hate this about modern, predominantly western, 
+AAA games, and I could explain it succinctly with an animated gif I saw on Twitter, that I stupidly didn’t save. It showed Lara Croft climbing up a cliff as a thunder storm raged, and then cut away to the 
+same design, done in the style of an Atari VCS. Lara dodges a rock, lightning strikes, it looks and sounds amazing, she says something to herself (the player) … and the dot on the VCS moves right one space, 
+before slowly continuing up, along its pre-determined path.&lt;/p&gt;
+
+&lt;p&gt;When I play games I just see the dot.&lt;/p&gt;
+
+&lt;p&gt;Zelda has several easily understood systems that are very robustly engineered. This has given Nintendo license to let the player explore them deeply, and not worry about too much about unintended consequences. 
+If anything, I think they’re fully aware of some of the exploits and are happy for you to use them (the hidden Koroks give the game away), but how these are applied in the world, and more importantly, how Nintendo 
+nudge you toward their uses, will be studied for quite a while. At least by me.&lt;/p&gt;
+
+&lt;p&gt;Probably the simplest example is cooking — something I never normally like in games — a self-determined means to buff (as well as heal), whose different ingredients are distributed over every region of the map. 
+It’s only possible to uncover all the recipes through extended play, but that 20 minute break to cook everything you’ve foraged over the last couple of hours becomes an enjoyable, repeatable ritual. I’m 50 hours 
+in and I’m still making new things, and more importantly, I still want to see what I can do with it. The world design backs up this system’s rules: There will always be something spicy growing halfway up a mountain. 
+Melons grow in hot regions, and their watery content will cool you. The body parts of electric Krese can be made into an elixir that provides shock protection. It’s simple, easy to break down — trivial when you look 
+at it — but the player groks it with very little conscious thought. Only one example of how to combine these things for a given end is provided, but it’s enough to explain that experimentation is key, so off you trot, 
+try and shoot every animal, and cook everything you see. I’m reminded of Minecraft’s crafting table.&lt;/p&gt;
+
+&lt;p&gt;Another easy example is Link’s stamina. You can run, climb or cling onto your para-glider for a short-period of time via a button press, and a simple UI shows the drain on your stamina. But Breath of the Wild 
+is an enormous world that requires exertion to explore. Even the short-cuts to travel — tame animals — require a certain level of stamina in order to bring them under your control. And you’re encouraged to ignore 
+these limitations by cooking up elixirs that will replenish your stamina whenever you need it.&lt;/p&gt;
+
+&lt;p&gt;My first few hours were all about cheating this “artificial limitation”. Pockets full of potions, I was desperate to run to the horizon and climb everything I could see, which is entirely possible as soon as you 
+leave the starting plateau. Can you imagine how much better World of Warcraft, or Guildwars 2 would be if you could climb ANY mountain you could see? And when you got to the top there’d be a hidden Korok, or a mini-boss, 
+or even just a breakable rock containing a diamond, waiting for you? Vista after vista unfolds, reinforcing a sense of place, and by the end-game, when you’ve powered this system up, you’re no longer taking your time, 
+mapping out a safe route up the mountain, but leaping and bounding to the top with barely a care in the world. It feels a bit Crackdown-y, and makes a compete fucking mockery of Assassin’s Creed. 
+Stamina moves from a game-y limitation to something empowering in the space of a few hours. And you should see the horses I have now…&lt;/p&gt;
+
+&lt;p&gt;Combat stays closest to the old Zelda way of doing things (from an interaction point of view) but even that has been completely over-turned. The traditional Z-Lock, jumps and doges are there, but now with weapons that are breakable.&lt;/p&gt;
+
+&lt;p&gt;On the face of it, breakable weapons should be a design faux pas best left to the F2P market, but the way it’s been applied is entirely logical within the context of the rest of the world. 
+Each region’s NPCs have different weapons, some many times stronger than others, and if you’re like me and you’ve Leeroy’d off into the distance, one hit kills will be rife. Disarmed NPCs will run to 
+whatever is lying on the ground and use it to attack you (even their fallen comrades, in some cases), but this is exactly Nintendo’s expectation for the player: Pick up the weapons that you see lying around. 
+You’re a scavenger, as well. Save your best ones for the larger foes, and use a branch for the pests. You can even sneak into a camp to steal enemy weapons before they see you, meaning any resulting fight will 
+be comically one-sided. Simple, easily understood, but with the benefit of giving real meaning to some of the items you discover. (And if you have a favourite, keep hold of it, as you can repair it by letting an Octorock eat it!)&lt;/p&gt;
+
+&lt;p&gt;There’s example after example of how the rules for the player are applied — designed — with thought to the other interactive elements in the world. Even the mechanic for taming a horse can be used with other animals you find in the wild. Want to rock-up riding a glowing Stag, or a Bear? Well, you can. Experiment. Explore.&lt;/p&gt;
+
+&lt;p&gt;The areas I love most though, and the thing I’d steal in a heart-beat, are the Shrines. (Oddly enough, the closest thing to what I wanted to do, but couldn’t, with the rooms in Lumo…)&lt;/p&gt;
+
+&lt;p&gt;Shrines in BotW serve multiple purposes. They act as fast-travel waypoints. The Spirit Orbs you collect from them are the means to more hearts and stamina. They act as bespoke puzzle and combat arenas, 
+replacing the monolithic dungeon designs of Zeldas-past. And for me, they became the biggest driver to explore the world, safe in the knowledge that if I could just get to that orange glow, 
+I’d be able to return at some later point.&lt;/p&gt;
+
+&lt;p&gt;The shrines are often just one or two puzzle ideas, beautifully crafted, but on a grander scale than you’d get in previous Zelda dungeons. A 20–30 minute diversion, often toying with the physics 
+engine, that serve to distil the sort of inventiveness we only see when the Nintendo’s design-team is firing on all cylinders. I absolutely fucking love them, and the way you can dip in-and-out of 
+them as a break from whatever you’re doing, makes them a constant, compelling, distraction.&lt;/p&gt;
+
+&lt;p&gt;And perhaps that is Breath of the Wild’s greatest strength. Open world games have always tried to distract you, but at their core has been the constant nagging of NPCs, and the gentle redirection back 
+onto the “Golden Path”. Fable 2 — OK, not an “open world” game in the sense of GTA — took it so far as to manifest the Golden Path in the world itself (!) but BotW just does not care. At no point do I 
+feel the need to “do” the “game”. I’m allowed the freedom to explore anywhere, at any point, to make of my avatar what I want. And even when I do sit down with the express desire to get back onto the 
+main-quest, I invariably end up doing something entirely different. Nearly every NPC in the game is intent on sending you off, away, from the Golden Path. The number of half finished sub-quests I have 
+is insane and I justkeep uncovering more.&lt;/p&gt;
+
+&lt;p&gt;On one of these diversions I saw Farosh…&lt;/p&gt;
+
+&lt;p&gt;I spend the first few weeks of my design lectures trying to explain what a game mechanic is by breaking down “systems”. Why systems design and implementation is the real meat-and-potatoes of a 
+great development team, not story or “ideas”. About how to communicate things in-world, without text, and why that’s more important than the things we explain to a player verbally. How you can 
+reward styles of play through the simple placement of “secrets”, how the player’s experimentation and mastery of things provides them ownership over the experience. I’m constantly pulling from 
+Nintendo’s back catalogue for examples of all this, but now I could pretty much re-write the entire course and just use Breath of the Wild. I’ve not even spoken here about the camera, the slate’s 
+powers and how these manifest differently across the “world” and the “dungeons”. It all makes me a little breathless at times. :D&lt;/p&gt;
+
+&lt;p&gt;Personally, I think it takes monumental brass-balls to be as confident in what you’ve made as this, to let go, to let the player just be. Many, many aspects of BotW will be copied in the future 
+(I’ll be nicking stuff), but this is a game I’m worried could only be made in Japan, and now Kojima is off, probably only by Nintendo. I cannot see any Western publisher funding the level of
+experimentation and iteration that’s required to design and implement these mechanics, this world, so robustly. To eschew business model (for the most part, DLC and Amiibos &lt;em&gt;cough&lt;/em&gt;) and trust in 
+quality. Certainly not on a scale as grand and as beautiful as this.&lt;/p&gt;
+
+&lt;p&gt;That’s a fucking shame, really, isn’t it?&lt;/p&gt;
+
+&lt;p&gt;Anyway, I’ve got that Friday feeling, and I’ve only one Divine Beast left to do.&lt;/p&gt;
+
+&lt;p&gt;Maybe a quick go before I get back to doing some real work. Next week…&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Devlog - 08.03.17</title>

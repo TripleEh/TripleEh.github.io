@@ -129,6 +129,82 @@
   
   <div class="post">
     <h1 class="post-title">
+      <a href="https://www.triple-aye.com/2017/02/03/Devlog-03.02.2017/">
+        Devlog - 03.02.2017
+      </a>
+    </h1>
+
+    <span class="post-date">03 Feb 2017</span>
+
+    <p><img src="/images/17.02.03-DecalsTest2.jpg" alt="Hello Mum" /></p>
+
+<p>It’s been a mad-cap couple of weeks. Here’s what I’ve been up to:</p>
+
+<h2 id="lumo">Lumo</h2>
+
+<p>Yesterday I pushed out version 1.17.2, to fix issues found with wireless Xbone pads running on Windows 7. Thanks go out to 
+Patrick Hogan — the developer of InControl, a nice cross platform input library for Unity that I can recommend, <a href="http://www.gallantgames.com/pages/incontrol-introduction">available here</a> —  for sparing the time to test around the issue and provide a fix.</p>
+
+<p>In addition to taking on the new version of InControl, I’ve also moved over to XInput, so — in theory —  joypad support should be a 
+little more robust on Windows going forward. (Crosses Fingers)</p>
+
+<p>This build also fixes a possible bug with joypad “submit” actions not being registered by the pause screen UI, as well as turning 
+off Unity’s bullshit “automatic” navigation option on some of the button layouts. Honestly, fuck that UI system.</p>
+
+<h2 id="neutrino">Neutrino</h2>
+
+<p>I’ve been doing a bit of train / weekend coding, so this has moved forward:</p>
+
+<ul>
+  <li>Finished off the Input system. You can now poll mouse and up to four joypads. Previously it only handled attach/dettach events.</li>
+  <li>Added some keystate handling for specific inputs in editor modes (keyboard shortcuts, basically)</li>
+  <li>Added a bunch of helper functions to quickly get sprites from texture pages</li>
+  <li>Got the Tile Map editor to the point where you can select and place tiles, freely, or snapped to a grid</li>
+</ul>
+
+<p>Next job is to store that in something I can spit out and reload that’ll be the basis of the level data. I’ll probably do a very thin 
+Command pattern wrapper over this so I can support unlimited Undo/Redo as well.</p>
+
+<h2 id="next-game">Next Game</h2>
+
+<p>I’ve been all over the shop with this the last couple of weeks:</p>
+
+<ul>
+  <li>Finished off the weapon-types code and added weapon pickups</li>
+  <li>Player can now be killed, either through damage or falling out of the world</li>
+  <li>Player respawns properly</li>
+  <li>Added Ammo to the HUD</li>
+  <li>Added decals, and spent a morning drawing swears on walls</li>
+  <li>Added a new “Pain Room” to the test room, for traps and damage/stat tweaking</li>
+  <li>Dipped my toe into Cascade, UE4’s particle system, and made some effects for pickups</li>
+  <li>Started on a shotgun model for the first person view</li>
+  <li>Added some new models for the ammunition pickpus</li>
+</ul>
+
+<p>The last item in that list has been my main diversion since the last post.</p>
+
+<p>I know that I’m going to be doing a fair amount of modelling on this project so I’m still slowly schooling myself on workflows. For this, I decided 
+to do some fairly high poly models of the pickup items and then bake them down to a low poly cage. Like everything, once I worked out how to 
+do it, it’s reasonably straight forward, but it took a day or so to really get it working.</p>
+
+<p>Building low poly cages seems to be a bit of an art, depending on the sorts of shapes you want, but after a lot of attempts I was able to bake AO and 
+normals in Modo that looked pretty clean on the low poly asset, and came out clearly in-engine. I’m far from an expert at this, but it’s something I 
+wanted to have in the toolbox even if I don’t use it very often.</p>
+
+<p>I also spent a day or two messing about with Substance Painter. The “rent to own” model really appeals to me, as well as fitting in my budget, so I 
+jumped on that. It’s a little unstable on my rig - I’ve had 4 or 5 really messy crashes - but when it’s working, it’s great. I doubt I’ll delve too 
+deeply into the materials for this game, but anything that speeds up texturing is going to be worth the effort learning.</p>
+
+<p>Now that Vine is dead I’ve started posting screenshots and little vids onto my Instagram account. You can keep an eye-out, <a href="https://www.instagram.com/garethnoyce/">here</a>.</p>
+
+<p>Also, there’s been a big migration of developers from Twitter onto Mastodon.social. If you’re a twitter user then I don’t really need to explain why this 
+is happening, but if not and you’re interested in a low traffic, Nazi-free open source Twitter-alike then <a href="https://mastodon.social">Mastodon</a> is worth 
+checking out. I’m @korruptor as usual.</p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
       <a href="https://www.triple-aye.com/2017/01/28/Visual-Studio-Code/">
         Visual Studio Code
       </a>
@@ -281,48 +357,6 @@ following steps which should fix the issue for anyone that’s upgraded from the
 <p>I know this is a massive ball-ache if you’ve managed to get a fair distance through the game, and I can only apologise. As far as we know this does solve the 
 issue and v1.02 should be stable for you.</p>
 
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="https://www.triple-aye.com/2016/11/08/Build-Update-v1.11.8-Fixes-to-Win10-controller-issues/">
-        Lumo Build Updates
-      </a>
-    </h1>
-
-    <span class="post-date">08 Nov 2016</span>
-
-    <p>The Windows 10 Anniversary update caused a lot of weird issues with how gamepads work, leaving Lumo and a bunch of other games
-with broken controls. I’ve just pushed out a new build to Steam that should fix most of these problems.</p>
-
-<p>It’s been tested with the following pads:</p>
-
-<ul>
-  <li>PS4</li>
-  <li>Xbox 360 (Wired and Wireless)</li>
-  <li>XBox One (wired)</li>
-</ul>
-
-<p>Other joypads should work, but may require you to define your own controller mappings in Settings-&gt;Controls. Fight sticks are not directly supported, unfortunately, 
-as many of them don’t identify themselves as pads, even though the may map to something like the default Xbox 360 layout (like my SF IV Fight Stick does).</p>
-
-<p>In addition to this I’ve re-written the redefine controls screen [and back-end], fixing several small issues that have been in there since release.</p>
-
-<p>Other fixes:</p>
-
-<ul>
-  <li>Several affected achievements re-written</li>
-  <li>Small balancing changes</li>
-  <li>Clue added to the Ice Cube Stairs room</li>
-</ul>
-
-<p>Mac and Linux were unaffected by the original bugs but I’ve put out new versions for all platforms just in-case. DRM free builds are uploading now and should go live in the next day or two.</p>
-
-<p>In addition - if this wasn’t bad enough -  Playstation 4 owners have been plagued by a save icon corruption for the last month. Withouth going into too much detail (<em>cough</em>Unity<em>cough</em>) I can 
-confirm that the fix for this, on both PS4 and Vita, went live today. Phew :)</p>
-
-<p>Apologies to all affected by these breakages, I know it’s been a complete nightmare. :(</p>
 
   </div>
   

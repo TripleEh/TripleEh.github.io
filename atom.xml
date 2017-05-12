@@ -4,13 +4,43 @@
  <title>Triple Eh?</title>
  <link href="https://www.triple-aye.com/atom.xml" rel="self"/>
  <link href="https://www.triple-aye.com/"/>
- <updated>2017-04-29T10:46:55+03:00</updated>
+ <updated>2017-05-12T13:08:01+03:00</updated>
  <id>https://www.triple-aye.com</id>
  <author>
    <name>Gareth Noyce</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Devlog: Replication</title>
+   <link href="https://www.triple-aye.com/2017/05/12/Devlog-12.05.17-Replication/"/>
+   <updated>2017-05-12T00:00:00+03:00</updated>
+   <id>https://www.triple-aye.com/2017/05/12/Devlog:-12.05.17---Replication</id>
+   <content type="html">&lt;p&gt;First week back on Next Game, for oooh, a few weeks, and time to tackle the networking side of things. I had an inkling that retro-fitting multiplayer into the work I’d already done would be a bit of a ball-ache, but I was wrong. It was a massive fucking pain in the hairy-tits.&lt;/p&gt;
+
+&lt;p&gt;The problem wasn’t so much that I didn’t understand the theory behind it all — although it does take a while to bed-in, and in all honesty Epic could really do with providing some better documentation on the C++ side of things — but that switching something simple, like the character responses to items being picked up, involves changing a lot of small bits of code in various classes. So where, sensibly, do you start?&lt;/p&gt;
+
+&lt;p&gt;I tried a couple of things, first the pickups, then the weapons, but half-way through each it was clear that I’d basically have to refactor a whole bunch of supporting code. Admittedly, there’re some easy wins with the default replication that’s built into the engine; things move, things spawn and you can feel good about your progress quite quickly. But the devil’s in the detail. Do things destroy themselves correctly for client and server, when either side triggers the event? Are modifications happening on the server instance and replicating correctly? Should this multi-cast or is there a better way?&lt;/p&gt;
+
+&lt;p&gt;And obviously, debugging this stuff isn’t fun when you have multiple copies of the same instance running, and try to breakpoint something.&lt;/p&gt;
+
+&lt;p&gt;I spent four days poking about at this, and although I’d made pretty reasonable progress there were bugs, little fiddly fucks that I really didn’t want to carry along with me. So yesterday I started a clean project and wrote a very simple Team Deathmatch game. Even re-built the characters from the ground up, this time using the Animation Starter Kit from the UE4 Marketplace.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/2017-05-11-TDM_8Player.png&quot; alt=&quot;TDM&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;That’s not a particularly exciting screenshot, but it’s 8 players in a TDM game mode, with a dedicated server. Players automatically join and leave teams and you can run around and kill each other.&lt;/p&gt;
+
+&lt;p&gt;If you’d told me a week ago that I’d effectively be starting from scratch to get this working I’d have given you the sad panda eyes, but now I’m on the other-side I’m happy. It was a good thing to do. I’m pretty confident I’m entering and exiting the game mode properly, I’m going through the login process and I’m cleaning transferring Player States and Controllers about. None of that was working 100% properly in the previous branch. And, I still have all the “old” code lying about. The HUDs, menus etc will “just work” when I drop them back in, and under the hood it’s going to be easier to migrate things over, piece-by-piece, test, and then move forward.&lt;/p&gt;
+
+&lt;p&gt;So, lesson of the week — and worse, something I knew anyway — if you’re making a networked game, do it from the beginning, don’t try and bolt it on afterwards.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Quite pleased I managed to get through all that without making the obvious “built to last” Bladerunner/Replicant joke.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Oh.&lt;/em&gt;&lt;/p&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>Devlog: Making Pixels Glow</title>

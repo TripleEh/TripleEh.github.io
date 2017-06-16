@@ -4,13 +4,82 @@
  <title>Triple Eh?</title>
  <link href="https://www.triple-aye.com/atom.xml" rel="self"/>
  <link href="https://www.triple-aye.com/"/>
- <updated>2017-06-01T09:16:38+03:00</updated>
+ <updated>2017-06-16T14:32:35+03:00</updated>
  <id>https://www.triple-aye.com</id>
  <author>
    <name>Gareth Noyce</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Devlog: The Price Is Right</title>
+   <link href="https://www.triple-aye.com/2017/06/03/Devlog-The-Price-Is-Right/"/>
+   <updated>2017-06-03T00:00:00+03:00</updated>
+   <id>https://www.triple-aye.com/2017/06/03/Devlog:-The-Price-Is-Right</id>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/images/price1.jpg&quot; alt=&quot;Price is right!&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;So, some lucky person on the U.S. version of The Price is Right walked away with a copy of Lumo (plus Uncharted &amp;amp; Ghostbusters) and a shiny PS4. That was a surprise, to say the least.&lt;/p&gt;
+
+&lt;p&gt;I’ve not thought about the game in a while, but Lumo’s popped up three times this week: Once in the issue of Edge I was reading, once on the PC Gamer podcast, and now this. One year on — it was released on May 24th, so happy 1st birthday, little game! — and I’m still being surprised by it.&lt;/p&gt;
+
+&lt;h1 id=&quot;next-game&quot;&gt;Next Game&lt;/h1&gt;
+
+&lt;p&gt;Last time I wrote I’d made the fairly drastic decision of binning most of my code and starting fresh, with a clean project, to build the networking from the ground up. I’ve continued down that path over the last couple of weeks, and bar a few exceptions — moving platforms, trigger spawns and a bit of front-end UI— I’m past where I was before “the great purge”.&lt;/p&gt;
+
+&lt;p&gt;Unreal’s RPC &amp;amp; replication system is actually pretty straight-forward, for the most part. And now I’ve got everything working I think I have a reasonably good understanding of it, but the documentation can definitely be improved. ShooterGame takes a fair old while to Grok.&lt;/p&gt;
+
+&lt;p&gt;I’ve ended up structuring things as follows:&lt;/p&gt;
+
+&lt;h2 id=&quot;game-mode&quot;&gt;Game Mode&lt;/h2&gt;
+
+&lt;p&gt;This mainly handles players logging in-and-out of the game session, as well as tracking which team the players are assigned to and what spawn points are available at any given time. Initial spawning (and re-spawning) are also handled here, as well as “starting” the game and passing that fact on to the Game State to track. What I’ve not done atm, but will have to go back to, is handling a clean exit out of a game and back to the main menu.&lt;/p&gt;
+
+&lt;p&gt;Oh, and acceptance of invites to a running game, but that’s probably a problem for a different area…&lt;/p&gt;
+
+&lt;p&gt;I am handling the travel between maps as the game defaults to starting in an empty one before jumping everyone to my test level when the host presses a button. That should “just work” when it comes to detecting end game logic, but we’ll see.&lt;/p&gt;
+
+&lt;h2 id=&quot;game-state&quot;&gt;Game State&lt;/h2&gt;
+
+&lt;p&gt;This is doing very little right now apart from tracking if the game is running, and telling the HUD to switch between Lobby and In-Game presentations, if so. For the co-op games it’ll be tracking everything from number of pickups &amp;amp; secrets collected, to how and why players got their score. I’d already written this code before the purge.&lt;/p&gt;
+
+&lt;h2 id=&quot;player-state&quot;&gt;Player State&lt;/h2&gt;
+
+&lt;p&gt;This is the 3rd time I’ve tried to structure a player character in UE4 and this time, rather than split things like health and score between the Character and the Player State I’ve opted to put everything not related to movement, rendering and audio into the Player State. All changes to Player State values happen on the server and replicate out. All requests for information; “Can I change to this weapon?”, “Can I pick up this item”, etc. are all server authoritative, as well.&lt;/p&gt;
+
+&lt;p&gt;Because of this there’s a lag in the update of a client player’s HUD, say when taking damage, as the new value may take a while to propagate over, but interestingly, all control related stuff is instant. I’m guessing this is the way UE4 networking is optimised internally. I’ll need to look into the HUD issues, but at a guess I can mirror values locally, do non-authoritative updates to them, and overwrite with replicated values when they appear. I doubt the player will care or notice.&lt;/p&gt;
+
+&lt;h2 id=&quot;player-controller&quot;&gt;Player Controller&lt;/h2&gt;
+
+&lt;p&gt;I not done any customisation to the default player controller at the moment.&lt;/p&gt;
+
+&lt;h2 id=&quot;player-character&quot;&gt;Player Character&lt;/h2&gt;
+
+&lt;p&gt;Re-writing this has been the biggest win, by far. It’s significantly less code than previously, and what I am replicating is done in a much cleaner fashion.&lt;/p&gt;
+
+&lt;p&gt;Important control stuff, like firing/changing weapons is server authoritative and there are multicast functions for things like playing audio cues, or hit effects. Will this feel laggy in the real world? I’m not sure, but everything I’ve read points to this being the normal way to do things, and it’s absolutely fine in the test environment.&lt;/p&gt;
+
+&lt;p&gt;I still need to put things like the damage beans back in, but that’s a five minute job…&lt;/p&gt;
+
+&lt;h2 id=&quot;other-stuff&quot;&gt;Other Stuff&lt;/h2&gt;
+
+&lt;p&gt;Because I’m networked I’ve been able to spend a few days with the weapons, armour and damage calculations. I’ve ended up creating custom Damage Types, which I’m passing through the normal UE4 damage system. These are dead handy, and it means I can detect what weapon has been used, who fired it, and even scale damage down for things like my own rocket jumps. Or, muhaha, scale up because the player is on a multiplier…&lt;/p&gt;
+
+&lt;p&gt;This obviously opens up the whole balancing can-of-worms, so for now I’ve side-stepped it by using a mixture of weapon damage values from Doom 2 and Quake 1. Just to get me started, like…&lt;/p&gt;
+
+&lt;p&gt;My double barrel shotgun is fucking lethal, though. You do not want to be meeting that in a dark corridor.&lt;/p&gt;
+
+&lt;p&gt;Armour has been interesting, not only how to scale the damage, but how to split the percentages between absorption and immediate health deductions. I can already tell that I’ll be moving this lever up and down until release…&lt;/p&gt;
+
+&lt;p&gt;…&lt;/p&gt;
+
+&lt;p&gt;It was a nervy few days, starting again, but it was the right choice. Doing networking with a bunch of existing code, that you need to break in many ways in the effort to rebuild, was absolutely the wrong way to go. So even though my current build doesn’t have the nice front end, and my test level is just a bunch of unused FBX files that haven’t even been imported, I have the basis for everything else going forward: a networked pvp environment that I can drop onto any level.&lt;/p&gt;
+
+&lt;p&gt;Next up, animating this fella, before exploring how to do some AI against co-op chums.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Copper.jpg&quot; alt=&quot;Copper&quot; /&gt;&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Devlog: Replication</title>

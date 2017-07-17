@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Devlog: Oh Behave... &middot; Triple Eh?
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/Boing.png">
+  <link rel="shortcut icon" href="/public/Boing.png">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body class="theme-base-09">
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>Triple Eh? Ltd.</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Blog</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/archive/">Archive</a>
+        
+      
+    
+      
+    
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+	
+		<span class="sidebar-nav-item">Follow me:</span>
+		<a class="sidebar-nav-item" href="https://twitter.com/korruptor">- Twitter</a>
+		<a class="sidebar-nav-item" href="https://www.youtube.com/channel/UC6H2Ql7vVE4hHc-GNkMK8bQ">- You Tube</a>
+		<a class="sidebar-nav-item" href="https://triple-eh.tumblr.com">- Tumblr</a>
+		<span class="sidebar-nav-item">Games:</span>
+		<a class="sidebar-nav-item" href="http://play-lumo.com/">- Lumo</a>
+		<span class="sidebar-nav-item">Web:</span>
+		<a class="sidebar-nav-item" href="http://triple-eh.net">- Triple Eh?</a>
+		<a class="sidebar-nav-item" href="http://triple-eh.net/presskit/index.php">- Press Kit</a>
+		<span class="sidebar-nav-item">Feed:</span>
+		<a class="sidebar-nav-item" href="https://triple-aye.net/atom.xml">- Atom Feed</a>
+  	<a class="sidebar-nav-item" href="https://triple-aye.net/feed.json">- JSON Feed</a>
+   </nav>
+
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2017. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Triple Eh?</a>
+            <small></small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <h1 class="post-title">Devlog: Oh Behave...</h1>
+  <span class="post-date">17 Jul 2017</span>
+  <p><img src="/images/2017-07-14-Behave.png" alt="Behaviour Tree" /></p>
+
+<p>Finally. I’ve got around to some game-play programming…</p>
+
+<p>My natural instinct when approaching this is to getting busy building a finite state machine, the core of which can be shared over the AI in my game, and then start building some instances to see what I like and what I don’t.</p>
+
+<p>UE4, unsurprisingly, is reasonably opinionated about how you should approach this and has its own system: Behaviour Trees. I’ve seen the BT system mentioned by quite a few devs over the last couple of months, and read bits and pieces about how to use it prior to rolling up my sleeves. I was quite excited to jump-in, but over the course of the last ten days I think I’ve gone through at least half of the seven stages of grief just trying to find a way of working with it that I can live with…</p>
+
+<p>One reason for this — and the thing that consistently annoys me about learning modern tools — is the absolute piss-poor state of documentation. I will never understand why people think scrubbing through hours of video is better than concise, written explanations of something, but there you go. Good technical documentation is a dying breed.</p>
+
+<p>The BT system does do slightly better than expected in this regard, as there’s a relatively skinny HOWTO that walks you through the basics, but A) It’s blueprint orientated and B) AI also has to drive animation, and audio, and oh-my-god-stuff-needs-to-be-replicated-and-why-the-fuck-isn’t-this-working-what-the-fuck-simple-thing-have-I-missed-now <em>sob</em>. Etc.</p>
+
+<p>Ok, I’m slightly exaggerating, but after a day of use my initial impression of the whole thing was that it was a teensy bit over engineered. Not designed for me. And I didn’t like it.</p>
+
+<p>I’ve slightly changed my mind since…</p>
+
+<p>–</p>
+
+<p>My simple starter AI character has a few states:</p>
+<ul>
+  <li>Idle</li>
+  <li>Idle at attention</li>
+  <li>Patrolling</li>
+  <li>Trying to get close to the Player</li>
+  <li>Leeroy Jenkins</li>
+  <li>Looking for a player that it’s just lost sight of</li>
+</ul>
+
+<p>Some of this information needs to be passed to the animation blueprint (being at attention, for example, or aiming at something) so the correct set of animations get played. Some of this information needs to be replicated, so clients see the correct thing.</p>
+
+<p>A Behaviour Tree’s Blackboard is basically designed to support this, being a slightly decoupled place to store data that a BT uses to make decisions, and that the rest of your code can then modify &amp; grab, as required. But that means touch-points in multiple places; the character blueprint, custom events to populate the animation blueprint, the AI Controller… in addition to the things that make the BT tick: the functions that make decisions and the services that perform checks.</p>
+
+<p>I really don’t like this. Debugging this stuff is a fucking nightmare. You end up with windows and breakpoints everywhere, and the relevant data is spread too far. I like my parameters in one place and I like to be able to quickly read state at runtime, preferably in one place, so my first foray into this wonderful world (using blueprints only) gave me the heebie jeebies, and worse, didn’t end up working correctly. I have no idea why.</p>
+
+<p><img src="/images/2017-07-14-DebuggingMess.png" alt="Mess" /></p>
+
+<p>By this point I’ve gone through the first three stages of grief, although mostly “Anger and Frustration”. So I decided in the “Depression” stage to have a go at a pure C++ AI, and check out what else the engine had to offer. This lead me to the AI Perception system, which on paper looks great: Sight, Sound, Damage and Touch events for your AI, just by adding a simple component. Woo! And at least half of that system works! The rest, largely undocumented, doesn’t appear to, but it’s labelled WIP so this is either my fault, or there’s some arcane magic that I’m missing.</p>
+
+<p>After an hour I really couldn’t be arsed stepping through the code to work out which, so I reverted back to the old Pawn Sensing stuff. This clearly isn’t as good, and it doesn’t provide anywhere near as fancy debugging output (which I’m a sucker for) but it works, and I could move on.</p>
+
+<p>After a day I had my FSM, a little AI dude, a derivation of the player weapons that the AI could use to kill me, and everything was working in co-op with a connected second player. Hurrah! Except that’s only the tip of the iceberg. This stuff only looks good, or becomes convincing, when the transitions between the states have some range of probability, a bit of variation, and reactions can be deferred a little. This means adding transitional states, which means FSMs in code quickly become unwieldy. Adding time delays to state changes also makes things harder to read…</p>
+
+<p>I wasn’t excited about carrying this forward and then having to debug it at some point in the future, and I do want something a tiny bit more advanced that Doom’s AI, so on reflection, straight C++ didn’t seem like the best bet either.</p>
+
+<p>The upward turn (grief stage 5, apparently) was when I worked out how to use BTs with C++. Even moving the tasks — operations in a BT that do something to the character or it’s data — to C++ is a massive win. I can debug my character, my controller and individual AI tasks within Visual Studio, with a decent call-stack and inspector, and use the BT to add in all the little random waits, variations, or sub-routes, without clogging up the code. Things immediately started looking better.</p>
+
+<p>Behaviour Trees also make the Environment Query System a tad easier to use and it seems like something that’s potentially cool, but I’ll be honest, I’m still on the up-hill climb with this. Have a look for yourself.</p>
+
+<p><img src="/images/2017-07-14-EQS.png" alt="EQS" /></p>
+
+<p>Spot the system written by a coder, for a coder.</p>
+
+<p>So far I’ve been able to use the EQS to generate random places to look for a player when the AI loses them, and random locations around the player, so the AI isn’t a stationary target when engaging. But I need to spend more time to actually understand how to use this system properly. Having the AI run for cover, or flank the player, would be cool and eminently doable.</p>
+
+<p><img src="/images/2017-07-14-DebuggingInGame.PNG" alt="In Game" /></p>
+
+<p>So where am I now?</p>
+
+<p>Well, the header image shows the BT I ended up with after all of this experimentation. One thing that’s abundantly clear is that using a BT to sense and make state decisions dynamically, each frame, isn’t the way to go. The stack of conditionals you end up with prior to running sequences and progressing down the tree is messy, and still not fun to debug. I’m going to re-do this next week, but with a stored “current state” that pulls from an enumerated list in the Blackboard. I’ll combine the pawn-sensing, via the AI controller, with the simple tests in the BT to change state at given circumstances, and write a small set of methods in the AI controller to set the animation params, replicate, and /or call multicast stuff for clients.</p>
+
+<p>I think this will reduce the surface area for debugging, make the BT itself a bit cleaner, and leave me with a small collection of C++ BT Tasks that I can re-use.</p>
+
+<p>But those could be famous last words of stage 7; acceptance and hope.</p>
+
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2017/06/26/Devlog-Frigging-in-the-Rigging">
+            Devlog: Frigging in the Rigging...
+            <small>26 Jun 2017</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2017/06/03/Devlog-The-Price-Is-Right/">
+            Devlog: The Price Is Right
+            <small>03 Jun 2017</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2017/05/12/Devlog-12.05.17-Replication/">
+            Devlog: Replication
+            <small>12 May 2017</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+  </body>
+</html>

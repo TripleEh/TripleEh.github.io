@@ -136,7 +136,41 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="https://www.triple-aye.com/2017/04/29/Devlog-Making-Pixels-Glow/">
+      <a href="http://localhost:4000/2017/05/12/Devlog-12.05.17-Replication/">
+        Devlog: Replication
+      </a>
+    </h1>
+
+    <span class="post-date">12 May 2017</span>
+
+    <p>First week back on Next Game, for oooh, a few weeks, and time to tackle the networking side of things. I had an inkling that retro-fitting multiplayer into the work I’d already done would be a bit of a ball-ache, but I was wrong. It was a massive fucking pain in the hairy-tits.</p>
+
+<p>The problem wasn’t so much that I didn’t understand the theory behind it all — although it does take a while to bed-in, and in all honesty Epic could really do with providing some better documentation on the C++ side of things — but that switching something simple, like the character responses to items being picked up, involves changing a lot of small bits of code in various classes. So where, sensibly, do you start?</p>
+
+<p>I tried a couple of things, first the pickups, then the weapons, but half-way through each it was clear that I’d basically have to refactor a whole bunch of supporting code. Admittedly, there’re some easy wins with the default replication that’s built into the engine; things move, things spawn and you can feel good about your progress quite quickly. But the devil’s in the detail. Do things destroy themselves correctly for client and server, when either side triggers the event? Are modifications happening on the server instance and replicating correctly? Should this multi-cast or is there a better way?</p>
+
+<p>And obviously, debugging this stuff isn’t fun when you have multiple copies of the same instance running, and try to breakpoint something.</p>
+
+<p>I spent four days poking about at this, and although I’d made pretty reasonable progress there were bugs, little fiddly fucks that I really didn’t want to carry along with me. So yesterday I started a clean project and wrote a very simple Team Deathmatch game. Even re-built the characters from the ground up, this time using the Animation Starter Kit from the UE4 Marketplace.</p>
+
+<p><img src="/images/2017-05-11-TDM_8Player.png" alt="TDM" /></p>
+
+<p>That’s not a particularly exciting screenshot, but it’s 8 players in a TDM game mode, with a dedicated server. Players automatically join and leave teams and you can run around and kill each other.</p>
+
+<p>If you’d told me a week ago that I’d effectively be starting from scratch to get this working I’d have given you the sad panda eyes, but now I’m on the other-side I’m happy. It was a good thing to do. I’m pretty confident I’m entering and exiting the game mode properly, I’m going through the login process and I’m cleaning transferring Player States and Controllers about. None of that was working 100% properly in the previous branch. And, I still have all the “old” code lying about. The HUDs, menus etc will “just work” when I drop them back in, and under the hood it’s going to be easier to migrate things over, piece-by-piece, test, and then move forward.</p>
+
+<p>So, lesson of the week — and worse, something I knew anyway — if you’re making a networked game, do it from the beginning, don’t try and bolt it on afterwards.</p>
+
+<p><em>Quite pleased I managed to get through all that without making the obvious “built to last” Bladerunner/Replicant joke.</em></p>
+
+<p><em>Oh.</em></p>
+
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://localhost:4000/2017/04/29/Devlog-Making-Pixels-Glow/">
         Devlog: Making Pixels Glow
       </a>
     </h1>
@@ -179,7 +213,7 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="https://www.triple-aye.com/2017/04/08/Devlog-08.04.17/">
+      <a href="http://localhost:4000/2017/04/08/Devlog-08.04.17/">
         Devlog - 08.04.17
       </a>
     </h1>
@@ -252,7 +286,7 @@ stuff off other developers now and again.</p>
   
   <div class="post">
     <h1 class="post-title">
-      <a href="https://www.triple-aye.com/2017/04/08/Devlog-17.03.17/">
+      <a href="http://localhost:4000/2017/04/08/Devlog-17.03.17/">
         Devlog - 17.03.17
       </a>
     </h1>
@@ -365,7 +399,7 @@ quality. Certainly not on a scale as grand and as beautiful as this.</p>
   
   <div class="post">
     <h1 class="post-title">
-      <a href="https://www.triple-aye.com/2017/03/08/Devlog-08.03.17/">
+      <a href="http://localhost:4000/2017/03/08/Devlog-08.03.17/">
         Devlog - 08.03.17
       </a>
     </h1>
@@ -431,125 +465,6 @@ to change. It’s heading in the right direction, though.</p>
 <p><a href="/images/2017-03-08-TestLevel_Armour.jpg"><img src="/images/2017-03-08-TestLevel_Armour.jpg" alt="Screenie" /></a></p>
 
 <p><a href="/images/2017-03-08-TestLevel_Corridor2.jpg"><img src="/images/2017-03-08-TestLevel_Corridor2.jpg" alt="Screenie" /></a></p>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="https://www.triple-aye.com/2017/02/24/Devlog-24.02.17/">
-        Devlog - 24.02.17
-      </a>
-    </h1>
-
-    <span class="post-date">24 Feb 2017</span>
-
-    <p>Oops, I missed a week and the devlog is late. Sorry! Game Dev and all that. Shipping late’s what we do…</p>
-
-<p>I put off posting as I was hopeful that I’d have something nice to show, but things haven’t quite worked out as planned:</p>
-
-<h2 id="next-game">Next Game</h2>
-
-<p>I added a damage effect –  the “damage beans” – on the screen edges to indicate that the player’s been hurt. It’s a simple post-process overlay, but with a normal map  added you get a nice distortion of the 
-screen as it fades in and out. Standard stuff for the most part. Except I have two versions, one that’s a blood-splat, and one that’s a nice high-res picture of actual baked beans. :D</p>
-
-<p>I’ve also had a quick play with the audio system in UE4. My natural inclination is to integrate FMOD, but I’m hearing from fellow developers on Mastodon that UE4’s system is pretty good, and from the quick tests 
-it might well be. Audio attenuation and geometry occlusion definite seem to work, which could be enough for what I need.</p>
-
-<p>But for the last 10 days or so I’ve been playing around with look and feel tests.</p>
-
-<p><img src="/images/17.02.17-SkyBox.jpg" alt="Nice skies" /></p>
-
-<p>This skybox got me into a lot of trouble.</p>
-
-<p>My intention with Next Game is to do everything quite low-poly and avoid as much texturing as possible. One reason for that is to look different, but texturing and modelling 
-take time, and time/money aren’t something that I have a lot of. If I have to get into texturing then I’d probably go for something old-school, like Gibhard or Strafe, but for obvious reasons I’d like to avoid that. 
-I think every man and his dog will be doing that style in a year or two…</p>
-
-<p>Unfortunately having a super realistic skybox lead me down a path where geometry got a bit too complex, and things rapidly looked incongruous when flat-shaded with high quality lighting. Basically, I couldn’t get it to look good unless it was
-extremely high-contrast. Which was unplayable. Although, I did spend a day flirting with an entirely black-and-white grading that I might go back to for some levels.</p>
-
-<p>Anyway, I’ve thrown away all that work. All the geometry modelled so far, the test level, the greybox, all the materials and all the textures. That stung a bit.</p>
-
-<p>This week I started again, but from a better footing: I chose a nice, harmonious, palette, and put a simple gradient in the sky-box. The palette is very limited: four base colours, four shades of each colour, and a gradient from top to bottom of each colour. I’ll 
-most likely add to that over time, but for now this is working well.</p>
-
-<p>UV-unwrapping can be done extremely quickly. Anything single colour can just be atlas unwrapped and pushed over the appropriate shade in the texture, while things with gradients just need a little 
-more attention to align them properly. Because the palette is fixed, everything sits in the scene, and with some lightmass settings tweaked I’m getting really rich colour gradients, colour bounces being picked up and 
-deep shadows. It looks better, basically. It’s also super colourful, to the point of being cartoony – far too much for this game – but I find it easier to turn everything up to 11 and then slowly dial it in over time. (Early screenshots of Lumo are
-practically black because I was shooting for a Scooby-Doo vibe. The final game looks nothing like it…)</p>
-
-<p>What needs sorting out now is the correct scale for things. My character moves extremely quickly, and rocket jumps go for miles. This will take a bit of two-and-fro, but that’s next week’s mission. At the minute everything’s a little too big but I find it quite endearing. Iterate, iterate.</p>
-
-<h2 id="neutrino">Neutrino</h2>
-
-<p><img src="/images/2017-02-19-TilemapAddRemove.png" alt="Tilemap Editor" /></p>
-
-<p>Still train-coding my way through this and the big news is, the tile map editor that I said I’d never write is basically done. It’s missing the ability to create re-usable brushes from placed tiles, so I might go back and add that at some point, but bar some tidying up and 
-deciding on the save format it’s doing what I’ll need.  This threw up a couple of interesting things.</p>
-
-<p>I was about to delve into the murk of C’s directory and file-handling, which is annoyingly different depending on the platform, but decided to have a quick search through Github to see what was already out there, and came across this little gem: <a href="https://github.com/cxong/tinydir">Tinydir</a>, 
- works brilliantly.</p>
-
-<p>While testing the tilemap editor I thought I’d throw in some massive numbers to see how it performed. Turns out things started crawling pretty quickly, which was er, a shock. After pushing it through Richard Mitton’s <a href="http://www.codersnotes.com/sleepy/">Very Sleepy</a> 
-the hot spot seemed to be in how I’m populating the VBOs, which again, was a bit of a surprise. This was supposed to be an optimised version of what I’d written a few years back on iOS…</p>
-
-<p>For some reason I was only getting ~8k sprites per frame. I was expecting quite a few more. The culprit was this line:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>mTransform = mTranslate * mRotation * mScale;
-</code></pre>
-</div>
-
-<p>Pretty standard stuff, this is just creating the translation matrix which I’m pushing all my vertices through before copying the result into the VBO. (Yes, at some point I should just do all that into the shader…)  I’ve done this before and had much better performance, 
-except then I was using my own math class, and this time I’m using <a href="http://glm.g-truc.net/0.9.8/index.html">OpenGL Math</a>. I figured it’d  be better to pass off the optimisation and maintenance of my maths stuff to, well, people that know some maths.</p>
-
-<p>So I dug into the operator * overload:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>GLM_FUNC_QUALIFIER tmat4x4&lt;T, P&gt; operator*(tmat4x4&lt;T, P&gt; const &amp; m1, tmat4x4&lt;T, P&gt; const &amp; m2)
-{
-	typename tmat4x4&lt;T, P&gt;::col_type const SrcA0 = m1[0];
-	typename tmat4x4&lt;T, P&gt;::col_type const SrcA1 = m1[1];
-	typename tmat4x4&lt;T, P&gt;::col_type const SrcA2 = m1[2];
-	typename tmat4x4&lt;T, P&gt;::col_type const SrcA3 = m1[3];
-
-	typename tmat4x4&lt;T, P&gt;::col_type const SrcB0 = m2[0];
-	typename tmat4x4&lt;T, P&gt;::col_type const SrcB1 = m2[1];
-	typename tmat4x4&lt;T, P&gt;::col_type const SrcB2 = m2[2];
-	typename tmat4x4&lt;T, P&gt;::col_type const SrcB3 = m2[3];
-
-	tmat4x4&lt;T, P&gt; Result(uninitialize);
-	Result[0] = SrcA0 * SrcB0[0] + SrcA1 * SrcB0[1] + SrcA2 * SrcB0[2] + SrcA3 * SrcB0[3];
-	Result[1] = SrcA0 * SrcB1[0] + SrcA1 * SrcB1[1] + SrcA2 * SrcB1[2] + SrcA3 * SrcB1[3];
-	Result[2] = SrcA0 * SrcB2[0] + SrcA1 * SrcB2[1] + SrcA2 * SrcB2[2] + SrcA3 * SrcB2[3];
-	Result[3] = SrcA0 * SrcB3[0] + SrcA1 * SrcB3[1] + SrcA2 * SrcB3[2] + SrcA3 * SrcB3[3];
-	return Result;
-}
-</code></pre>
-</div>
-
-<p>Ow. That’s creating a lot of vec4 variables over the course of a few thousand sprites.</p>
-
-<p>I admit, I’m learning GLM as I go, and maybe there’re some functions to do mat4 multiplications in place but the docs make my nose bleed, and to be honest I couldn’t be arsed to trawl through it all.</p>
-
-<p>So instead of using a glm::mat4, my matrix is now a simple array, allocated at the start of the function, that only contains the scale and rotation. I can push the sprite corners through this 
-and add the translation, and remove a lot of obviously zero multiplications from the process.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>vBL.x = (vBL_Pos-&gt;x * s_mTransMat[0]) + (vBL_Pos-&gt;y * s_mTransMat[1]) + vPos-&gt;x;
-vBL.y = (vBL_Pos-&gt;y * s_mTransMat[3]) + (vBL_Pos-&gt;y * s_mTransMat[4]) + vPos-&gt;y;
-vBL.z = vPos-&gt;z;
-
-etc. etc. 
-
-</code></pre>
-</div>
-
-<p>This is fine for 2D stuff, which is all I intend to use this engine for.</p>
-
-<p>And the result? About a 15x speed-up. In fact, I get exactly the same number of sprites out of a single thread on my X1 laptop, as I do on my big fat devrig: ~150k @ 60fps.</p>
-
-<p>I’ll probably look to multi-thread this once the physics engine and fmod have been integrated, but for now it’s more than good enough for a little shoot-em-up.</p>
-
-<p>The moral of the story: Future Gareth, you should probably look into how to use GLM properly.</p>
-
 
   </div>
   

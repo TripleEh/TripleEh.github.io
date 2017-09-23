@@ -95,6 +95,10 @@
         
       
     
+      
+        
+      
+    
 	
 		<span class="sidebar-nav-item">Follow me:</span>
 		<a class="sidebar-nav-item" href="https://twitter.com/korruptor">- Twitter</a>
@@ -133,6 +137,79 @@
 
       <div class="container content">
         <div class="posts">
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://localhost:4000/2017/06/03/Devlog-The-Price-Is-Right/">
+        Devlog: The Price Is Right
+      </a>
+    </h1>
+
+    <span class="post-date">03 Jun 2017</span>
+
+    <p><img src="/images/price1.jpg" alt="Price is right!" /></p>
+
+<p>So, some lucky person on the U.S. version of The Price is Right walked away with a copy of Lumo (plus Uncharted &amp; Ghostbusters) and a shiny PS4. That was a surprise, to say the least.</p>
+
+<p>I’ve not thought about the game in a while, but Lumo’s popped up three times this week: Once in the issue of Edge I was reading, once on the PC Gamer podcast, and now this. One year on — it was released on May 24th, so happy 1st birthday, little game! — and I’m still being surprised by it.</p>
+
+<h1 id="next-game">Next Game</h1>
+
+<p>Last time I wrote I’d made the fairly drastic decision of binning most of my code and starting fresh, with a clean project, to build the networking from the ground up. I’ve continued down that path over the last couple of weeks, and bar a few exceptions — moving platforms, trigger spawns and a bit of front-end UI— I’m past where I was before “the great purge”.</p>
+
+<p>Unreal’s RPC &amp; replication system is actually pretty straight-forward, for the most part. And now I’ve got everything working I think I have a reasonably good understanding of it, but the documentation can definitely be improved. ShooterGame takes a fair old while to Grok.</p>
+
+<p>I’ve ended up structuring things as follows:</p>
+
+<h2 id="game-mode">Game Mode</h2>
+
+<p>This mainly handles players logging in-and-out of the game session, as well as tracking which team the players are assigned to and what spawn points are available at any given time. Initial spawning (and re-spawning) are also handled here, as well as “starting” the game and passing that fact on to the Game State to track. What I’ve not done atm, but will have to go back to, is handling a clean exit out of a game and back to the main menu.</p>
+
+<p>Oh, and acceptance of invites to a running game, but that’s probably a problem for a different area…</p>
+
+<p>I am handling the travel between maps as the game defaults to starting in an empty one before jumping everyone to my test level when the host presses a button. That should “just work” when it comes to detecting end game logic, but we’ll see.</p>
+
+<h2 id="game-state">Game State</h2>
+
+<p>This is doing very little right now apart from tracking if the game is running, and telling the HUD to switch between Lobby and In-Game presentations, if so. For the co-op games it’ll be tracking everything from number of pickups &amp; secrets collected, to how and why players got their score. I’d already written this code before the purge.</p>
+
+<h2 id="player-state">Player State</h2>
+
+<p>This is the 3rd time I’ve tried to structure a player character in UE4 and this time, rather than split things like health and score between the Character and the Player State I’ve opted to put everything not related to movement, rendering and audio into the Player State. All changes to Player State values happen on the server and replicate out. All requests for information; “Can I change to this weapon?”, “Can I pick up this item”, etc. are all server authoritative, as well.</p>
+
+<p>Because of this there’s a lag in the update of a client player’s HUD, say when taking damage, as the new value may take a while to propagate over, but interestingly, all control related stuff is instant. I’m guessing this is the way UE4 networking is optimised internally. I’ll need to look into the HUD issues, but at a guess I can mirror values locally, do non-authoritative updates to them, and overwrite with replicated values when they appear. I doubt the player will care or notice.</p>
+
+<h2 id="player-controller">Player Controller</h2>
+
+<p>I not done any customisation to the default player controller at the moment.</p>
+
+<h2 id="player-character">Player Character</h2>
+
+<p>Re-writing this has been the biggest win, by far. It’s significantly less code than previously, and what I am replicating is done in a much cleaner fashion.</p>
+
+<p>Important control stuff, like firing/changing weapons is server authoritative and there are multicast functions for things like playing audio cues, or hit effects. Will this feel laggy in the real world? I’m not sure, but everything I’ve read points to this being the normal way to do things, and it’s absolutely fine in the test environment.</p>
+
+<p>I still need to put things like the damage beans back in, but that’s a five minute job…</p>
+
+<h2 id="other-stuff">Other Stuff</h2>
+
+<p>Because I’m networked I’ve been able to spend a few days with the weapons, armour and damage calculations. I’ve ended up creating custom Damage Types, which I’m passing through the normal UE4 damage system. These are dead handy, and it means I can detect what weapon has been used, who fired it, and even scale damage down for things like my own rocket jumps. Or, muhaha, scale up because the player is on a multiplier…</p>
+
+<p>This obviously opens up the whole balancing can-of-worms, so for now I’ve side-stepped it by using a mixture of weapon damage values from Doom 2 and Quake 1. Just to get me started, like…</p>
+
+<p>My double barrel shotgun is fucking lethal, though. You do not want to be meeting that in a dark corridor.</p>
+
+<p>Armour has been interesting, not only how to scale the damage, but how to split the percentages between absorption and immediate health deductions. I can already tell that I’ll be moving this lever up and down until release…</p>
+
+<p>…</p>
+
+<p>It was a nervy few days, starting again, but it was the right choice. Doing networking with a bunch of existing code, that you need to break in many ways in the effort to rebuild, was absolutely the wrong way to go. So even though my current build doesn’t have the nice front end, and my test level is just a bunch of unused FBX files that haven’t even been imported, I have the basis for everything else going forward: a networked pvp environment that I can drop onto any level.</p>
+
+<p>Next up, animating this fella, before exploring how to do some AI against co-op chums.</p>
+
+<p><img src="/images/Copper.jpg" alt="Copper" /></p>
+
+  </div>
   
   <div class="post">
     <h1 class="post-title">
@@ -394,77 +471,6 @@ quality. Certainly not on a scale as grand and as beautiful as this.</p>
 <p>Anyway, I’ve got that Friday feeling, and I’ve only one Divine Beast left to do.</p>
 
 <p>Maybe a quick go before I get back to doing some real work. Next week…</p>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="http://localhost:4000/2017/03/08/Devlog-08.03.17/">
-        Devlog - 08.03.17
-      </a>
-    </h1>
-
-    <span class="post-date">08 Mar 2017</span>
-
-    <p>Early update, this time, as I’m off to the UK for a wedding. Because of that – and because I’m meeting up with a friend 
-who’s helping me with some concept art – it’s been a race-to-make-a-face since my last post.</p>
-
-<h2 id="next-game">Next Game</h2>
-
-<p><a href="/images/2017-03-08-TestLevel_Courtyard2.jpg"><img src="/images/2017-03-08-TestLevel_Courtyard2.jpg" alt="Screenie" /></a></p>
-
-<p>The second iteration of the test level is basically done. As I said, it’s super chunky and super low-poly, but it looks a lot better than my 
-first iteration. And I can get very dark areas, as well as very light areas. Pretty important for a Quake-a-like.</p>
-
-<p>Although this scene is essentially outdoor, I don’t actually think I’ll do that in many of the levels. My plan for most of it is 
-to do something darker and not as well lit, but for the purposes of a test I just wanted to see if I could do both. So I’ve aped a bit of the 
-Quake 1 start thing, and done an imaginary “intro” level.</p>
-
-<p>There’s a lot wrong with it; the scale is on the, er, large side – but the minute you start rocket jumping that’s less of a problem –  there’s a lack of secondary motion – wibbly grass, lights swaying, stuff like that – 
-and hardly any props to dress the scene. Although the colours work for me, a bit more detail would definitely help.</p>
-
-<p>I’m not too bothered about all this atm, the main function 
-of the test was to find a workflow that’s quick enough to let me bang out [reasonably] good looking geometry, and the lack of texturing definitely helps that. I’ve
-gone from zero to a level I can run around, in 8 days. And half that time’s been trying to understand lighting.  Nearly all the missing things 
-will happen over time and I can dress the scenes with more props as and when I make them. It’s how I worked the environment in Lumo.</p>
-
-<p>I’m still toying with the idea of bevelling the larger geometry pieces as 
-the extra edges would play in the light. Nintendo do this all the time in Mario and Zelda, so it might be worth a test…</p>
-
-<p>Anyway. After the mild depression at going down the wrong path and throwing out a couple of week’s work, this whole exercise turned out to be super useful. The untextured “matte” look forced me to work out how the baked lighting is applied, especially 
-when the various shadow schemes are thrown into the mix. There’s no where to hide so setting this up was a lot of trial and error, not helped by the 
-fact that my lighting build-quality was set to “preview” for God knows how long. That flushed out lots of stupid things, but derp. Fucking idiot, etc.</p>
-
-<p>The Modo side of things has been great, although it took me a long time to uvunwrap for clean bakes.  Initially I was just ignoring it, letting the UE importer 
-generate the lightmaps and then wondering why I had dirty big splotches everywhere. Then I started adding a second UV channel in the model to mitigate, 
-which gives some control over how the model parts are split. But the real-trick, which it took me a couple of days to clock-on to, is making sure edges/verts 
-are clamped to texel boundaries. In Modo this is trivial, you can set the UVGrid to 1/64, and then use the snapping tool to make sure that edges/verts are all 
-nice and clean. It’s a bit handraulic, but if done right, a one shot deal.  I think.</p>
-
-<p>I still have some light-bleeding in parts of the level, but this is either where I’ve not added an edge to the wall (one model) where it meets the floors 
-(a different model), or have a polygon that extrudes through the wall, so catches the light and the dark. The second issue is just me not knowing what I was<br />
-doing at the start and then being too lazy to go back in and fix it. You can see it on the window frames.</p>
-
-<p>I’ve also had a good play around with Cascade, and although I don’t feel as confident with it as Unity’s particle system, I’m able to do the basics. The same 
-can be pretty much said for the material editor. I’m hoping to pick stuff up via osmosis and concentrate on the big things for the foreseeable.</p>
-
-<p>Code-wise, I don’t think I’ve had any problems. I’ve even started doing a few things – the on screen messages for example – in Blueprints. Quick and dirty is, 
-as Quick and Dirty does, and all that.</p>
-
-<p>I’ve stuck a little video of all this up on You Tube. It should go without saying that the Quake 1 sound effects won’t be there for long, and everything is liable 
-to change. It’s heading in the right direction, though.</p>
-
-<div style="text-align: center"><iframe width="560" height="315" src="https://www.youtube.com/embed/gxeUt0OoUMo" frameborder="0" allowfullscreen=""></iframe><p>&nbsp;</p></div>
-
-<p>Click screenies to enbiggen.</p>
-
-<p><a href="/images/2017-03-08-TestLevel_Underground.jpg"><img src="/images/2017-03-08-TestLevel_Underground.jpg" alt="Screenie" /></a></p>
-
-<p><a href="/images/2017-03-08-TestLevel_TP1.jpg"><img src="/images/2017-03-08-TestLevel_TP1.jpg" alt="Screenie" /></a></p>
-
-<p><a href="/images/2017-03-08-TestLevel_Armour.jpg"><img src="/images/2017-03-08-TestLevel_Armour.jpg" alt="Screenie" /></a></p>
-
-<p><a href="/images/2017-03-08-TestLevel_Corridor2.jpg"><img src="/images/2017-03-08-TestLevel_Corridor2.jpg" alt="Screenie" /></a></p>
 
   </div>
   

@@ -95,6 +95,10 @@
         
       
     
+      
+        
+      
+    
 	
 		<span class="sidebar-nav-item">Follow me:</span>
 		<a class="sidebar-nav-item" href="https://twitter.com/korruptor">- Twitter</a>
@@ -133,6 +137,66 @@
 
       <div class="container content">
         <div class="posts">
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://localhost:4000/2017/09/23/Devlog-Curves/">
+        Devlog: Curves
+      </a>
+    </h1>
+
+    <span class="post-date">23 Sep 2017</span>
+
+    <p>I’m in the process of packing up my life for the move back to Tampere, so this will be the last catch-up blog until I’m setup again. Meh.</p>
+
+<h3 id="neutrino">Neutrino</h3>
+
+<p>I’ve done a fair bit more work on this, due to travel, downtime waiting for estate agents and the start of the new Semester at University. The “big” new item is the curve editor.</p>
+
+<p>I want the enemies to have pretty varied attack patterns, and although a lot of this could be done with the judicious use of Sine, you can’t beat having a decent spline to hand.</p>
+
+<p>There’re a few ways you can do this, but I’ve opted for chaining cubic Bézier curves together, as the maths is about my level.</p>
+
+<p><img src="/images/curve_math.png" alt="Maths.... Ugh" /></p>
+
+<p>Or, in code:</p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="n">glm</span><span class="o">::</span><span class="n">vec2</span> <span class="n">CalculateBezierPoint</span><span class="p">(</span><span class="k">const</span> <span class="kt">float</span> <span class="n">t</span><span class="p">,</span> <span class="k">const</span> <span class="n">glm</span><span class="o">::</span><span class="n">vec2</span><span class="o">*</span> <span class="n">p0</span><span class="p">,</span> <span class="k">const</span> <span class="n">glm</span><span class="o">::</span><span class="n">vec2</span><span class="o">*</span> <span class="n">p1</span><span class="p">,</span> <span class="k">const</span> <span class="n">glm</span><span class="o">::</span><span class="n">vec2</span><span class="o">*</span> <span class="n">p2</span><span class="p">,</span> <span class="k">const</span> <span class="n">glm</span><span class="o">::</span><span class="n">vec2</span><span class="o">*</span> <span class="n">p3</span><span class="p">)</span> 
+<span class="p">{</span>
+    <span class="kt">float</span> <span class="n">fT</span> <span class="o">=</span> <span class="n">clamp</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">);</span>
+    <span class="kt">float</span> <span class="n">u</span> <span class="o">=</span> <span class="mi">1</span> <span class="err">—</span> <span class="n">fT</span><span class="p">;</span>
+    <span class="kt">float</span> <span class="n">tt</span> <span class="o">=</span> <span class="n">fT</span><span class="o">*</span><span class="n">fT</span><span class="p">;</span>
+    <span class="kt">float</span> <span class="n">uu</span> <span class="o">=</span> <span class="n">u</span><span class="o">*</span><span class="n">u</span><span class="p">;</span>
+    <span class="kt">float</span> <span class="n">uuu</span> <span class="o">=</span> <span class="n">uu</span> <span class="o">*</span> <span class="n">u</span><span class="p">;</span>
+    <span class="kt">float</span> <span class="n">ttt</span> <span class="o">=</span> <span class="n">tt</span> <span class="o">*</span> <span class="n">fT</span><span class="p">;</span>
+    <span class="n">glm</span><span class="o">::</span><span class="n">vec2</span> <span class="n">p</span> <span class="o">=</span> <span class="n">glm</span><span class="o">::</span><span class="n">vec2</span><span class="p">(</span><span class="n">uuu</span> <span class="o">*</span> <span class="o">*</span><span class="n">p0</span><span class="p">);</span>
+    <span class="n">p</span> <span class="o">+=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">uu</span> <span class="o">*</span> <span class="n">t</span> <span class="o">*</span> <span class="o">*</span><span class="n">p1</span><span class="p">;</span>
+    <span class="n">p</span> <span class="o">+=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">u</span> <span class="o">*</span> <span class="n">tt</span> <span class="o">*</span> <span class="o">*</span><span class="n">p2</span><span class="p">;</span>
+    <span class="n">p</span> <span class="o">+=</span> <span class="n">ttt</span> <span class="o">*</span> <span class="o">*</span><span class="n">p3</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">p</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>ImGui has been a lifesaver, again, as it took very little time to put together enough UI to load, save and edit curves. There’s no real limit to the number of curves I can chain together, but in practice, two or three is more than enough. It’s simple, but it works.</p>
+
+<p><img src="/images/NeutrinoCapture_23.09.17.gif" alt="Fancy Gif" /></p>
+
+<p>The other nice addition to Neutrino, as you can see above, is embedded .GIF output. Totally stole this idea from Philip Bak, but it makes perfect sense; in a world where you need to fire out screenshots on social media as often as possible, what could be better than pressing a button and getting an animated .GIF, resized for Twitter?</p>
+
+<p>We both opted to use this single header lib from Charlie Tangora. 3 function calls and Bob’s your mother’s brother. Perfect.</p>
+
+<p>Other stuff that’s been done:</p>
+
+<ul>
+  <li>Simple timer based callbacks, so single entities don’t need to constantly poll their state, they can just ask to do something in the future.</li>
+  <li>Start of a level sequencer… This is based off the camera position, and will be responsible for doing all the spawning and in-game events. I’ll probably do a ImGui editor for this and talk about it in a future post</li>
+  <li>Roughly sketched out how enemy entities will work. I’m trying to do existence based processing using a table layout — I’m high on Data Oriented Design kool-aid — so I’ll talk about this in a future post, once I’ve worked out how I’m doing it.</li>
+  <li>Ran the codebase through Valgrind and removed a bunch of silly little memory leaks. One problem with the stop/start nature of the way I work on this is that, sometimes, if I have to stop in the middle of something, I forget to go back and clean-up after myself. I’ve got into the habit of just checking periodically in-case I’ve done something stupid. Normally I have ;D</li>
+</ul>
+
+<p>Anyway, I better get back to packing boxes ;D</p>
+
+
+  </div>
   
   <div class="post">
     <h1 class="post-title">
@@ -308,79 +372,6 @@ best not to be a completely static target. Good enough, for now, but I’ll be c
 <p>I’ve spent the rest of this week preparing to develop the character AI. I’ve created a new Game Mode for the co-op campaign, and I’m halfway through building an open space for the AI to run around in (see the screenshot at the top of this page).</p>
 
 <p>Next up: it’s all about UE4’s AI system…</p>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="http://localhost:4000/2017/06/03/Devlog-The-Price-Is-Right/">
-        Devlog: The Price Is Right
-      </a>
-    </h1>
-
-    <span class="post-date">03 Jun 2017</span>
-
-    <p><img src="/images/price1.jpg" alt="Price is right!" /></p>
-
-<p>So, some lucky person on the U.S. version of The Price is Right walked away with a copy of Lumo (plus Uncharted &amp; Ghostbusters) and a shiny PS4. That was a surprise, to say the least.</p>
-
-<p>I’ve not thought about the game in a while, but Lumo’s popped up three times this week: Once in the issue of Edge I was reading, once on the PC Gamer podcast, and now this. One year on — it was released on May 24th, so happy 1st birthday, little game! — and I’m still being surprised by it.</p>
-
-<h1 id="next-game">Next Game</h1>
-
-<p>Last time I wrote I’d made the fairly drastic decision of binning most of my code and starting fresh, with a clean project, to build the networking from the ground up. I’ve continued down that path over the last couple of weeks, and bar a few exceptions — moving platforms, trigger spawns and a bit of front-end UI— I’m past where I was before “the great purge”.</p>
-
-<p>Unreal’s RPC &amp; replication system is actually pretty straight-forward, for the most part. And now I’ve got everything working I think I have a reasonably good understanding of it, but the documentation can definitely be improved. ShooterGame takes a fair old while to Grok.</p>
-
-<p>I’ve ended up structuring things as follows:</p>
-
-<h2 id="game-mode">Game Mode</h2>
-
-<p>This mainly handles players logging in-and-out of the game session, as well as tracking which team the players are assigned to and what spawn points are available at any given time. Initial spawning (and re-spawning) are also handled here, as well as “starting” the game and passing that fact on to the Game State to track. What I’ve not done atm, but will have to go back to, is handling a clean exit out of a game and back to the main menu.</p>
-
-<p>Oh, and acceptance of invites to a running game, but that’s probably a problem for a different area…</p>
-
-<p>I am handling the travel between maps as the game defaults to starting in an empty one before jumping everyone to my test level when the host presses a button. That should “just work” when it comes to detecting end game logic, but we’ll see.</p>
-
-<h2 id="game-state">Game State</h2>
-
-<p>This is doing very little right now apart from tracking if the game is running, and telling the HUD to switch between Lobby and In-Game presentations, if so. For the co-op games it’ll be tracking everything from number of pickups &amp; secrets collected, to how and why players got their score. I’d already written this code before the purge.</p>
-
-<h2 id="player-state">Player State</h2>
-
-<p>This is the 3rd time I’ve tried to structure a player character in UE4 and this time, rather than split things like health and score between the Character and the Player State I’ve opted to put everything not related to movement, rendering and audio into the Player State. All changes to Player State values happen on the server and replicate out. All requests for information; “Can I change to this weapon?”, “Can I pick up this item”, etc. are all server authoritative, as well.</p>
-
-<p>Because of this there’s a lag in the update of a client player’s HUD, say when taking damage, as the new value may take a while to propagate over, but interestingly, all control related stuff is instant. I’m guessing this is the way UE4 networking is optimised internally. I’ll need to look into the HUD issues, but at a guess I can mirror values locally, do non-authoritative updates to them, and overwrite with replicated values when they appear. I doubt the player will care or notice.</p>
-
-<h2 id="player-controller">Player Controller</h2>
-
-<p>I not done any customisation to the default player controller at the moment.</p>
-
-<h2 id="player-character">Player Character</h2>
-
-<p>Re-writing this has been the biggest win, by far. It’s significantly less code than previously, and what I am replicating is done in a much cleaner fashion.</p>
-
-<p>Important control stuff, like firing/changing weapons is server authoritative and there are multicast functions for things like playing audio cues, or hit effects. Will this feel laggy in the real world? I’m not sure, but everything I’ve read points to this being the normal way to do things, and it’s absolutely fine in the test environment.</p>
-
-<p>I still need to put things like the damage beans back in, but that’s a five minute job…</p>
-
-<h2 id="other-stuff">Other Stuff</h2>
-
-<p>Because I’m networked I’ve been able to spend a few days with the weapons, armour and damage calculations. I’ve ended up creating custom Damage Types, which I’m passing through the normal UE4 damage system. These are dead handy, and it means I can detect what weapon has been used, who fired it, and even scale damage down for things like my own rocket jumps. Or, muhaha, scale up because the player is on a multiplier…</p>
-
-<p>This obviously opens up the whole balancing can-of-worms, so for now I’ve side-stepped it by using a mixture of weapon damage values from Doom 2 and Quake 1. Just to get me started, like…</p>
-
-<p>My double barrel shotgun is fucking lethal, though. You do not want to be meeting that in a dark corridor.</p>
-
-<p>Armour has been interesting, not only how to scale the damage, but how to split the percentages between absorption and immediate health deductions. I can already tell that I’ll be moving this lever up and down until release…</p>
-
-<p>…</p>
-
-<p>It was a nervy few days, starting again, but it was the right choice. Doing networking with a bunch of existing code, that you need to break in many ways in the effort to rebuild, was absolutely the wrong way to go. So even though my current build doesn’t have the nice front end, and my test level is just a bunch of unused FBX files that haven’t even been imported, I have the basis for everything else going forward: a networked pvp environment that I can drop onto any level.</p>
-
-<p>Next up, animating this fella, before exploring how to do some AI against co-op chums.</p>
-
-<p><img src="/images/Copper.jpg" alt="Copper" /></p>
 
   </div>
   

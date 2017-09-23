@@ -95,6 +95,10 @@
         
       
     
+      
+        
+      
+    
 	
 		<span class="sidebar-nav-item">Follow me:</span>
 		<a class="sidebar-nav-item" href="https://twitter.com/korruptor">- Twitter</a>
@@ -133,6 +137,52 @@
 
       <div class="container content">
         <div class="posts">
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://localhost:4000/2017/01/06/Dev-blog,-6th-Jan/">
+        Dev blog, 6th Jan
+      </a>
+    </h1>
+
+    <span class="post-date">06 Jan 2017</span>
+
+    <p>Happy New Year!</p>
+
+<p>Apologies. The blog was on a temporary hiatus through December, as I had to prepare for a programming course that I’m 
+due to give at TAMK University this year. That meant getting up-to-speed with the latest Unity version,<br />
+and writing a simple game that’ll form the basis of the course. As well as having a Xmas Holiday.</p>
+
+<p>But I did do some work and make some decisions. The first of which: Oh Snow! is canned. Probably forever. Why?
+Short answer; it was meant to be my toy project, not something that took a year to make, and due to teaching 
+and signing up for a Finnish language course, I basically did nothing on it. But I did learn some Unreal, so it 
+wasn’t a complete waste.</p>
+
+<p>That means <em>Next Game</em> has officially been started. Here’s a little WIP screenie:</p>
+
+<p><a href="/images/2017-01-06-PsyanceTestRoom.jpg"><img src="/images/2017-01-06-PsyanceTestRoom.jpg" alt="It's an FPS!" /></a></p>
+
+<p>Yes, it’s an FPS. No, I’ve not done any graphics or modelling yet. And yes, that’s the default UE4 character model.</p>
+
+<p>More info on <em>Next Game</em> in a later update.</p>
+
+<p>Aside from that, Unity 5.5.x, and eating mince pies(+), I’ve done some more on Neutrino. The choice of using cmake for the 
+build process turned out to be an excellent one. I thought I’d have a pop at getting the game running on windows, and although 
+the cmake gui is a bit weird, once I worked out the intricacies it spat out a Visual Studio 2015 solution and Neutrino built and ran 
+first time. And yeah, that surprised the hell out of me.</p>
+
+<p>I’ve been continuing my love-in with ImGui, and decided that the effort to parse TileD tilemaps and integrate them into everything else 
+I want to do was becoming a monumental pain in the arse. And I quite fancy rendering the tilemap through a pixel shader <a href="http://blog.tojicode.com/2012/07/sprite-tile-maps-on-gpu.html">a little like this</a>.
+So I’ve started writing a simple tilemap editor in-engine. Exactly what I said I wouldn’t do. Ahem.</p>
+
+<p>Early doors. I’m at the point where I can click a tile and move it about.</p>
+
+<p><a href="/images/2017-01-06-StartOftheTilemap.png"><img src="/images/2017-01-06-StartOftheTilemap.png" alt="It's a tilemap editor. Ish" /></a></p>
+
+<p>(+) I hate mince pies.</p>
+
+
+  </div>
   
   <div class="post">
     <h1 class="post-title">
@@ -346,38 +396,6 @@ so it’s nice when I do finally crack something. Even if it takes all day… :)
 <p>So, next up: a quick pass on the texture, then some simple poses for test anims.</p>
 
 <p>After I’ve recovered from a week in the UK! :D</p>
-
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="http://localhost:4000/2016/10/12/This-is-scary">
-        This is scary...
-      </a>
-    </h1>
-
-    <span class="post-date">12 Oct 2016</span>
-
-    <p>Quick aside: I’ve been doing a bit of work on the side project this week - mainly on the train to and from my teaching classes - and I noticed something a bit worrying. For a 
-while I’ve been wondering why my 2D framework for Neutrino appears to be pixel-fill limited on my laptop. Much more so than I expected. Jumping to 1080p in a window is enough 
-to really hit the performance, so after integrating ImGUI I dug a little 
-deeper and added some profilng.</p>
-
-<p>It turns out that the engine isn’t as slow as I thought. Internally it was vsync’d to 60, but unbound could 
-potentially hit ~1400fps. Visually, however, it was blatantly dropping frames. If anything, it looked sub Dirty Hz (30fps). Not good. So I tried glmark2 and it was showing the same problem, 
-it’d report fps in the hundreds, but visually appear dog slow.</p>
-
-<p>My laptop runs Ubuntu 16.04, and for the desktop environment I’ve been using the latest version of Cinnamon. I like it, it’s incredibly clean, good looking and does what I need. 
-The other big plus is Nemo - the file manager - which is by far my favourite thing about it. Default split-pane views ftw! But, for whatever reason, I didn’t consider that my performance problems could 
-be related to this.</p>
-
-<p>On a whim I tested the game under Unity, and lo. A silky smooth, 60fps.</p>
-
-<p>So yeah, even though Cinnamon claimed that it wasn’t running in SW rendering mode, for whatever reason, the window update wasn’t actually matching what I was outputting. Quite a big “Whoah” moment, 
-and something I thought was worth sharing. Not all desktop environments are equal, and some aren’t good for games.</p>
-
-<p>Real shame, as I can’t use Cinnamon while it’s exhibiting this kinda problem. Also doesn’t bode well for when I release something, but I’ll cross that bridge when I come to it.</p>
 
 
   </div>

@@ -4,7 +4,7 @@
  <title>Triple Eh?</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2017-09-23T13:25:55+03:00</updated>
+ <updated>2017-09-23T13:32:44+03:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Gareth Noyce</name>
@@ -50,9 +50,9 @@
 
 &lt;p&gt;&lt;img src=&quot;/images/NeutrinoCapture_23.09.17.gif&quot; alt=&quot;Fancy Gif&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;The other nice addition to Neutrino, as you can see above, is embedded .GIF output. Totally stole this idea from Philip Bak, but it makes perfect sense; in a world where you need to fire out screenshots on social media as often as possible, what could be better than pressing a button and getting an animated .GIF, resized for Twitter?&lt;/p&gt;
+&lt;p&gt;The other nice addition to Neutrino, as you can see above, is embedded .GIF output. Totally stole this idea from &lt;a href=&quot;https://twitter.com/niinegames&quot;&gt;Philip Bak&lt;/a&gt;, but it makes perfect sense; in a world where you need to fire out screenshots on social media as often as possible, what could be better than pressing a button and getting an animated .GIF, resized for Twitter?&lt;/p&gt;
 
-&lt;p&gt;We both opted to use this single header lib from Charlie Tangora. 3 function calls and Bob’s your mother’s brother. Perfect.&lt;/p&gt;
+&lt;p&gt;We both opted to use this (single header)[https://github.com/ginsweater/gif-h] lib from Charlie Tangora. 3 function calls and Bob’s your mother’s brother. Perfect.&lt;/p&gt;
 
 &lt;p&gt;Other stuff that’s been done:&lt;/p&gt;
 

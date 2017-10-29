@@ -4,13 +4,57 @@
  <title>Triple Eh?</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2017-09-23T13:32:44+03:00</updated>
+ <updated>2017-10-29T09:55:11+02:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Gareth Noyce</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Devlog: Upheaval</title>
+   <link href="http://localhost:4000/2017/10/29/Devlog-Upheaval/"/>
+   <updated>2017-10-29T00:00:00+03:00</updated>
+   <id>http://localhost:4000/2017/10/29/Devlog:-Upheaval</id>
+   <content type="html">&lt;p&gt;I’ve lost count of the number of times I’ve moved house. Enough that I should be a bit of an expert at it, or at least, not underestimate how long it takes to sort everything out once I’ve “unpacked”. As it was, the first three weeks of October were a right-off, but bar buying a new coffee machine I’m basically good to go, I‘m back on the ‘net, and I’ve just come back from a much more chilled few days in the UK to celebrate my birthday.&lt;/p&gt;
+
+&lt;p&gt;Go go go!&lt;/p&gt;
+
+&lt;p&gt;Unfortunately, a few more things changed than just my location. It’s been a weird month.&lt;/p&gt;
+
+&lt;h2 id=&quot;next-game&quot;&gt;Next Game&lt;/h2&gt;
+
+&lt;p&gt;I’ve not written about this in detail for a while, mainly because progress has been so stop-start it’s been hard to wrap-up the work into an interesting post.&lt;/p&gt;
+
+&lt;p&gt;Where am I? I think from the code point of view I’ve got pretty much everything in place for a networked, multi-player game. Steam integration is working, you can join / leave hosted games through friend invites, browsing for public hosted games works, the co-op and TDM modes work, environmental stuff like trigger operated doors and moving platforms are in, pick-ups, weapon types, ammo, projectiles, area explosions, AI spawning, death— everything you’d expect from a game of Quake — is in and working. But it’s hit a wall.&lt;/p&gt;
+
+&lt;p&gt;I’ve lost some collaborators (totally understandably, and I’m amazingly grateful for their help to-date) and I’ve not got the money to sub-contract out in order to hit the quality bar that I want. So I’m left with a choice: rollback on the art/audio/VFX-sides, and maybe go for something like Strafe or Gibhard, or, come back to this project if-and-when I have the cash to bring on a couple of people for a few months.&lt;/p&gt;
+
+&lt;p&gt;I probably could hit a nice retro-feel with some low poly characters and pixely textures, but I think Strafe’s got that covered now and I don’t want to re-tread that ground. Going even more coarsely grained, almost Doom2-like, is an option, but again, feels like a step back from what I have in my head. So I’m going to park this.&lt;/p&gt;
+
+&lt;p&gt;If I’m honest, every step in this project has been just a smidge harder than it should have been, not least because of some seismic shifts in my personal-life that have royally fucked my ability to focus, but I’m inclined to listen to the universe and accept that this “isn’t the one”. Meh.&lt;/p&gt;
+
+&lt;p&gt;I still want to make a really fucking fast, twitchy FPS, so I’m not ready to let this go completely. Which means maintaining it with each UE4 upgrade and biding my time…&lt;/p&gt;
+
+&lt;h2 id=&quot;neutrino&quot;&gt;Neutrino&lt;/h2&gt;
+
+&lt;p&gt;Man, I’m so fucking glad that I decided to roll with a little side-project, post Lumo. Being able to work on something when surrounded by boxes, on a train, bus, or stuck in an airport, has been a life-saver. I’d be much more stressed if I was looking back on October as being entirely unproductive.&lt;/p&gt;
+
+&lt;p&gt;The fruits of this half-arsed labour?&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;images/Neutrino_BulletEd.gif&quot; alt=&quot;GunEd&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Behold, my nearly finished Gun Editor.&lt;/p&gt;
+
+&lt;p&gt;Yup, dead simple, probably only a day’s work, but I’ve also gone through and cleaned up a few hanging TODO items, and added viewport scaling to the mouse wheel for the editor modes.&lt;/p&gt;
+
+&lt;p&gt;I need to add the bullet definitions to this, then do a particle emitter editor, at which point I literally have no more excuses. I need to be making a game with this. But I’m not going to go back to it until Xmas.&lt;/p&gt;
+
+&lt;p&gt;I have a cunning plan…&lt;/p&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>Devlog: Curves</title>
@@ -52,7 +96,7 @@
 
 &lt;p&gt;The other nice addition to Neutrino, as you can see above, is embedded .GIF output. Totally stole this idea from &lt;a href=&quot;https://twitter.com/niinegames&quot;&gt;Philip Bak&lt;/a&gt;, but it makes perfect sense; in a world where you need to fire out screenshots on social media as often as possible, what could be better than pressing a button and getting an animated .GIF, resized for Twitter?&lt;/p&gt;
 
-&lt;p&gt;We both opted to use this (single header)[https://github.com/ginsweater/gif-h] lib from Charlie Tangora. 3 function calls and Bob’s your mother’s brother. Perfect.&lt;/p&gt;
+&lt;p&gt;We both opted to use this &lt;a href=&quot;https://github.com/ginsweater/gif-h&quot;&gt;single header&lt;/a&gt; lib from Charlie Tangora. 3 function calls and Bob’s your mother’s brother. Perfect.&lt;/p&gt;
 
 &lt;p&gt;Other stuff that’s been done:&lt;/p&gt;
 
@@ -669,16 +713,15 @@ the hot spot seemed to be in how I’m populating the VBOs, which again, was a b
 
 &lt;p&gt;For some reason I was only getting ~8k sprites per frame. I was expecting quite a few more. The culprit was this line:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mTransform = mTranslate * mRotation * mScale;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mTransform = mTranslate * mRotation * mScale;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Pretty standard stuff, this is just creating the translation matrix which I’m pushing all my vertices through before copying the result into the VBO. (Yes, at some point I should just do all that into the shader…)  I’ve done this before and had much better performance, 
 except then I was using my own math class, and this time I’m using &lt;a href=&quot;http://glm.g-truc.net/0.9.8/index.html&quot;&gt;OpenGL Math&lt;/a&gt;. I figured it’d  be better to pass off the optimisation and maintenance of my maths stuff to, well, people that know some maths.&lt;/p&gt;
 
 &lt;p&gt;So I dug into the operator * overload:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;GLM_FUNC_QUALIFIER tmat4x4&amp;lt;T, P&amp;gt; operator*(tmat4x4&amp;lt;T, P&amp;gt; const &amp;amp; m1, tmat4x4&amp;lt;T, P&amp;gt; const &amp;amp; m2)
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;GLM_FUNC_QUALIFIER tmat4x4&amp;lt;T, P&amp;gt; operator*(tmat4x4&amp;lt;T, P&amp;gt; const &amp;amp; m1, tmat4x4&amp;lt;T, P&amp;gt; const &amp;amp; m2)
 {
 	typename tmat4x4&amp;lt;T, P&amp;gt;::col_type const SrcA0 = m1[0];
 	typename tmat4x4&amp;lt;T, P&amp;gt;::col_type const SrcA1 = m1[1];
@@ -697,8 +740,7 @@ except then I was using my own math class, and this time I’m using &lt;a href=
 	Result[3] = SrcA0 * SrcB3[0] + SrcA1 * SrcB3[1] + SrcA2 * SrcB3[2] + SrcA3 * SrcB3[3];
 	return Result;
 }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Ow. That’s creating a lot of vec4 variables over the course of a few thousand sprites.&lt;/p&gt;
 
@@ -707,14 +749,13 @@ except then I was using my own math class, and this time I’m using &lt;a href=
 &lt;p&gt;So instead of using a glm::mat4, my matrix is now a simple array, allocated at the start of the function, that only contains the scale and rotation. I can push the sprite corners through this 
 and add the translation, and remove a lot of obviously zero multiplications from the process.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;vBL.x = (vBL_Pos-&amp;gt;x * s_mTransMat[0]) + (vBL_Pos-&amp;gt;y * s_mTransMat[1]) + vPos-&amp;gt;x;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;vBL.x = (vBL_Pos-&amp;gt;x * s_mTransMat[0]) + (vBL_Pos-&amp;gt;y * s_mTransMat[1]) + vPos-&amp;gt;x;
 vBL.y = (vBL_Pos-&amp;gt;y * s_mTransMat[3]) + (vBL_Pos-&amp;gt;y * s_mTransMat[4]) + vPos-&amp;gt;y;
 vBL.z = vPos-&amp;gt;z;
 
 etc. etc. 
 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;This is fine for 2D stuff, which is all I intend to use this engine for.&lt;/p&gt;
 

@@ -191,16 +191,15 @@ the hot spot seemed to be in how I’m populating the VBOs, which again, was a b
 
 <p>For some reason I was only getting ~8k sprites per frame. I was expecting quite a few more. The culprit was this line:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>mTransform = mTranslate * mRotation * mScale;
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mTransform = mTranslate * mRotation * mScale;
+</code></pre></div></div>
 
 <p>Pretty standard stuff, this is just creating the translation matrix which I’m pushing all my vertices through before copying the result into the VBO. (Yes, at some point I should just do all that into the shader…)  I’ve done this before and had much better performance, 
 except then I was using my own math class, and this time I’m using <a href="http://glm.g-truc.net/0.9.8/index.html">OpenGL Math</a>. I figured it’d  be better to pass off the optimisation and maintenance of my maths stuff to, well, people that know some maths.</p>
 
 <p>So I dug into the operator * overload:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>GLM_FUNC_QUALIFIER tmat4x4&lt;T, P&gt; operator*(tmat4x4&lt;T, P&gt; const &amp; m1, tmat4x4&lt;T, P&gt; const &amp; m2)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GLM_FUNC_QUALIFIER tmat4x4&lt;T, P&gt; operator*(tmat4x4&lt;T, P&gt; const &amp; m1, tmat4x4&lt;T, P&gt; const &amp; m2)
 {
 	typename tmat4x4&lt;T, P&gt;::col_type const SrcA0 = m1[0];
 	typename tmat4x4&lt;T, P&gt;::col_type const SrcA1 = m1[1];
@@ -219,8 +218,7 @@ except then I was using my own math class, and this time I’m using <a href="ht
 	Result[3] = SrcA0 * SrcB3[0] + SrcA1 * SrcB3[1] + SrcA2 * SrcB3[2] + SrcA3 * SrcB3[3];
 	return Result;
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Ow. That’s creating a lot of vec4 variables over the course of a few thousand sprites.</p>
 
@@ -229,14 +227,13 @@ except then I was using my own math class, and this time I’m using <a href="ht
 <p>So instead of using a glm::mat4, my matrix is now a simple array, allocated at the start of the function, that only contains the scale and rotation. I can push the sprite corners through this 
 and add the translation, and remove a lot of obviously zero multiplications from the process.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>vBL.x = (vBL_Pos-&gt;x * s_mTransMat[0]) + (vBL_Pos-&gt;y * s_mTransMat[1]) + vPos-&gt;x;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vBL.x = (vBL_Pos-&gt;x * s_mTransMat[0]) + (vBL_Pos-&gt;y * s_mTransMat[1]) + vPos-&gt;x;
 vBL.y = (vBL_Pos-&gt;y * s_mTransMat[3]) + (vBL_Pos-&gt;y * s_mTransMat[4]) + vPos-&gt;y;
 vBL.z = vPos-&gt;z;
 
 etc. etc. 
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>This is fine for 2D stuff, which is all I intend to use this engine for.</p>
 
@@ -255,6 +252,15 @@ etc. etc.
     
       <li>
         <h3>
+          <a href="/2017/10/29/Devlog-Upheaval/">
+            Devlog: Upheaval
+            <small>29 Oct 2017</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
           <a href="/2017/09/23/Devlog-Curves/">
             Devlog: Curves
             <small>23 Sep 2017</small>
@@ -267,15 +273,6 @@ etc. etc.
           <a href="/2017/09/05/Devlog-Grab-bag-catch-up-post">
             Devlog: Grab bag catch-up post...
             <small>05 Sep 2017</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/2017/07/20/Work-In-Progress/">
-            Work In Progress
-            <small>20 Jul 2017</small>
           </a>
         </h3>
       </li>

@@ -4,7 +4,7 @@
  <title>Triple Eh?</title>
  <link href="https://www.triple-aye.com/atom.xml" rel="self"/>
  <link href="https://www.triple-aye.com/"/>
- <updated>2017-11-26T12:25:13+02:00</updated>
+ <updated>2017-11-26T12:29:02+02:00</updated>
  <id>https://www.triple-aye.com</id>
  <author>
    <name>Gareth Noyce</name>
@@ -19,7 +19,7 @@
    <id>https://www.triple-aye.com/2017/11/26/Devlog:-November</id>
    <content type="html">&lt;p&gt;Apologies for the long delay in posting. I’m ashamed to say that I’ve still not bought a coffee machine, but it’s not stopped me from having a fairly productive few weeks.&lt;/p&gt;
 
-&lt;p&gt;##Lumo&lt;/p&gt;
+&lt;h2 id=&quot;lumo&quot;&gt;Lumo&lt;/h2&gt;
 
 &lt;p&gt;Yes, it’s finally out on the Switch and just in time for Xmas! The port was done by Spiral House Ltd and I’m very pleased with the result. After all the hassles JAW had with Unity on Vita, I was
 worried that the same problems might plague Unity on the Switch, but fortunately that doesn’t appear to be the case.&lt;/p&gt;
@@ -31,7 +31,7 @@ means you can pick it up for 10 minutes, run about and then put it down. Obvious
 
 &lt;p&gt;Fortunately I’ve not had to do much PR for this release, but I did do an &lt;a href=&quot;https://www.reddit.com/r/NintendoSwitch/comments/7e9iyn/im_gareth_noyce_the_developer_of_lumo_ask_me/&quot;&gt;AMA on r/NintendoSwitch.&lt;/a&gt; Many thanks to Tim and the other mods there for inviting me on. :)&lt;/p&gt;
 
-&lt;p&gt;##Little Breton&lt;/p&gt;
+&lt;h2 id=&quot;little-breton&quot;&gt;Little Breton&lt;/h2&gt;
 
 &lt;p&gt;With Psyance parked until I decide how to get some art done, I’ve moved on to the other idea that’s been bubbling away in the back of my head. In some respects this is a bit of a spiritual sequel to Lumo, as 
 the big problem I kept facing when making that game was to stop myself from turning it into a massive Zelda dungeon. Head over Heels and co. largely kept their puzzles restricted to single rooms, and so I wanted Lumo 

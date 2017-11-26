@@ -11,7 +11,7 @@
 
   <title>
     
-      Devlog: Grab bag catch-up post... &middot; Triple Eh?
+      Devlog: November &middot; Triple Eh?
     
   </title>
 
@@ -137,54 +137,40 @@
 
       <div class="container content">
         <div class="post">
-  <h1 class="post-title">Devlog: Grab bag catch-up post...</h1>
-  <span class="post-date">05 Sep 2017</span>
-  <p>I’m waaaay overdue a post.</p>
+  <h1 class="post-title">Devlog: November</h1>
+  <span class="post-date">26 Nov 2017</span>
+  <p>Apologies for the long delay in posting. I’m ashamed to say that I’ve still not bought a coffee machine, but it’s not stopped me from having a fairly productive few weeks.</p>
 
-<p>A lot has been going on, on the dev-side, and in my personal life. I’ve had a bit of a holiday, I’ve been to the UK and back, and I’m at the start of trying to move away from Helsinki, and back to Tampere. My plans of a heads down summer of work didn’t really happen. Oh well :D</p>
+<p>##Lumo</p>
 
-<h2 id="neutrino">Neutrino</h2>
+<p>Yes, it’s finally out on the Switch and just in time for Xmas! The port was done by Spiral House Ltd and I’m very pleased with the result. After all the hassles JAW had with Unity on Vita, I was
+worried that the same problems might plague Unity on the Switch, but fortunately that doesn’t appear to be the case.</p>
 
-<p>Due to the travel, hanging about in airports and nights in hotels, Neutrino has had a fair bit of attention. Effectively the engine side of it is complete.</p>
+<p>To all intents and purposes Lumo on the Switch is identical to the PS4 version, just capped at 30 fps. It’s also an unintentionally perfect game for the Switch, as the room based style of play 
+means you can pick it up for 10 minutes, run about and then put it down. Obviously I’m a massive fan-boy for the Switch, but I really did enjoy going back to the game and playing it on the go. It feels perfect.</p>
 
-<p>Box2D has been integrated. I’m not a massive fan of Box2D, but it’s simple enough to use and reasonably fast for a small number of objects. I’ve gone the whole hog this time and written the debug renderer for the physics world! Seeing what’s happening under the hood really does make a difference.</p>
+<p>There are physical copies in the EU and US, but not a lot of them so hit up Amazon if you’re after one. They’re going to disappear quickly.</p>
 
-<p>Neutrino is still single threaded, and still, effectively, vsync locked. I’m going to do a bit of work at some point to move Box2D over to another thread and fix the fucking timestep, at which point it’d be interesting to see it run on a GSync screen. But anyway…</p>
+<p>Fortunately I’ve not had to do much PR for this release, but I did do an <a href="https://www.reddit.com/r/NintendoSwitch/comments/7e9iyn/im_gareth_noyce_the_developer_of_lumo_ask_me/">AMA on r/NintendoSwitch.</a> Many thanks to Tim and the other mods there for inviting me on. :)</p>
 
-<p><img src="/images/2017-09-05-DebugRender.png" alt="Debug Rendering" /></p>
+<p>##Little Breton</p>
 
-<p>Still not much to look at, but it’s getting there. Next step is to make a particle emitter editor, bullet trajectory “pattern” editor and a spline editor for the attack waves. Then I think I can make some levels…</p>
+<p>With Psyance parked until I decide how to get some art done, I’ve moved on to the other idea that’s been bubbling away in the back of my head. In some respects this is a bit of a spiritual sequel to Lumo, as 
+the big problem I kept facing when making that game was to stop myself from turning it into a massive Zelda dungeon. Head over Heels and co. largely kept their puzzles restricted to single rooms, and so I wanted Lumo 
+to stick to that template, which meant not doing certain things.</p>
 
-<h2 id="next-game">Next Game</h2>
+<p>So sod it, it’s time to make some Zelda dungeons :)</p>
 
-<p>A month or so ago I decided that I had a lot of bits, but I didn’t have a game. I really should start putting this all together.</p>
+<p><img src="/images/LittleBreton.jpg" alt="Little Breton" /></p>
 
-<p>Steam’s a good forcing function for this: If I’m going to make an online game then I really need to have it running through Steam and then get some other people to play it! To do that, I’ll need working UI and a proper flow in-and-out of the various game modes.</p>
+<p>I’ll post more info on this after Xmas. For now I’m busy making modular art pieces so I can start sketching out a world to run around in.</p>
 
-<p>UI in UE4 is pretty lovely. UMG has its quirks, but it works, looks good, and compared to the complete abomination in Unity, is a joy to put together. And — shock — I really like Blueprints for chaining UI together. Delay node ftw!</p>
-
-<p>That being said, there’s still a lot of UI screens to put together — once you throw in game-modes, with options, lobby screens, error handling etc. — but I have a working screen for each part of this (with no real thought applied to the styling atm) and I’m able to enter and exit a game.</p>
-
-<p>Online Session handling (like pretty much everything else in UE4) is piss poorly documented. There’s a video showing you how to do it in Blueprints, and a working example in Shooter Game that does it in C++. Because it’s so intrinsically tied to the UI, for the first pass I opted to start a simple blueprint session and see if I can connect to it via Steam. This took the better part of a day, but it does actually work; I can see hosted games over Steam, pull up some small bits of information about them, and I can join and leave a session. Wow!</p>
-
-<p>The problem is, the blueprint stuff doesn’t really have any idea about any of the custom parameters that define a hosted session, so I’m going to have to go back under the hood and do this properly in C++. Then I can filter against game mode, see the name of the server, handle friend invites and the like. But for now, just for the purposes of development, I have a “game” that I can upload to Steam, send to friends, and we can run about and shoot each.</p>
-
-<p>Time to grey box some levels to run around in.</p>
 
 </div>
 
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
-    
-      <li>
-        <h3>
-          <a href="/2017/11/26/Devlog-November/">
-            Devlog: November
-            <small>26 Nov 2017</small>
-          </a>
-        </h3>
-      </li>
     
       <li>
         <h3>
@@ -200,6 +186,15 @@
           <a href="/2017/09/23/Devlog-Curves/">
             Devlog: Curves
             <small>23 Sep 2017</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2017/09/05/Devlog-Grab-bag-catch-up-post">
+            Devlog: Grab bag catch-up post...
+            <small>05 Sep 2017</small>
           </a>
         </h3>
       </li>

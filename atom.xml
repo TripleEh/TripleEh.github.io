@@ -4,12 +4,32 @@
  <title>Triple Eh?</title>
  <link href="https://triple-aye.com/atom.xml" rel="self"/>
  <link href="https://triple-aye.com/"/>
- <updated>2018-03-07T16:55:31+02:00</updated>
+ <updated>2018-03-24T09:26:23+02:00</updated>
  <id>https://triple-aye.com/</id>
  <author>
    <name>Gareth Noyce</name>
  </author>
 
+ 
+ <entry>
+   <title>Stylised Water Shader</title>
+	 <link href="https://triple-aye.com/2018/03/24/Stylised-Water-Shader/"/>
+   <updated>2018-03-24T00:00:00+02:00</updated>
+	 <id>https://triple-aye.com/2018/03/24/Stylised-Water-Shader</id>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/images/water.gif&quot; alt=&quot;Water Animation Gif&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Over the last few weeks I’ve been teaching 2nd year game programming students the basics of Unity3D shader programming. Last week 
+this culminated in the class making a simple Surface Shader for water, which I’ve – shamelessly – tried to get close to Zelda: Wind Waker. Because.&lt;/p&gt;
+
+&lt;p&gt;Since stylised water effects are always in vogue, I figure this might be useful to other people.&lt;/p&gt;
+
+&lt;p&gt;I’ve exposed all the parameters, but it’s a stupidly simple shader that you should have no problem bending to your needs.&lt;/p&gt;
+
+&lt;p&gt;The GitHub repo is here: &lt;a href=&quot;https://github.com/TripleEh/StylisedWater_SurfaceShader/&quot;&gt;https://github.com/TripleEh/StylisedWater_SurfaceShader/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Enjoy!&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>In-Game Sticky Notes...</title>

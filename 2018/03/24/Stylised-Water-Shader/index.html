@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Stylised Water Shader &middot; Triple Eh?
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/Boing.png">
+  <link rel="shortcut icon" href="/public/Boing.png">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body class="theme-base-09">
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>Triple Eh? Ltd.</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Blog</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/archive/">Archive</a>
+        
+      
+    
+      
+    
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+	
+		<span class="sidebar-nav-item">Follow me:</span>
+		<a class="sidebar-nav-item" href="https://twitter.com/korruptor">- Twitter</a>
+		<a class="sidebar-nav-item" href="https://www.youtube.com/channel/UC6H2Ql7vVE4hHc-GNkMK8bQ">- You Tube</a>
+		<a class="sidebar-nav-item" href="https://triple-eh.tumblr.com">- Tumblr</a>
+		<span class="sidebar-nav-item">Games:</span>
+		<a class="sidebar-nav-item" href="http://play-lumo.com/">- Lumo</a>
+		<span class="sidebar-nav-item">Web:</span>
+		<a class="sidebar-nav-item" href="http://triple-eh.net">- Triple Eh?</a>
+		<a class="sidebar-nav-item" href="http://triple-eh.net/presskit/index.php">- Press Kit</a>
+		<span class="sidebar-nav-item">Feed:</span>
+		<a class="sidebar-nav-item" href="https://triple-aye.net/atom.xml">- Atom Feed</a>
+  	<a class="sidebar-nav-item" href="https://triple-aye.net/feed.json">- JSON Feed</a>
+   </nav>
+
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2018. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Triple Eh?</a>
+            <small></small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <h1 class="post-title">Stylised Water Shader</h1>
+  <span class="post-date">24 Mar 2018</span>
+  <p><img src="/images/water.gif" alt="Water Animation Gif" /></p>
+
+<p>Over the last few weeks I’ve been teaching 2nd year game programming students the basics of Unity3D shader programming. Last week 
+this culminated in the class making a simple Surface Shader for water, which I’ve – shamelessly – tried to get close to Zelda: Wind Waker. Because.</p>
+
+<p>Since stylised water effects are always in vogue, I figure this might be useful to other people.</p>
+
+<p>I’ve exposed all the parameters, but it’s a stupidly simple shader that you should have no problem bending to your needs.</p>
+
+<p>The GitHub repo is here: <a href="https://github.com/TripleEh/StylisedWater_SurfaceShader/">https://github.com/TripleEh/StylisedWater_SurfaceShader/</a></p>
+
+<p>Enjoy!</p>
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2018/03/07/In-Game-Sticky-Notes">
+            In-Game Sticky Notes...
+            <small>07 Mar 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2018/01/20/Super-Simple-Day-Night-Cycle/">
+            Super Simple Day Night Cycle
+            <small>20 Jan 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2018/01/06/In-Game-Camera/">
+            In Game Camera
+            <small>06 Jan 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+  </body>
+</html>

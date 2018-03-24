@@ -8,6 +8,16 @@
         "name": "Gareth Noyce"},
     "items": [
       {
+            "id": "http://localhost:4000/2018/03/24/Stylised-Water-Shader",
+            "url": "http://localhost:4000/2018/03/24/Stylised-Water-Shader/",
+            "title": "Stylised Water Shader",
+            "content_html": "<p><img src=\"/images/water.gif\" alt=\"Water Animation Gif\" /></p>\n\n<p>Over the last few weeks I’ve been teaching 2nd year game programming students the basics of Unity3D shader programming. Last week \nthis culminated in the class making a simple Surface Shader for water, which I’ve – shamelessly – tried to get close to Zelda: Wind Waker. Because.</p>\n\n<p>Since stylised water effects are always in vogue, I figure this might be useful to other people.</p>\n\n<p>I’ve exposed all the parameters, but it’s a stupidly simple shader that you should have no problem bending to your needs.</p>\n\n<p>The GitHub repo is here: <a href=\"https://github.com/TripleEh/StylisedWater_SurfaceShader/\">https://github.com/TripleEh/StylisedWater_SurfaceShader/</a></p>\n\n<p>Enjoy!</p>",
+            "summary": "",
+            "date_published": "2018-03-24T00:00:00+02:00",
+            "date_modified": "2018-03-24T00:00:00+02:00",
+            "author": {
+              "name": "Gareth Noyce"},
+            "tags": []},{
             "id": "http://localhost:4000/2018/03/07/In-Game-Sticky-Notes...",
             "url": "http://localhost:4000/2018/03/07/In-Game-Sticky-Notes",
             "title": "In-Game Sticky Notes…",
@@ -95,16 +105,6 @@
             "summary": "",
             "date_published": "2017-07-17T00:00:00+03:00",
             "date_modified": "2017-07-17T00:00:00+03:00",
-            "author": {
-              "name": "Gareth Noyce"},
-            "tags": []},{
-            "id": "http://localhost:4000/2017/06/26/Devlog:-Frigging-in-the-Rigging...",
-            "url": "http://localhost:4000/2017/06/26/Devlog-Frigging-in-the-Rigging",
-            "title": "Devlog: Frigging in the Rigging…",
-            "content_html": "<p><img src=\"/images/rigging1.png\" alt=\"AI Test Dungeon\" /></p>\n\n<p>What I know about animation you could happily fit on the back of a postage stamp. I purposefully dodged it when making Lumo — through a cunning lack of in-game NPC characters — but I have vivid memories of swearing in 3DS Max for a couple of weeks, while trying to learn how to rig, then skin, what characters I did have. It was horrible, and the end result looks shite.</p>\n\n<p>Fortunately, you don’t get particularly close to the characters in Lumo, otherwise you’d notice lots of silly little folds and polygon creases where the skinning isn’t quite right. There’s one very obvious issue that’s visible in the close-up cut-scene, when you collect the wand, and it still annoys the shit out of me to this day.</p>\n\n<p>Anyway, that’s a long way of saying that, eek, I’m skinning / rigging the first character for Next Game. This time with Modo.</p>\n\n<p>As I’d not bothered adding any animation controls before, I figure it was time to do things “properly”, especially as the characters in Next Game will be much more in your face. There are some really nice tutorials on Plural Sight, which got me over the hump with this, but it’s still a long, incredibly boring process, that I’m ashamed to admit took me the better part of a week. It’s stupidly easy to get distracted when you’re just fiddling about with vert weights…</p>\n\n<p>But I have something that resembles an animation rig:</p>\n\n<p><img src=\"/images/rigging2.png\" alt=\"Almost looks like the real thing...\" /></p>\n\n<p>Once you get there, animating things is actually a lot of fun. I do really enjoy the process and I’ve got a new found respect for the people that do this well. Modo’s whole animation process — like the rest of the software — just fits my head, so it’s actually nice to sit there and tweak things, with the added bonus that the export process into UE4 is flawless, which is more than I can say for Max into Mecanim…</p>\n\n<p>One thing I love about animating in Modo is the Actions. These are short animation clips that are tucked away behind a little drop down menu. With Max I ended up with a timeline full of different animations, or multiple copies of the character, each with a different animation on. Now I have everything at my finger tips, and I can cut-and-paste bits between different animations. It’s clean, and it’s tidy, and it works. And when I export a single FBX, UE4 takes each Action and makes a single Animation Clip out of it. Each of these can be re-imported singularly, meaning iteration times are nice and short. Big thumbs up.</p>\n\n<p>After another week of fiddling, I ended up with this:</p>\n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/qE7HklpJwG4\" frameborder=\"0\" allowfullscreen=\"\"></iframe>\n\n<p>I’ve never done a “proper” walk (or run) cycle before, so I’m pretty happy with those. There’re not perfect, for a start there’s not enough follow-through, or looseness, in the hands and arms. Particularly in the run cycle. I think that’s a result of me using an IK chain on those limbs, which limited my ability to control the elbow angle at certain points. It was fiddly to make sure the swing stayed in a clean arc as the body moved up and down, as well, so with hindsight, I don’t think I’ll use IK on the arms in future. Everything else, though? Not baaaaaad, 7/10.</p>\n\n<p>I’ve spent the rest of this week preparing to develop the character AI. I’ve created a new Game Mode for the co-op campaign, and I’m halfway through building an open space for the AI to run around in (see the screenshot at the top of this page).</p>\n\n<p>Next up: it’s all about UE4’s AI system…</p>",
-            "summary": "",
-            "date_published": "2017-06-26T00:00:00+03:00",
-            "date_modified": "2017-06-26T00:00:00+03:00",
             "author": {
               "name": "Gareth Noyce"},
             "tags": []}]

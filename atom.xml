@@ -4,12 +4,40 @@
  <title>Triple Eh?</title>
  <link href="https://triple-aye.com/atom.xml" rel="self"/>
  <link href="https://triple-aye.com/"/>
- <updated>2018-03-24T09:26:23+02:00</updated>
+ <updated>2018-05-05T14:02:55+03:00</updated>
  <id>https://triple-aye.com/</id>
  <author>
    <name>Gareth Noyce</name>
  </author>
 
+ 
+ <entry>
+   <title>I'm alive...</title>
+	 <link href="https://triple-aye.com/2018/05/05/I'm-alive"/>
+   <updated>2018-05-05T00:00:00+03:00</updated>
+	 <id>https://triple-aye.com/2018/05/05/I'm-alive...</id>
+   <content type="html">&lt;p&gt;…with caveats :D&lt;/p&gt;
+
+&lt;p&gt;Apologies, things have been quiet on here, which wasn’t intentional.&lt;/p&gt;
+
+&lt;p&gt;At the start of April I suffered abdominal pains that, over the course of 6 hours, ended up with me 
+having surgery for a suspected twisted intestine. I had the best possible outcomes from both the 
+surgery and the recuperation, but it’s meant the better part of four weeks not doing much at all (“recuperating”, or “boredom” as I like to think of it).&lt;/p&gt;
+
+&lt;p&gt;I’m back on my feet, in fact, bar some much needed core strengthening to repair the muscle that was cut open 
+I’d say I’m basically tip-top. Phew! So massive thanks to the Doctors and Nurses at Hki for their sterling work and humour. The physio was a bit harsh, though ;D&lt;/p&gt;
+
+&lt;p&gt;The next big change is that I’m moving back to the UK in June. Things are making their way into boxes, errands need to be run, 
+and my eye is not really on my work. Again. But this shouldn’t take too long, or be too painful.&lt;/p&gt;
+
+&lt;p&gt;Once that’s out of the way I’m also thinking of doing more on Mixer/Twitch (and maybe You Tube), so my work is a little more visible. I love writing blog posts
+but people don’t like reading them any more. That’s not to say this blog is going to die. It’s not. Some topics will deserve more detail than a video will allow so 
+you can still expect updates here, I’ve just not made up my mind how frequently, or what sort of content will be best.&lt;/p&gt;
+
+&lt;p&gt;That’s a long winded way of apologising for the lack of updates this month, and for the lack of updates in the month to come. But I’ll be back soon :)&lt;/p&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>Stylised Water Shader</title>

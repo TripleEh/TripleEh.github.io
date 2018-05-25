@@ -38,7 +38,7 @@
 html,
 body {
   overflow-x: hidden;
-	background-color: #ffffdd;
+	background-color: #fcfdf2;
 }
 
 html {
@@ -48,7 +48,7 @@ html {
 h1, h2, h3, h4, h5, h6 {
   font-family: "PT Sans", Helvetica, Arial, sans-serif;
   font-weight: 400;
-  color: #313131;
+  color: #fcfdf2;
   letter-spacing: -.025rem;
 }
 
@@ -152,7 +152,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "PT Sans", Helvetica, Arial, sans-serif;
   font-size: .875rem; /* 15px */
   color: rgba(255,255,255,.6);
-  background-color: #202020;
+  background-color: #e9ebd4;
   -webkit-transition: all .3s ease-in-out;
           transition: all .3s ease-in-out;
 }
@@ -458,12 +458,12 @@ a.pagination-item:hover {
 .theme-base-09 .sidebar,
 .theme-base-09 .sidebar-toggle:active,
 .theme-base-09 #sidebar-checkbox:checked ~ .sidebar-toggle {
-  background-color: #d28445;
+  background-color: #6959a6;
 }
 .theme-base-09 .container a,
 .theme-base-09 .sidebar-toggle,
 .theme-base-09 .related-posts li a:hover {
-  color: #d28445;
+  color: #13bcd9;
 }
 
 /* Yellow */

@@ -147,7 +147,50 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="https://www.triple-aye.com/2017/04/08/Devlog-08.04.17/">
+      <a href="http://localhost:4000/2017/04/29/Devlog-Making-Pixels-Glow/">
+        Devlog: Making Pixels Glow
+      </a>
+    </h1>
+
+    <span class="post-date">29 Apr 2017</span>
+
+    <p>Easter and consultancy work have got in the way a bit, but the side project’s taken a big step forward…</p>
+
+<p><img src="/images/2017-04-28-AddedAudio.PNG" alt="Screenshot" /></p>
+
+<h1 id="neutrino">Neutrino</h1>
+<p>When I last wrote Neutrino was rendering directly to the screen, which wasn’t exactly the look I was after for low resolution, pixel-based games. So last week I took a day to sit down and finish off the rendering path, with the aim being to have some control over the process and get closer to a CRT “glow”.</p>
+
+<p>I’ve ended up with a fairly standard process that you’ve probably read about before.</p>
+
+<p><em>Stage 1:</em> The background tile-map and all the sprites collected in the VBO during the current tick are rendered to a 480x270 pixel texture. I picked this size because it’s a quarter of a 1080p screen, so scales nicely to my 4k monitor, but isn’t too chunky as to leave pixels the size of my face on-screen.</p>
+
+<p><em>Stage2:</em> The texture generated in Stage 1 is then rendered to a second 480x270 texture, via a high-pass “filter”. Atm this filter checks for pixel luminance, rendering any pixel above a certain brightness as normal, and any below that level at some, definable, smaller multiple of itself. I could discard these failing pixels completely, but I found the effect looks nicer when there’s a ramp.</p>
+
+<p><em>Stage3:</em> The texture from stage 2 is blurred in two passes, once horizontally, and once vertically. The resolution of this can be defined at run-time, but I’ve found that I get good results by blurring the low resolution texture from stage 2, and then getting the benefits of bi-linear filtering as I draw the blurred result, enlarged, as part of the final composite</p>
+
+<p><em>Stage4:</em> I draw a single full-screen quad to the screen, using the low resolution texture from stage 1. This is rendered with a trivially simple “scanline” shader, that checks the output position of the pixel: Every other line is rendered “dark”, for the scanlines. For “normal” lines, the shader checks the pixel, rendering the 1st biased to red, the 2nd biased to green, the 3rd biased to blue and the 4th “dark”. After this, the same quad is re-drawn, but using the blurred textured from pass 4, and again, I have controls for how much this bloomed texture contributes…</p>
+
+<p>This is probably the simplest form of scanline effect. It’s not emulating PAL, or NTSC screens. There’s no phosphor persistence — although I probably will add that in, to a degree, by using the blurred “bloom” texture as an accumulator — and there is no barrel shifter to simulate the curve of an old screen.</p>
+
+<p>I did look at <a href="https://www.shadertoy.com/view/XsjSzR">Tim Lottes CRT pixel shader</a> but it needs a fair amount of tweaking to run well on my X1’s Intel GPU. And there’s also Kyle PIttman’s <a href="http://www.gamasutra.com/blogs/KylePittman/20150420/241442/CRT_Simulation_in_Super_Win_the_Game.php">shader from Super Win The Game</a>, which I also discounted.</p>
+
+<p>To be honest, I’m not going for either of these looks. All I actually care about is the feel of staring into an arcade, in a dark room, where those white pixels were too white, and where certain colours left a bit of a tint on your eyeball. The screenshot at the top of the page is a fairly toned down example of where I’ll end up, cos, If I crank some of the settings up, I can get to some pretty mad places.</p>
+
+<p>All of this will be optional for the player. I know some people hate scanlines — why emulate broken technology? — but I’ll probably setup a few different presets to pick and choose from, so those of us of a certain vintage feel a bit more at home.</p>
+
+<p>(I’d be tempted to leave all the settings available, but that’d probably mean that every time I saw a screenshot of the game online it’d be at some crazy-bastard setting, that I hate…)</p>
+
+<p>Possible todo items: Adding some saturation controls to this may be handy. And maybe a colour look-up table, so I can set curves in Affinty Photo and have them baked into the final output?</p>
+
+<h1 id="next-game">Next Game</h1>
+<p>I’m dead excited. Hoping to have more to show soon. ;)</p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://localhost:4000/2017/04/08/Devlog-08.04.17/">
         Devlog - 08.04.17
       </a>
     </h1>
@@ -220,7 +263,7 @@ stuff off other developers now and again.</p>
   
   <div class="post">
     <h1 class="post-title">
-      <a href="https://www.triple-aye.com/2017/04/08/Devlog-17.03.17/">
+      <a href="http://localhost:4000/2017/04/08/Devlog-17.03.17/">
         Devlog - 17.03.17
       </a>
     </h1>
@@ -333,7 +376,7 @@ quality. Certainly not on a scale as grand and as beautiful as this.</p>
   
   <div class="post">
     <h1 class="post-title">
-      <a href="https://www.triple-aye.com/2017/03/08/Devlog-08.03.17/">
+      <a href="http://localhost:4000/2017/03/08/Devlog-08.03.17/">
         Devlog - 08.03.17
       </a>
     </h1>
@@ -404,7 +447,7 @@ to change. It’s heading in the right direction, though.</p>
   
   <div class="post">
     <h1 class="post-title">
-      <a href="https://www.triple-aye.com/2017/02/24/Devlog-24.02.17/">
+      <a href="http://localhost:4000/2017/02/24/Devlog-24.02.17/">
         Devlog - 24.02.17
       </a>
     </h1>
@@ -515,82 +558,6 @@ etc. etc.
 
 <p>The moral of the story: Future Gareth, you should probably look into how to use GLM properly.</p>
 
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="https://www.triple-aye.com/2017/02/03/Devlog-03.02.2017/">
-        Devlog - 03.02.2017
-      </a>
-    </h1>
-
-    <span class="post-date">03 Feb 2017</span>
-
-    <p><img src="/images/17.02.03-DecalsTest2.jpg" alt="Hello Mum" /></p>
-
-<p>It’s been a mad-cap couple of weeks. Here’s what I’ve been up to:</p>
-
-<h2 id="lumo">Lumo</h2>
-
-<p>Yesterday I pushed out version 1.17.2, to fix issues found with wireless Xbone pads running on Windows 7. Thanks go out to 
-Patrick Hogan — the developer of InControl, a nice cross platform input library for Unity that I can recommend, <a href="http://www.gallantgames.com/pages/incontrol-introduction">available here</a> —  for sparing the time to test around the issue and provide a fix.</p>
-
-<p>In addition to taking on the new version of InControl, I’ve also moved over to XInput, so — in theory —  joypad support should be a 
-little more robust on Windows going forward. (Crosses Fingers)</p>
-
-<p>This build also fixes a possible bug with joypad “submit” actions not being registered by the pause screen UI, as well as turning 
-off Unity’s bullshit “automatic” navigation option on some of the button layouts. Honestly, fuck that UI system.</p>
-
-<h2 id="neutrino">Neutrino</h2>
-
-<p>I’ve been doing a bit of train / weekend coding, so this has moved forward:</p>
-
-<ul>
-  <li>Finished off the Input system. You can now poll mouse and up to four joypads. Previously it only handled attach/dettach events.</li>
-  <li>Added some keystate handling for specific inputs in editor modes (keyboard shortcuts, basically)</li>
-  <li>Added a bunch of helper functions to quickly get sprites from texture pages</li>
-  <li>Got the Tile Map editor to the point where you can select and place tiles, freely, or snapped to a grid</li>
-</ul>
-
-<p>Next job is to store that in something I can spit out and reload that’ll be the basis of the level data. I’ll probably do a very thin 
-Command pattern wrapper over this so I can support unlimited Undo/Redo as well.</p>
-
-<h2 id="next-game">Next Game</h2>
-
-<p>I’ve been all over the shop with this the last couple of weeks:</p>
-
-<ul>
-  <li>Finished off the weapon-types code and added weapon pickups</li>
-  <li>Player can now be killed, either through damage or falling out of the world</li>
-  <li>Player respawns properly</li>
-  <li>Added Ammo to the HUD</li>
-  <li>Added decals, and spent a morning drawing swears on walls</li>
-  <li>Added a new “Pain Room” to the test room, for traps and damage/stat tweaking</li>
-  <li>Dipped my toe into Cascade, UE4’s particle system, and made some effects for pickups</li>
-  <li>Started on a shotgun model for the first person view</li>
-  <li>Added some new models for the ammunition pickpus</li>
-</ul>
-
-<p>The last item in that list has been my main diversion since the last post.</p>
-
-<p>I know that I’m going to be doing a fair amount of modelling on this project so I’m still slowly schooling myself on workflows. For this, I decided 
-to do some fairly high poly models of the pickup items and then bake them down to a low poly cage. Like everything, once I worked out how to 
-do it, it’s reasonably straight forward, but it took a day or so to really get it working.</p>
-
-<p>Building low poly cages seems to be a bit of an art, depending on the sorts of shapes you want, but after a lot of attempts I was able to bake AO and 
-normals in Modo that looked pretty clean on the low poly asset, and came out clearly in-engine. I’m far from an expert at this, but it’s something I 
-wanted to have in the toolbox even if I don’t use it very often.</p>
-
-<p>I also spent a day or two messing about with Substance Painter. The “rent to own” model really appeals to me, as well as fitting in my budget, so I 
-jumped on that. It’s a little unstable on my rig - I’ve had 4 or 5 really messy crashes - but when it’s working, it’s great. I doubt I’ll delve too 
-deeply into the materials for this game, but anything that speeds up texturing is going to be worth the effort learning.</p>
-
-<p>Now that Vine is dead I’ve started posting screenshots and little vids onto my Instagram account. You can keep an eye-out, <a href="https://www.instagram.com/garethnoyce/">here</a>.</p>
-
-<p>Also, there’s been a big migration of developers from Twitter onto Mastodon.social. If you’re a twitter user then I don’t really need to explain why this 
-is happening, but if not and you’re interested in a low traffic, Nazi-free open source Twitter-alike then <a href="https://mastodon.social">Mastodon</a> is worth 
-checking out. I’m @korruptor as usual.</p>
 
   </div>
   

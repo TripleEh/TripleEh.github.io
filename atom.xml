@@ -4,7 +4,7 @@
  <title>Triple Eh?</title>
  <link href="https://triple-aye.com/atom.xml" rel="self"/>
  <link href="https://triple-aye.com/"/>
- <updated>2018-07-16T21:19:02+01:00</updated>
+ <updated>2018-07-16T21:20:31+01:00</updated>
  <id>https://triple-aye.com/</id>
  <author>
    <name>Gareth Noyce</name>
@@ -16,8 +16,7 @@
 	 <link href="https://triple-aye.com/2018/07/16/Lumo-Dev-Diary/"/>
    <updated>2018-07-16T00:00:00+01:00</updated>
 	 <id>https://triple-aye.com/2018/07/16/Lumo-Dev-Diary</id>
-   <content type="html">&lt;h1 id=&quot;lumo-development-diary&quot;&gt;Lumo Development Diary&lt;/h1&gt;
-&lt;p&gt;My house move is complete and I’m living in the UK again. Woo!&lt;/p&gt;
+   <content type="html">&lt;p&gt;My house move is complete and I’m living in the UK again. Woo!&lt;/p&gt;
 
 &lt;p&gt;I stumbled on the Lumo Development Diary that I wrote for Linux Voice Magazine while setting up my office, and I’m fairly sure that I’ve never posted it here. So, for posterity, here is the full article:&lt;/p&gt;
 

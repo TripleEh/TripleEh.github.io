@@ -11,7 +11,7 @@
 
   <title>
     
-      Lumo, Vita release imminent! &middot; Triple Eh?
+      Devlog: Grab bag catch-up post... &middot; Triple Eh?
     
   </title>
 
@@ -143,15 +143,39 @@
 
       <div class="container content">
         <div class="post">
-  <h1 class="post-title">Lumo, Vita release imminent!</h1>
-  <span class="post-date">28 Jun 2016</span>
-  <p>As noted by the fine folks over at <a href="http://www.eurogamer.net/articles/2016-06-28-lumo-finally-has-a-vita-release-date">Eurogamer</a>, the release date for Lumo has been announced; 5th July.</p>
+  <h1 class="post-title">Devlog: Grab bag catch-up post...</h1>
+  <span class="post-date">05 Sep 2017</span>
+  <p>I’m waaaay overdue a post.</p>
 
-<p>This is much later than originally promised, and for that I do sincerely apologise for keeping you waiting, but the folks over at <a href="http://www.jawltd.com/">JAW</a> have been working hard optimising, squeezing, cajoling and generally persuading what is, at heart, a PC game into the Vita’s tiny innards. No easy task…</p>
+<p>A lot has been going on, on the dev-side, and in my personal life. I’ve had a bit of a holiday, I’ve been to the UK and back, and I’m at the start of trying to move away from Helsinki, and back to Tampere. My plans of a heads down summer of work didn’t really happen. Oh well :D</p>
 
-<p>The form factor should suit the game well, and it’ll also support Cross Buy and Cross Save, so it’s a steal for all you Sony chums out there!</p>
+<h2 id="neutrino">Neutrino</h2>
 
-<p>Anyway, enjoy!</p>
+<p>Due to the travel, hanging about in airports and nights in hotels, Neutrino has had a fair bit of attention. Effectively the engine side of it is complete.</p>
+
+<p>Box2D has been integrated. I’m not a massive fan of Box2D, but it’s simple enough to use and reasonably fast for a small number of objects. I’ve gone the whole hog this time and written the debug renderer for the physics world! Seeing what’s happening under the hood really does make a difference.</p>
+
+<p>Neutrino is still single threaded, and still, effectively, vsync locked. I’m going to do a bit of work at some point to move Box2D over to another thread and fix the fucking timestep, at which point it’d be interesting to see it run on a GSync screen. But anyway…</p>
+
+<p><img src="/images/2017-09-05-DebugRender.png" alt="Debug Rendering" /></p>
+
+<p>Still not much to look at, but it’s getting there. Next step is to make a particle emitter editor, bullet trajectory “pattern” editor and a spline editor for the attack waves. Then I think I can make some levels…</p>
+
+<h2 id="next-game">Next Game</h2>
+
+<p>A month or so ago I decided that I had a lot of bits, but I didn’t have a game. I really should start putting this all together.</p>
+
+<p>Steam’s a good forcing function for this: If I’m going to make an online game then I really need to have it running through Steam and then get some other people to play it! To do that, I’ll need working UI and a proper flow in-and-out of the various game modes.</p>
+
+<p>UI in UE4 is pretty lovely. UMG has its quirks, but it works, looks good, and compared to the complete abomination in Unity, is a joy to put together. And — shock — I really like Blueprints for chaining UI together. Delay node ftw!</p>
+
+<p>That being said, there’s still a lot of UI screens to put together — once you throw in game-modes, with options, lobby screens, error handling etc. — but I have a working screen for each part of this (with no real thought applied to the styling atm) and I’m able to enter and exit a game.</p>
+
+<p>Online Session handling (like pretty much everything else in UE4) is piss poorly documented. There’s a video showing you how to do it in Blueprints, and a working example in Shooter Game that does it in C++. Because it’s so intrinsically tied to the UI, for the first pass I opted to start a simple blueprint session and see if I can connect to it via Steam. This took the better part of a day, but it does actually work; I can see hosted games over Steam, pull up some small bits of information about them, and I can join and leave a session. Wow!</p>
+
+<p>The problem is, the blueprint stuff doesn’t really have any idea about any of the custom parameters that define a hosted session, so I’m going to have to go back under the hood and do this properly in C++. Then I can filter against game mode, see the name of the server, handle friend invites and the like. But for now, just for the purposes of development, I have a “game” that I can upload to Steam, send to friends, and we can run about and shoot each.</p>
+
+<p>Time to grey box some levels to run around in.</p>
 
 </div>
 

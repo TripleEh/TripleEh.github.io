@@ -11,7 +11,7 @@
 
   <title>
     
-      Lumo, Vita release imminent! &middot; Triple Eh?
+      Devlog: Frigging in the Rigging... &middot; Triple Eh?
     
   </title>
 
@@ -143,15 +143,35 @@
 
       <div class="container content">
         <div class="post">
-  <h1 class="post-title">Lumo, Vita release imminent!</h1>
-  <span class="post-date">28 Jun 2016</span>
-  <p>As noted by the fine folks over at <a href="http://www.eurogamer.net/articles/2016-06-28-lumo-finally-has-a-vita-release-date">Eurogamer</a>, the release date for Lumo has been announced; 5th July.</p>
+  <h1 class="post-title">Devlog: Frigging in the Rigging...</h1>
+  <span class="post-date">26 Jun 2017</span>
+  <p><img src="/images/rigging1.png" alt="AI Test Dungeon" /></p>
 
-<p>This is much later than originally promised, and for that I do sincerely apologise for keeping you waiting, but the folks over at <a href="http://www.jawltd.com/">JAW</a> have been working hard optimising, squeezing, cajoling and generally persuading what is, at heart, a PC game into the Vita’s tiny innards. No easy task…</p>
+<p>What I know about animation you could happily fit on the back of a postage stamp. I purposefully dodged it when making Lumo — through a cunning lack of in-game NPC characters — but I have vivid memories of swearing in 3DS Max for a couple of weeks, while trying to learn how to rig, then skin, what characters I did have. It was horrible, and the end result looks shite.</p>
 
-<p>The form factor should suit the game well, and it’ll also support Cross Buy and Cross Save, so it’s a steal for all you Sony chums out there!</p>
+<p>Fortunately, you don’t get particularly close to the characters in Lumo, otherwise you’d notice lots of silly little folds and polygon creases where the skinning isn’t quite right. There’s one very obvious issue that’s visible in the close-up cut-scene, when you collect the wand, and it still annoys the shit out of me to this day.</p>
 
-<p>Anyway, enjoy!</p>
+<p>Anyway, that’s a long way of saying that, eek, I’m skinning / rigging the first character for Next Game. This time with Modo.</p>
+
+<p>As I’d not bothered adding any animation controls before, I figure it was time to do things “properly”, especially as the characters in Next Game will be much more in your face. There are some really nice tutorials on Plural Sight, which got me over the hump with this, but it’s still a long, incredibly boring process, that I’m ashamed to admit took me the better part of a week. It’s stupidly easy to get distracted when you’re just fiddling about with vert weights…</p>
+
+<p>But I have something that resembles an animation rig:</p>
+
+<p><img src="/images/rigging2.png" alt="Almost looks like the real thing..." /></p>
+
+<p>Once you get there, animating things is actually a lot of fun. I do really enjoy the process and I’ve got a new found respect for the people that do this well. Modo’s whole animation process — like the rest of the software — just fits my head, so it’s actually nice to sit there and tweak things, with the added bonus that the export process into UE4 is flawless, which is more than I can say for Max into Mecanim…</p>
+
+<p>One thing I love about animating in Modo is the Actions. These are short animation clips that are tucked away behind a little drop down menu. With Max I ended up with a timeline full of different animations, or multiple copies of the character, each with a different animation on. Now I have everything at my finger tips, and I can cut-and-paste bits between different animations. It’s clean, and it’s tidy, and it works. And when I export a single FBX, UE4 takes each Action and makes a single Animation Clip out of it. Each of these can be re-imported singularly, meaning iteration times are nice and short. Big thumbs up.</p>
+
+<p>After another week of fiddling, I ended up with this:</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qE7HklpJwG4" frameborder="0" allowfullscreen=""></iframe>
+
+<p>I’ve never done a “proper” walk (or run) cycle before, so I’m pretty happy with those. There’re not perfect, for a start there’s not enough follow-through, or looseness, in the hands and arms. Particularly in the run cycle. I think that’s a result of me using an IK chain on those limbs, which limited my ability to control the elbow angle at certain points. It was fiddly to make sure the swing stayed in a clean arc as the body moved up and down, as well, so with hindsight, I don’t think I’ll use IK on the arms in future. Everything else, though? Not baaaaaad, 7/10.</p>
+
+<p>I’ve spent the rest of this week preparing to develop the character AI. I’ve created a new Game Mode for the co-op campaign, and I’m halfway through building an open space for the AI to run around in (see the screenshot at the top of this page).</p>
+
+<p>Next up: it’s all about UE4’s AI system…</p>
 
 </div>
 

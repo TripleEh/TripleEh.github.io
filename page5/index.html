@@ -103,6 +103,10 @@
         
       
     
+      
+        
+      
+    
 	
 		<span class="sidebar-nav-item">Follow me:</span>
 		<a class="sidebar-nav-item" href="https://twitter.com/Triple_Eh_Ltd">- Twitter</a>
@@ -143,6 +147,77 @@
 
       <div class="container content">
         <div class="posts">
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="https://triple-aye.com//2017/03/08/Devlog-08.03.17/">
+        Devlog - 08.03.17
+      </a>
+    </h1>
+
+    <span class="post-date">08 Mar 2017</span>
+
+    <p>Early update, this time, as I’m off to the UK for a wedding. Because of that – and because I’m meeting up with a friend 
+who’s helping me with some concept art – it’s been a race-to-make-a-face since my last post.</p>
+
+<h2 id="next-game">Next Game</h2>
+
+<p><a href="/images/2017-03-08-TestLevel_Courtyard2.jpg"><img src="/images/2017-03-08-TestLevel_Courtyard2.jpg" alt="Screenie" /></a></p>
+
+<p>The second iteration of the test level is basically done. As I said, it’s super chunky and super low-poly, but it looks a lot better than my 
+first iteration. And I can get very dark areas, as well as very light areas. Pretty important for a Quake-a-like.</p>
+
+<p>Although this scene is essentially outdoor, I don’t actually think I’ll do that in many of the levels. My plan for most of it is 
+to do something darker and not as well lit, but for the purposes of a test I just wanted to see if I could do both. So I’ve aped a bit of the 
+Quake 1 start thing, and done an imaginary “intro” level.</p>
+
+<p>There’s a lot wrong with it; the scale is on the, er, large side – but the minute you start rocket jumping that’s less of a problem –  there’s a lack of secondary motion – wibbly grass, lights swaying, stuff like that – 
+and hardly any props to dress the scene. Although the colours work for me, a bit more detail would definitely help.</p>
+
+<p>I’m not too bothered about all this atm, the main function 
+of the test was to find a workflow that’s quick enough to let me bang out [reasonably] good looking geometry, and the lack of texturing definitely helps that. I’ve
+gone from zero to a level I can run around, in 8 days. And half that time’s been trying to understand lighting.  Nearly all the missing things 
+will happen over time and I can dress the scenes with more props as and when I make them. It’s how I worked the environment in Lumo.</p>
+
+<p>I’m still toying with the idea of bevelling the larger geometry pieces as 
+the extra edges would play in the light. Nintendo do this all the time in Mario and Zelda, so it might be worth a test…</p>
+
+<p>Anyway. After the mild depression at going down the wrong path and throwing out a couple of week’s work, this whole exercise turned out to be super useful. The untextured “matte” look forced me to work out how the baked lighting is applied, especially 
+when the various shadow schemes are thrown into the mix. There’s no where to hide so setting this up was a lot of trial and error, not helped by the 
+fact that my lighting build-quality was set to “preview” for God knows how long. That flushed out lots of stupid things, but derp. Fucking idiot, etc.</p>
+
+<p>The Modo side of things has been great, although it took me a long time to uvunwrap for clean bakes.  Initially I was just ignoring it, letting the UE importer 
+generate the lightmaps and then wondering why I had dirty big splotches everywhere. Then I started adding a second UV channel in the model to mitigate, 
+which gives some control over how the model parts are split. But the real-trick, which it took me a couple of days to clock-on to, is making sure edges/verts 
+are clamped to texel boundaries. In Modo this is trivial, you can set the UVGrid to 1/64, and then use the snapping tool to make sure that edges/verts are all 
+nice and clean. It’s a bit handraulic, but if done right, a one shot deal.  I think.</p>
+
+<p>I still have some light-bleeding in parts of the level, but this is either where I’ve not added an edge to the wall (one model) where it meets the floors 
+(a different model), or have a polygon that extrudes through the wall, so catches the light and the dark. The second issue is just me not knowing what I was<br />
+doing at the start and then being too lazy to go back in and fix it. You can see it on the window frames.</p>
+
+<p>I’ve also had a good play around with Cascade, and although I don’t feel as confident with it as Unity’s particle system, I’m able to do the basics. The same 
+can be pretty much said for the material editor. I’m hoping to pick stuff up via osmosis and concentrate on the big things for the foreseeable.</p>
+
+<p>Code-wise, I don’t think I’ve had any problems. I’ve even started doing a few things – the on screen messages for example – in Blueprints. Quick and dirty is, 
+as Quick and Dirty does, and all that.</p>
+
+<p>I’ve stuck a little video of all this up on You Tube. It should go without saying that the Quake 1 sound effects won’t be there for long, and everything is liable 
+to change. It’s heading in the right direction, though.</p>
+
+<div style="text-align: center"><iframe width="560" height="315" src="https://www.youtube.com/embed/gxeUt0OoUMo" frameborder="0" allowfullscreen=""></iframe><p>&nbsp;</p></div>
+
+<p>Click screenies to enbiggen.</p>
+
+<p><a href="/images/2017-03-08-TestLevel_Underground.jpg"><img src="/images/2017-03-08-TestLevel_Underground.jpg" alt="Screenie" /></a></p>
+
+<p><a href="/images/2017-03-08-TestLevel_TP1.jpg"><img src="/images/2017-03-08-TestLevel_TP1.jpg" alt="Screenie" /></a></p>
+
+<p><a href="/images/2017-03-08-TestLevel_Armour.jpg"><img src="/images/2017-03-08-TestLevel_Armour.jpg" alt="Screenie" /></a></p>
+
+<p><a href="/images/2017-03-08-TestLevel_Corridor2.jpg"><img src="/images/2017-03-08-TestLevel_Corridor2.jpg" alt="Screenie" /></a></p>
+
+  </div>
   
   <div class="post">
     <h1 class="post-title">
@@ -415,52 +490,6 @@ worth checking out.</p>
 <p>I’ve added a little video to You Tube for those who want a peek (see the top of this post). It should go without saying that none of the assets in this are final, or even likely to appear in-game. It’s bits and bobs from Lumo and UE4’s example assets, that I’ve thrown together. Although I did lose a good chunk of time over Xmas playing with the lighting and post, just to see how it worked ;D</p>
 
 <p>The music is by Steve Birch, from the album Wonderland, that’ll be released by Joof sometime in Feb.</p>
-
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="https://triple-aye.com//2017/01/06/Dev-blog,-6th-Jan/">
-        Dev blog, 6th Jan
-      </a>
-    </h1>
-
-    <span class="post-date">06 Jan 2017</span>
-
-    <p>Happy New Year!</p>
-
-<p>Apologies. The blog was on a temporary hiatus through December, as I had to prepare for a programming course that I’m 
-due to give at TAMK University this year. That meant getting up-to-speed with the latest Unity version,<br />
-and writing a simple game that’ll form the basis of the course. As well as having a Xmas Holiday.</p>
-
-<p>But I did do some work and make some decisions. The first of which: Oh Snow! is canned. Probably forever. Why?
-Short answer; it was meant to be my toy project, not something that took a year to make, and due to teaching 
-and signing up for a Finnish language course, I basically did nothing on it. But I did learn some Unreal, so it 
-wasn’t a complete waste.</p>
-
-<p>That means <em>Next Game</em> has officially been started. Here’s a little WIP screenie:</p>
-
-<p><a href="/images/2017-01-06-PsyanceTestRoom.jpg"><img src="/images/2017-01-06-PsyanceTestRoom.jpg" alt="It's an FPS!" /></a></p>
-
-<p>Yes, it’s an FPS. No, I’ve not done any graphics or modelling yet. And yes, that’s the default UE4 character model.</p>
-
-<p>More info on <em>Next Game</em> in a later update.</p>
-
-<p>Aside from that, Unity 5.5.x, and eating mince pies(+), I’ve done some more on Neutrino. The choice of using cmake for the 
-build process turned out to be an excellent one. I thought I’d have a pop at getting the game running on windows, and although 
-the cmake gui is a bit weird, once I worked out the intricacies it spat out a Visual Studio 2015 solution and Neutrino built and ran 
-first time. And yeah, that surprised the hell out of me.</p>
-
-<p>I’ve been continuing my love-in with ImGui, and decided that the effort to parse TileD tilemaps and integrate them into everything else 
-I want to do was becoming a monumental pain in the arse. And I quite fancy rendering the tilemap through a pixel shader <a href="http://blog.tojicode.com/2012/07/sprite-tile-maps-on-gpu.html">a little like this</a>.
-So I’ve started writing a simple tilemap editor in-engine. Exactly what I said I wouldn’t do. Ahem.</p>
-
-<p>Early doors. I’m at the point where I can click a tile and move it about.</p>
-
-<p><a href="/images/2017-01-06-StartOftheTilemap.png"><img src="/images/2017-01-06-StartOftheTilemap.png" alt="It's a tilemap editor. Ish" /></a></p>
-
-<p>(+) I hate mince pies.</p>
 
 
   </div>

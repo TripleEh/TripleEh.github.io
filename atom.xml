@@ -4,12 +4,31 @@
  <title>Triple Eh?</title>
  <link href="https://triple-aye.com/atom.xml" rel="self"/>
  <link href="https://triple-aye.com/"/>
- <updated>2018-07-16T21:27:04+01:00</updated>
+ <updated>2018-07-30T13:22:56+01:00</updated>
  <id>https://triple-aye.com/</id>
  <author>
    <name>Gareth Noyce</name>
  </author>
 
+ 
+ <entry>
+   <title>Dev Log - Player Character Actions</title>
+	 <link href="https://triple-aye.com/2018/07/30/Dev-Log-Player-Character-Actions/"/>
+   <updated>2018-07-30T00:00:00+01:00</updated>
+	 <id>https://triple-aye.com/2018/07/30/Dev-Log---Player-Character-Actions</id>
+   <content type="html">&lt;p&gt;Here’s the first video Dev Log, where I discuss some of the Player Character Actions, and the systems I have to build under them.&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/x2WHXuC23AQ&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; encrypted-media&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Or a &lt;a href=&quot;https://www.youtube.com/watch?v=x2WHXuC23AQ&quot;&gt;Direct Link&lt;/a&gt; if you prefer.&lt;/p&gt;
+
+&lt;p&gt;This is still very rough and ready. Rather than spend a couple of days doing fancy titles, sexy wipes, and capturing loads of video I just want to 
+get something up, to get the ball rolling. I’ll slowly work to improve the overall quality as I do more videos.&lt;/p&gt;
+
+&lt;p&gt;Don’t forget, you can always join me on &lt;a href=&quot;https://www.twitch.tv/tripleeh&quot;&gt;Twitch&lt;/a&gt;.&lt;/p&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>Lumo Dev Diary</title>

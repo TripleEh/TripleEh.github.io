@@ -4,12 +4,28 @@
  <title>Triple Eh?</title>
  <link href="https://triple-aye.com/atom.xml" rel="self"/>
  <link href="https://triple-aye.com/"/>
- <updated>2018-07-30T13:22:56+01:00</updated>
+ <updated>2018-08-15T08:16:15+01:00</updated>
  <id>https://triple-aye.com/</id>
  <author>
    <name>Gareth Noyce</name>
  </author>
 
+ 
+ <entry>
+   <title>Dev Log - Fishing</title>
+	 <link href="https://triple-aye.com/2018/08/15/Dev-Log-Fishing/"/>
+   <updated>2018-08-15T00:00:00+01:00</updated>
+	 <id>https://triple-aye.com/2018/08/15/Dev-Log---Fishing</id>
+   <content type="html">&lt;p&gt;Time for another dev log, this time I’m doing a high level overview of what was involved in the basics of the fishing action.&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/z6M-wUo-rM4&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; encrypted-media&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Here’s a &lt;a href=&quot;https://www.youtube.com/watch?v=z6M-wUo-rM4&quot;&gt;Direct Link&lt;/a&gt; for those that prefer.&lt;/p&gt;
+
+&lt;p&gt;It’s still a bit rough and ready, but I did spend some time to do a proper title. Small improvements ;D&lt;/p&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>Dev Log - Player Character Actions</title>

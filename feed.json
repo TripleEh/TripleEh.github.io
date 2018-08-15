@@ -8,6 +8,16 @@
         "name": "Gareth Noyce"},
     "items": [
       {
+            "id": "http://localhost:4000/2018/08/15/Dev-Log---Fishing",
+            "url": "http://localhost:4000/2018/08/15/Dev-Log-Fishing/",
+            "title": "Dev Log - Fishing",
+            "content_html": "<p>Time for another dev log, this time I’m doing a high level overview of what was involved in the basics of the fishing action.</p>\n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/z6M-wUo-rM4\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen=\"\"></iframe>\n\n<p>Here’s a <a href=\"https://www.youtube.com/watch?v=z6M-wUo-rM4\">Direct Link</a> for those that prefer.</p>\n\n<p>It’s still a bit rough and ready, but I did spend some time to do a proper title. Small improvements ;D</p>",
+            "summary": "Time for another dev log, this time I’m doing a high level overview of what was involved in the basics of the fishing action.",
+            "date_published": "2018-08-15T00:00:00+01:00",
+            "date_modified": "2018-08-15T00:00:00+01:00",
+            "author": {
+              "name": "Gareth Noyce"},
+            "tags": []},{
             "id": "http://localhost:4000/2018/07/30/Dev-Log---Player-Character-Actions",
             "url": "http://localhost:4000/2018/07/30/Dev-Log-Player-Character-Actions/",
             "title": "Dev Log - Player Character Actions",
@@ -95,16 +105,6 @@
             "summary": "Apologies for the long delay in posting. I’m ashamed to say that I’ve still not bought a coffee machine, but it’s not stopped me from having a fairly productive few weeks.",
             "date_published": "2017-11-26T00:00:00+00:00",
             "date_modified": "2017-11-26T00:00:00+00:00",
-            "author": {
-              "name": "Gareth Noyce"},
-            "tags": []},{
-            "id": "http://localhost:4000/2017/10/29/Devlog:-Upheaval",
-            "url": "http://localhost:4000/2017/10/29/Devlog-Upheaval/",
-            "title": "Devlog: Upheaval",
-            "content_html": "<p>I’ve lost count of the number of times I’ve moved house. Enough that I should be a bit of an expert at it, or at least, not underestimate how long it takes to sort everything out once I’ve “unpacked”. As it was, the first three weeks of October were a right-off, but bar buying a new coffee machine I’m basically good to go, I‘m back on the ‘net, and I’ve just come back from a much more chilled few days in the UK to celebrate my birthday.</p>\n\n<p>Go go go!</p>\n\n<p>Unfortunately, a few more things changed than just my location. It’s been a weird month.</p>\n\n<h2 id=\"next-game\">Next Game</h2>\n\n<p>I’ve not written about this in detail for a while, mainly because progress has been so stop-start it’s been hard to wrap-up the work into an interesting post.</p>\n\n<p>Where am I? I think from the code point of view I’ve got pretty much everything in place for a networked, multi-player game. Steam integration is working, you can join / leave hosted games through friend invites, browsing for public hosted games works, the co-op and TDM modes work, environmental stuff like trigger operated doors and moving platforms are in, pick-ups, weapon types, ammo, projectiles, area explosions, AI spawning, death— everything you’d expect from a game of Quake — is in and working. But it’s hit a wall.</p>\n\n<p>I’ve lost some collaborators (totally understandably, and I’m amazingly grateful for their help to-date) and I’ve not got the money to sub-contract out in order to hit the quality bar that I want. So I’m left with a choice: rollback on the art/audio/VFX-sides, and maybe go for something like Strafe or Gibhard, or, come back to this project if-and-when I have the cash to bring on a couple of people for a few months.</p>\n\n<p>I probably could hit a nice retro-feel with some low poly characters and pixely textures, but I think Strafe’s got that covered now and I don’t want to re-tread that ground. Going even more coarsely grained, almost Doom2-like, is an option, but again, feels like a step back from what I have in my head. So I’m going to park this.</p>\n\n<p>If I’m honest, every step in this project has been just a smidge harder than it should have been, not least because of some seismic shifts in my personal-life that have royally fucked my ability to focus, but I’m inclined to listen to the universe and accept that this “isn’t the one”. Meh.</p>\n\n<p>I still want to make a really fucking fast, twitchy FPS, so I’m not ready to let this go completely. Which means maintaining it with each UE4 upgrade and biding my time…</p>\n\n<h2 id=\"neutrino\">Neutrino</h2>\n\n<p>Man, I’m so fucking glad that I decided to roll with a little side-project, post Lumo. Being able to work on something when surrounded by boxes, on a train, bus, or stuck in an airport, has been a life-saver. I’d be much more stressed if I was looking back on October as being entirely unproductive.</p>\n\n<p>The fruits of this half-arsed labour?</p>\n\n<p><img src=\"images/Neutrino_BulletEd.gif\" alt=\"GunEd\" /></p>\n\n<p>Behold, my nearly finished Gun Editor.</p>\n\n<p>Yup, dead simple, probably only a day’s work, but I’ve also gone through and cleaned up a few hanging TODO items, and added viewport scaling to the mouse wheel for the editor modes.</p>\n\n<p>I need to add the bullet definitions to this, then do a particle emitter editor, at which point I literally have no more excuses. I need to be making a game with this. But I’m not going to go back to it until Xmas.</p>\n\n<p>I have a cunning plan…</p>",
-            "summary": "I’ve lost count of the number of times I’ve moved house. Enough that I should be a bit of an expert at it, or at least, not underestimate how long it takes to sort everything out once I’ve “unpacked”. As it was, the first three weeks of October were a right-off, but bar buying a new coffee machine I’m basically good to go, I‘m back on the ‘net, and I’ve just come back from a much more chilled few days in the UK to celebrate my birthday.",
-            "date_published": "2017-10-29T00:00:00+01:00",
-            "date_modified": "2017-10-29T00:00:00+01:00",
             "author": {
               "name": "Gareth Noyce"},
             "tags": []}]

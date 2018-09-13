@@ -8,6 +8,16 @@
         "name": "Gareth Noyce"},
     "items": [
       {
+            "id": "http://localhost:4000/2018/09/13/Dev-Log:-Build-Update",
+            "url": "http://localhost:4000/2018/09/13/Dev-Log-Build-Update/",
+            "title": "Dev Log: Build Update",
+            "content_html": "<p>Woo, I’ve been on holiday! And done some stuff! And now I’m off to Finland to give some lectures on game design…</p>\n\n<p>So here’s a quick run-down of the bits and pieces I’ve been doing in-between all that…</p>\n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/P8CE-d36OGs?rel=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen=\"\"></iframe>\n\n<p>Don’t forget, you can watch me streaming development most weekday mornings (GMT) on <a href=\"https://www.twitch.tv/tripleeh\">Twitch</a>.</p>",
+            "summary": "Woo, I’ve been on holiday! And done some stuff! And now I’m off to Finland to give some lectures on game design…",
+            "date_published": "2018-09-13T00:00:00+01:00",
+            "date_modified": "2018-09-13T00:00:00+01:00",
+            "author": {
+              "name": "Gareth Noyce"},
+            "tags": []},{
             "id": "http://localhost:4000/2018/08/15/Dev-Log---Fishing",
             "url": "http://localhost:4000/2018/08/15/Dev-Log-Fishing/",
             "title": "Dev Log - Fishing",
@@ -95,16 +105,6 @@
             "summary": "Good camera implementations in games are super interesting, often hiding a lot of subtlety from the player in order to present the best view of the action. Don’t believe me? Check out this quick run-down of some of the camera-modes in Super Mario World.",
             "date_published": "2018-01-06T00:00:00+00:00",
             "date_modified": "2018-01-06T00:00:00+00:00",
-            "author": {
-              "name": "Gareth Noyce"},
-            "tags": []},{
-            "id": "http://localhost:4000/2017/11/26/Devlog:-November",
-            "url": "http://localhost:4000/2017/11/26/Devlog-November/",
-            "title": "Devlog: November",
-            "content_html": "<p>Apologies for the long delay in posting. I’m ashamed to say that I’ve still not bought a coffee machine, but it’s not stopped me from having a fairly productive few weeks.</p>\n\n<h2 id=\"lumo\">Lumo</h2>\n\n<p>Yes, it’s finally out on the Switch and just in time for Xmas! The port was done by Spiral House Ltd and I’m very pleased with the result. After all the hassles JAW had with Unity on Vita, I was\nworried that the same problems might plague Unity on the Switch, but fortunately that doesn’t appear to be the case.</p>\n\n<p>To all intents and purposes Lumo on the Switch is identical to the PS4 version, just capped at 30 fps. It’s also an unintentionally perfect game for the Switch, as the room based style of play \nmeans you can pick it up for 10 minutes, run about and then put it down. Obviously I’m a massive fan-boy for the Switch, but I really did enjoy going back to the game and playing it on the go. It feels perfect.</p>\n\n<p>There are physical copies in the EU and US, but not a lot of them so hit up Amazon if you’re after one. They’re going to disappear quickly.</p>\n\n<p>Fortunately I’ve not had to do much PR for this release, but I did do an <a href=\"https://www.reddit.com/r/NintendoSwitch/comments/7e9iyn/im_gareth_noyce_the_developer_of_lumo_ask_me/\">AMA on r/NintendoSwitch.</a> Many thanks to Tim and the other mods there for inviting me on. :)</p>\n\n<h2 id=\"little-breton\">Little Breton</h2>\n\n<p>With Psyance parked until I decide how to get some art done, I’ve moved on to the other idea that’s been bubbling away in the back of my head. In some respects this is a bit of a spiritual sequel to Lumo, as \nthe big problem I kept facing when making that game was to stop myself from turning it into a massive Zelda dungeon. Head over Heels and co. largely kept their puzzles restricted to single rooms, and so I wanted Lumo \nto stick to that template, which meant not doing certain things.</p>\n\n<p>So sod it, it’s time to make some Zelda dungeons :)</p>\n\n<p><img src=\"/images/LittleBreton.jpg\" alt=\"Little Breton\" /></p>\n\n<p>I’ll post more info on this after Xmas. For now I’m busy making modular art pieces so I can start sketching out a world to run around in.</p>",
-            "summary": "Apologies for the long delay in posting. I’m ashamed to say that I’ve still not bought a coffee machine, but it’s not stopped me from having a fairly productive few weeks.",
-            "date_published": "2017-11-26T00:00:00+00:00",
-            "date_modified": "2017-11-26T00:00:00+00:00",
             "author": {
               "name": "Gareth Noyce"},
             "tags": []}]

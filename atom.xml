@@ -4,12 +4,27 @@
  <title>Triple Eh?</title>
  <link href="https://triple-aye.com/atom.xml" rel="self"/>
  <link href="https://triple-aye.com/"/>
- <updated>2018-08-15T08:16:15+01:00</updated>
+ <updated>2018-09-13T16:33:56+01:00</updated>
  <id>https://triple-aye.com/</id>
  <author>
    <name>Gareth Noyce</name>
  </author>
 
+ 
+ <entry>
+   <title>Dev Log: Build Update</title>
+	 <link href="https://triple-aye.com/2018/09/13/Dev-Log-Build-Update/"/>
+   <updated>2018-09-13T00:00:00+01:00</updated>
+	 <id>https://triple-aye.com/2018/09/13/Dev-Log:-Build-Update</id>
+   <content type="html">&lt;p&gt;Woo, I’ve been on holiday! And done some stuff! And now I’m off to Finland to give some lectures on game design…&lt;/p&gt;
+
+&lt;p&gt;So here’s a quick run-down of the bits and pieces I’ve been doing in-between all that…&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/P8CE-d36OGs?rel=0&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; encrypted-media&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Don’t forget, you can watch me streaming development most weekday mornings (GMT) on &lt;a href=&quot;https://www.twitch.tv/tripleeh&quot;&gt;Twitch&lt;/a&gt;.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Dev Log - Fishing</title>

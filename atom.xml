@@ -4,7 +4,7 @@
  <title>Triple Eh?</title>
  <link href="https://triple-aye.com/atom.xml" rel="self"/>
  <link href="https://triple-aye.com/"/>
- <updated>2018-10-24T10:10:07+03:00</updated>
+ <updated>2018-12-01T10:20:35+00:00</updated>
  <id>https://triple-aye.com/</id>
  <author>
    <name>Gareth Noyce</name>
@@ -12,9 +12,24 @@
 
  
  <entry>
+   <title>Dev Log: New Character, Pick-ups and Chests</title>
+	 <link href="https://triple-aye.com/2018/12/01/Dev-Log-New-Character,-Pick-ups-and-Chests/"/>
+   <updated>2018-12-01T00:00:00+00:00</updated>
+	 <id>https://triple-aye.com/2018/12/01/Dev-Log:-New-Character,-Pick-ups-and-Chests</id>
+   <content type="html">&lt;p&gt;Another month, another quick video update. Lots of bits and pieces this month, with the most visual being the new character design, from Paul Large.&lt;/p&gt;
+
+&lt;p&gt;Enjoy:&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/_to4aS9m5XU&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://youtu.be/_to4aS9m5XU&quot;&gt;Direct Link&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
    <title>Dev Log: More Fishing</title>
 	 <link href="https://triple-aye.com/2018/10/24/Dev-Log-More-Fishing/"/>
-   <updated>2018-10-24T00:00:00+03:00</updated>
+   <updated>2018-10-24T00:00:00+01:00</updated>
 	 <id>https://triple-aye.com/2018/10/24/Dev-Log:-More-Fishing</id>
    <content type="html">&lt;p&gt;I’ve been busy this month. Firstly, I’ve agreed to work a couple of days a week for a start-up in Cambridge (outside of games), so now I have some income.&lt;/p&gt;
 
@@ -31,7 +46,7 @@
  <entry>
    <title>Dev Log: Build Update</title>
 	 <link href="https://triple-aye.com/2018/09/13/Dev-Log-Build-Update/"/>
-   <updated>2018-09-13T00:00:00+03:00</updated>
+   <updated>2018-09-13T00:00:00+01:00</updated>
 	 <id>https://triple-aye.com/2018/09/13/Dev-Log:-Build-Update</id>
    <content type="html">&lt;p&gt;Woo, I’ve been on holiday! And done some stuff! And now I’m off to Finland to give some lectures on game design…&lt;/p&gt;
 
@@ -46,7 +61,7 @@
  <entry>
    <title>Dev Log - Fishing</title>
 	 <link href="https://triple-aye.com/2018/08/15/Dev-Log-Fishing/"/>
-   <updated>2018-08-15T00:00:00+03:00</updated>
+   <updated>2018-08-15T00:00:00+01:00</updated>
 	 <id>https://triple-aye.com/2018/08/15/Dev-Log---Fishing</id>
    <content type="html">&lt;p&gt;Time for another dev log, this time I’m doing a high level overview of what was involved in the basics of the fishing action.&lt;/p&gt;
 
@@ -62,7 +77,7 @@
  <entry>
    <title>Dev Log - Player Character Actions</title>
 	 <link href="https://triple-aye.com/2018/07/30/Dev-Log-Player-Character-Actions/"/>
-   <updated>2018-07-30T00:00:00+03:00</updated>
+   <updated>2018-07-30T00:00:00+01:00</updated>
 	 <id>https://triple-aye.com/2018/07/30/Dev-Log---Player-Character-Actions</id>
    <content type="html">&lt;p&gt;Here’s the first video Dev Log, where I discuss some of the Player Character Actions, and the systems I have to build under them.&lt;/p&gt;
 
@@ -81,7 +96,7 @@ get something up, to get the ball rolling. I’ll slowly work to improve the ove
  <entry>
    <title>Lumo Dev Diary</title>
 	 <link href="https://triple-aye.com/2018/07/16/Lumo-Dev-Diary/"/>
-   <updated>2018-07-16T00:00:00+03:00</updated>
+   <updated>2018-07-16T00:00:00+01:00</updated>
 	 <id>https://triple-aye.com/2018/07/16/Lumo-Dev-Diary</id>
    <content type="html">&lt;p&gt;My house move is complete and I’m living in the UK again. Woo!&lt;/p&gt;
 
@@ -170,7 +185,7 @@ The rest of the month is a blur of interviews, podcasts, 4am Twitch streams and 
  <entry>
    <title>A new look...</title>
 	 <link href="https://triple-aye.com/2018/05/26/A-new-look/"/>
-   <updated>2018-05-26T00:00:00+03:00</updated>
+   <updated>2018-05-26T00:00:00+01:00</updated>
 	 <id>https://triple-aye.com/2018/05/26/A-new-look</id>
    <content type="html">&lt;p&gt;So I’ve every so slightly updated the blog. There’s a new colour scheme and a fancy logo has appeared. Don’t worry, nothing’s really changed except I’ve finally decided 
 to “brand” my one man company.&lt;/p&gt;
@@ -190,7 +205,7 @@ is an uphill struggle these days.&lt;/p&gt;
  <entry>
    <title>I'm alive...</title>
 	 <link href="https://triple-aye.com/2018/05/05/I'm-alive/"/>
-   <updated>2018-05-05T00:00:00+03:00</updated>
+   <updated>2018-05-05T00:00:00+01:00</updated>
 	 <id>https://triple-aye.com/2018/05/05/I'm-alive</id>
    <content type="html">&lt;p&gt;…with caveats :D&lt;/p&gt;
 
@@ -218,7 +233,7 @@ you can still expect updates here, I’ve just not made up my mind how frequentl
  <entry>
    <title>Stylised Water Shader</title>
 	 <link href="https://triple-aye.com/2018/03/24/Stylised-Water-Shader/"/>
-   <updated>2018-03-24T00:00:00+02:00</updated>
+   <updated>2018-03-24T00:00:00+00:00</updated>
 	 <id>https://triple-aye.com/2018/03/24/Stylised-Water-Shader</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/images/water.gif&quot; alt=&quot;Water Animation Gif&quot; /&gt;&lt;/p&gt;
 
@@ -238,7 +253,7 @@ this culminated in the class making a simple Surface Shader for water, which I�
  <entry>
    <title>In-Game Sticky Notes...</title>
 	 <link href="https://triple-aye.com/2018/03/07/In-Game-Sticky-Notes/"/>
-   <updated>2018-03-07T00:00:00+02:00</updated>
+   <updated>2018-03-07T00:00:00+00:00</updated>
 	 <id>https://triple-aye.com/2018/03/07/In-Game-Sticky-Notes</id>
    <content type="html">&lt;p&gt;You know what it’s like, you’re building something in-engine and you need to make a note of something — a TODO, or random idea — and your notepad isn’t to hand.&lt;/p&gt;
 
@@ -395,7 +410,7 @@ this culminated in the class making a simple Surface Shader for water, which I�
  <entry>
    <title>Super Simple Day Night Cycle</title>
 	 <link href="https://triple-aye.com/2018/01/20/Super-Simple-Day-Night-Cycle/"/>
-   <updated>2018-01-20T00:00:00+02:00</updated>
+   <updated>2018-01-20T00:00:00+00:00</updated>
 	 <id>https://triple-aye.com/2018/01/20/Super-Simple-Day-Night-Cycle</id>
    <content type="html">&lt;p&gt;A Day/Night cycle can be a bit of a double edged sword. On the plus side it gives you the freedom to demarcate events into time periods — “they mostly come at night. Mostly…” — and on the downside you have to make the environment look good in a range of different lighting setups. So it’s important to have some easy controls.&lt;/p&gt;
 
@@ -494,7 +509,7 @@ this culminated in the class making a simple Surface Shader for water, which I�
  <entry>
    <title>In Game Camera</title>
 	 <link href="https://triple-aye.com/2018/01/06/In-Game-Camera/"/>
-   <updated>2018-01-06T00:00:00+02:00</updated>
+   <updated>2018-01-06T00:00:00+00:00</updated>
 	 <id>https://triple-aye.com/2018/01/06/In-Game-Camera</id>
    <content type="html">&lt;p&gt;Good camera implementations in games are super interesting, often hiding a lot of subtlety from the player in order to present the best view of the action. Don’t believe me? Check out this quick run-down of some of the camera-modes in &lt;a href=&quot;https://www.youtube.com/watch?v=TCIMPYM0AQg&quot;&gt;Super Mario World&lt;/a&gt;.&lt;/p&gt;
 
@@ -621,7 +636,7 @@ this culminated in the class making a simple Surface Shader for water, which I�
  <entry>
    <title>Devlog: November</title>
 	 <link href="https://triple-aye.com/2017/11/26/Devlog-November/"/>
-   <updated>2017-11-26T00:00:00+02:00</updated>
+   <updated>2017-11-26T00:00:00+00:00</updated>
 	 <id>https://triple-aye.com/2017/11/26/Devlog:-November</id>
    <content type="html">&lt;p&gt;Apologies for the long delay in posting. I’m ashamed to say that I’ve still not bought a coffee machine, but it’s not stopped me from having a fairly productive few weeks.&lt;/p&gt;
 
@@ -655,7 +670,7 @@ to stick to that template, which meant not doing certain things.&lt;/p&gt;
  <entry>
    <title>Devlog: Upheaval</title>
 	 <link href="https://triple-aye.com/2017/10/29/Devlog-Upheaval/"/>
-   <updated>2017-10-29T00:00:00+03:00</updated>
+   <updated>2017-10-29T00:00:00+01:00</updated>
 	 <id>https://triple-aye.com/2017/10/29/Devlog:-Upheaval</id>
    <content type="html">&lt;p&gt;I’ve lost count of the number of times I’ve moved house. Enough that I should be a bit of an expert at it, or at least, not underestimate how long it takes to sort everything out once I’ve “unpacked”. As it was, the first three weeks of October were a right-off, but bar buying a new coffee machine I’m basically good to go, I‘m back on the ‘net, and I’ve just come back from a much more chilled few days in the UK to celebrate my birthday.&lt;/p&gt;
 
@@ -699,7 +714,7 @@ to stick to that template, which meant not doing certain things.&lt;/p&gt;
  <entry>
    <title>Devlog: Curves</title>
 	 <link href="https://triple-aye.com/2017/09/23/Devlog-Curves/"/>
-   <updated>2017-09-23T00:00:00+03:00</updated>
+   <updated>2017-09-23T00:00:00+01:00</updated>
 	 <id>https://triple-aye.com/2017/09/23/Devlog:-Curves</id>
    <content type="html">&lt;p&gt;I’m in the process of packing up my life for the move back to Tampere, so this will be the last catch-up blog until I’m setup again. Meh.&lt;/p&gt;
 
@@ -755,7 +770,7 @@ to stick to that template, which meant not doing certain things.&lt;/p&gt;
  <entry>
    <title>Devlog: Grab bag catch-up post...</title>
 	 <link href="https://triple-aye.com/2017/09/05/Devlog-Grab-bag-catch-up-post/"/>
-   <updated>2017-09-05T00:00:00+03:00</updated>
+   <updated>2017-09-05T00:00:00+01:00</updated>
 	 <id>https://triple-aye.com/2017/09/05/Devlog:-Grab-bag-catch-up-post</id>
    <content type="html">&lt;p&gt;I’m waaaay overdue a post.&lt;/p&gt;
 
@@ -794,7 +809,7 @@ to stick to that template, which meant not doing certain things.&lt;/p&gt;
  <entry>
    <title>Work In Progress</title>
 	 <link href="https://triple-aye.com/2017/07/20/Work-In-Progress/"/>
-   <updated>2017-07-20T00:00:00+03:00</updated>
+   <updated>2017-07-20T00:00:00+01:00</updated>
 	 <id>https://triple-aye.com/2017/07/20/Work-In-Progress</id>
    <content type="html">&lt;p&gt;Quick little update, especially for those of you that actually follow the blog, rather than catch me on Tumblr or Medium. Here’s the progress that I’ve been making on the AI in the test dungeon over the last 3 weeks:&lt;/p&gt;
 
@@ -809,7 +824,7 @@ best not to be a completely static target. Good enough, for now, but I’ll be c
  <entry>
    <title>Devlog: Oh Behave...</title>
 	 <link href="https://triple-aye.com/2017/07/17/Devlog-Oh-Behave"/>
-   <updated>2017-07-17T00:00:00+03:00</updated>
+   <updated>2017-07-17T00:00:00+01:00</updated>
 	 <id>https://triple-aye.com/2017/07/17/Devlog:-Oh-Behave...</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/images/2017-07-14-Behave.png&quot; alt=&quot;Behaviour Tree&quot; /&gt;&lt;/p&gt;
 
@@ -881,7 +896,7 @@ best not to be a completely static target. Good enough, for now, but I’ll be c
  <entry>
    <title>Devlog: Frigging in the Rigging...</title>
 	 <link href="https://triple-aye.com/2017/06/26/Devlog-Frigging-in-the-Rigging/"/>
-   <updated>2017-06-26T00:00:00+03:00</updated>
+   <updated>2017-06-26T00:00:00+01:00</updated>
 	 <id>https://triple-aye.com/2017/06/26/Devlog:-Frigging-in-the-Rigging</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/images/rigging1.png&quot; alt=&quot;AI Test Dungeon&quot; /&gt;&lt;/p&gt;
 
@@ -916,7 +931,7 @@ best not to be a completely static target. Good enough, for now, but I’ll be c
  <entry>
    <title>Devlog: The Price Is Right</title>
 	 <link href="https://triple-aye.com/2017/06/03/Devlog-The-Price-Is-Right/"/>
-   <updated>2017-06-03T00:00:00+03:00</updated>
+   <updated>2017-06-03T00:00:00+01:00</updated>
 	 <id>https://triple-aye.com/2017/06/03/Devlog:-The-Price-Is-Right</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/images/price1.jpg&quot; alt=&quot;Price is right!&quot; /&gt;&lt;/p&gt;
 
@@ -985,7 +1000,7 @@ best not to be a completely static target. Good enough, for now, but I’ll be c
  <entry>
    <title>Devlog: Replication</title>
 	 <link href="https://triple-aye.com/2017/05/12/Devlog-12.05.17-Replication/"/>
-   <updated>2017-05-12T00:00:00+03:00</updated>
+   <updated>2017-05-12T00:00:00+01:00</updated>
 	 <id>https://triple-aye.com/2017/05/12/Devlog:-12.05.17---Replication</id>
    <content type="html">&lt;p&gt;First week back on Next Game, for oooh, a few weeks, and time to tackle the networking side of things. I had an inkling that retro-fitting multiplayer into the work I’d already done would be a bit of a ball-ache, but I was wrong. It was a massive fucking pain in the hairy-tits.&lt;/p&gt;
 
@@ -1015,7 +1030,7 @@ best not to be a completely static target. Good enough, for now, but I’ll be c
  <entry>
    <title>Devlog: Making Pixels Glow</title>
 	 <link href="https://triple-aye.com/2017/04/29/Devlog-Making-Pixels-Glow/"/>
-   <updated>2017-04-29T00:00:00+03:00</updated>
+   <updated>2017-04-29T00:00:00+01:00</updated>
 	 <id>https://triple-aye.com/2017/04/29/Devlog:-Making-Pixels-Glow</id>
    <content type="html">&lt;p&gt;Easter and consultancy work have got in the way a bit, but the side project’s taken a big step forward…&lt;/p&gt;
 
@@ -1054,7 +1069,7 @@ best not to be a completely static target. Good enough, for now, but I’ll be c
  <entry>
    <title>Devlog - 08.04.17</title>
 	 <link href="https://triple-aye.com/2017/04/08/Devlog-08.04.17/"/>
-   <updated>2017-04-08T00:00:00+03:00</updated>
+   <updated>2017-04-08T00:00:00+01:00</updated>
 	 <id>https://triple-aye.com/2017/04/08/Devlog---08.04.17</id>
    <content type="html">&lt;p&gt;Zelda has been pushed to the back-burner, I’ve been to the UK for a trade show, and started up a new consultancy gig. Even found some time to do some programming…&lt;/p&gt;
 
@@ -1123,7 +1138,7 @@ stuff off other developers now and again.&lt;/p&gt;
  <entry>
    <title>Devlog - 17.03.17</title>
 	 <link href="https://triple-aye.com/2017/04/08/Devlog-17.03.17/"/>
-   <updated>2017-04-08T00:00:00+03:00</updated>
+   <updated>2017-04-08T00:00:00+01:00</updated>
 	 <id>https://triple-aye.com/2017/04/08/Devlog---17.03.17</id>
    <content type="html">&lt;p&gt;The flip-side to blogging about my progress is that you get to see the occasions where I’ve not been massively productive. So I’m going to waffle on about what’s really had its hooks in me over the last couple of weeks…&lt;/p&gt;
 
@@ -1232,7 +1247,7 @@ quality. Certainly not on a scale as grand and as beautiful as this.&lt;/p&gt;
  <entry>
    <title>Devlog - 08.03.17</title>
 	 <link href="https://triple-aye.com/2017/03/08/Devlog-08.03.17/"/>
-   <updated>2017-03-08T00:00:00+02:00</updated>
+   <updated>2017-03-08T00:00:00+00:00</updated>
 	 <id>https://triple-aye.com/2017/03/08/Devlog---08.03.17</id>
    <content type="html">&lt;p&gt;Early update, this time, as I’m off to the UK for a wedding. Because of that – and because I’m meeting up with a friend 
 who’s helping me with some concept art – it’s been a race-to-make-a-face since my last post.&lt;/p&gt;
@@ -1299,7 +1314,7 @@ to change. It’s heading in the right direction, though.&lt;/p&gt;
  <entry>
    <title>Devlog - 24.02.17</title>
 	 <link href="https://triple-aye.com/2017/02/24/Devlog-24.02.17/"/>
-   <updated>2017-02-24T00:00:00+02:00</updated>
+   <updated>2017-02-24T00:00:00+00:00</updated>
 	 <id>https://triple-aye.com/2017/02/24/Devlog---24.02.17</id>
    <content type="html">&lt;p&gt;Oops, I missed a week and the devlog is late. Sorry! Game Dev and all that. Shipping late’s what we do…&lt;/p&gt;
 
@@ -1411,7 +1426,7 @@ etc. etc.
  <entry>
    <title>Devlog - 03.02.2017</title>
 	 <link href="https://triple-aye.com/2017/02/03/Devlog-03.02.2017/"/>
-   <updated>2017-02-03T00:00:00+02:00</updated>
+   <updated>2017-02-03T00:00:00+00:00</updated>
 	 <id>https://triple-aye.com/2017/02/03/Devlog---03.02.2017</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/images/17.02.03-DecalsTest2.jpg&quot; alt=&quot;Hello Mum&quot; /&gt;&lt;/p&gt;
 
@@ -1483,7 +1498,7 @@ checking out. I’m @korruptor as usual.&lt;/p&gt;
  <entry>
    <title>Visual Studio Code</title>
 	 <link href="https://triple-aye.com/2017/01/28/Visual-Studio-Code/"/>
-   <updated>2017-01-28T00:00:00+02:00</updated>
+   <updated>2017-01-28T00:00:00+00:00</updated>
 	 <id>https://triple-aye.com/2017/01/28/Visual-Studio-Code</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;images/vscode.png&quot; alt=&quot;Visual Studio Code&quot; /&gt;&lt;/p&gt;
 
@@ -1518,7 +1533,7 @@ worth checking out.&lt;/p&gt;
  <entry>
    <title>Devlog - 20.1.17</title>
 	 <link href="https://triple-aye.com/2017/01/20/Devlog-20.1.17/"/>
-   <updated>2017-01-20T00:00:00+02:00</updated>
+   <updated>2017-01-20T00:00:00+00:00</updated>
 	 <id>https://triple-aye.com/2017/01/20/Devlog---20.1.17</id>
    <content type="html">&lt;div style=&quot;text-align: center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/qr0ff58evkQ&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;/div&gt;
 
@@ -1558,7 +1573,7 @@ worth checking out.&lt;/p&gt;
  <entry>
    <title>Dev blog, 6th Jan</title>
 	 <link href="https://triple-aye.com/2017/01/06/Dev-blog,-6th-Jan/"/>
-   <updated>2017-01-06T00:00:00+02:00</updated>
+   <updated>2017-01-06T00:00:00+00:00</updated>
 	 <id>https://triple-aye.com/2017/01/06/Dev-blog,-6th-Jan</id>
    <content type="html">&lt;p&gt;Happy New Year!&lt;/p&gt;
 
@@ -1600,7 +1615,7 @@ So I’ve started writing a simple tilemap editor in-engine. Exactly what I said
  <entry>
    <title>PS4 v1.02 Save Games</title>
 	 <link href="https://triple-aye.com/2016/12/03/PS4-v1.0.2-Save-Games/"/>
-   <updated>2016-12-03T00:00:00+02:00</updated>
+   <updated>2016-12-03T00:00:00+00:00</updated>
 	 <id>https://triple-aye.com/2016/12/03/PS4-v1.0.2-Save-Games</id>
    <content type="html">&lt;p&gt;A few people have still experienced the save icon corruption on PS4 and have posted to the Steam forums for info. Mart from RSG just posted the 
 following steps which should fix the issue for anyone that’s upgraded from the previous build, but still has problems:&lt;/p&gt;
@@ -1624,7 +1639,7 @@ issue and v1.02 should be stable for you.&lt;/p&gt;
  <entry>
    <title>Lumo Build Updates</title>
 	 <link href="https://triple-aye.com/2016/11/08/Build-Update-v1.11.8-Fixes-to-Win10-controller-issues/"/>
-   <updated>2016-11-08T00:00:00+02:00</updated>
+   <updated>2016-11-08T00:00:00+00:00</updated>
 	 <id>https://triple-aye.com/2016/11/08/Build-Update-v1.11.8---Fixes-to-Win10-controller-issues</id>
    <content type="html">&lt;p&gt;The Windows 10 Anniversary update caused a lot of weird issues with how gamepads work, leaving Lumo and a bunch of other games
 with broken controls. I’ve just pushed out a new build to Steam that should fix most of these problems.&lt;/p&gt;
@@ -1662,7 +1677,7 @@ confirm that the fix for this, on both PS4 and Vita, went live today. Phew :)&lt
  <entry>
    <title>Devupdate - 4th November</title>
 	 <link href="https://triple-aye.com/2016/11/04/Devupdate-4th-November/"/>
-   <updated>2016-11-04T00:00:00+02:00</updated>
+   <updated>2016-11-04T00:00:00+00:00</updated>
 	 <id>https://triple-aye.com/2016/11/04/Devupdate---4th-November</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;images/lemsip.jpg&quot; alt=&quot;How I miss this...&quot; /&gt;&lt;/p&gt;
 
@@ -1755,7 +1770,7 @@ fun this week. In between the sneezes.&lt;/p&gt;
  <entry>
    <title>Devupdate - 13th October</title>
 	 <link href="https://triple-aye.com/2016/10/13/Devupdate-13th-October/"/>
-   <updated>2016-10-13T00:00:00+03:00</updated>
+   <updated>2016-10-13T00:00:00+01:00</updated>
 	 <id>https://triple-aye.com/2016/10/13/Devupdate---13th-October</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/images/2016.10.13_UV_ForBlogPost.PNG&quot; alt=&quot;UV Islands&quot; /&gt;&lt;/p&gt;
 
@@ -1800,7 +1815,7 @@ so it’s nice when I do finally crack something. Even if it takes all day… :)
  <entry>
    <title>This is scary...</title>
 	 <link href="https://triple-aye.com/2016/10/12/This-is-scary"/>
-   <updated>2016-10-12T00:00:00+03:00</updated>
+   <updated>2016-10-12T00:00:00+01:00</updated>
 	 <id>https://triple-aye.com/2016/10/12/This-is-scary...</id>
    <content type="html">&lt;p&gt;Quick aside: I’ve been doing a bit of work on the side project this week - mainly on the train to and from my teaching classes - and I noticed something a bit worrying. For a 
 while I’ve been wondering why my 2D framework for Neutrino appears to be pixel-fill limited on my laptop. Much more so than I expected. Jumping to 1080p in a window is enough 
@@ -1828,7 +1843,7 @@ and something I thought was worth sharing. Not all desktop environments are equa
  <entry>
    <title>Devupdate - 6th October</title>
 	 <link href="https://triple-aye.com/2016/10/06/Devupdate/"/>
-   <updated>2016-10-06T00:00:00+03:00</updated>
+   <updated>2016-10-06T00:00:00+01:00</updated>
 	 <id>https://triple-aye.com/2016/10/06/Devupdate</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/images/2016.10.06_Character_WIP1.jpg&quot; alt=&quot;Character 1 WIP&quot; /&gt;&lt;/p&gt;
 
@@ -1864,7 +1879,7 @@ confident that this’ll be good to go before I leave for the UK next week.&lt;/
  <entry>
    <title>Devupdate - 23rd September</title>
 	 <link href="https://triple-aye.com/2016/09/23/devupdate-23rd-september/"/>
-   <updated>2016-09-23T08:14:00+03:00</updated>
+   <updated>2016-09-23T08:14:00+01:00</updated>
 	 <id>https://triple-aye.com/2016/09/23/devupdate-23rd-september</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/images/22.09.2016-SplitScreenTest.jpg&quot; alt=&quot;Screenshot&quot; /&gt;&lt;/p&gt;
 
@@ -1894,7 +1909,7 @@ confident that this’ll be good to go before I leave for the UK next week.&lt;/
  <entry>
    <title>Dev Update – 14th September</title>
 	 <link href="https://triple-aye.com/2016/09/14/dev-update-15th-september/"/>
-   <updated>2016-09-14T18:37:00+03:00</updated>
+   <updated>2016-09-14T18:37:00+01:00</updated>
 	 <id>https://triple-aye.com/2016/09/14/dev-update-15th-september</id>
    <content type="html">&lt;p&gt;I’ve had my head in Unreal, off and on, since the last post and I’m slowly starting to make head-way. As mentioned in the previous post, the Blueprint system was feeling like a grind, so I spent a week biting the bullet and just trying to get stuff going from the C++ side. This immediately gave me better results, and despite the iteration time being slower, I ended up getting a lot more done.&lt;/p&gt;
 
@@ -1912,7 +1927,7 @@ confident that this’ll be good to go before I leave for the UK next week.&lt;/
  <entry>
    <title>Dev Update - 26th August</title>
 	 <link href="https://triple-aye.com/2016/08/26/dev-update-26th-august/"/>
-   <updated>2016-08-26T10:52:00+03:00</updated>
+   <updated>2016-08-26T10:52:00+01:00</updated>
 	 <id>https://triple-aye.com/2016/08/26/dev-update-26th-august</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/images/Screenshot-from-2016-08-26-09-46-16-e1472198667714.png&quot; alt=&quot;Screenshot&quot; /&gt;
 So, this is exciting. Linux Voice - easily my fav tech magazine - very kindly asked if I’d be interesting in writing a quick Dev Diary about Lumo. Obviously I jumped at the chance. Having grown up reading Zzap!64’s &lt;a href=&quot;http://www.zzap64.co.uk/zzap3/para_birth01.html&quot;&gt;“Diary of a Game”&lt;/a&gt; series, from the likes of Andy Braybrook and Jeff Minter, this was too good an opportunity to miss. The LV team did a lovely job, ending up with a 6 page feature - including some of the early prototype screenshots - in this month’s issue. Massive thanks to Graham and the lads for that!&lt;/p&gt;
@@ -1938,7 +1953,7 @@ So, this is exciting. Linux Voice - easily my fav tech magazine - very kindly 
  <entry>
    <title>Dev Update - 5th August</title>
 	 <link href="https://triple-aye.com/2016/08/05/dev-update-5th-august/"/>
-   <updated>2016-08-05T18:31:00+03:00</updated>
+   <updated>2016-08-05T18:31:00+01:00</updated>
 	 <id>https://triple-aye.com/2016/08/05/dev-update-5th-august</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/images/NESJoypad_Final.jpg&quot; alt=&quot;NES Joypad&quot; /&gt;&lt;/p&gt;
 
@@ -1968,7 +1983,7 @@ So, this is exciting. Linux Voice - easily my fav tech magazine - very kindly 
  <entry>
    <title>Lumo Director's Commentary, Part 8</title>
 	 <link href="https://triple-aye.com/2016/07/08/lumo-directors-commentary-part-8/"/>
-   <updated>2016-07-08T12:26:00+03:00</updated>
+   <updated>2016-07-08T12:26:00+01:00</updated>
 	 <id>https://triple-aye.com/2016/07/08/lumo-directors-commentary-part-8</id>
    <content type="html">&lt;div style=&quot;text-align: center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/6icLEGefcTY&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;/div&gt;
 
@@ -1981,7 +1996,7 @@ So, this is exciting. Linux Voice - easily my fav tech magazine - very kindly 
  <entry>
    <title>Lumo Director's Commentary Part 7</title>
 	 <link href="https://triple-aye.com/2016/07/01/lumo-directors-commentary-part-7/"/>
-   <updated>2016-07-01T11:37:00+03:00</updated>
+   <updated>2016-07-01T11:37:00+01:00</updated>
 	 <id>https://triple-aye.com/2016/07/01/lumo-directors-commentary-part-7</id>
    <content type="html">&lt;div style=&quot;text-align: center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/iP_xaDQDZsk&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;/div&gt;
 
@@ -1991,7 +2006,7 @@ So, this is exciting. Linux Voice - easily my fav tech magazine - very kindly 
  <entry>
    <title>Archiving...</title>
 	 <link href="https://triple-aye.com/2016/07/01/archiving/"/>
-   <updated>2016-07-01T11:35:00+03:00</updated>
+   <updated>2016-07-01T11:35:00+01:00</updated>
 	 <id>https://triple-aye.com/2016/07/01/archiving</id>
    <content type="html">&lt;p&gt;Strange feeling, but the Lumo adventure is drawing to a close. I’ve just updated my PC to Windows 10 and I’m in the process of archiving up all the software, source code, assets, documents and miscellaneous paraphernalia that I’ve accumulated and used over the last 2.5 years making the game.&lt;/p&gt;
 
@@ -2008,7 +2023,7 @@ So, this is exciting. Linux Voice - easily my fav tech magazine - very kindly 
  <entry>
    <title>Lumo, Vita release imminent!</title>
 	 <link href="https://triple-aye.com/2016/06/28/lumo-vita-release-imminent/"/>
-   <updated>2016-06-28T16:20:00+03:00</updated>
+   <updated>2016-06-28T16:20:00+01:00</updated>
 	 <id>https://triple-aye.com/2016/06/28/lumo-vita-release-imminent</id>
    <content type="html">&lt;p&gt;As noted by the fine folks over at &lt;a href=&quot;http://www.eurogamer.net/articles/2016-06-28-lumo-finally-has-a-vita-release-date&quot;&gt;Eurogamer&lt;/a&gt;, the release date for Lumo has been announced; 5th July.&lt;/p&gt;
 
@@ -2023,7 +2038,7 @@ So, this is exciting. Linux Voice - easily my fav tech magazine - very kindly 
  <entry>
    <title>Director's Commentary, Part 6</title>
 	 <link href="https://triple-aye.com/2016/06/23/directors-commentary-part-6/"/>
-   <updated>2016-06-23T22:04:00+03:00</updated>
+   <updated>2016-06-23T22:04:00+01:00</updated>
 	 <id>https://triple-aye.com/2016/06/23/directors-commentary-part-6</id>
    <content type="html">&lt;div style=&quot;text-align: center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/DPXR4u92ikg&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;/div&gt;
 
@@ -2033,7 +2048,7 @@ So, this is exciting. Linux Voice - easily my fav tech magazine - very kindly 
  <entry>
    <title>Lumo, now available for XBox One!</title>
 	 <link href="https://triple-aye.com/2016/06/23/lumo-now-available-for-xbox-one/"/>
-   <updated>2016-06-23T22:01:00+03:00</updated>
+   <updated>2016-06-23T22:01:00+01:00</updated>
 	 <id>https://triple-aye.com/2016/06/23/lumo-now-available-for-xbox-one</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/images/image.png&quot; alt=&quot;Xbox&quot; /&gt;
 Phew, we got there in the end! Lumo’s out now on XBox One. Head over to the &lt;a href=&quot;https://store.xbox.com/en-GB/Xbox-One/Games/Lumo/1247d4e3-2a97-4d47-9eba-8983c801edec&quot;&gt;Xbox store&lt;/a&gt; to grab your copy!&lt;/p&gt;
@@ -2043,7 +2058,7 @@ Phew, we got there in the end! Lumo’s out now on XBox One. Head over to the &l
  <entry>
    <title>Director's Commentary, Part 5</title>
 	 <link href="https://triple-aye.com/2016/06/17/directors-commentary-part-5/"/>
-   <updated>2016-06-17T12:29:00+03:00</updated>
+   <updated>2016-06-17T12:29:00+01:00</updated>
 	 <id>https://triple-aye.com/2016/06/17/directors-commentary-part-5</id>
    <content type="html">&lt;p&gt;Quick run through the first of the Cauldron sections. Nothing too strenuous in here:&lt;/p&gt;
 
@@ -2055,7 +2070,7 @@ Phew, we got there in the end! Lumo’s out now on XBox One. Head over to the &l
  <entry>
    <title>Director's Commentary, Part 4</title>
 	 <link href="https://triple-aye.com/2016/06/09/directors-commentary-part-4/"/>
-   <updated>2016-06-09T11:07:00+03:00</updated>
+   <updated>2016-06-09T11:07:00+01:00</updated>
 	 <id>https://triple-aye.com/2016/06/09/directors-commentary-part-4</id>
    <content type="html">&lt;div style=&quot;text-align: center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/H84P9mI-V4w&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;/div&gt;
 
@@ -2065,7 +2080,7 @@ Phew, we got there in the end! Lumo’s out now on XBox One. Head over to the &l
  <entry>
    <title>Director's Commentary, Part 3 &amp; World's first Old School run!</title>
 	 <link href="https://triple-aye.com/2016/06/03/directors-commentary-part-3-worlds-first-old-school-run/"/>
-   <updated>2016-06-03T11:36:00+03:00</updated>
+   <updated>2016-06-03T11:36:00+01:00</updated>
 	 <id>https://triple-aye.com/2016/06/03/directors-commentary-part-3-worlds-first-old-school-run</id>
    <content type="html">&lt;p&gt;Exciting news, and worth recording for posterity… The world’s first Lumo Old School run has been recorded and put on You Tube. 1 hour 28 minutes to beat!&lt;/p&gt;
 
@@ -2085,7 +2100,7 @@ Phew, we got there in the end! Lumo’s out now on XBox One. Head over to the &l
  <entry>
    <title>Director's Commentary, Part 2</title>
 	 <link href="https://triple-aye.com/2016/05/29/directors-commentary-part-2/"/>
-   <updated>2016-05-29T01:31:00+03:00</updated>
+   <updated>2016-05-29T01:31:00+01:00</updated>
 	 <id>https://triple-aye.com/2016/05/29/directors-commentary-part-2</id>
    <content type="html">&lt;p&gt;Here’s the second part of my Director’s Commentary walk through of Lumo. Enjoy!&lt;/p&gt;
 
@@ -2097,7 +2112,7 @@ Phew, we got there in the end! Lumo’s out now on XBox One. Head over to the &l
  <entry>
    <title>Release Day!</title>
 	 <link href="https://triple-aye.com/2016/05/25/release-day/"/>
-   <updated>2016-05-25T10:34:00+03:00</updated>
+   <updated>2016-05-25T10:34:00+01:00</updated>
 	 <id>https://triple-aye.com/2016/05/25/release-day</id>
    <content type="html">&lt;p&gt;Lumo’s out and the reaction from press and public has been great! Phew! That’s a massive weight off.&lt;/p&gt;
 
@@ -2116,7 +2131,7 @@ Phew, we got there in the end! Lumo’s out now on XBox One. Head over to the &l
  <entry>
    <title>Director's Commentary, Part 1</title>
 	 <link href="https://triple-aye.com/2016/05/20/directors-commentary-part-1/"/>
-   <updated>2016-05-20T10:55:00+03:00</updated>
+   <updated>2016-05-20T10:55:00+01:00</updated>
 	 <id>https://triple-aye.com/2016/05/20/directors-commentary-part-1</id>
    <content type="html">&lt;p&gt;There’s a lot of stuff tucked away in Lumo, some of it’s obvious, some of it’s pretty subtle, so I’ve had a lot of requests to explain more about the game. To that end I’ve started a Director’s Commentary series of videos. I’m doing a full run through of the game, nattering as I go. I’ll show where a lot of the collectables are hidden, and discuss what ever pops into my head as I play.&lt;/p&gt;
 
@@ -2128,7 +2143,7 @@ Phew, we got there in the end! Lumo’s out now on XBox One. Head over to the &l
  <entry>
    <title>Lumo Release Date</title>
 	 <link href="https://triple-aye.com/2016/05/11/lumo-release-date/"/>
-   <updated>2016-05-11T16:40:00+03:00</updated>
+   <updated>2016-05-11T16:40:00+01:00</updated>
 	 <id>https://triple-aye.com/2016/05/11/lumo-release-date</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/images/WebsiteHeader.png&quot; alt=&quot;Header&quot; /&gt;
 Be-de-dip-diddly-dip… News Update!&lt;/p&gt;
@@ -2144,7 +2159,7 @@ Be-de-dip-diddly-dip… News Update!&lt;/p&gt;
  <entry>
    <title>Devupdate, 11th May</title>
 	 <link href="https://triple-aye.com/2016/05/11/devupdate-11th-may/"/>
-   <updated>2016-05-11T10:36:00+03:00</updated>
+   <updated>2016-05-11T10:36:00+01:00</updated>
 	 <id>https://triple-aye.com/2016/05/11/devupdate-11th-may</id>
    <content type="html">&lt;p&gt;So. This happened:&lt;/p&gt;
 
@@ -2169,7 +2184,7 @@ Be-de-dip-diddly-dip… News Update!&lt;/p&gt;
  <entry>
    <title>Where's Lumo?</title>
 	 <link href="https://triple-aye.com/2016/04/27/wheres-lumo/"/>
-   <updated>2016-04-27T18:02:00+03:00</updated>
+   <updated>2016-04-27T18:02:00+01:00</updated>
 	 <id>https://triple-aye.com/2016/04/27/wheres-lumo</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/images/MyDesk-2-1024x613.jpg&quot; alt=&quot;My Desk&quot; /&gt;
 It’s there. On that PC.&lt;/p&gt;

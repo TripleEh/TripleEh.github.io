@@ -107,6 +107,10 @@
         
       
     
+      
+        
+      
+    
 	
 		<span class="sidebar-nav-item">Follow me:</span>
 		<a class="sidebar-nav-item" href="https://twitter.com/Triple_Eh_Ltd">- Twitter</a>
@@ -147,6 +151,29 @@
 
       <div class="container content">
         <div class="posts">
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="https://triple-aye.com//2018/07/30/Dev-Log-Player-Character-Actions/">
+        Dev Log - Player Character Actions
+      </a>
+    </h1>
+
+    <span class="post-date">30 Jul 2018</span>
+
+    <p>Here’s the first video Dev Log, where I discuss some of the Player Character Actions, and the systems I have to build under them.</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/x2WHXuC23AQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+
+<p>Or a <a href="https://www.youtube.com/watch?v=x2WHXuC23AQ">Direct Link</a> if you prefer.</p>
+
+<p>This is still very rough and ready. Rather than spend a couple of days doing fancy titles, sexy wipes, and capturing loads of video I just want to 
+get something up, to get the ball rolling. I’ll slowly work to improve the overall quality as I do more videos.</p>
+
+<p>Don’t forget, you can always join me on <a href="https://www.twitch.tv/tripleeh">Twitch</a>.</p>
+
+
+  </div>
   
   <div class="post">
     <h1 class="post-title">
@@ -318,167 +345,6 @@ this culminated in the class making a simple Surface Shader for water, which I�
 <p>The GitHub repo is here: <a href="https://github.com/TripleEh/StylisedWater_SurfaceShader/">https://github.com/TripleEh/StylisedWater_SurfaceShader/</a></p>
 
 <p>Enjoy!</p>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="https://triple-aye.com//2018/03/07/In-Game-Sticky-Notes/">
-        In-Game Sticky Notes...
-      </a>
-    </h1>
-
-    <span class="post-date">07 Mar 2018</span>
-
-    <p>You know what it’s like, you’re building something in-engine and you need to make a note of something — a TODO, or random idea — and your notepad isn’t to hand.</p>
-
-<p>I went through a couple of notepads while making Lumo, as well as having a Remember The Milk list of TODOs and “wouldn’t it be funny ” ideas (most of which I actually managed to get through) but this requires a certain level of rigour. I had to constantly remind myself to go back and curate, lest I forget something. To this day I still have a niggling feeling that I let some good ideas slip…</p>
-
-<p>I’ve been on the hunt for a better way of managing this, well, ever since I joined the industry, so I’ve tried various methodologies, mind-maps, Trello boards, Jira projects, and all the usual project management wank that, frankly, is just overkill for what is, essentially, a conversation with myself.</p>
-
-<p>And then I remembered this:</p>
-
-<p><img src="images/sticky1.jpg" alt="Screenshot of Nintendo's tooling in BotW" /></p>
-
-<p>Fucking. Genius.</p>
-
-<p>I’ve worked on projects with levels of automation before — screenshots in the bug database that embed camera co-ords (and/or other information) that you could double click to launch the build in the correct location — but Nintendo have gone to the logical extreme. They’ve integrated their project management processes directly into their game-world. And that’s lush. Perfect, in fact.</p>
-
-<p>So how much of this would I need, working on my own?</p>
-
-<p>Well, technically, not much. The first pass could literally be a sticky note. A gentle reminder, in-game, to do something, that I can edit and delete as I play-test. For this I’d only need:</p>
-
-<ul>
-  <li>A text entry box (that only appears in development builds)</li>
-  <li>Mapped to some sort of joypad input (to show &amp; hide it)</li>
-  <li>A way to save the current position, along with whatever text was entered</li>
-  <li>Some modifications to the GameMode, to load this information and spawn Actors during start-up</li>
-  <li>A way to delete notes</li>
-  <li>I’d also like to keep this information human readable, just in case I want to review notes outside of the game</li>
-</ul>
-
-<h2 id="implementing">Implementing</h2>
-
-<p>One of the mistakes I made with Lumo was relying on the Unity Inspector as the primary interface to the game’s state and “cheats”. This meant that I had to tick a bunch of boxes before letting the splash screen jump to the correct room, which became more than a little tedious by the end. One of the first things I did in LB was knock up a custom Dev UI to avoid this, so I already had the perfect place to add a text-entry box:</p>
-
-<p><img src="images/sticky2.jpeg" alt="Screenshot of my dev UI" /></p>
-
-<p>One pattern I’ve fallen into recently is using the Game Instance as my “Game Globals”. Rather than do a lot of GetX and casting — which is just as tedious in Blueprints as it is in code — I’ll store pointers to things I might need from several places in the Game Instance, or add simple Get/Set functions.</p>
-
-<p>Storing the Note is an example of this. The Game Instance knows about the static functions that do the dirty work, and exposes a simple “Add” / “Remove” pair of methods to Blueprints.</p>
-
-<p>[I tend to do most of my UI work in Blueprints now, primarily as they’re able to delay, which is handy when things are animating.]</p>
-
-<p><img src="images/sticky3.png" alt="The Blueprint" /></p>
-
-<h2 id="json">JSon</h2>
-
-<p>Because I want the notes to be human readable, XML and Json immediately spring to mind. It seemed like a reasonable bet that one of these was implemented by UE4 and it turns out that Json is available by adding Json and JsonUtilities to your Build.cs file:</p>
-
-<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="n">PublicDependencyModuleNames</span><span class="p">.</span><span class="n">AddRange</span><span class="p">(</span><span class="n">new</span> <span class="n">string</span><span class="p">[]</span> <span class="p">{</span> <span class="p">...</span> <span class="s">"Json"</span><span class="p">,</span> <span class="s">"JsonUtilities"</span>  <span class="p">});</span>
-
-</code></pre></div></div>
-
-<p>There’s not a lot of documentation regarding Json, at least that I could find, but fortunately its use is scattered throughout the code-base. The simplest method that I’ve found looks like like this.</p>
-
-<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="c1">// Create a root JSon object that'll hold all the sub sections
-</span><span class="n">TSharedRef</span><span class="o">&lt;</span><span class="n">FJsonObject</span><span class="o">&gt;</span> <span class="n">RootJson</span> <span class="o">=</span> <span class="n">MakeShareable</span><span class="p">(</span><span class="n">new</span> <span class="n">FJsonObject</span><span class="p">);</span>
-
-<span class="c1">// Output the contents of the DevNotes arrays
-</span><span class="p">{</span>
-	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">m_aNoteContents</span><span class="p">.</span><span class="n">Num</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
-	<span class="p">{</span>
-			<span class="n">TSharedRef</span><span class="o">&lt;</span><span class="n">FJsonObject</span><span class="o">&gt;</span> <span class="n">SubJson</span> <span class="o">=</span> <span class="n">MakeShareable</span><span class="p">(</span><span class="n">new</span> <span class="n">FJsonObject</span><span class="p">);</span>
-			<span class="n">SubJson</span><span class="o">-&gt;</span><span class="n">SetNumberField</span><span class="p">(</span><span class="n">TEXT</span><span class="p">(</span><span class="s">"X"</span><span class="p">),</span> <span class="n">m_aNotePositions</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">X</span><span class="p">);</span>
-			<span class="n">SubJson</span><span class="o">-&gt;</span><span class="n">SetNumberField</span><span class="p">(</span><span class="n">TEXT</span><span class="p">(</span><span class="s">"Y"</span><span class="p">),</span> <span class="n">m_aNotePositions</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">Y</span><span class="p">);</span>
-			<span class="n">SubJson</span><span class="o">-&gt;</span><span class="n">SetNumberField</span><span class="p">(</span><span class="n">TEXT</span><span class="p">(</span><span class="s">"Z"</span><span class="p">),</span> <span class="n">m_aNotePositions</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">Z</span><span class="p">);</span>
-			<span class="n">SubJson</span><span class="o">-&gt;</span><span class="n">SetStringField</span><span class="p">(</span><span class="n">TEXT</span><span class="p">(</span><span class="s">"Note"</span><span class="p">),</span> <span class="o">*</span><span class="n">m_aNoteContents</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
-			<span class="n">RootJson</span><span class="o">-&gt;</span><span class="n">SetObjectField</span><span class="p">(</span><span class="n">FString</span><span class="o">::</span><span class="n">Printf</span><span class="p">(</span><span class="n">TEXT</span><span class="p">(</span><span class="s">"Note_%d"</span><span class="p">),</span> <span class="n">i</span><span class="p">),</span> <span class="n">SubJson</span><span class="p">);</span>
-	<span class="p">}</span>
-
-<span class="p">}</span>
-
-<span class="c1">// Output the built string to file
-</span><span class="p">{</span>
-	<span class="n">FString</span> <span class="n">OutputStr</span><span class="p">;</span>
-	<span class="n">TSharedRef</span><span class="o">&lt;</span><span class="n">TJsonWriter</span><span class="o">&lt;&gt;&gt;</span> <span class="n">Writer</span> <span class="o">=</span> <span class="n">TJsonWriterFactory</span><span class="o">&lt;&gt;::</span><span class="n">Create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">OutputStr</span><span class="p">);</span>
-	<span class="n">FJsonSerializer</span><span class="o">::</span><span class="n">Serialize</span><span class="p">(</span><span class="n">RootJson</span><span class="p">,</span> <span class="n">Writer</span><span class="p">);</span>
-	<span class="n">FString</span> <span class="n">sFullPath</span> <span class="o">=</span> <span class="n">FPaths</span><span class="o">::</span><span class="n">ProjectSavedDir</span><span class="p">()</span> <span class="o">+</span> <span class="n">_sDevNotesFilename</span><span class="p">;</span>
-	<span class="n">FFileHelper</span><span class="o">::</span><span class="n">SaveStringToFile</span><span class="p">(</span><span class="n">OutputStr</span><span class="p">,</span> <span class="o">*</span><span class="n">sFullPath</span><span class="p">);</span>
-<span class="p">}</span>
-
-
-</code></pre></div></div>
-
-<p>First we need to build the root of the Json document (RootJson) as this acts as the holder for the sub-objects that contain the actual data.</p>
-
-<p>With that, we can then iterate over whatever data we wish to export. The Json format is just a collection of name-value pairs (Bool, String, Number…) which sit inside a pair of curly braces. Because of this, each note — which contains the position and text that I entered — needs to go in it’s own Json object, which is then added to RootJson.</p>
-
-<p>Once we’ve parsed our data and built our Json we then need to serialise it out to a file, which we do by getting its string representation. This is achieved through TJsonWriter and FJsonSerializer. TJsonWriterFactory is templated to accept a printing policy when outputting to a string, but I’ve ignored that as the default is perfectly readable.</p>
-
-<p>[You’ll note from the code example that I’m currently saving to the game’s “Save Game” directory. This may have to change in the future as the contents of this directory don’t get packaged up with the build. But the notes are just reminders to self…]</p>
-
-<p>Loading the JSon is also dead simple, as it largely mirrors the creation process:</p>
-
-<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">FString</span> <span class="n">sFullPath</span> <span class="o">=</span> <span class="n">FPaths</span><span class="o">::</span><span class="n">ProjectSavedDir</span><span class="p">()</span> <span class="o">+</span> <span class="n">_sDevNotesFilename</span><span class="p">;</span>
-
-<span class="k">if</span> <span class="p">(</span><span class="n">FPlatformFileManager</span><span class="o">::</span><span class="n">Get</span><span class="p">().</span><span class="n">GetPlatformFile</span><span class="p">().</span><span class="n">FileExists</span><span class="p">(</span><span class="o">*</span><span class="n">sFullPath</span><span class="p">))</span>
-<span class="p">{</span>
-	<span class="n">UDbg</span><span class="o">::</span><span class="n">LOG_INFO</span><span class="p">(</span><span class="s">"UDevNote::Init: Found Dev Notes Json File"</span><span class="p">);</span>
-	<span class="n">FString</span> <span class="n">FileString</span><span class="p">;</span>
-	<span class="n">FFileHelper</span><span class="o">::</span><span class="n">LoadFileToString</span><span class="p">(</span><span class="n">FileString</span><span class="p">,</span> <span class="o">*</span><span class="n">sFullPath</span><span class="p">);</span>
-				
-	<span class="n">TSharedPtr</span><span class="o">&lt;</span><span class="n">FJsonObject</span><span class="o">&gt;</span> <span class="n">RootJson</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
-	<span class="n">TSharedRef</span><span class="o">&lt;</span><span class="n">TJsonReader</span><span class="o">&lt;&gt;&gt;</span> <span class="n">JsonReader</span> <span class="o">=</span> <span class="n">TJsonReaderFactory</span><span class="o">&lt;&gt;::</span><span class="n">Create</span><span class="p">(</span><span class="n">FileString</span><span class="p">);</span>
-
-	<span class="k">if</span> <span class="p">(</span><span class="n">FJsonSerializer</span><span class="o">::</span><span class="n">Deserialize</span><span class="p">(</span><span class="n">JsonReader</span><span class="p">,</span> <span class="n">RootJson</span><span class="p">))</span>
-	<span class="p">{</span>
-			<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
-			<span class="p">{</span>
-				<span class="k">const</span> <span class="n">TSharedPtr</span><span class="o">&lt;</span><span class="n">FJsonObject</span><span class="o">&gt;*</span> <span class="n">pObjectTest</span> <span class="o">=</span> <span class="n">nullptr</span><span class="p">;</span>
-				<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">RootJson</span><span class="o">-&gt;</span><span class="n">TryGetObjectField</span><span class="p">(</span><span class="n">FString</span><span class="o">::</span><span class="n">Printf</span><span class="p">(</span><span class="n">TEXT</span><span class="p">(</span><span class="s">"Note_%d"</span><span class="p">),</span> <span class="n">i</span><span class="p">),</span><span class="n">pObjectTest</span><span class="p">))</span>
-					<span class="k">break</span><span class="p">;</span>
-
-				<span class="n">FJsonObject</span><span class="o">*</span> <span class="n">SubJson</span> <span class="o">=</span> <span class="n">pObjectTest</span><span class="o">-&gt;</span><span class="n">Get</span><span class="p">();</span>
-				<span class="n">FVector</span> <span class="n">vPos</span> <span class="o">=</span> <span class="n">FVector</span><span class="p">(</span><span class="n">SubJson</span><span class="o">-&gt;</span><span class="n">GetNumberField</span><span class="p">(</span><span class="n">TEXT</span><span class="p">(</span><span class="s">"X"</span><span class="p">)),</span> <span class="n">SubJson</span><span class="o">-&gt;</span><span class="n">GetNumberField</span><span class="p">(</span><span class="n">TEXT</span><span class="p">(</span><span class="s">"Y"</span><span class="p">)),</span> <span class="n">SubJson</span><span class="o">-&gt;</span><span class="n">GetNumberField</span><span class="p">(</span><span class="n">TEXT</span><span class="p">(</span><span class="s">"Z"</span><span class="p">)));</span>
-				<span class="n">FString</span> <span class="n">sNote</span> <span class="o">=</span> <span class="n">SubJson</span><span class="o">-&gt;</span><span class="n">GetStringField</span><span class="p">(</span><span class="n">TEXT</span><span class="p">(</span><span class="s">"Note"</span><span class="p">));</span>
-				<span class="n">m_aNoteContents</span><span class="p">.</span><span class="n">Emplace</span><span class="p">(</span><span class="n">sNote</span><span class="p">);</span>
-				<span class="n">m_aNotePositions</span><span class="p">.</span><span class="n">Emplace</span><span class="p">(</span><span class="n">vPos</span><span class="p">);</span>
-			<span class="p">}</span>
-	<span class="p">}</span>
-<span class="p">}</span>
-
-
-</code></pre></div></div>
-
-<h2 id="game-framework-classes">Game Framework Classes</h2>
-
-<p>Now that I have the ability to export notes from the UI (and reload them) I just need to be able to spawn a representation into the world. I’ve opted to create a DevNote actor class, and then add a pointer to the derived Blueprint instance to my Game Mode.</p>
-
-<p>During BeginPlay() — in UE_BUILD_DEVELOPMENT configurations — the Game Mode checks that the Blueprint has been set, asks the Game Instance to check for Dev Notes, and then iterates over any, spawning an actor into the world for each.</p>
-
-<p>This actor stores the text of the Dev Note so it can be passed to the dialog system.</p>
-
-<p><img src="images/sticky4.png" alt="A Sticky Note" /></p>
-
-<h2 id="viewing-dev-note">Viewing Dev Note</h2>
-
-<p>The Dev Note acts in the same way as other interactables — things like sign posts, or NPCs that have a message to pass to the player — by flashing up a button to press when the player enters a trigger area.</p>
-
-<p>If the player (me) interacts, the Dev Note text is passed to the dialog system, which pops up the appropriate UI.</p>
-
-<p>I’ll maybe write-up the Dialog System in a later blog post.</p>
-
-<p><img src="images/sticky5.png" alt="The Dialog System showing the note" /></p>
-
-<h2 id="where-next">Where Next?</h2>
-
-<p>I quite like this new toy so I’m already thinking of ways it could be more useful. Hooking it up to a Bug Database is an obvious thing to do, but I’d also like to be able to spit out QR codes that track the game’s state. With that I’d have a very handy tool that would completely eliminate the problem I faced with Lumo; jumping about the timeline and ensuring the game is in the correct state to replicate issues and do repeatable tests.</p>
-
-<p>Anyway, it was a fun little aside, so maybe you’ll find it useful. :)</p>
-
 
   </div>
   

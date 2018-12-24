@@ -4,7 +4,7 @@
  <title>Triple Eh?</title>
  <link href="https://triple-aye.com/atom.xml" rel="self"/>
  <link href="https://triple-aye.com/"/>
- <updated>2018-12-24T11:43:42+00:00</updated>
+ <updated>2018-12-24T11:45:34+00:00</updated>
  <id>https://triple-aye.com/</id>
  <author>
    <name>Gareth Noyce</name>
@@ -19,9 +19,10 @@
    <content type="html">&lt;p&gt;Something unscripted, this time. A quick tour of the build as-is:&lt;/p&gt;
 
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/jvTixxZzVAI&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-&lt;p&gt;o&lt;/p&gt;
 
-&lt;p&gt;(Direct Link)[https://www.youtube.com/watch?v=jvTixxZzVAI]&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=jvTixxZzVAI&quot;&gt;Direct Link&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Happy Xmas, everyone. I hope you and yours have a great holiday season. Fingers crossed 2019 isn’t as tumultuous as 2018…&lt;/p&gt;
 
 </content>
  </entry>

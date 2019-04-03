@@ -8,6 +8,16 @@
         "name": "Gareth Noyce"},
     "items": [
       {
+            "id": "https://www.triple-aye.com/2019/04/03/Dev-Vlog-007---Where's-Wally-Been",
+            "url": "https://www.triple-aye.com/2019/04/03/Dev-Vlog-007-Where's-Wally-Been/",
+            "title": "Dev Vlog 007 - Where’s Wally Been?",
+            "content_html": "<p>Damn, I’m sorry, it’s been ages. Honestly, between travel and the day job, the last couple of months have been mental. But here you go, a quick <a href=\"ihttps://youtu.be/UbAxk4reW7g\">video</a> to catch up:</p>\n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/UbAxk4reW7g\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\"></iframe>\n\n<p>Also, I’ve just setup a <a href=\"https://vimeo.com/tripleeh\">Vimeo</a> channel, as the videos tend to be a little higher quality over there. I’ll try and keep it up-to-date from now on.</p>",
+            "summary": "Damn, I’m sorry, it’s been ages. Honestly, between travel and the day job, the last couple of months have been mental. But here you go, a quick video to catch up:",
+            "date_published": "2019-04-03T00:00:00+01:00",
+            "date_modified": "2019-04-03T00:00:00+01:00",
+            "author": {
+              "name": "Gareth Noyce"},
+            "tags": []},{
             "id": "https://www.triple-aye.com/2018/12/24/Dev-Vlog-006",
             "url": "https://www.triple-aye.com/2018/12/24/Dev-Vlog-006/",
             "title": "Dev Vlog 006",
@@ -95,16 +105,6 @@
             "summary": "…with caveats :D",
             "date_published": "2018-05-05T00:00:00+01:00",
             "date_modified": "2018-05-05T00:00:00+01:00",
-            "author": {
-              "name": "Gareth Noyce"},
-            "tags": []},{
-            "id": "https://www.triple-aye.com/2018/03/24/Stylised-Water-Shader",
-            "url": "https://www.triple-aye.com/2018/03/24/Stylised-Water-Shader/",
-            "title": "Stylised Water Shader",
-            "content_html": "<p><img src=\"/images/water.gif\" alt=\"Water Animation Gif\" /></p>\n\n<p>Over the last few weeks I’ve been teaching 2nd year game programming students the basics of Unity3D shader programming. Last week \nthis culminated in the class making a simple Surface Shader for water, which I’ve – shamelessly – tried to get close to Zelda: Wind Waker. Because.</p>\n\n<p>Since stylised water effects are always in vogue, I figure this might be useful to other people.</p>\n\n<p>I’ve exposed all the parameters, but it’s a stupidly simple shader that you should have no problem bending to your needs.</p>\n\n<p>The GitHub repo is here: <a href=\"https://github.com/TripleEh/StylisedWater_SurfaceShader/\">https://github.com/TripleEh/StylisedWater_SurfaceShader/</a></p>\n\n<p>Enjoy!</p>",
-            "summary": "",
-            "date_published": "2018-03-24T00:00:00+00:00",
-            "date_modified": "2018-03-24T00:00:00+00:00",
             "author": {
               "name": "Gareth Noyce"},
             "tags": []}]

@@ -4,12 +4,25 @@
  <title>Triple Eh?</title>
  <link href="https://triple-aye.com/atom.xml" rel="self"/>
  <link href="https://triple-aye.com/"/>
- <updated>2018-12-24T11:45:34+00:00</updated>
+ <updated>2019-04-03T13:48:49+01:00</updated>
  <id>https://triple-aye.com/</id>
  <author>
    <name>Gareth Noyce</name>
  </author>
 
+ 
+ <entry>
+   <title>Dev Vlog 007 - Where's Wally Been?</title>
+	 <link href="https://triple-aye.com/2019/04/03/Dev-Vlog-007-Where's-Wally-Been/"/>
+   <updated>2019-04-03T00:00:00+01:00</updated>
+	 <id>https://triple-aye.com/2019/04/03/Dev-Vlog-007---Where's-Wally-Been?</id>
+   <content type="html">&lt;p&gt;Damn, I’m sorry, it’s been ages. Honestly, between travel and the day job, the last couple of months have been mental. But here you go, a quick &lt;a href=&quot;ihttps://youtu.be/UbAxk4reW7g&quot;&gt;video&lt;/a&gt; to catch up:&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/UbAxk4reW7g&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Also, I’ve just setup a &lt;a href=&quot;https://vimeo.com/tripleeh&quot;&gt;Vimeo&lt;/a&gt; channel, as the videos tend to be a little higher quality over there. I’ll try and keep it up-to-date from now on.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Dev Vlog 006</title>

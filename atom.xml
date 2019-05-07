@@ -4,12 +4,30 @@
  <title>Triple Eh?</title>
  <link href="https://triple-aye.com/atom.xml" rel="self"/>
  <link href="https://triple-aye.com/"/>
- <updated>2019-04-03T13:53:35+01:00</updated>
+ <updated>2019-05-07T21:27:47+01:00</updated>
  <id>https://triple-aye.com/</id>
  <author>
    <name>Gareth Noyce</name>
  </author>
 
+ 
+ <entry>
+   <title>Dev Vlog: 008 - Eugatron</title>
+	 <link href="https://triple-aye.com/2019/05/07/Dev-Vlog-008-Eugatron/"/>
+   <updated>2019-05-07T00:00:00+01:00</updated>
+	 <id>https://triple-aye.com/2019/05/07/Dev-Vlog:-008---Eugatron</id>
+   <content type="html">&lt;p&gt;Back again with a quick update.&lt;/p&gt;
+
+&lt;p&gt;The Unity side-project is drawing to an end! The second game-mode, Eugatron, is basically done and now contains 50 levels
+ of manic Robotron style blasting. I’ve gotta be honest, I’ve had a right laugh playing it, and spent waaaaay too long 
+ “testing” it. I’ve definitely coming back to this at some point in the future for a sequel.&lt;/p&gt;
+
+&lt;p&gt;Here’s a quick video of me playing through it:&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/JbF_Iz4KgZ0&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>Dev Vlog 007 - Where's Wally Been?</title>

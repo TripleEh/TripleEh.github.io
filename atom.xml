@@ -4,12 +4,27 @@
  <title>Triple Eh?</title>
  <link href="https://triple-aye.com/atom.xml" rel="self"/>
  <link href="https://triple-aye.com/"/>
- <updated>2019-06-08T13:37:07+01:00</updated>
+ <updated>2019-07-03T15:24:50+01:00</updated>
  <id>https://triple-aye.com/</id>
  <author>
    <name>Gareth Noyce</name>
  </author>
 
+ 
+ <entry>
+   <title>Dev-Vlog: 009 - Starting on the Combat</title>
+	 <link href="https://triple-aye.com/2019/07/03/Dev-Vlog-009-Starting-on-the-Combat/"/>
+   <updated>2019-07-03T00:00:00+01:00</updated>
+	 <id>https://triple-aye.com/2019/07/03/Dev-Vlog:-009---Starting-on-the-Combat</id>
+   <content type="html">&lt;p&gt;I’ve finally bitten the bullet and started on the combat system. Here’s a &lt;a href=&quot;https://www.youtube.com/watch?v=EmtR1sNbWl4&quot;&gt;little video&lt;/a&gt; discussing it.&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/EmtR1sNbWl4&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;It’s been a really busy month. I’ve nearly shipped an iOS game (contract work), Cecconoid’s store presences are 
+basically done, the trailer is up and I’m slowly gathering wishlists. Unfortunately a lot of the work I’ve been 
+doing isn’t on my own projects, but that’s a good problem to have. :)&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Making a game in 90 days...</title>

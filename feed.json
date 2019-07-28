@@ -8,6 +8,16 @@
         "name": "Gareth Noyce"},
     "items": [
       {
+            "id": "https://www.triple-aye.com/2019/07/28/25-Waves-of-Cecconoid",
+            "url": "https://www.triple-aye.com/2019/07/28/25-Waves-of-Cecconoid/",
+            "title": "25 Waves of Cecconoid",
+            "content_html": "<p>For some reason I’m always busier in the summer. It’s been a pattern since the last year of Lumo and 2019\nhas been no different. I’ve picked up some great contract work – so the rent is paid – but it’s not left \na lot of time for me to work on my own stuff. 1st World Problems… But it’s worked out really well, having \nthe opportunity to look back at Cecconoid and Eugatron with fresh eyes has been fantastic. I’ve been \nable to pull them apart, spot issues and tweak stuff to get them much closer to what I was envisaging at the start.</p>\n\n<p>This week I did the “final” balance pass on Eugatron. It’s hard. It’ll punish you. But it’s easier than Robotron,\nwhich is my concession to modern gamers. I recorded 25 waves so you can have a look, and then I went back in and \nmade them more difficult. You can thank me later :)</p>\n\n<p><a href=\"https://www.youtube.com/watch?v=-0hmFKJgdIo\">Check out the video on my You Tube Channel</a></p>\n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/-0hmFKJgdIo\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\"></iframe>",
+            "summary": "For some reason I’m always busier in the summer. It’s been a pattern since the last year of Lumo and 2019 has been no different. I’ve picked up some great contract work – so the rent is paid – but it’s not left a lot of time for me to work on my own stuff. 1st World Problems… But it’s worked out really well, having the opportunity to look back at Cecconoid and Eugatron with fresh eyes has been fantastic. I’ve been able to pull them apart, spot issues and tweak stuff to get them much closer to what I was envisaging at the start.",
+            "date_published": "2019-07-28T00:00:00+01:00",
+            "date_modified": "2019-07-28T00:00:00+01:00",
+            "author": {
+              "name": "Gareth Noyce"},
+            "tags": []},{
             "id": "https://www.triple-aye.com/2019/07/03/Dev-Vlog:-009---Starting-on-the-Combat",
             "url": "https://www.triple-aye.com/2019/07/03/Dev-Vlog-009-Starting-on-the-Combat/",
             "title": "Dev-Vlog: 009 - Starting on the Combat",
@@ -95,16 +105,6 @@
             "summary": "Time for another dev log, this time I’m doing a high level overview of what was involved in the basics of the fishing action.",
             "date_published": "2018-08-15T00:00:00+01:00",
             "date_modified": "2018-08-15T00:00:00+01:00",
-            "author": {
-              "name": "Gareth Noyce"},
-            "tags": []},{
-            "id": "https://www.triple-aye.com/2018/07/30/Dev-Log---Player-Character-Actions",
-            "url": "https://www.triple-aye.com/2018/07/30/Dev-Log-Player-Character-Actions/",
-            "title": "Dev Log - Player Character Actions",
-            "content_html": "<p>Here’s the first video Dev Log, where I discuss some of the Player Character Actions, and the systems I have to build under them.</p>\n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/x2WHXuC23AQ\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen=\"\"></iframe>\n\n<p>Or a <a href=\"https://www.youtube.com/watch?v=x2WHXuC23AQ\">Direct Link</a> if you prefer.</p>\n\n<p>This is still very rough and ready. Rather than spend a couple of days doing fancy titles, sexy wipes, and capturing loads of video I just want to \nget something up, to get the ball rolling. I’ll slowly work to improve the overall quality as I do more videos.</p>\n\n<p>Don’t forget, you can always join me on <a href=\"https://www.twitch.tv/tripleeh\">Twitch</a>.</p>",
-            "summary": "Here’s the first video Dev Log, where I discuss some of the Player Character Actions, and the systems I have to build under them.",
-            "date_published": "2018-07-30T00:00:00+01:00",
-            "date_modified": "2018-07-30T00:00:00+01:00",
             "author": {
               "name": "Gareth Noyce"},
             "tags": []}]

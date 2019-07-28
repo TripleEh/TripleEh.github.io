@@ -4,12 +4,34 @@
  <title>Triple Eh?</title>
  <link href="https://triple-aye.com/atom.xml" rel="self"/>
  <link href="https://triple-aye.com/"/>
- <updated>2019-07-03T15:24:50+01:00</updated>
+ <updated>2019-07-28T10:10:17+01:00</updated>
  <id>https://triple-aye.com/</id>
  <author>
    <name>Gareth Noyce</name>
  </author>
 
+ 
+ <entry>
+   <title>25 Waves of Cecconoid</title>
+	 <link href="https://triple-aye.com/2019/07/28/25-Waves-of-Cecconoid/"/>
+   <updated>2019-07-28T00:00:00+01:00</updated>
+	 <id>https://triple-aye.com/2019/07/28/25-Waves-of-Cecconoid</id>
+   <content type="html">&lt;p&gt;For some reason I’m always busier in the summer. It’s been a pattern since the last year of Lumo and 2019
+has been no different. I’ve picked up some great contract work – so the rent is paid – but it’s not left 
+a lot of time for me to work on my own stuff. 1st World Problems… But it’s worked out really well, having 
+the opportunity to look back at Cecconoid and Eugatron with fresh eyes has been fantastic. I’ve been 
+able to pull them apart, spot issues and tweak stuff to get them much closer to what I was envisaging at the start.&lt;/p&gt;
+
+&lt;p&gt;This week I did the “final” balance pass on Eugatron. It’s hard. It’ll punish you. But it’s easier than Robotron,
+which is my concession to modern gamers. I recorded 25 waves so you can have a look, and then I went back in and 
+made them more difficult. You can thank me later :)&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=-0hmFKJgdIo&quot;&gt;Check out the video on my You Tube Channel&lt;/a&gt;&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/-0hmFKJgdIo&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>Dev-Vlog: 009 - Starting on the Combat</title>

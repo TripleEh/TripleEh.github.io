@@ -8,6 +8,16 @@
         "name": "Gareth Noyce"},
     "items": [
       {
+            "id": "https://www.triple-aye.com/2019/09/10/Cecconoid-Gameplay",
+            "url": "https://www.triple-aye.com/2019/09/10/Cecconoid-Gameplay/",
+            "title": "Cecconoid Gameplay",
+            "content_html": "<p>I’ve just got the leaderboards and achievements to integrate into Steam and then we’re good to go! While you’re waiting, here’s a little gameplay taster vid:</p>\n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/c8Ue2jLDcjk\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\"></iframe>",
+            "summary": "I’ve just got the leaderboards and achievements to integrate into Steam and then we’re good to go! While you’re waiting, here’s a little gameplay taster vid:",
+            "date_published": "2019-09-10T00:00:00+01:00",
+            "date_modified": "2019-09-10T00:00:00+01:00",
+            "author": {
+              "name": "Gareth Noyce"},
+            "tags": []},{
             "id": "https://www.triple-aye.com/2019/07/28/25-Waves-of-Cecconoid",
             "url": "https://www.triple-aye.com/2019/07/28/25-Waves-of-Cecconoid/",
             "title": "25 Waves of Cecconoid",
@@ -95,16 +105,6 @@
             "summary": "Woo, I’ve been on holiday! And done some stuff! And now I’m off to Finland to give some lectures on game design…",
             "date_published": "2018-09-13T00:00:00+01:00",
             "date_modified": "2018-09-13T00:00:00+01:00",
-            "author": {
-              "name": "Gareth Noyce"},
-            "tags": []},{
-            "id": "https://www.triple-aye.com/2018/08/15/Dev-Log---Fishing",
-            "url": "https://www.triple-aye.com/2018/08/15/Dev-Log-Fishing/",
-            "title": "Dev Log - Fishing",
-            "content_html": "<p>Time for another dev log, this time I’m doing a high level overview of what was involved in the basics of the fishing action.</p>\n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/z6M-wUo-rM4\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen=\"\"></iframe>\n\n<p>Here’s a <a href=\"https://www.youtube.com/watch?v=z6M-wUo-rM4\">Direct Link</a> for those that prefer.</p>\n\n<p>It’s still a bit rough and ready, but I did spend some time to do a proper title. Small improvements ;D</p>",
-            "summary": "Time for another dev log, this time I’m doing a high level overview of what was involved in the basics of the fishing action.",
-            "date_published": "2018-08-15T00:00:00+01:00",
-            "date_modified": "2018-08-15T00:00:00+01:00",
             "author": {
               "name": "Gareth Noyce"},
             "tags": []}]

@@ -4,7 +4,7 @@
  <title>Triple Eh?</title>
  <link href="https://triple-aye.com/atom.xml" rel="self"/>
  <link href="https://triple-aye.com/"/>
- <updated>2019-10-20T09:19:31+01:00</updated>
+ <updated>2019-10-20T14:14:51+01:00</updated>
  <id>https://triple-aye.com/</id>
  <author>
    <name>Gareth Noyce</name>
@@ -27,27 +27,28 @@ you’ve not had a look, yet, please head over to:&lt;/p&gt;
 &lt;hr /&gt;
 
 &lt;p&gt;There’s been a (minor) flurry of emails in the air regarding Apple’s introduction of notarisation for 
-apps (and games) that are distributed outside of the Mac App Store. This affects everything on Steam, 
-and so, obviously, Lumo. And, as it happens, I’ve been working on Lumo since Cecconoid was released, with
-an eye on fixing the difficulty balance so it isn’t murderously difficult on a phone. The timing couldn’t 
+apps that are distributed outside of the Mac App Store. This affects everything on Steam, 
+including Lumo. As it happens, I’ve been working on Lumo since Cecconoid was released, with
+an eye on adjusting the difficulty balance so it isn’t murderously tricky on a phone. The timing couldn’t 
 be better.&lt;/p&gt;
 
 &lt;p&gt;To be honest, I’ve wanted to go back to Lumo for a long time. I’ve never been happy with the end sections of the 
 game because they were put together as I was running out of cash. A bit more art, here and there, would go a long 
-way. But the main problem with Lumo has always been the way it was built. Part of that is my fault. I took a lot of 
-short-cuts, I bought in Asset Store packages where I thought there would save me time, and I chose to use Unity over UE4 
-because it was easier to get going, and slightly better documented. And I’ve regretted that ever since.&lt;/p&gt;
+way. But the main problem with Lumo has always been the way it was built. Part of that is my fault; I took a lot of 
+shortcuts, I bought in Asset Store packages where I thought there would save me time, and I chose to use Unity over UE4 
+because it was easier to get going, and slightly better documented. I’ve regretted that ever since.&lt;/p&gt;
 
 &lt;p&gt;The path from Unity 4.x to 5.x was horrendous, with every core system of the engine being re-written or 
 broken in some way. The entire 5.x range of Unity was a shit-show, stability-wise (see my personal blog for rants about that). 
 So Lumo needs a specific, hot-fix version of Unity, for every sku that exists, because there are show-stopping bugs on that platform if you use 
-the wrong version of the engine to build it. Because of this, the console versions diverged from the PC versions, and the PC versions ended up being frozen.&lt;/p&gt;
+the wrong version of Unity to build it. Because of this, the console versions diverged from the PC versions, and the PC versions ended up being frozen.&lt;/p&gt;
 
 &lt;p&gt;What I’ve wanted to do for the longest time is try and get a consolidated build, a “director’s cut” of the game, on a new version of Unity, with most of these problems fixed. Now seems like a reasonable time to do it.&lt;/p&gt;
 
-&lt;p&gt;And we’ve made good progress, the iOS version of the game is basically a port of the Switch version, on 2019.2.x, that’s running well. We’ll be able to ship that, no problem. But it’s not the version I want, as we’ll be lowering shader quality and turning off a lot of post. It’ll have compromises.&lt;/p&gt;
+&lt;p&gt;Thalamus have made good progress. The iOS version of the game is basically a port of the Switch version, on 2019.2.x, that’s running well. We’ll be able to ship that, no problem. But it’s not the version I want, as we’ll be lowering shader quality and turning off a lot of post. Not to mention it’ll
+have a balance tailored for touch-screen. It’s a compromise.&lt;/p&gt;
 
-&lt;p&gt;No, for me, the PC version has always been the canonical build, so I’ve been looking into what it would take to get that tidied up, get all the little niggly platform-specific bugs fixed, and the whole thing moved onto a new, “stable” version of Unity, and made somewhat “future proof”.&lt;/p&gt;
+&lt;p&gt;No, for me, the PC version has always been the canonical build, so I’ve been looking into what it would take to get that tidied up, get all the niggly, platform-specific bugs fixed, and the whole thing moved onto a new, “stable” version of Unity, and made somewhat future proof.&lt;/p&gt;
 
 &lt;p&gt;After a cursory look:&lt;/p&gt;
 
@@ -65,13 +66,13 @@ the wrong version of the engine to build it. Because of this, the console versio
   &lt;li&gt;Fireworks and all particles with sub-emitters are broken (I’ve no idea why)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;A few of these will have to be fixed for the iOS/Android, but we’re going to ship with all the deprecated stuff which is less than ideal.&lt;/p&gt;
+&lt;p&gt;A few of these will have to be fixed for iOS/Android, but we’re going to ship with all the deprecated stuff, which is less than ideal.&lt;/p&gt;
 
 &lt;p&gt;As for the “main” version, well, it’s sold less than 300 copies on the Mac. There’s no way I’m going to do that work just to get Lumo on an updated Unity, so that I can properly notarise. The existing version of Lumo on the Mac will die when it dies, and that’ll be that.&lt;/p&gt;
 
-&lt;p&gt;Assuming the iOS/Android version turn out nicely (and they’re looking very good atm) then it’ll be possible to notarise a Mac build from that, and get it on a couple of the stores, which I’ll definitely consider.  But, it won’t be the “PC” version, and my hopes of getting to a conslidated, official, “Director’s Cut” of the game are basically dashed. There’s no way it’s worth the effort to re-engineer that much of the game.&lt;/p&gt;
+&lt;p&gt;Assuming the iOS/Android version turn out nicely (and they’re looking very good atm) then it’ll be possible to notarise a Mac build from that, and get it on a couple of the stores, which I’ll definitely consider, but it depends how much work it is to revert the balance changes. Even then, it won’t be the “PC” version, and my hopes of getting to a consolidated, official, “Director’s Cut” of the game are basically dashed. There’s no way it’s worth the effort to re-engineer that much of the game.&lt;/p&gt;
 
-&lt;p&gt;I’m genuinely a bit sad about this, as I’d got a bit excited about going in and polishing up the areas that I’ve always had a problem with. But it’s not to be.&lt;/p&gt;
+&lt;p&gt;I’m genuinely sad about this. I was getting a bit excited about going in and polishing up the areas that I’ve always had a problem with, but it’s not to be.&lt;/p&gt;
 
 &lt;p&gt;I did, at least, learn my lesson with Cecconoid. I used the minimum of 3rd Party stuff, I wrote everything as simply as possible, and I didn’t use any of the Unity stuff that’s a moving target, because hey, it’s a stupid little 2D game!&lt;/p&gt;
 

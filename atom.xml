@@ -4,12 +4,24 @@
  <title>Triple Eh?</title>
  <link href="https://triple-aye.com/atom.xml" rel="self"/>
  <link href="https://triple-aye.com/"/>
- <updated>2019-10-20T14:14:51+01:00</updated>
+ <updated>2019-10-26T09:51:36+01:00</updated>
  <id>https://triple-aye.com/</id>
  <author>
    <name>Gareth Noyce</name>
  </author>
 
+ 
+ <entry>
+   <title>Dev Vlog: 010</title>
+	 <link href="https://triple-aye.com/2019/10/26/Dev-Vlog-010/"/>
+   <updated>2019-10-26T00:00:00+01:00</updated>
+	 <id>https://triple-aye.com/2019/10/26/Dev-Vlog:-010</id>
+   <content type="html">&lt;p&gt;I’m long overdue a video update. Apologies. Cecconoid was taking over for a while. Speaking of which, if you’ve not added it to your wish list, please do! It’ll be in all the winter sales ;)&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/arJqL2xS1AQ&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>Saving Project Lumo...</title>

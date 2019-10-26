@@ -8,6 +8,16 @@
         "name": "Gareth Noyce"},
     "items": [
       {
+            "id": "https://www.triple-aye.com/2019/10/26/Dev-Vlog:-010",
+            "url": "https://www.triple-aye.com/2019/10/26/Dev-Vlog-010/",
+            "title": "Dev Vlog: 010",
+            "content_html": "<p>I’m long overdue a video update. Apologies. Cecconoid was taking over for a while. Speaking of which, if you’ve not added it to your wish list, please do! It’ll be in all the winter sales ;)</p>\n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/arJqL2xS1AQ\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\"></iframe>",
+            "summary": "I’m long overdue a video update. Apologies. Cecconoid was taking over for a while. Speaking of which, if you’ve not added it to your wish list, please do! It’ll be in all the winter sales ;)",
+            "date_published": "2019-10-26T00:00:00+01:00",
+            "date_modified": "2019-10-26T00:00:00+01:00",
+            "author": {
+              "name": "Gareth Noyce"},
+            "tags": []},{
             "id": "https://www.triple-aye.com/2019/10/20/Saving-Project-Lumo...",
             "url": "https://www.triple-aye.com/2019/10/20/Saving-Project-Lumo",
             "title": "Saving Project Lumo…",
@@ -95,16 +105,6 @@
             "summary": "Another month, another quick video update. Lots of bits and pieces this month, with the most visual being the new character design, from Paul Large.",
             "date_published": "2018-12-01T00:00:00+00:00",
             "date_modified": "2018-12-01T00:00:00+00:00",
-            "author": {
-              "name": "Gareth Noyce"},
-            "tags": []},{
-            "id": "https://www.triple-aye.com/2018/10/24/Dev-Log:-More-Fishing",
-            "url": "https://www.triple-aye.com/2018/10/24/Dev-Log-More-Fishing/",
-            "title": "Dev Log: More Fishing",
-            "content_html": "<p>I’ve been busy this month. Firstly, I’ve agreed to work a couple of days a week for a start-up in Cambridge (outside of games), so now I have some income.</p>\n\n<p>The build has also taken some good steps forward. Phil (Dopedemand) is back, providing music for the game, which is fantastic. You can hear some of his work in the video below.</p>\n\n<p>And the fishing system is basically done. Lots of little things in this, but it feels good and I’m going to have some fun with it!</p>\n\n<p>Check out the <a href=\"https://www.youtube.com/watch?v=rhiSc1BlFdA\">Video Log</a> to see how I’m getting on:</p>\n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/rhiSc1BlFdA\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen=\"\"></iframe>",
-            "summary": "I’ve been busy this month. Firstly, I’ve agreed to work a couple of days a week for a start-up in Cambridge (outside of games), so now I have some income.",
-            "date_published": "2018-10-24T00:00:00+01:00",
-            "date_modified": "2018-10-24T00:00:00+01:00",
             "author": {
               "name": "Gareth Noyce"},
             "tags": []}]

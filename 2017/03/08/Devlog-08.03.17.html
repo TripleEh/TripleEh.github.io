@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Devlog - 08.03.17 &middot; Triple Eh?
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/Boing.png">
+  <link rel="shortcut icon" href="/public/Boing.png">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body class="theme-base-09">
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>Triple Eh? Ltd.</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Blog</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/archive/">Archive</a>
+        
+      
+    
+      
+    
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+	
+		<span class="sidebar-nav-item">Follow me:</span>
+		<a class="sidebar-nav-item" href="https://twitter.com/Triple_Eh_Ltd">- Twitter</a>
+		<a class="sidebar-nav-item" href="https://www.youtube.com/channel/UC6H2Ql7vVE4hHc-GNkMK8bQ">- You Tube</a>
+		<a class="sidebar-nav-item" href="https://www.twitch.tv/tripleeh">- Twitch</a>
+		<span class="sidebar-nav-item">Games:</span>
+		<a class="sidebar-nav-item" href="http://play-lumo.com/">- Lumo</a>
+		<span class="sidebar-nav-item">Web:</span>
+		<a class="sidebar-nav-item" href="http://triple-eh.com">- Triple Eh?</a>
+		<span class="sidebar-nav-item">Feed:</span>
+		<a class="sidebar-nav-item" href="https://triple-aye.net/atom.xml">- Atom Feed</a>
+  	<a class="sidebar-nav-item" href="https://triple-aye.net/feed.json">- JSON Feed</a>
+   </nav>
+
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2019. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">
+							<img style="border:none" src="/images/te_logo.png"/>
+						</a>
+            <small></small>
+          </h3>
+        </div>
+      </div>
+		
+
+      <div class="container content">
+        <div class="post">
+  <h1 class="post-title">Devlog - 08.03.17</h1>
+  <span class="post-date">08 Mar 2017</span>
+  <p>Early update, this time, as I’m off to the UK for a wedding. Because of that – and because I’m meeting up with a friend 
+who’s helping me with some concept art – it’s been a race-to-make-a-face since my last post.</p>
+
+<h2 id="next-game">Next Game</h2>
+
+<p><a href="/images/2017-03-08-TestLevel_Courtyard2.jpg"><img src="/images/2017-03-08-TestLevel_Courtyard2.jpg" alt="Screenie" /></a></p>
+
+<p>The second iteration of the test level is basically done. As I said, it’s super chunky and super low-poly, but it looks a lot better than my 
+first iteration. And I can get very dark areas, as well as very light areas. Pretty important for a Quake-a-like.</p>
+
+<p>Although this scene is essentially outdoor, I don’t actually think I’ll do that in many of the levels. My plan for most of it is 
+to do something darker and not as well lit, but for the purposes of a test I just wanted to see if I could do both. So I’ve aped a bit of the 
+Quake 1 start thing, and done an imaginary “intro” level.</p>
+
+<p>There’s a lot wrong with it; the scale is on the, er, large side – but the minute you start rocket jumping that’s less of a problem –  there’s a lack of secondary motion – wibbly grass, lights swaying, stuff like that – 
+and hardly any props to dress the scene. Although the colours work for me, a bit more detail would definitely help.</p>
+
+<p>I’m not too bothered about all this atm, the main function 
+of the test was to find a workflow that’s quick enough to let me bang out [reasonably] good looking geometry, and the lack of texturing definitely helps that. I’ve
+gone from zero to a level I can run around, in 8 days. And half that time’s been trying to understand lighting.  Nearly all the missing things 
+will happen over time and I can dress the scenes with more props as and when I make them. It’s how I worked the environment in Lumo.</p>
+
+<p>I’m still toying with the idea of bevelling the larger geometry pieces as 
+the extra edges would play in the light. Nintendo do this all the time in Mario and Zelda, so it might be worth a test…</p>
+
+<p>Anyway. After the mild depression at going down the wrong path and throwing out a couple of week’s work, this whole exercise turned out to be super useful. The untextured “matte” look forced me to work out how the baked lighting is applied, especially 
+when the various shadow schemes are thrown into the mix. There’s no where to hide so setting this up was a lot of trial and error, not helped by the 
+fact that my lighting build-quality was set to “preview” for God knows how long. That flushed out lots of stupid things, but derp. Fucking idiot, etc.</p>
+
+<p>The Modo side of things has been great, although it took me a long time to uvunwrap for clean bakes.  Initially I was just ignoring it, letting the UE importer 
+generate the lightmaps and then wondering why I had dirty big splotches everywhere. Then I started adding a second UV channel in the model to mitigate, 
+which gives some control over how the model parts are split. But the real-trick, which it took me a couple of days to clock-on to, is making sure edges/verts 
+are clamped to texel boundaries. In Modo this is trivial, you can set the UVGrid to 1/64, and then use the snapping tool to make sure that edges/verts are all 
+nice and clean. It’s a bit handraulic, but if done right, a one shot deal.  I think.</p>
+
+<p>I still have some light-bleeding in parts of the level, but this is either where I’ve not added an edge to the wall (one model) where it meets the floors 
+(a different model), or have a polygon that extrudes through the wall, so catches the light and the dark. The second issue is just me not knowing what I was<br />
+doing at the start and then being too lazy to go back in and fix it. You can see it on the window frames.</p>
+
+<p>I’ve also had a good play around with Cascade, and although I don’t feel as confident with it as Unity’s particle system, I’m able to do the basics. The same 
+can be pretty much said for the material editor. I’m hoping to pick stuff up via osmosis and concentrate on the big things for the foreseeable.</p>
+
+<p>Code-wise, I don’t think I’ve had any problems. I’ve even started doing a few things – the on screen messages for example – in Blueprints. Quick and dirty is, 
+as Quick and Dirty does, and all that.</p>
+
+<p>I’ve stuck a little video of all this up on You Tube. It should go without saying that the Quake 1 sound effects won’t be there for long, and everything is liable 
+to change. It’s heading in the right direction, though.</p>
+
+<div style="text-align: center"><iframe width="560" height="315" src="https://www.youtube.com/embed/gxeUt0OoUMo" frameborder="0" allowfullscreen=""></iframe><p>&nbsp;</p></div>
+
+<p>Click screenies to enbiggen.</p>
+
+<p><a href="/images/2017-03-08-TestLevel_Underground.jpg"><img src="/images/2017-03-08-TestLevel_Underground.jpg" alt="Screenie" /></a></p>
+
+<p><a href="/images/2017-03-08-TestLevel_TP1.jpg"><img src="/images/2017-03-08-TestLevel_TP1.jpg" alt="Screenie" /></a></p>
+
+<p><a href="/images/2017-03-08-TestLevel_Armour.jpg"><img src="/images/2017-03-08-TestLevel_Armour.jpg" alt="Screenie" /></a></p>
+
+<p><a href="/images/2017-03-08-TestLevel_Corridor2.jpg"><img src="/images/2017-03-08-TestLevel_Corridor2.jpg" alt="Screenie" /></a></p>
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="https://triple-aye.com//2019/10/27/Cecconoid-Camera-Setup.html">
+            Cecconoid's Camera Setup
+            <small>27 Oct 2019</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="https://triple-aye.com//2019/10/26/Dev-Vlog-010.html">
+            Dev Vlog: 010
+            <small>26 Oct 2019</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="https://triple-aye.com//2019/10/20/Saving-Project-Lumo....html">
+            Saving Project Lumo...
+            <small>20 Oct 2019</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+  </body>
+</html>

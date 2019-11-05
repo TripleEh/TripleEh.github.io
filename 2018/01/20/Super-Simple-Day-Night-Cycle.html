@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Super Simple Day Night Cycle &middot; Triple Eh?
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/Boing.png">
+  <link rel="shortcut icon" href="/public/Boing.png">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body class="theme-base-09">
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>Triple Eh? Ltd.</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Blog</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/archive/">Archive</a>
+        
+      
+    
+      
+    
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+	
+		<span class="sidebar-nav-item">Follow me:</span>
+		<a class="sidebar-nav-item" href="https://twitter.com/Triple_Eh_Ltd">- Twitter</a>
+		<a class="sidebar-nav-item" href="https://www.youtube.com/channel/UC6H2Ql7vVE4hHc-GNkMK8bQ">- You Tube</a>
+		<a class="sidebar-nav-item" href="https://www.twitch.tv/tripleeh">- Twitch</a>
+		<span class="sidebar-nav-item">Games:</span>
+		<a class="sidebar-nav-item" href="http://play-lumo.com/">- Lumo</a>
+		<span class="sidebar-nav-item">Web:</span>
+		<a class="sidebar-nav-item" href="http://triple-eh.com">- Triple Eh?</a>
+		<span class="sidebar-nav-item">Feed:</span>
+		<a class="sidebar-nav-item" href="https://triple-aye.net/atom.xml">- Atom Feed</a>
+  	<a class="sidebar-nav-item" href="https://triple-aye.net/feed.json">- JSON Feed</a>
+   </nav>
+
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2019. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">
+							<img style="border:none" src="/images/te_logo.png"/>
+						</a>
+            <small></small>
+          </h3>
+        </div>
+      </div>
+		
+
+      <div class="container content">
+        <div class="post">
+  <h1 class="post-title">Super Simple Day Night Cycle</h1>
+  <span class="post-date">20 Jan 2018</span>
+  <p>A Day/Night cycle can be a bit of a double edged sword. On the plus side it gives you the freedom to demarcate events into time periods — “they mostly come at night. Mostly…” — and on the downside you have to make the environment look good in a range of different lighting setups. So it’s important to have some easy controls.</p>
+
+<p>I’ve flip-flopped on whether to include a day/night cycle in my new project for a while. I’m not at the point where the game is looking good in any setup, so making things harder from the start might not be the best decision. But, I do want to have night-time specific events, and having drowned myself in Breath Of The Wild over the last few months it’s clear that having a cycle, even if simple, does add to the sense of “place”. The player gets to see the world evolve, even in small ways, over time, and that’s good.</p>
+
+<p>Before I begin explaining my simple implementation, let me point you at this series of videos from Kleiner Baer. He’s implemented an awesome Day/Night cycle that not only takes into account the long/lat of your game-world, but also the calendar seasons. I spent a day implementing it when I first considered adding Day/Night to my game, and it’s great, but not quite what I wanted…</p>
+
+<p>So what does my system need to do?</p>
+
+<ul>
+  <li>I’ll need to be able to set the time of day, for obvious reasons.</li>
+  <li>I’ll need to be able to get the time of day, as the Player will no doubt need it in a UI somewhere.</li>
+  <li>I want control over the length of my shadows. This means doing more than a simple slow, continuous rotation of the Sun and Moon. I want short mid-day shadows, and longer shadows at dawn/dusk, that project at specific angles. I’m trying flatter the top-down view of the world.</li>
+  <li>I don’t want black shadows, so I’m going to have to use a Sky Light to help lift them up, which means I’ll need to continuously update both the intensity of the Sky Light, and it’s colour.</li>
+  <li>I’ll need the same control for the colour and intensity of the Sun and Moon…</li>
+</ul>
+
+<p>Because I’m a top down game I don’t need:</p>
+
+<ul>
+  <li>The Sun or Moon to be visible in the sky, or move across the sky correctly.</li>
+</ul>
+
+<p>This simplifies things.</p>
+
+<p>My controller therefore needs: two directional lights (Sun and Moon), a Sky Light to help with the shadows, and a value to track the time.</p>
+
+<p>The first thing to do is decide how to handle the time. I don’t want to be fiddling around with minutes / seconds — why do the maths when you can avoid it? — so given I only want hours I can track this with a single float, that works as a 24 hour clock:</p>
+
+<ul>
+  <li>0.9f == 9pm</li>
+  <li>1.2f == Noon</li>
+  <li>2.1f == 9pm</li>
+</ul>
+
+<p>Etc.</p>
+
+<p>Updating the time is simple:</p>
+
+<blockquote>
+  <p>fCurrentGameTime += DeltaTime * (2.4f / fLengthOfDayInSeconds);</p>
+</blockquote>
+
+<p>which I can do in my DayNightController’s <em>Tick</em> function. Bob’s your mother’s brother.</p>
+
+<p>(If I want minutes, say for the UI, I can get them by multiplying <em>fCurrentGameTime</em> by 10, and then pulling out the fractional part of the resulting float. This is the percentage of an “hour”, so:</p>
+
+<blockquote>
+  <p>(fFract*100.0f) * 0.59f</p>
+</blockquote>
+
+<p>will give me a screen-printable value, and I’ll just ignore seconds…)</p>
+
+<p>So the main thing about this implementation is having control over colour and light intensity. I could just lerp between known-good values, say for morning, noon and night, but a far better way would be to use Curves.</p>
+
+<p>UE4, handily, has an editable curve system for float, vector and colour values — exactly what’s needed here — and one of their big benefits is that you can edit them and see your changes reflected during PIE. This is perfect for me, as I’ll be fiddling with these curves until the day the game is released.</p>
+
+<p>The Curve editor is fairly basic, but it does the job. For my system I need curves that go from 0.0 to 2.4f, which I pull-out using <em>fCurrentGameTime</em> as the index.</p>
+
+<p><img src="/images/DN1.PNG" alt="Sun Colour" /></p>
+
+<p>This is the curve for the colour of the Sun’s light during the course of the day. Atm I’m staying quite blue in the morning and blending to a very orange/red sunset in the evening, but this will be tweaked a million more times…</p>
+
+<p>The angle of the sun’s light is done in a similar way:</p>
+
+<p><img src="/images/DN2.png" alt="Angle9" /></p>
+
+<p>Editing the Y value in this graph is what allows me to have very small shadows at mid-day and longer ones at dusk/dawn. Very tweakable.</p>
+
+<p>So the class setup becomes:</p>
+
+<p><img src="/images/DN3.png" alt="Class" /></p>
+
+<p>And putting all this together, the Tick function looks like:</p>
+
+<p><img src="/images/DN4.png" alt="Tick" /></p>
+
+<p>As the title says: Super. Simple.</p>
+
+<p>There’re a couple of gotchas with this, at least for me.</p>
+
+<ul>
+  <li>You need some sensible defaults, otherwise everything is going to be waaaay too bright when you drop a derived Blueprint into the world.</li>
+  <li>Moveable Sky Lights will apply distance field AO by default, and that’s not something I’m after right now. It looks a little weird with my top-down view, but I may go back and tweak this later. Setting the Sky Light to Stationary disables this.</li>
+  <li>Because my game is top-down I don’t need a sky box. Passing in a specific Cube map (all white) to the Sky Light makes it a little cheaper and gives better colour control. (Hat-tip to Mr Large for that factoid.)</li>
+</ul>
+
+<p>So you’ll want to setup some sane values in the constructor. You’ll probably want to play around with a couple of lights in the editor first and work out how you want the shadows to appear, as well. There’re a lot of settings to toy with depending on the look you’re after.</p>
+
+<p>The end result, before I spend the next several years tweaking it, is pretty good.</p>
+
+<p><img src="/images/DN5.gif" alt="TOD" /></p>
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="https://triple-aye.com//2019/10/27/Cecconoid-Camera-Setup.html">
+            Cecconoid's Camera Setup
+            <small>27 Oct 2019</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="https://triple-aye.com//2019/10/26/Dev-Vlog-010.html">
+            Dev Vlog: 010
+            <small>26 Oct 2019</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="https://triple-aye.com//2019/10/20/Saving-Project-Lumo....html">
+            Saving Project Lumo...
+            <small>20 Oct 2019</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+  </body>
+</html>

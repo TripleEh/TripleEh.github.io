@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Devlog: Replication &middot; Triple Eh?
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/Boing.png">
+  <link rel="shortcut icon" href="/public/Boing.png">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body class="theme-base-09">
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>Triple Eh? Ltd.</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Blog</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/archive/">Archive</a>
+        
+      
+    
+      
+    
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+	
+		<span class="sidebar-nav-item">Follow me:</span>
+		<a class="sidebar-nav-item" href="https://twitter.com/Triple_Eh_Ltd">- Twitter</a>
+		<a class="sidebar-nav-item" href="https://www.youtube.com/channel/UC6H2Ql7vVE4hHc-GNkMK8bQ">- You Tube</a>
+		<a class="sidebar-nav-item" href="https://www.twitch.tv/tripleeh">- Twitch</a>
+		<span class="sidebar-nav-item">Games:</span>
+		<a class="sidebar-nav-item" href="http://play-lumo.com/">- Lumo</a>
+		<span class="sidebar-nav-item">Web:</span>
+		<a class="sidebar-nav-item" href="http://triple-eh.com">- Triple Eh?</a>
+		<span class="sidebar-nav-item">Feed:</span>
+		<a class="sidebar-nav-item" href="https://triple-aye.net/atom.xml">- Atom Feed</a>
+  	<a class="sidebar-nav-item" href="https://triple-aye.net/feed.json">- JSON Feed</a>
+   </nav>
+
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2019. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">
+							<img style="border:none" src="/images/te_logo.png"/>
+						</a>
+            <small></small>
+          </h3>
+        </div>
+      </div>
+		
+
+      <div class="container content">
+        <div class="post">
+  <h1 class="post-title">Devlog: Replication</h1>
+  <span class="post-date">12 May 2017</span>
+  <p>First week back on Next Game, for oooh, a few weeks, and time to tackle the networking side of things. I had an inkling that retro-fitting multiplayer into the work I’d already done would be a bit of a ball-ache, but I was wrong. It was a massive fucking pain in the hairy-tits.</p>
+
+<p>The problem wasn’t so much that I didn’t understand the theory behind it all — although it does take a while to bed-in, and in all honesty Epic could really do with providing some better documentation on the C++ side of things — but that switching something simple, like the character responses to items being picked up, involves changing a lot of small bits of code in various classes. So where, sensibly, do you start?</p>
+
+<p>I tried a couple of things, first the pickups, then the weapons, but half-way through each it was clear that I’d basically have to refactor a whole bunch of supporting code. Admittedly, there’re some easy wins with the default replication that’s built into the engine; things move, things spawn and you can feel good about your progress quite quickly. But the devil’s in the detail. Do things destroy themselves correctly for client and server, when either side triggers the event? Are modifications happening on the server instance and replicating correctly? Should this multi-cast or is there a better way?</p>
+
+<p>And obviously, debugging this stuff isn’t fun when you have multiple copies of the same instance running, and try to breakpoint something.</p>
+
+<p>I spent four days poking about at this, and although I’d made pretty reasonable progress there were bugs, little fiddly fucks that I really didn’t want to carry along with me. So yesterday I started a clean project and wrote a very simple Team Deathmatch game. Even re-built the characters from the ground up, this time using the Animation Starter Kit from the UE4 Marketplace.</p>
+
+<p><img src="/images/2017-05-11-TDM_8Player.png" alt="TDM" /></p>
+
+<p>That’s not a particularly exciting screenshot, but it’s 8 players in a TDM game mode, with a dedicated server. Players automatically join and leave teams and you can run around and kill each other.</p>
+
+<p>If you’d told me a week ago that I’d effectively be starting from scratch to get this working I’d have given you the sad panda eyes, but now I’m on the other-side I’m happy. It was a good thing to do. I’m pretty confident I’m entering and exiting the game mode properly, I’m going through the login process and I’m cleaning transferring Player States and Controllers about. None of that was working 100% properly in the previous branch. And, I still have all the “old” code lying about. The HUDs, menus etc will “just work” when I drop them back in, and under the hood it’s going to be easier to migrate things over, piece-by-piece, test, and then move forward.</p>
+
+<p>So, lesson of the week — and worse, something I knew anyway — if you’re making a networked game, do it from the beginning, don’t try and bolt it on afterwards.</p>
+
+<p><em>Quite pleased I managed to get through all that without making the obvious “built to last” Bladerunner/Replicant joke.</em></p>
+
+<p><em>Oh.</em></p>
+
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="https://triple-aye.com//2019/10/27/Cecconoid-Camera-Setup.html">
+            Cecconoid's Camera Setup
+            <small>27 Oct 2019</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="https://triple-aye.com//2019/10/26/Dev-Vlog-010.html">
+            Dev Vlog: 010
+            <small>26 Oct 2019</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="https://triple-aye.com//2019/10/20/Saving-Project-Lumo....html">
+            Saving Project Lumo...
+            <small>20 Oct 2019</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+  </body>
+</html>

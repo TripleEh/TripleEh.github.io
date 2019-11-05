@@ -11,7 +11,7 @@
 
   <title>
     
-      Triple Eh? &middot; 
+      Cecconoid's Camera Setup &middot; Triple Eh?
     
   </title>
 
@@ -154,18 +154,10 @@
 		
 
       <div class="container content">
-        <div class="posts">
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="https://triple-aye.com//2019/10/27/Cecconoid-Camera-Setup/.html">
-        Cecconoid's Camera Setup
-      </a>
-    </h1>
-
-    <span class="post-date">27 Oct 2019</span>
-
-    <p>Cecconoid’s an old school game, with an old school aesthetic, which means big fat chunky pixels on super high-resolution displays. Uh Oh.</p>
+        <div class="post">
+  <h1 class="post-title">Cecconoid's Camera Setup</h1>
+  <span class="post-date">27 Oct 2019</span>
+  <p>Cecconoid’s an old school game, with an old school aesthetic, which means big fat chunky pixels on super high-resolution displays. Uh Oh.</p>
 
 <p>I’ve ranted at length (on my personal blog) about some simple sins against the pixel that I see again and again in modern indie games:</p>
 
@@ -256,152 +248,41 @@ on a full screen quad. Bingo. No more diamonds. No more rotated, or sheered pixe
 <p>We ended up stripping all of this from the mobile version as there’s very little value in adding scanlines to such a tiny screen, but for desktop or console, sweating the details, even for stuff like this, gives you a pretty good final image. In my old-man opinion, anyway.</p>
 
 
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="https://triple-aye.com//2019/10/26/Dev-Vlog-010/.html">
-        Dev Vlog: 010
-      </a>
-    </h1>
-
-    <span class="post-date">26 Oct 2019</span>
-
-    <p>I’m long overdue a video update. Apologies. Cecconoid was taking over for a while. Speaking of which, if you’ve not added it to your wish list, please do! It’ll be in all the winter sales ;)</p>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/arJqL2xS1AQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
-
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="https://triple-aye.com//2019/10/20/Saving-Project-Lumo.html">
-        Saving Project Lumo...
-      </a>
-    </h1>
-
-    <span class="post-date">20 Oct 2019</span>
-
-    <p>Cecconoid has been out for just over a week and people seem to be pretty happy with it. If 
-you’ve not had a look, yet, please head over to:</p>
-
-<ul>
-  <li><a href="https://store.steampowered.com/app/683310/Cecconoid/">Steam</a></li>
-  <li><a href="https://triple-eh.itch.io/cecconoid">Itch.io</a></li>
-</ul>
-
-<hr />
-
-<p>There’s been a (minor) flurry of emails in the air regarding Apple’s introduction of notarisation for 
-apps that are distributed outside of the Mac App Store. This affects everything on Steam, 
-including Lumo. As it happens, I’ve been working on Lumo since Cecconoid was released, with
-an eye on adjusting the difficulty balance so it isn’t murderously tricky on a phone. The timing couldn’t 
-be better.</p>
-
-<p>To be honest, I’ve wanted to go back to Lumo for a long time. I’ve never been happy with the end sections of the 
-game because they were put together as I was running out of cash. A bit more art, here and there, would go a long 
-way. But the main problem with Lumo has always been the way it was built. Part of that is my fault; I took a lot of 
-shortcuts, I bought in Asset Store packages where I thought there would save me time, and I chose to use Unity over UE4 
-because it was easier to get going, and slightly better documented. I’ve regretted that ever since.</p>
-
-<p>The path from Unity 4.x to 5.x was horrendous, with every core system of the engine being re-written or 
-broken in some way. The entire 5.x range of Unity was a shit-show, stability-wise (see my personal blog for rants about that). 
-So Lumo needs a specific, hot-fix version of Unity, for every sku that exists, because there are show-stopping bugs on that platform if you use 
-the wrong version of Unity to build it. Because of this, the console versions diverged from the PC versions, and the PC versions ended up being frozen.</p>
-
-<p>What I’ve wanted to do for the longest time is try and get a consolidated build, a “director’s cut” of the game, on a new version of Unity, with most of these problems fixed. Now seems like a reasonable time to do it.</p>
-
-<p>Thalamus have made good progress. The iOS version of the game is basically a port of the Switch version, on 2019.2.x, that’s running well. We’ll be able to ship that, no problem. But it’s not the version I want, as we’ll be lowering shader quality and turning off a lot of post. Not to mention it’ll
-have a balance tailored for touch-screen. It’s a compromise.</p>
-
-<p>No, for me, the PC version has always been the canonical build, so I’ve been looking into what it would take to get that tidied up, get all the niggly, platform-specific bugs fixed, and the whole thing moved onto a new, “stable” version of Unity, and made somewhat future proof.</p>
-
-<p>After a cursory look:</p>
-
-<ul>
-  <li>Scene management needs a re-write, as I’m on the deprecated API</li>
-  <li>All the use of GUI layers (all the HUDs in-game) need to be re-built, using the current UI, as they’re deprecated</li>
-  <li>The FMOD I’m using has been deprecated, meaning everything in-editor is broken. All audio needs to be moved over to a new version of FMOD</li>
-  <li>All the FMOD uses in code needs to be moved over to the new API</li>
-  <li>All the shaders built in Shader Forge (ie: 50% of the materials in the game) need to be re-writen as they no longer compile (Everything transparent is purple atm)</li>
-  <li>Post on all cameras needs to be re-done (simple) but the way I colour correct doesn’t exist any more, so most of the textures and all the lighting will need to be checked, or re-built.</li>
-  <li>InControl needs bouncing up to latest, meaning I’ll have to re-write the re-definable controls (I’ve hacked InControl to do what I need)</li>
-  <li>Steam API needs bouncing up to latest</li>
-  <li>The package I use for ropes doesn’t work on any new version of Unity</li>
-  <li>Reflections are broken (no idea why)</li>
-  <li>Fireworks and all particles with sub-emitters are broken (I’ve no idea why)</li>
-</ul>
-
-<p>A few of these will have to be fixed for iOS/Android, but we’re going to ship with all the deprecated stuff, which is less than ideal.</p>
-
-<p>As for the “main” version, well, it’s sold less than 300 copies on the Mac. There’s no way I’m going to do that work just to get Lumo on an updated Unity, so that I can properly notarise. The existing version of Lumo on the Mac will die when it dies, and that’ll be that.</p>
-
-<p>Assuming the iOS/Android version turn out nicely (and they’re looking very good atm) then it’ll be possible to notarise a Mac build from that, and get it on a couple of the stores, which I’ll definitely consider, but it depends how much work it is to revert the balance changes. Even then, it won’t be the “PC” version, and my hopes of getting to a consolidated, official, “Director’s Cut” of the game are basically dashed. There’s no way it’s worth the effort to re-engineer that much of the game.</p>
-
-<p>I’m genuinely sad about this. I was getting a bit excited about going in and polishing up the areas that I’ve always had a problem with, but it’s not to be.</p>
-
-<p>I did, at least, learn my lesson with Cecconoid. I used the minimum of 3rd Party stuff, I wrote everything as simply as possible, and I didn’t use any of the Unity stuff that’s a moving target, because hey, it’s a stupid little 2D game!</p>
-
-<p>So, Lumo is what it is. It will “die” at some point.</p>
-
-<p>But I’ve got some other ideas.</p>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="https://triple-aye.com//2019/09/10/Cecconoid-Gameplay/.html">
-        Cecconoid Gameplay
-      </a>
-    </h1>
-
-    <span class="post-date">10 Sep 2019</span>
-
-    <p>I’ve just got the leaderboards and achievements to integrate into Steam and then we’re good to go! While you’re waiting, here’s a little gameplay taster vid:</p>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/c8Ue2jLDcjk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
-
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="https://triple-aye.com//2019/07/28/25-Waves-of-Cecconoid/.html">
-        25 Waves of Cecconoid
-      </a>
-    </h1>
-
-    <span class="post-date">28 Jul 2019</span>
-
-    <p>For some reason I’m always busier in the summer. It’s been a pattern since the last year of Lumo and 2019
-has been no different. I’ve picked up some great contract work – so the rent is paid – but it’s not left 
-a lot of time for me to work on my own stuff. 1st World Problems… But it’s worked out really well, having 
-the opportunity to look back at Cecconoid and Eugatron with fresh eyes has been fantastic. I’ve been 
-able to pull them apart, spot issues and tweak stuff to get them much closer to what I was envisaging at the start.</p>
-
-<p>This week I did the “final” balance pass on Eugatron. It’s hard. It’ll punish you. But it’s easier than Robotron,
-which is my concession to modern gamers. I recorded 25 waves so you can have a look, and then I went back in and 
-made them more difficult. You can thank me later :)</p>
-
-<p><a href="https://www.youtube.com/watch?v=-0hmFKJgdIo">Check out the video on my You Tube Channel</a></p>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/-0hmFKJgdIo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
-
-
-  </div>
-  
 </div>
 
-<div class="pagination">
-  
-    <a class="pagination-item older" href="/page2">Older</a>
-  
-  
-    <span class="pagination-item newer">Newer</span>
-  
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="https://triple-aye.com//2019/10/26/Dev-Vlog-010/.html">
+            Dev Vlog: 010
+            <small>26 Oct 2019</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="https://triple-aye.com//2019/10/20/Saving-Project-Lumo.html">
+            Saving Project Lumo...
+            <small>20 Oct 2019</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="https://triple-aye.com//2019/09/10/Cecconoid-Gameplay/.html">
+            Cecconoid Gameplay
+            <small>10 Sep 2019</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
 </div>
-
 
       </div>
     </div>

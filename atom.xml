@@ -4,7 +4,7 @@
  <title>Triple Eh?</title>
  <link href="https://triple-aye.com/atom.xml" rel="self"/>
  <link href="https://triple-aye.com/"/>
- <updated>2019-11-05T17:35:16+00:00</updated>
+ <updated>2019-11-05T17:39:17+00:00</updated>
  <id>https://triple-aye.com/</id>
  <author>
    <name>Gareth Noyce</name>
@@ -113,7 +113,7 @@ on a full screen quad. Bingo. No more diamonds. No more rotated, or sheered pixe
    <title>Dev Vlog: 010</title>
 	 <link href="https://triple-aye.com/2019/10/26/Dev-Vlog-010/"/>
    <updated>2019-10-26T00:00:00+01:00</updated>
-	 <id>https://triple-aye.com/2019/10/26/Dev-Vlog:-010</id>
+	 <id>https://triple-aye.com/2019/10/26/Dev-Vlog-010</id>
    <content type="html">&lt;p&gt;I’m long overdue a video update. Apologies. Cecconoid was taking over for a while. Speaking of which, if you’ve not added it to your wish list, please do! It’ll be in all the winter sales ;)&lt;/p&gt;
 
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/arJqL2xS1AQ&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
@@ -230,7 +230,7 @@ made them more difficult. You can thank me later :)&lt;/p&gt;
    <title>Dev-Vlog: 009 - Starting on the Combat</title>
 	 <link href="https://triple-aye.com/2019/07/03/Dev-Vlog-009-Starting-on-the-Combat/"/>
    <updated>2019-07-03T00:00:00+01:00</updated>
-	 <id>https://triple-aye.com/2019/07/03/Dev-Vlog:-009---Starting-on-the-Combat</id>
+	 <id>https://triple-aye.com/2019/07/03/Dev-Vlog-009---Starting-on-the-Combat</id>
    <content type="html">&lt;p&gt;I’ve finally bitten the bullet and started on the combat system. Here’s a &lt;a href=&quot;https://www.youtube.com/watch?v=EmtR1sNbWl4&quot;&gt;little video&lt;/a&gt; discussing it.&lt;/p&gt;
 
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/EmtR1sNbWl4&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
@@ -362,7 +362,7 @@ sit there for a while, meaning I can go back to it with a fresh set of eyes, do 
    <title>Dev Vlog: 008 - Eugatron</title>
 	 <link href="https://triple-aye.com/2019/05/07/Dev-Vlog-008-Eugatron/"/>
    <updated>2019-05-07T00:00:00+01:00</updated>
-	 <id>https://triple-aye.com/2019/05/07/Dev-Vlog:-008---Eugatron</id>
+	 <id>https://triple-aye.com/2019/05/07/Dev-Vlog-008---Eugatron</id>
    <content type="html">&lt;p&gt;Back again with a quick update.&lt;/p&gt;
 
 &lt;p&gt;The Unity side-project is drawing to an end! The second game-mode, Eugatron, is basically done and now contains 50 levels
@@ -409,7 +409,7 @@ sit there for a while, meaning I can go back to it with a fresh set of eyes, do 
    <title>Dev Log: New Character, Pick-ups and Chests</title>
 	 <link href="https://triple-aye.com/2018/12/01/Dev-Log-New-Character,-Pick-ups-and-Chests/"/>
    <updated>2018-12-01T00:00:00+00:00</updated>
-	 <id>https://triple-aye.com/2018/12/01/Dev-Log:-New-Character,-Pick-ups-and-Chests</id>
+	 <id>https://triple-aye.com/2018/12/01/Dev-Log-New-Character,-Pick-ups-and-Chests</id>
    <content type="html">&lt;p&gt;Another month, another quick video update. Lots of bits and pieces this month, with the most visual being the new character design, from Paul Large.&lt;/p&gt;
 
 &lt;p&gt;Enjoy:&lt;/p&gt;
@@ -424,7 +424,7 @@ sit there for a while, meaning I can go back to it with a fresh set of eyes, do 
    <title>Dev Log: More Fishing</title>
 	 <link href="https://triple-aye.com/2018/10/24/Dev-Log-More-Fishing/"/>
    <updated>2018-10-24T00:00:00+01:00</updated>
-	 <id>https://triple-aye.com/2018/10/24/Dev-Log:-More-Fishing</id>
+	 <id>https://triple-aye.com/2018/10/24/Dev-Log-More-Fishing</id>
    <content type="html">&lt;p&gt;I’ve been busy this month. Firstly, I’ve agreed to work a couple of days a week for a start-up in Cambridge (outside of games), so now I have some income.&lt;/p&gt;
 
 &lt;p&gt;The build has also taken some good steps forward. Phil (Dopedemand) is back, providing music for the game, which is fantastic. You can hear some of his work in the video below.&lt;/p&gt;
@@ -441,7 +441,7 @@ sit there for a while, meaning I can go back to it with a fresh set of eyes, do 
    <title>Dev Log: Build Update</title>
 	 <link href="https://triple-aye.com/2018/09/13/Dev-Log-Build-Update/"/>
    <updated>2018-09-13T00:00:00+01:00</updated>
-	 <id>https://triple-aye.com/2018/09/13/Dev-Log:-Build-Update</id>
+	 <id>https://triple-aye.com/2018/09/13/Dev-Log-Build-Update</id>
    <content type="html">&lt;p&gt;Woo, I’ve been on holiday! And done some stuff! And now I’m off to Finland to give some lectures on game design…&lt;/p&gt;
 
 &lt;p&gt;So here’s a quick run-down of the bits and pieces I’ve been doing in-between all that…&lt;/p&gt;
@@ -1031,7 +1031,7 @@ this culminated in the class making a simple Surface Shader for water, which I�
    <title>Devlog: November</title>
 	 <link href="https://triple-aye.com/2017/11/26/Devlog-November/"/>
    <updated>2017-11-26T00:00:00+00:00</updated>
-	 <id>https://triple-aye.com/2017/11/26/Devlog:-November</id>
+	 <id>https://triple-aye.com/2017/11/26/Devlog-November</id>
    <content type="html">&lt;p&gt;Apologies for the long delay in posting. I’m ashamed to say that I’ve still not bought a coffee machine, but it’s not stopped me from having a fairly productive few weeks.&lt;/p&gt;
 
 &lt;h2 id=&quot;lumo&quot;&gt;Lumo&lt;/h2&gt;
@@ -1065,7 +1065,7 @@ to stick to that template, which meant not doing certain things.&lt;/p&gt;
    <title>Devlog: Upheaval</title>
 	 <link href="https://triple-aye.com/2017/10/29/Devlog-Upheaval/"/>
    <updated>2017-10-29T00:00:00+01:00</updated>
-	 <id>https://triple-aye.com/2017/10/29/Devlog:-Upheaval</id>
+	 <id>https://triple-aye.com/2017/10/29/Devlog-Upheaval</id>
    <content type="html">&lt;p&gt;I’ve lost count of the number of times I’ve moved house. Enough that I should be a bit of an expert at it, or at least, not underestimate how long it takes to sort everything out once I’ve “unpacked”. As it was, the first three weeks of October were a right-off, but bar buying a new coffee machine I’m basically good to go, I‘m back on the ‘net, and I’ve just come back from a much more chilled few days in the UK to celebrate my birthday.&lt;/p&gt;
 
 &lt;p&gt;Go go go!&lt;/p&gt;
@@ -1109,7 +1109,7 @@ to stick to that template, which meant not doing certain things.&lt;/p&gt;
    <title>Devlog: Curves</title>
 	 <link href="https://triple-aye.com/2017/09/23/Devlog-Curves/"/>
    <updated>2017-09-23T00:00:00+01:00</updated>
-	 <id>https://triple-aye.com/2017/09/23/Devlog:-Curves</id>
+	 <id>https://triple-aye.com/2017/09/23/Devlog-Curves</id>
    <content type="html">&lt;p&gt;I’m in the process of packing up my life for the move back to Tampere, so this will be the last catch-up blog until I’m setup again. Meh.&lt;/p&gt;
 
 &lt;h3 id=&quot;neutrino&quot;&gt;Neutrino&lt;/h3&gt;
@@ -1165,7 +1165,7 @@ to stick to that template, which meant not doing certain things.&lt;/p&gt;
    <title>Devlog: Grab bag catch-up post...</title>
 	 <link href="https://triple-aye.com/2017/09/05/Devlog-Grab-bag-catch-up-post/"/>
    <updated>2017-09-05T00:00:00+01:00</updated>
-	 <id>https://triple-aye.com/2017/09/05/Devlog:-Grab-bag-catch-up-post</id>
+	 <id>https://triple-aye.com/2017/09/05/Devlog-Grab-bag-catch-up-post</id>
    <content type="html">&lt;p&gt;I’m waaaay overdue a post.&lt;/p&gt;
 
 &lt;p&gt;A lot has been going on, on the dev-side, and in my personal life. I’ve had a bit of a holiday, I’ve been to the UK and back, and I’m at the start of trying to move away from Helsinki, and back to Tampere. My plans of a heads down summer of work didn’t really happen. Oh well :D&lt;/p&gt;
@@ -1219,7 +1219,7 @@ best not to be a completely static target. Good enough, for now, but I’ll be c
    <title>Devlog: Oh Behave...</title>
 	 <link href="https://triple-aye.com/2017/07/17/Devlog-Oh-Behave"/>
    <updated>2017-07-17T00:00:00+01:00</updated>
-	 <id>https://triple-aye.com/2017/07/17/Devlog:-Oh-Behave...</id>
+	 <id>https://triple-aye.com/2017/07/17/Devlog-Oh-Behave...</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/images/2017-07-14-Behave.png&quot; alt=&quot;Behaviour Tree&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Finally. I’ve got around to some game-play programming…&lt;/p&gt;
@@ -1291,7 +1291,7 @@ best not to be a completely static target. Good enough, for now, but I’ll be c
    <title>Devlog: Frigging in the Rigging...</title>
 	 <link href="https://triple-aye.com/2017/06/26/Devlog-Frigging-in-the-Rigging/"/>
    <updated>2017-06-26T00:00:00+01:00</updated>
-	 <id>https://triple-aye.com/2017/06/26/Devlog:-Frigging-in-the-Rigging</id>
+	 <id>https://triple-aye.com/2017/06/26/Devlog-Frigging-in-the-Rigging</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/images/rigging1.png&quot; alt=&quot;AI Test Dungeon&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;What I know about animation you could happily fit on the back of a postage stamp. I purposefully dodged it when making Lumo — through a cunning lack of in-game NPC characters — but I have vivid memories of swearing in 3DS Max for a couple of weeks, while trying to learn how to rig, then skin, what characters I did have. It was horrible, and the end result looks shite.&lt;/p&gt;
@@ -1326,7 +1326,7 @@ best not to be a completely static target. Good enough, for now, but I’ll be c
    <title>Devlog: The Price Is Right</title>
 	 <link href="https://triple-aye.com/2017/06/03/Devlog-The-Price-Is-Right/"/>
    <updated>2017-06-03T00:00:00+01:00</updated>
-	 <id>https://triple-aye.com/2017/06/03/Devlog:-The-Price-Is-Right</id>
+	 <id>https://triple-aye.com/2017/06/03/Devlog-The-Price-Is-Right</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/images/price1.jpg&quot; alt=&quot;Price is right!&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;So, some lucky person on the U.S. version of The Price is Right walked away with a copy of Lumo (plus Uncharted &amp;amp; Ghostbusters) and a shiny PS4. That was a surprise, to say the least.&lt;/p&gt;
@@ -1395,7 +1395,7 @@ best not to be a completely static target. Good enough, for now, but I’ll be c
    <title>Devlog: Replication</title>
 	 <link href="https://triple-aye.com/2017/05/12/Devlog-12.05.17-Replication/"/>
    <updated>2017-05-12T00:00:00+01:00</updated>
-	 <id>https://triple-aye.com/2017/05/12/Devlog:-12.05.17---Replication</id>
+	 <id>https://triple-aye.com/2017/05/12/Devlog-12.05.17---Replication</id>
    <content type="html">&lt;p&gt;First week back on Next Game, for oooh, a few weeks, and time to tackle the networking side of things. I had an inkling that retro-fitting multiplayer into the work I’d already done would be a bit of a ball-ache, but I was wrong. It was a massive fucking pain in the hairy-tits.&lt;/p&gt;
 
 &lt;p&gt;The problem wasn’t so much that I didn’t understand the theory behind it all — although it does take a while to bed-in, and in all honesty Epic could really do with providing some better documentation on the C++ side of things — but that switching something simple, like the character responses to items being picked up, involves changing a lot of small bits of code in various classes. So where, sensibly, do you start?&lt;/p&gt;
@@ -1425,7 +1425,7 @@ best not to be a completely static target. Good enough, for now, but I’ll be c
    <title>Devlog: Making Pixels Glow</title>
 	 <link href="https://triple-aye.com/2017/04/29/Devlog-Making-Pixels-Glow/"/>
    <updated>2017-04-29T00:00:00+01:00</updated>
-	 <id>https://triple-aye.com/2017/04/29/Devlog:-Making-Pixels-Glow</id>
+	 <id>https://triple-aye.com/2017/04/29/Devlog-Making-Pixels-Glow</id>
    <content type="html">&lt;p&gt;Easter and consultancy work have got in the way a bit, but the side project’s taken a big step forward…&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/2017-04-28-AddedAudio.PNG&quot; alt=&quot;Screenshot&quot; /&gt;&lt;/p&gt;

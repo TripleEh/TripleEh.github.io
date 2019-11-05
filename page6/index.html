@@ -158,6 +158,49 @@
   
   <div class="post">
     <h1 class="post-title">
+      <a href="https://triple-aye.com//2017/09/05/Devlog-Grab-bag-catch-up-post/.html">
+        Devlog: Grab bag catch-up post...
+      </a>
+    </h1>
+
+    <span class="post-date">05 Sep 2017</span>
+
+    <p>I’m waaaay overdue a post.</p>
+
+<p>A lot has been going on, on the dev-side, and in my personal life. I’ve had a bit of a holiday, I’ve been to the UK and back, and I’m at the start of trying to move away from Helsinki, and back to Tampere. My plans of a heads down summer of work didn’t really happen. Oh well :D</p>
+
+<h2 id="neutrino">Neutrino</h2>
+
+<p>Due to the travel, hanging about in airports and nights in hotels, Neutrino has had a fair bit of attention. Effectively the engine side of it is complete.</p>
+
+<p>Box2D has been integrated. I’m not a massive fan of Box2D, but it’s simple enough to use and reasonably fast for a small number of objects. I’ve gone the whole hog this time and written the debug renderer for the physics world! Seeing what’s happening under the hood really does make a difference.</p>
+
+<p>Neutrino is still single threaded, and still, effectively, vsync locked. I’m going to do a bit of work at some point to move Box2D over to another thread and fix the fucking timestep, at which point it’d be interesting to see it run on a GSync screen. But anyway…</p>
+
+<p><img src="/images/2017-09-05-DebugRender.png" alt="Debug Rendering" /></p>
+
+<p>Still not much to look at, but it’s getting there. Next step is to make a particle emitter editor, bullet trajectory “pattern” editor and a spline editor for the attack waves. Then I think I can make some levels…</p>
+
+<h2 id="next-game">Next Game</h2>
+
+<p>A month or so ago I decided that I had a lot of bits, but I didn’t have a game. I really should start putting this all together.</p>
+
+<p>Steam’s a good forcing function for this: If I’m going to make an online game then I really need to have it running through Steam and then get some other people to play it! To do that, I’ll need working UI and a proper flow in-and-out of the various game modes.</p>
+
+<p>UI in UE4 is pretty lovely. UMG has its quirks, but it works, looks good, and compared to the complete abomination in Unity, is a joy to put together. And — shock — I really like Blueprints for chaining UI together. Delay node ftw!</p>
+
+<p>That being said, there’s still a lot of UI screens to put together — once you throw in game-modes, with options, lobby screens, error handling etc. — but I have a working screen for each part of this (with no real thought applied to the styling atm) and I’m able to enter and exit a game.</p>
+
+<p>Online Session handling (like pretty much everything else in UE4) is piss poorly documented. There’s a video showing you how to do it in Blueprints, and a working example in Shooter Game that does it in C++. Because it’s so intrinsically tied to the UI, for the first pass I opted to start a simple blueprint session and see if I can connect to it via Steam. This took the better part of a day, but it does actually work; I can see hosted games over Steam, pull up some small bits of information about them, and I can join and leave a session. Wow!</p>
+
+<p>The problem is, the blueprint stuff doesn’t really have any idea about any of the custom parameters that define a hosted session, so I’m going to have to go back under the hood and do this properly in C++. Then I can filter against game mode, see the name of the server, handle friend invites and the like. But for now, just for the purposes of development, I have a “game” that I can upload to Steam, send to friends, and we can run about and shoot each.</p>
+
+<p>Time to grey box some levels to run around in.</p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
       <a href="https://triple-aye.com//2017/07/20/Work-In-Progress/.html">
         Work In Progress
       </a>
@@ -360,40 +403,6 @@ best not to be a completely static target. Good enough, for now, but I’ll be c
 <p>Next up, animating this fella, before exploring how to do some AI against co-op chums.</p>
 
 <p><img src="/images/Copper.jpg" alt="Copper" /></p>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="https://triple-aye.com//2017/05/12/Devlog-12.05.17-Replication/.html">
-        Devlog: Replication
-      </a>
-    </h1>
-
-    <span class="post-date">12 May 2017</span>
-
-    <p>First week back on Next Game, for oooh, a few weeks, and time to tackle the networking side of things. I had an inkling that retro-fitting multiplayer into the work I’d already done would be a bit of a ball-ache, but I was wrong. It was a massive fucking pain in the hairy-tits.</p>
-
-<p>The problem wasn’t so much that I didn’t understand the theory behind it all — although it does take a while to bed-in, and in all honesty Epic could really do with providing some better documentation on the C++ side of things — but that switching something simple, like the character responses to items being picked up, involves changing a lot of small bits of code in various classes. So where, sensibly, do you start?</p>
-
-<p>I tried a couple of things, first the pickups, then the weapons, but half-way through each it was clear that I’d basically have to refactor a whole bunch of supporting code. Admittedly, there’re some easy wins with the default replication that’s built into the engine; things move, things spawn and you can feel good about your progress quite quickly. But the devil’s in the detail. Do things destroy themselves correctly for client and server, when either side triggers the event? Are modifications happening on the server instance and replicating correctly? Should this multi-cast or is there a better way?</p>
-
-<p>And obviously, debugging this stuff isn’t fun when you have multiple copies of the same instance running, and try to breakpoint something.</p>
-
-<p>I spent four days poking about at this, and although I’d made pretty reasonable progress there were bugs, little fiddly fucks that I really didn’t want to carry along with me. So yesterday I started a clean project and wrote a very simple Team Deathmatch game. Even re-built the characters from the ground up, this time using the Animation Starter Kit from the UE4 Marketplace.</p>
-
-<p><img src="/images/2017-05-11-TDM_8Player.png" alt="TDM" /></p>
-
-<p>That’s not a particularly exciting screenshot, but it’s 8 players in a TDM game mode, with a dedicated server. Players automatically join and leave teams and you can run around and kill each other.</p>
-
-<p>If you’d told me a week ago that I’d effectively be starting from scratch to get this working I’d have given you the sad panda eyes, but now I’m on the other-side I’m happy. It was a good thing to do. I’m pretty confident I’m entering and exiting the game mode properly, I’m going through the login process and I’m cleaning transferring Player States and Controllers about. None of that was working 100% properly in the previous branch. And, I still have all the “old” code lying about. The HUDs, menus etc will “just work” when I drop them back in, and under the hood it’s going to be easier to migrate things over, piece-by-piece, test, and then move forward.</p>
-
-<p>So, lesson of the week — and worse, something I knew anyway — if you’re making a networked game, do it from the beginning, don’t try and bolt it on afterwards.</p>
-
-<p><em>Quite pleased I managed to get through all that without making the obvious “built to last” Bladerunner/Replicant joke.</em></p>
-
-<p><em>Oh.</em></p>
-
 
   </div>
   

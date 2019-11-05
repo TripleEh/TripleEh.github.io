@@ -185,25 +185,25 @@
 <p>Anyway. The trick to respecting the pixel, once you’ve got this far, is simple: render to an off-screen Render Target (texture), and then display that 
 on a full screen quad. Bingo. No more diamonds. No more rotated, or sheered pixels. You can get on with your business. You don’t have any stupid clamping to do, you move on with life, and ship, looking like this:</p>
 
-<p><img src="images/PIcture1.PNG" alt="Image 1" /></p>
+<p><img src="/images/PIcture1.PNG" alt="Image 1" /></p>
 
 <p>This is cool. This is enough to ensure grouchy old people like me will play your game and not moan about your pixels. Job done.</p>
 
 <p>Here’s the game camera, that renders to the off-screen render target:</p>
 
-<p><img src="images/Picture5.PNG" alt="Image 5" /></p>
+<p><img src="/images/Picture5.PNG" alt="Image 5" /></p>
 
 <p>Here’s the fullscreen quad:</p>
 
-<p><img src="images/Picture2.PNG" alt="Images 3" /></p>
+<p><img src="/images/Picture2.PNG" alt="Images 3" /></p>
 
 <p>The fullscreen quad is wrapped up in a UI canvas, that’s a screen overlay on Cam_FinalRenderOutput:</p>
 
-<p><img src="images/Picture3.PNG" alt="Image 2" /></p>
+<p><img src="/images/Picture3.PNG" alt="Image 2" /></p>
 
 <p>This is the layout of all that in the inspector:</p>
 
-<p><img src="images/Picture4.PNG" alt="Image 4" /></p>
+<p><img src="/images/Picture4.PNG" alt="Image 4" /></p>
 
 <p>All the hip-kids try and get close to the old CRT look, and given I’m of a certain vintage, I’m obviously going to have a pop as well. The ‘best’ way to do this is to add post processing to the full-screen quad:</p>
 
@@ -229,27 +229,27 @@ on a full screen quad. Bingo. No more diamonds. No more rotated, or sheered pixe
 
 <p>So lets break that down one by one. First up the scanlines. What you don’t is dirty black horizontal lines going across your pixels. Old CRTs had RGB triads, so pick your poison from the available patterns that were used. I’ve gone for:</p>
 
-<p><img src="images/Picture7.PNG" alt="RGB" /></p>
+<p><img src="/images/Picture7.PNG" alt="RGB" /></p>
 
 <p>This gives you the following, which is quite subtle:</p>
 
-<p><img src="images/Picture6.PNG" alt="Scanlines" /></p>
+<p><img src="/images/Picture6.PNG" alt="Scanlines" /></p>
 
 <p>It’s important to set this up before you do much work on the art side, because it seriously changes the gamut. You’ll notice the range of hues becomes a little muddier, and overall brightness is lowered, although I was alright, because I was mainly using white. You can compensate in the actual texture, if you want, but you can also bring it up a little with the glow, which is what I opted for.</p>
 
 <p>Glow, on its own, gives you some nice bleed across the pixels. I’ve tried to set mine up so that white pixels affect quite a large area around themselves, which is kinda similar to what you get on CRT monitors, but dialled up to 11.</p>
 
-<p><img src="images/Picture8.PNG" alt="Glow" /></p>
+<p><img src="/images/Picture8.PNG" alt="Glow" /></p>
 
 <p>For the noise I’ve tried to focus it on the black areas. Just enough to create some movement, like a bit of bad reception, but not enough that you’d really notice it if you looked at any lit areas. If I was doing a game with more than two colours, I’d ramp this waaaay up. Anyway, this image has the brightness turned up a little so you can see how the noise interacts with what we have in the post-chain:</p>
 
-<p><img src="images/Picture9.PNG" alt="Noise" /></p>
+<p><img src="/images/Picture9.PNG" alt="Noise" /></p>
 
 <p>Fish eye, does what it says on the tin. I’ve also opted to add some very small amount of Vignette. I’ve not gone for the RGB separation in the corners, because I’m going to use that in the sequel to Eugatron as a gameplay effect. Keeping my powder dry for a while.</p>
 
 <p>Anyway, all together, we get the final image:</p>
 
-<p><img src="images/Picture10.PNG" alt="Final" /></p>
+<p><img src="/images/Picture10.PNG" alt="Final" /></p>
 
 <p>That’s a lot of effort for my dodgy pixel art, but on a 4k Oled, it’s well worth every cycle. And no dodgy pixels in sight.</p>
 

@@ -136,7 +136,7 @@
 
   <div class="sidebar-item">
     <p>
-      &copy; 2019. All rights reserved.
+      &copy; 2020. All rights reserved.
     </p>
   </div>
 </div>
@@ -159,6 +159,50 @@
 
       <div class="container content">
         <div class="posts">
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="https://triple-aye.com//2017/01/20/Devlog-20.1.17.html">
+        Devlog - 20.1.17
+      </a>
+    </h1>
+
+    <span class="post-date">20 Jan 2017</span>
+
+    <div style="text-align: center"><iframe width="560" height="315" src="https://www.youtube.com/embed/qr0ff58evkQ" frameborder="0" allowfullscreen=""></iframe><p>&nbsp;</p></div>
+
+<p>Bar teaching, the last two weeks have been entirely focused on Next Game, so I’ve managed to get quite a lot done.</p>
+
+<p>Character movement is essentially ‘finished’. It’s pretty nippy - Quake 1 fast, in fact - but it feels nice and responsive. At least to me . Rocket Jumps will be featuring heavily, so spending the time to play around with this in order to get the height and distance nailed, was essential. Changes from here-on will just be tiny number tweaks, so I’m at the point now where I feel safe to begin whiteboxing levels.</p>
+
+<p>The player’s inventory management is also working. You can cycle through weapons, pick up armour and health, as well as take damage. Armour modifiers still need to be added but I know exactly how these will operate.</p>
+
+<p>UE’s weapon and projectile systems took a while to figure out, but I do now have 3 basic types that should cover everything I intend to use:</p>
+
+<ul>
+  <li>Projectile based: rocket launcher / nail gun, stuff like that.</li>
+  <li>Instant shot: Pistols</li>
+  <li>Instant multi-shot: Shotguns.</li>
+</ul>
+
+<p>Weapons have individual fire rates, can spawn splash damage areas and their damage can attenuate over distance. The only thing you might expect that’s missing - especially if you play something like COD - is projectile penetration. I’m toying with the idea of adding this, but right now my guess is that it’ll be pretty useless within the sort of levels that I intend to create.</p>
+
+<p>None of the weapons have been properly setup atm, as that’s something I’ll do once some NPCs are in. I need moving targets to shoot at!</p>
+
+<p>I’ve also had a crash course in the localisation system, configuring animation blueprints, playing audio and have dipped my toe into Cascade again.</p>
+
+<p>For the most part the last two weeks have been really productive, but I’ve been badly burned by a couple of things. One of the worst was discovering that UE4 types get garbage-collected quite aggressively. If, say, you have a TArray of elements but don’t add the UPROPERTY() macro above their definition, then at some point they’ll disappear from under you. It took me a few hours to work out exactly what was causing the crash and why, as it was appearing fairly randomly - and taking the editor out with it - but like everything, it’s completely obvious once you spot it.</p>
+
+<p>I’ve also learned the hard way that Play In Editor - PIE - masks a certain type of class initialisation bug. Stupidly, I had a set of FText variables defined outside the class (they were static char arrays at first) which compiled perfectly fine, and even ran in the editor, but cooked builds would immediately crash. It took me a couple of hours to realise that it wasn’t my Anti Virus, or some auto-build failure, but UE4 barfing when trying to initialise the variable before the engine had started up. This was happening before the splash screen was appearing, so I wasn’t even getting a log to help… Again, totally obvious once you spot it.</p>
+
+<p>I probably lost a day bug hunting this stuff, so I’m a little behind where I wanted to be this week -  ammo pickups are half done, and weapon pickups haven’t been started - but I’m basically at the point where I can play around with some look and feel tests, and maybe start white-boxing some spaces to run around in. I’m also growing in confidence with the engine and my ability to at least fix my own fuck-ups, so it’s probably a net win…</p>
+
+<p>I’ve added a little video to You Tube for those who want a peek (see the top of this post). It should go without saying that none of the assets in this are final, or even likely to appear in-game. It’s bits and bobs from Lumo and UE4’s example assets, that I’ve thrown together. Although I did lose a good chunk of time over Xmas playing with the lighting and post, just to see how it worked ;D</p>
+
+<p>The music is by Steve Birch, from the album Wonderland, that’ll be released by Joof sometime in Feb.</p>
+
+
+  </div>
   
   <div class="post">
     <h1 class="post-title">
@@ -369,55 +413,6 @@ is exposing an interface for assigning controllers or redefining controls. As th
 
 <p>I’m hoping I’ll get a day clear to go back to Oh Snow next week, but with three teaching courses on the go that might be wishful thinking. Either way, I’ve had
 fun this week. In between the sneezes.</p>
-
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="https://triple-aye.com//2016/10/13/Devupdate-13th-October.html">
-        Devupdate - 13th October
-      </a>
-    </h1>
-
-    <span class="post-date">13 Oct 2016</span>
-
-    <p><img src="/images/2016.10.13_UV_ForBlogPost.PNG" alt="UV Islands" /></p>
-
-<p>I thought I’d do a quick update before I head out to the UK this weekend.</p>
-
-<p>I’ve had a bit of fun this week. Neutrino moved forward for the first time in a long while. I’ve integrated <a href="https://github.com/ocornut/imgui">ImGUI</a>, a lovely
-header based widget library for games and other multi-media. This is one of those “where have you been all my life” bits of code, that slotted straight in and opened 
-up a really simple, clean way to do debug output, windows, memory inspection and the like. So far I’ve only added some simple performance counters, but the plan is 
-to use this to build up the internal editors for things like splines, particle effects and bullet patterns. I’m having a bit of a man crush on it…</p>
-
-<p>Oh Snow’s also moving forward. The base character is done, skinned and rigged. I had to make a few tweaks since the last update, and today I sat down to try and get the UVing 
-into shape. I’ve not used any of the UV tools in Modo before (can you spot a pattern here?) and to be perfectly honest, for Lumo I got away with everything being basically box 
-mapped, so don’t really profess to even know the terminology. Every day’s a school day.</p>
-
-<p>As ever, Modo’s been good to me. I made a lot of mistakes, and had to kinda stumble my way through the various options to work out what does what, but I finished today with a pretty 
-clean set of UV islands, and what appears to be - to me at least - reasonable texel density.</p>
-
-<p>All this highlighted some problems in my modelling workflow. As a lot of the geometry is mirrored, I could have saved myself a lot of time if I’d done a quick UV map on the model 
-before I mirrored it. I’m wasting UV space for things that could be overlapping. I’m not sure if there’s a quick way to do this after the fact, other than manually line up 
-the appropriate islands. I might need to ask around on that.</p>
-
-<p>For this game it’s not really going to be a problem…</p>
-
-<p>Also, I should have done the UVing before the skinning, as I noticed a few problems with a couple of quads that meant going back in to make some tweaks. Fortunately this is simple in Modo,
-but something to bear in mind in the future.</p>
-
-<p>The paint tools in Modo turned out to be really useful for finding where my UV seams were causing problems, and really drove home how quickly things can look shit if there’s too much 
-distortion in the quads. Today I found all this out after I thought I was ‘done’, so I scrapped everything (basically the whole day’s work) and started again. Once I vaguely knew what 
-I was doing the whole process took less than an hour.</p>
-
-<p>I’m having to stop myself from getting too stressed over the slow progress I’m making atm, and keep reminding myself that taking the hit now will pay off down the road. Learning Modo - and 
-pretty much the entire art pipeline - is a pretty big task. Learning UE4 is also going to take a good long while. The fact is, I need these skills if I’m going to continue making games on my own, 
-so it’s nice when I do finally crack something. Even if it takes all day… :)</p>
-
-<p>So, next up: a quick pass on the texture, then some simple poses for test anims.</p>
-
-<p>After I’ve recovered from a week in the UK! :D</p>
 
 
   </div>

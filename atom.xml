@@ -4,12 +4,24 @@
  <title>Triple Eh?</title>
  <link href="https://triple-aye.com/atom.xml" rel="self"/>
  <link href="https://triple-aye.com/"/>
- <updated>2019-12-18T18:22:46+00:00</updated>
+ <updated>2020-01-31T15:46:58+00:00</updated>
  <id>https://triple-aye.com/</id>
  <author>
    <name>Gareth Noyce</name>
  </author>
 
+ 
+ <entry>
+   <title>Dev Vlog - Jan 2020</title>
+	 <link href="https://triple-aye.com/2020/01/31/Dev-Vlog-Jan-2020.html"/>
+   <updated>2020-01-31T00:00:00+00:00</updated>
+	 <id>https://triple-aye.com/2020/01/31/Dev-Vlog---Jan-2020</id>
+   <content type="html">&lt;p&gt;Happy New Year, everyone! It’s been a pretty productive start to the year. Couple of big things have gone in, and lots of little bits of art have landed. It’s almost starting to look like a game!&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/h9t7vxwBVfA&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>Dev Vlog 011 - More World Building</title>

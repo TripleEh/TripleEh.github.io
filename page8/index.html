@@ -162,6 +162,79 @@
   
   <div class="post">
     <h1 class="post-title">
+      <a href="https://triple-aye.com//2017/04/08/Devlog-08.04.17.html">
+        Devlog - 08.04.17
+      </a>
+    </h1>
+
+    <span class="post-date">08 Apr 2017</span>
+
+    <p>Zelda has been pushed to the back-burner, I’ve been to the UK for a trade show, and started up a new consultancy gig. Even found some time to do some programming…</p>
+
+<h2 id="eurogamer-rezzed">Eurogamer: Rezzed</h2>
+
+<p>I’ve not been to Rezzed in four or five years, but I can safely say that it’s my favourite “trade” show. It’s far more chill than the Expo, and there are plenty of opportunities to 
+catch up with Developers, ask them techie questions, and get the shizz on who’s getting published by whom, and where the funding’s at. Eurogamer also do a good range of panel discussions, 
+which are great to watch, and what with it being in central London, getting ruinously drunk in the evening is entirely possible.</p>
+
+<p>It’s hard to pick stand-outs at shows like these, but ExoOne and Tokyo 42 were the two that got me, and were by far the best looking Unity developed games at the show. I 
+know it doesn’t matter what engine a game is written in, but having spent 2 days walking around it was incredibly obvious - for the most part - who was using what. Unity on the
+Nintendo Switch looking rough as balls (Overcooked was running at 15-20fps at points) and there were many many tales of people having the same problems as I had, while shipping Lumo. So I did leave the 
+show thinking that I’d made the right choice moving to UE4, and Epic having a large presence at the venue definitely didn’t hurt that.</p>
+
+<p>And if Snake Pass really was ported to Switch in a week, well, I’m looking forward to begging Nintendo for some Devkits toward the end of the year… :D</p>
+
+<p>I didn’t show anything, or talk to publishers this time around. It was just nice to go to a show with no pressure and mooch around. My Zub t-shirt had its first public airing. :D</p>
+
+<h2 id="new-gig">New Gig</h2>
+
+<p>I’ve picked up some consultancy work with a start-up in Helsinki. Can’t say much about it atm, but that’s one or two days a week helping them get going with their project. It’s time away from 
+doing my own stuff, but extra cash in the bank is never a bad thing, and I’m working in an area I’ve not really touched before, so a few things to learn.</p>
+
+<h2 id="neutrino">Neutrino</h2>
+
+<p>You’d think with all the planes and trains I’ve been on this month, I’d have done more, but it turns out that in my excitement at getting exit row seats on the plane, I forgot that no bags are allowed to be stashed and the table barely 
+holds a cup, let alone my laptop. But I did manage to do a few things.</p>
+
+<p>I’ve put in the various game states so Neutrino moves through the splash-screen, “main menu”, and into a test level, and finished off the saving of tilemaps to a binary file. I can load this, and I can create a static 
+VBO that holds the tile-data. But I’ve not quite got it all hooked up so the level is being displayed. That’s the next job.</p>
+
+<p>Most games have several versions, Debug and Release being the most common. Normally these will do slightly different things: Debug will have more integrity checks, print out more logging information, and may even contain different modes 
+(none of Neurino’s editors, for example, are even compiled into the release build).</p>
+
+<p>Release, as the name suggests, is normally what gets shipped to the players. To date I’ve only ever been working in Debug builds, so I thought it was about time 
+that I checked out how the release build was getting on… And the good news is, excellently! I’d made a couple of mistakes with some #ifdef wrapping, but once fixed, Release was up and running in a couple of minutes. I’m mildly 
+surprised about that.</p>
+
+<h2 id="next-game">Next Game</h2>
+
+<p>Work’s been a bit stop/start, but quite a lot’s been done. The bulk of the effort has been working on the game-flow: at launch the game presents a little splash-screen with the company logo on, which nicely fades into the main 
+menu. From there, you can jump into the first level, or quit out to the desktop. In-game it’s now possible to pause (in single player) and the level’s exit teleporters will take control away from the player and 
+present an end of level stats screen, showing score, items collected, time taken and any bonuses earned, etc.</p>
+
+<p>This was a good exercise and I uncovered a few things: for a start, I’m still not using the various game and player state classes correctly. Things like the inventory are currently in my Player Controller, and should
+be in the Player State class. Level pick-ups and secrets aren’t being tracked in the Game State class, but by the player or individually. All of this comes back to UE4 being opinionated about how to structure the 
+game, and I’m still learning that stuff. What I have “works”, but will be completely broken in a networked game.</p>
+
+<p>I’m at the point now - having basically got my head around how to do the single player stuff - that I’m going to refactor the bits I’ve got wrong, and then make a start on the network replication. I’ve no idea how to handle 
+the lobby system, or picking game-modes, but if I can get the players, weapons, projectiles and pick-ups replicating, that puts me in a good position to then start on the AI. I can work the rest out later.</p>
+
+<p>I also discovered that it was possible to have a static library of C++ functions you could provide to Blueprints, but despite this working well for a few days it eventually started to give me 
+build errors, complaining that things were compiled with out-of-date outers (or something). I’ve no idea what this meant, and I’m starting to become more and more distrustful of Blueprints in general. They’re ok for little 
+throw-away things, but even doing the UI flow in them was tedious. Debugging them is an absolute nightmare…</p>
+
+<p><a href="https://www.youtube.com/playlist?list=PLqfZolvobgUADL9xLhimuX3TQONLZGJO5">51Daedalus</a> is giving a serious of lighting lectures over on his You Tube channel. I can highly recommend these, as I’ve learned a lot from the 
+few hours he’s already done, including a lovely little trick for faking volumetric light areas (which I’ve nicked and slapped all over my test level). I think lit particles and these sorts of faked volumetric tricks 
+are going to be really important, in Next Game. Some of the best looking stuff at Rezzed was doing of a lot of this for atmosphere, so it’s something I’m really keen to try and learn.</p>
+
+<p>Also, a shout out to the Unofficial Unreal Discord Community: <a href="http://unrealslackers.org/">Unreal Slackers</a> I’ve been able to get a few questions answered, and people seem nice and friendly. It’s good to be able to bounce 
+stuff off other developers now and again.</p>
+
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
       <a href="https://triple-aye.com//2017/04/08/Devlog-17.03.17.html">
         Devlog - 17.03.17
       </a>
@@ -533,45 +606,6 @@ deeply into the materials for this game, but anything that speeds up texturing i
 <p>Also, there’s been a big migration of developers from Twitter onto Mastodon.social. If you’re a twitter user then I don’t really need to explain why this 
 is happening, but if not and you’re interested in a low traffic, Nazi-free open source Twitter-alike then <a href="https://mastodon.social">Mastodon</a> is worth 
 checking out. I’m @korruptor as usual.</p>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="https://triple-aye.com//2017/01/28/Visual-Studio-Code.html">
-        Visual Studio Code
-      </a>
-    </h1>
-
-    <span class="post-date">28 Jan 2017</span>
-
-    <p><img src="images/vscode.png" alt="Visual Studio Code" /></p>
-
-<p>I’m interrupting normal blogging service to give a shout out to Visual Studio Code, on Linux. I 
-was put onto it by one of my students, and I’ve been running it for the last week as a daily driver when 
-train-coding. And it’s great.</p>
-
-<p>Normally I use Emacs or Vim, depending on the mood, and I have done for years, but both of them require a 
-fair bit of setup, and I’ve always got a second terminal open for compilation / launching
-the executable.</p>
-
-<p>Visual Studio Code, while not quite as nice as either of those from the text editing pov, is easily on a 
-par with something like Sublime Text, but with a special party trick: it integrates extremely well with GCC &amp; GDB.</p>
-
-<p>You can setup a problem parser, which will grep gcc’s output, allowing you to quickly jump to compilation errors, and
-it’ll launch GDB and act as a front-end, allowing you to hover-inspect variables and do all the things you’d
-expect from a larger IDE.</p>
-
-<p>And it’s nippy. Surprisingly nippy. In fact, for C/C++ programming, this has quickly become my go-to editor 
-on Linux. I can heartily recommend it.</p>
-
-<p>If there’s one nitpick, it’s the lack of horizontal splits. Something Visual Studio seems to be partially 
-allergic to, as well. But other than that, if you’re a Linux coder and you want some of the trappings of an 
-IDE, without installing something shit like Eclipse, or slow and lethargic like QT Creator, VS Code is well
-worth checking out.</p>
-
-<p>And I can’t believe I’m saying that.</p>
-
 
   </div>
   

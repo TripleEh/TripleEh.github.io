@@ -4,12 +4,26 @@
  <title>Triple Eh?</title>
  <link href="https://triple-aye.com/atom.xml" rel="self"/>
  <link href="https://triple-aye.com/"/>
- <updated>2020-02-23T10:31:14+00:00</updated>
+ <updated>2020-03-05T12:46:14+00:00</updated>
  <id>https://triple-aye.com/</id>
  <author>
    <name>Gareth Noyce</name>
  </author>
 
+ 
+ <entry>
+   <title>Dialogs and Strings...</title>
+	 <link href="https://triple-aye.com/2020/03/05/Dialogs-and-Strings....html"/>
+   <updated>2020-03-05T00:00:00+00:00</updated>
+	 <id>https://triple-aye.com/2020/03/05/Dialogs-and-Strings...</id>
+   <content type="html">&lt;p&gt;Trying something a little different for this update, because I’ve not had time to do anything sexy in the last two weeks. Unless you count butterflies (and I do).&lt;/p&gt;
+
+&lt;p&gt;So here’s some detail on how I’m doing LOC, and a smidge about input handling. Enjoy!&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/IVyeK9ErGyY&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>Dungeon and Ting</title>

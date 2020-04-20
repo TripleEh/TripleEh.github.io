@@ -162,6 +162,26 @@
   
   <div class="post">
     <h1 class="post-title">
+      <a href="https://triple-aye.com//2020/04/20/Dev-Vlog-014-Self-Isolation.html">
+        Dev Vlog 014 - Self Isolation
+      </a>
+    </h1>
+
+    <span class="post-date">20 Apr 2020</span>
+
+    <p>I’m deep into making a proper dungeon, which is kind of exciting, so hopefully not too long before I can show you the grey box of that. 
+In the meantime, here’s a little bit about how I got on last month.</p>
+
+<p>It feels a bit weird to be talking about development during these times, so I hope you and yours are doing ok. Stay safe, I’ll post again soon.</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eNmOfA6gOEA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<p>P.S. I might have started doing some stuff on the Amiga again. If I get some time, I’ll maybe talk about that, as well. ;)</p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
       <a href="https://triple-aye.com//2020/03/05/Dialogs-and-Strings....html">
         Dialogs and Strings...
       </a>
@@ -225,108 +245,6 @@
 <iframe width="560" height="315" src="https://www.youtube.com/embed/z_ojweZBNzc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 
 <p>Have a great holiday season, everyone! Catch you next year :)</p>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="https://triple-aye.com//2019/10/27/Cecconoid-Camera-Setup.html">
-        Cecconoid's Camera Setup
-      </a>
-    </h1>
-
-    <span class="post-date">27 Oct 2019</span>
-
-    <p>Cecconoid’s an old school game, with an old school aesthetic, which means big fat chunky pixels on super high-resolution displays. Uh Oh.</p>
-
-<p>I’ve ranted at length (on my personal blog) about some simple sins against the pixel that I see again and again in modern indie games:</p>
-
-<ul>
-  <li>Use of different “sizes” for pixels, across different assets</li>
-  <li>Rotated, or “diamond” pixels…</li>
-</ul>
-
-<p>Both of these occur, generally, because, although the sprites’ texture is pixel-art, the sprite is then rendered to a high-res display, with no other cares in the world. As assets are scaled, rotated, or, you know, otherwise moved about in a “gamey” fashion, those poor little pixels get munged into unnatural shapes. Or worse, all that lovely filtering that’s applied to textures to make them look good, gets applied to our sprites, and before you know it, there’s sub-pixel stuff going on, bi-linear filtering, and stuff’s a mess.</p>
-
-<p>I know, I know. I shouldn’t care, I should just leave it be, but honestly, I’ve walked away from games that do this. It annoys me so much.</p>
-
-<p>So yeah, Cecconoid wasn’t going to be doing any of that guff.</p>
-
-<p>My chosen display resolution is as close to ancient as I could reasonably get: 384x216px (1920x1080 / 5), or, at the Unity default of 100 pixels per unit, 3.84 by 2.16. To put that into perspective, the original ZX Speccy was 256x192px, so given the aspect ratio, we’re not too far out. This also works well with Box2D, as it’s expecting to be given objects with sensible kilo ranges. Our movement speeds are also going to be pretty sane and easy to conceptualise. The only problem is that the Unity editor isn’t really built for doing stuff at this scale, so your snap settings are going to be at 0.01 if you want per-pixel, or 0.16/0.08, depending on the size of your tiles. Prefab views will open a billion miles out, and most of your initial particle stuff will be the size of a small moon. It gets filddly, quickly and ugh, whatever, I give up…</p>
-
-<p>Anyway. The trick to respecting the pixel, once you’ve got this far, is simple: render to an off-screen Render Target (texture), and then display that 
-on a full screen quad. Bingo. No more diamonds. No more rotated, or sheered pixels. You can get on with your business. You don’t have any stupid clamping to do, you move on with life, and ship, looking like this:</p>
-
-<p><img src="/images/PIcture1.PNG" alt="Image 1" /></p>
-
-<p>This is cool. This is enough to ensure grouchy old people like me will play your game and not moan about your pixels. Job done.</p>
-
-<p>Here’s the game camera, that renders to the off-screen render target:</p>
-
-<p><img src="/images/Picture5.PNG" alt="Image 5" /></p>
-
-<p>Here’s the fullscreen quad:</p>
-
-<p><img src="/images/Picture2.PNG" alt="Images 3" /></p>
-
-<p>The fullscreen quad is wrapped up in a UI canvas, that’s a screen overlay on Cam_FinalRenderOutput:</p>
-
-<p><img src="/images/Picture3.PNG" alt="Image 2" /></p>
-
-<p>This is the layout of all that in the inspector:</p>
-
-<p><img src="/images/Picture4.PNG" alt="Image 4" /></p>
-
-<p>All the hip-kids try and get close to the old CRT look, and given I’m of a certain vintage, I’m obviously going to have a pop as well. The ‘best’ way to do this is to add post processing to the full-screen quad:</p>
-
-<h3 id="scanlines">“Scanlines”</h3>
-
-<p>Stuff was low res, and things were slow. The beam in CRTs rasterscaned the computer’s output, line by line, and depending on the type of TV / Monitor you were using, you’d see darker areas between these scaned lines. If you got your nose up really close, the RGB pattern of the phosphorescent screen that the beam would illuminate, would also be visible.</p>
-
-<p>We have 4k screens, so surely that’s enough pixels to make little RGB triads a thing again?</p>
-
-<h3 id="glow">Glow</h3>
-
-<p>Those illuminated phosphors popped. The glowed. They bled into each other. They created final colours that weren’t in the original image. And white things used to leave a trail, like a scar across your eyeball…</p>
-
-<p>Well, as much as I’d like to, adding trails to a B&amp;W game would actually make it a little too hard to read, so I’m going to skip that. But white is going to glow. And colours (red, in my case) should bleed. Oh yes.</p>
-
-<h3 id="noise">Noise.</h3>
-
-<p>TVs were shit back in the day, and even your fav monitor wasn’t pin-sharp. And, I’m a fully paid-up member of the “grain makes all computer graphics look better” club. Unlucky.</p>
-
-<h3 id="fish-eye">Fish Eye.</h3>
-
-<p>CRTs were curved. It adds nothing, and tbh normally ends up making stuff look worse, but a tiny smidge here and there won’t hurt.</p>
-
-<p>So lets break that down one by one. First up the scanlines. What you don’t is dirty black horizontal lines going across your pixels. Old CRTs had RGB triads, so pick your poison from the available patterns that were used. I’ve gone for:</p>
-
-<p><img src="/images/Picture7.PNG" alt="RGB" /></p>
-
-<p>This gives you the following, which is quite subtle:</p>
-
-<p><img src="/images/Picture6.PNG" alt="Scanlines" /></p>
-
-<p>It’s important to set this up before you do much work on the art side, because it seriously changes the gamut. You’ll notice the range of hues becomes a little muddier, and overall brightness is lowered, although I was alright, because I was mainly using white. You can compensate in the actual texture, if you want, but you can also bring it up a little with the glow, which is what I opted for.</p>
-
-<p>Glow, on its own, gives you some nice bleed across the pixels. I’ve tried to set mine up so that white pixels affect quite a large area around themselves, which is kinda similar to what you get on CRT monitors, but dialled up to 11.</p>
-
-<p><img src="/images/Picture8.PNG" alt="Glow" /></p>
-
-<p>For the noise I’ve tried to focus it on the black areas. Just enough to create some movement, like a bit of bad reception, but not enough that you’d really notice it if you looked at any lit areas. If I was doing a game with more than two colours, I’d ramp this waaaay up. Anyway, this image has the brightness turned up a little so you can see how the noise interacts with what we have in the post-chain:</p>
-
-<p><img src="/images/Picture9.PNG" alt="Noise" /></p>
-
-<p>Fish eye, does what it says on the tin. I’ve also opted to add some very small amount of Vignette. I’ve not gone for the RGB separation in the corners, because I’m going to use that in the sequel to Eugatron as a gameplay effect. Keeping my powder dry for a while.</p>
-
-<p>Anyway, all together, we get the final image:</p>
-
-<p><img src="/images/Picture10.PNG" alt="Final" /></p>
-
-<p>That’s a lot of effort for my dodgy pixel art, but on a 4k Oled, it’s well worth every cycle. And no dodgy pixels in sight.</p>
-
-<p>We ended up stripping all of this from the mobile version as there’s very little value in adding scanlines to such a tiny screen, but for desktop or console, sweating the details, even for stuff like this, gives you a pretty good final image. In my old-man opinion, anyway.</p>
-
 
   </div>
   

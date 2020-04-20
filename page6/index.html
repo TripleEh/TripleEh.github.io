@@ -162,6 +162,109 @@
   
   <div class="post">
     <h1 class="post-title">
+      <a href="https://triple-aye.com//2018/01/20/Super-Simple-Day-Night-Cycle.html">
+        Super Simple Day Night Cycle
+      </a>
+    </h1>
+
+    <span class="post-date">20 Jan 2018</span>
+
+    <p>A Day/Night cycle can be a bit of a double edged sword. On the plus side it gives you the freedom to demarcate events into time periods — “they mostly come at night. Mostly…” — and on the downside you have to make the environment look good in a range of different lighting setups. So it’s important to have some easy controls.</p>
+
+<p>I’ve flip-flopped on whether to include a day/night cycle in my new project for a while. I’m not at the point where the game is looking good in any setup, so making things harder from the start might not be the best decision. But, I do want to have night-time specific events, and having drowned myself in Breath Of The Wild over the last few months it’s clear that having a cycle, even if simple, does add to the sense of “place”. The player gets to see the world evolve, even in small ways, over time, and that’s good.</p>
+
+<p>Before I begin explaining my simple implementation, let me point you at this series of videos from Kleiner Baer. He’s implemented an awesome Day/Night cycle that not only takes into account the long/lat of your game-world, but also the calendar seasons. I spent a day implementing it when I first considered adding Day/Night to my game, and it’s great, but not quite what I wanted…</p>
+
+<p>So what does my system need to do?</p>
+
+<ul>
+  <li>I’ll need to be able to set the time of day, for obvious reasons.</li>
+  <li>I’ll need to be able to get the time of day, as the Player will no doubt need it in a UI somewhere.</li>
+  <li>I want control over the length of my shadows. This means doing more than a simple slow, continuous rotation of the Sun and Moon. I want short mid-day shadows, and longer shadows at dawn/dusk, that project at specific angles. I’m trying flatter the top-down view of the world.</li>
+  <li>I don’t want black shadows, so I’m going to have to use a Sky Light to help lift them up, which means I’ll need to continuously update both the intensity of the Sky Light, and it’s colour.</li>
+  <li>I’ll need the same control for the colour and intensity of the Sun and Moon…</li>
+</ul>
+
+<p>Because I’m a top down game I don’t need:</p>
+
+<ul>
+  <li>The Sun or Moon to be visible in the sky, or move across the sky correctly.</li>
+</ul>
+
+<p>This simplifies things.</p>
+
+<p>My controller therefore needs: two directional lights (Sun and Moon), a Sky Light to help with the shadows, and a value to track the time.</p>
+
+<p>The first thing to do is decide how to handle the time. I don’t want to be fiddling around with minutes / seconds — why do the maths when you can avoid it? — so given I only want hours I can track this with a single float, that works as a 24 hour clock:</p>
+
+<ul>
+  <li>0.9f == 9pm</li>
+  <li>1.2f == Noon</li>
+  <li>2.1f == 9pm</li>
+</ul>
+
+<p>Etc.</p>
+
+<p>Updating the time is simple:</p>
+
+<blockquote>
+  <p>fCurrentGameTime += DeltaTime * (2.4f / fLengthOfDayInSeconds);</p>
+</blockquote>
+
+<p>which I can do in my DayNightController’s <em>Tick</em> function. Bob’s your mother’s brother.</p>
+
+<p>(If I want minutes, say for the UI, I can get them by multiplying <em>fCurrentGameTime</em> by 10, and then pulling out the fractional part of the resulting float. This is the percentage of an “hour”, so:</p>
+
+<blockquote>
+  <p>(fFract*100.0f) * 0.59f</p>
+</blockquote>
+
+<p>will give me a screen-printable value, and I’ll just ignore seconds…)</p>
+
+<p>So the main thing about this implementation is having control over colour and light intensity. I could just lerp between known-good values, say for morning, noon and night, but a far better way would be to use Curves.</p>
+
+<p>UE4, handily, has an editable curve system for float, vector and colour values — exactly what’s needed here — and one of their big benefits is that you can edit them and see your changes reflected during PIE. This is perfect for me, as I’ll be fiddling with these curves until the day the game is released.</p>
+
+<p>The Curve editor is fairly basic, but it does the job. For my system I need curves that go from 0.0 to 2.4f, which I pull-out using <em>fCurrentGameTime</em> as the index.</p>
+
+<p><img src="/images/DN1.PNG" alt="Sun Colour" /></p>
+
+<p>This is the curve for the colour of the Sun’s light during the course of the day. Atm I’m staying quite blue in the morning and blending to a very orange/red sunset in the evening, but this will be tweaked a million more times…</p>
+
+<p>The angle of the sun’s light is done in a similar way:</p>
+
+<p><img src="/images/DN2.png" alt="Angle9" /></p>
+
+<p>Editing the Y value in this graph is what allows me to have very small shadows at mid-day and longer ones at dusk/dawn. Very tweakable.</p>
+
+<p>So the class setup becomes:</p>
+
+<p><img src="/images/DN3.png" alt="Class" /></p>
+
+<p>And putting all this together, the Tick function looks like:</p>
+
+<p><img src="/images/DN4.png" alt="Tick" /></p>
+
+<p>As the title says: Super. Simple.</p>
+
+<p>There’re a couple of gotchas with this, at least for me.</p>
+
+<ul>
+  <li>You need some sensible defaults, otherwise everything is going to be waaaay too bright when you drop a derived Blueprint into the world.</li>
+  <li>Moveable Sky Lights will apply distance field AO by default, and that’s not something I’m after right now. It looks a little weird with my top-down view, but I may go back and tweak this later. Setting the Sky Light to Stationary disables this.</li>
+  <li>Because my game is top-down I don’t need a sky box. Passing in a specific Cube map (all white) to the Sky Light makes it a little cheaper and gives better colour control. (Hat-tip to Mr Large for that factoid.)</li>
+</ul>
+
+<p>So you’ll want to setup some sane values in the constructor. You’ll probably want to play around with a couple of lights in the editor first and work out how you want the shadows to appear, as well. There’re a lot of settings to toy with depending on the look you’re after.</p>
+
+<p>The end result, before I spend the next several years tweaking it, is pretty good.</p>
+
+<p><img src="/images/DN5.gif" alt="TOD" /></p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
       <a href="https://triple-aye.com//2018/01/06/In-Game-Camera.html">
         In Game Camera
       </a>
@@ -434,49 +537,6 @@ to stick to that template, which meant not doing certain things.</p>
 
 <p>Anyway, I better get back to packing boxes ;D</p>
 
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="https://triple-aye.com//2017/09/05/Devlog-Grab-bag-catch-up-post.html">
-        Devlog: Grab bag catch-up post...
-      </a>
-    </h1>
-
-    <span class="post-date">05 Sep 2017</span>
-
-    <p>I’m waaaay overdue a post.</p>
-
-<p>A lot has been going on, on the dev-side, and in my personal life. I’ve had a bit of a holiday, I’ve been to the UK and back, and I’m at the start of trying to move away from Helsinki, and back to Tampere. My plans of a heads down summer of work didn’t really happen. Oh well :D</p>
-
-<h2 id="neutrino">Neutrino</h2>
-
-<p>Due to the travel, hanging about in airports and nights in hotels, Neutrino has had a fair bit of attention. Effectively the engine side of it is complete.</p>
-
-<p>Box2D has been integrated. I’m not a massive fan of Box2D, but it’s simple enough to use and reasonably fast for a small number of objects. I’ve gone the whole hog this time and written the debug renderer for the physics world! Seeing what’s happening under the hood really does make a difference.</p>
-
-<p>Neutrino is still single threaded, and still, effectively, vsync locked. I’m going to do a bit of work at some point to move Box2D over to another thread and fix the fucking timestep, at which point it’d be interesting to see it run on a GSync screen. But anyway…</p>
-
-<p><img src="/images/2017-09-05-DebugRender.png" alt="Debug Rendering" /></p>
-
-<p>Still not much to look at, but it’s getting there. Next step is to make a particle emitter editor, bullet trajectory “pattern” editor and a spline editor for the attack waves. Then I think I can make some levels…</p>
-
-<h2 id="next-game">Next Game</h2>
-
-<p>A month or so ago I decided that I had a lot of bits, but I didn’t have a game. I really should start putting this all together.</p>
-
-<p>Steam’s a good forcing function for this: If I’m going to make an online game then I really need to have it running through Steam and then get some other people to play it! To do that, I’ll need working UI and a proper flow in-and-out of the various game modes.</p>
-
-<p>UI in UE4 is pretty lovely. UMG has its quirks, but it works, looks good, and compared to the complete abomination in Unity, is a joy to put together. And — shock — I really like Blueprints for chaining UI together. Delay node ftw!</p>
-
-<p>That being said, there’s still a lot of UI screens to put together — once you throw in game-modes, with options, lobby screens, error handling etc. — but I have a working screen for each part of this (with no real thought applied to the styling atm) and I’m able to enter and exit a game.</p>
-
-<p>Online Session handling (like pretty much everything else in UE4) is piss poorly documented. There’s a video showing you how to do it in Blueprints, and a working example in Shooter Game that does it in C++. Because it’s so intrinsically tied to the UI, for the first pass I opted to start a simple blueprint session and see if I can connect to it via Steam. This took the better part of a day, but it does actually work; I can see hosted games over Steam, pull up some small bits of information about them, and I can join and leave a session. Wow!</p>
-
-<p>The problem is, the blueprint stuff doesn’t really have any idea about any of the custom parameters that define a hosted session, so I’m going to have to go back under the hood and do this properly in C++. Then I can filter against game mode, see the name of the server, handle friend invites and the like. But for now, just for the purposes of development, I have a “game” that I can upload to Steam, send to friends, and we can run about and shoot each.</p>
-
-<p>Time to grey box some levels to run around in.</p>
 
   </div>
   

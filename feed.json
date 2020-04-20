@@ -8,6 +8,16 @@
         "name": "Gareth Noyce"},
     "items": [
       {
+            "id": "https://www.triple-aye.com/2020/04/20/Dev-Vlog-014---Self-Isolation",
+            "url": "https://www.triple-aye.com/2020/04/20/Dev-Vlog-014-Self-Isolation.html",
+            "title": "Dev Vlog 014 - Self Isolation",
+            "content_html": "<p>I’m deep into making a proper dungeon, which is kind of exciting, so hopefully not too long before I can show you the grey box of that. \nIn the meantime, here’s a little bit about how I got on last month.</p>\n\n<p>It feels a bit weird to be talking about development during these times, so I hope you and yours are doing ok. Stay safe, I’ll post again soon.</p>\n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/eNmOfA6gOEA\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\"></iframe>\n\n<p>P.S. I might have started doing some stuff on the Amiga again. If I get some time, I’ll maybe talk about that, as well. ;)</p>",
+            "summary": "I’m deep into making a proper dungeon, which is kind of exciting, so hopefully not too long before I can show you the grey box of that. In the meantime, here’s a little bit about how I got on last month.",
+            "date_published": "2020-04-20T00:00:00+01:00",
+            "date_modified": "2020-04-20T00:00:00+01:00",
+            "author": {
+              "name": "Gareth Noyce"},
+            "tags": []},{
             "id": "https://www.triple-aye.com/2020/03/05/Dialogs-and-Strings...",
             "url": "https://www.triple-aye.com/2020/03/05/Dialogs-and-Strings....html",
             "title": "Dialogs and Strings…",
@@ -95,16 +105,6 @@
             "summary": "For some reason I’m always busier in the summer. It’s been a pattern since the last year of Lumo and 2019 has been no different. I’ve picked up some great contract work – so the rent is paid – but it’s not left a lot of time for me to work on my own stuff. 1st World Problems… But it’s worked out really well, having the opportunity to look back at Cecconoid and Eugatron with fresh eyes has been fantastic. I’ve been able to pull them apart, spot issues and tweak stuff to get them much closer to what I was envisaging at the start.",
             "date_published": "2019-07-28T00:00:00+01:00",
             "date_modified": "2019-07-28T00:00:00+01:00",
-            "author": {
-              "name": "Gareth Noyce"},
-            "tags": []},{
-            "id": "https://www.triple-aye.com/2019/07/03/Dev-Vlog-009---Starting-on-the-Combat",
-            "url": "https://www.triple-aye.com/2019/07/03/Dev-Vlog-009-Starting-on-the-Combat.html",
-            "title": "Dev-Vlog: 009 - Starting on the Combat",
-            "content_html": "<p>I’ve finally bitten the bullet and started on the combat system. Here’s a <a href=\"https://www.youtube.com/watch?v=EmtR1sNbWl4\">little video</a> discussing it.</p>\n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/EmtR1sNbWl4\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\"></iframe>\n\n<p>It’s been a really busy month. I’ve nearly shipped an iOS game (contract work), Cecconoid’s store presences are \nbasically done, the trailer is up and I’m slowly gathering wishlists. Unfortunately a lot of the work I’ve been \ndoing isn’t on my own projects, but that’s a good problem to have. :)</p>",
-            "summary": "I’ve finally bitten the bullet and started on the combat system. Here’s a little video discussing it.",
-            "date_published": "2019-07-03T00:00:00+01:00",
-            "date_modified": "2019-07-03T00:00:00+01:00",
             "author": {
               "name": "Gareth Noyce"},
             "tags": []}]
